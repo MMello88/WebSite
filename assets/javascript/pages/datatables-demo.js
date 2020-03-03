@@ -25,7 +25,6 @@ function () {
       this.searchRecords();
       this.selecter();
       this.clearSelected();
-      this.table2(); // add buttons
 
       this.table.buttons().container().appendTo('#dt-buttons').unwrap();
     }
@@ -168,55 +167,6 @@ function () {
     key: "clearSelectedRows",
     value: function clearSelectedRows() {
       $('#check-handle').prop('indeterminate', false).prop('checked', false).trigger('change');
-    }
-  }, {
-    key: "table2",
-    value: function table2() {
-      $('#myTable2').DataTable({
-        dom: "<'row'<'col-sm-12 col-md-6'l><'col-sm-12 col-md-6'f>>\n        <'table-responsive'tr>\n        <'row align-items-center'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7 d-flex justify-content-end'p>>",
-        language: {
-          paginate: {
-            previous: '<i class="fa fa-lg fa-angle-left"></i>',
-            next: '<i class="fa fa-lg fa-angle-right"></i>'
-          }
-        },
-        autoWidth: false,
-        ajax: 'assets/data/products.json',
-        deferRender: true,
-        order: [1, 'asc'],
-        columns: [{
-          data: 'name',
-          className: 'align-middle'
-        }, {
-          data: 'inventory',
-          className: 'align-middle'
-        }, {
-          data: 'variant',
-          className: 'align-middle'
-        }, {
-          data: 'prices',
-          className: 'align-middle'
-        }, {
-          data: 'sales',
-          className: 'align-middle'
-        }, {
-          data: 'actions',
-          className: 'align-middle text-right',
-          orderable: false,
-          searchable: false
-        }],
-        columnDefs: [{
-          targets: 0,
-          render: function render(data, type, row, meta) {
-            return "<a href=\"#".concat(row.id, "\" class=\"tile tile-img mr-1\">\n            <img class=\"img-fluid\" src=\"assets/images/dummy/img-").concat(row.img, ".jpg\" alt=\"Card image cap\">\n          </a>\n          <a href=\"#").concat(row.id, "\">").concat(row.name, "</a>");
-          }
-        }, {
-          targets: 5,
-          render: function render(data, type, row, meta) {
-            return "<a class=\"btn btn-sm btn-icon btn-secondary\" href=\"#".concat(data, "\"><i class=\"fa fa-pencil-alt\"></i></a>\n          <a class=\"btn btn-sm btn-icon btn-secondary\" href=\"#").concat(data, "\"><i class=\"far fa-trash-alt\"></i></a>");
-          }
-        }]
-      });
     }
   }]);
 

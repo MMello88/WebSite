@@ -96,12 +96,6 @@
         <div class="form-group">
           <button class="btn btn-lg btn-primary btn-block" type="submit">Sign Up</button>
         </div><!-- /.form-group -->
-        <!-- .form-group -->
-        <div class="form-group text-center">
-          <div class="custom-control custom-control-inline custom-checkbox">
-            <input type="checkbox" class="custom-control-input" id="newsletter"> <label class="custom-control-label" for="newsletter">Sign me up for the newsletter</label>
-          </div>
-        </div><!-- /.form-group -->
         <!-- recovery links -->
         <p class="text-center text-muted mb-0"> By creating an account you agree to the <a href="#">Terms of Use</a> and <a href="#">Privacy Policy</a>. </p><!-- /recovery links -->
       </form><!-- /.auth-form -->

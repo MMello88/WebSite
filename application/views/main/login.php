@@ -98,7 +98,7 @@
         </div><!-- /.form-group -->
         <!-- recovery links -->
         <div class="text-center pt-3">
-          <a href="auth-recovery-username.html" class="link">Forgot Username?</a> <span class="mx-2">·</span> <a href="<?= base_url('user/forgot') ?>" class="link">Forgot Password?</a>
+          <a href="<?= base_url('user/forgot') ?>" class="link">Forgot Password?</a>
         </div><!-- /recovery links -->
       </form><!-- /.auth-form -->
       <!-- copyright -->

@@ -77,7 +77,7 @@
           <button class="btn btn-lg btn-block btn-primary" type="submit">Reset Password</button>
         </div>
         <div class="d-block d-md-inline-block">
-          <a href="auth-signin-v1.html" class="btn btn-block btn-light">Return to signin</a>
+          <a href="<?= base_url('user/login') ?>" class="btn btn-block btn-light">Return to login</a>
         </div>
       </form><!-- /.auth-form -->
       <footer class="auth-footer mt-5"> © 2018 All Rights Reserved. Loper is Responsive Admin Theme build on top of latest Bootstrap 4. <a href="#">Privacy</a> and <a href="#">Terms</a>

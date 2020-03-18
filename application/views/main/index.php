@@ -91,6 +91,7 @@
                 <a class="nav-link py-2" href="#">Contact</a>
               </li>
               <li class="nav-item mr-lg-3">
+                <a class="nav-link py-2" href="<?= base_url('user/create') ?>">create</a>
                 <a class="nav-link py-2" href="<?= base_url('user/login') ?>">login</a>
               </li>
             </ul>

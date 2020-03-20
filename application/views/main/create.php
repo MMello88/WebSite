@@ -72,33 +72,45 @@
         </h1>
         <p> Already have an account? please <a href="<?= base_url('user/login') ?>">Sign In</a>
         </p>
-      </header><!-- form -->
-      <form class="auth-form">
+      </header>
+      <!-- form -->
+      <?= form_open('user/cadastrar', ["class" => "auth-form"]); ?>
         <!-- .form-group -->
         <div class="form-group">
           <div class="form-label-group">
             <input type="email" id="inputEmail" class="form-control" placeholder="Email" required="" autofocus=""> <label for="inputEmail">Email</label>
           </div>
         </div><!-- /.form-group -->
+
+
+        <!-- .form-group -->
+        <div class="form-group">
+          <div class="form-label-group">
+            <input type="email" id="inputEmail" class="form-control" placeholder="Email" required="" autofocus=""> <label for="inputEmail">Email</label>
+          </div>
+        </div><!-- /.form-group -->
+
         <!-- .form-group -->
         <div class="form-group">
           <div class="form-label-group">
             <input type="text" id="inputUser" class="form-control" placeholder="Username" required=""> <label for="inputUser">Username</label>
           </div>
         </div><!-- /.form-group -->
+
         <!-- .form-group -->
         <div class="form-group">
           <div class="form-label-group">
             <input type="password" id="inputPassword" class="form-control" placeholder="Password" required=""> <label for="inputPassword">Password</label>
           </div>
         </div><!-- /.form-group -->
+        
         <!-- .form-group -->
         <div class="form-group">
           <button class="btn btn-lg btn-primary btn-block" type="submit">Sign Up</button>
         </div><!-- /.form-group -->
         <!-- recovery links -->
         <p class="text-center text-muted mb-0"> By creating an account you agree to the <a href="#">Terms of Use</a> and <a href="#">Privacy Policy</a>. </p><!-- /recovery links -->
-      </form><!-- /.auth-form -->
+      <?= form_close() ?><!-- /.auth-form -->
       <!-- copyright -->
       <footer class="auth-footer"> © 2018 All Rights Reserved. </footer>
     </main><!-- /.auth -->

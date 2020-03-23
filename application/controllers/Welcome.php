@@ -2,7 +2,6 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Welcome extends CI_Controller {
-
 	
 	/*
 	 * router /welcome/crud
@@ -11,10 +10,13 @@ class Welcome extends CI_Controller {
 	{
 		$this->load->view('crud/datatables');
 	}
+	
 	/*
 	 * router /
 	 */
 	public function index(){
-		$this->load->view('main/index');
+		$data['login'] = $this->session->userdata('login');
+
+		$this->load->view('main/index', $data);
 	}
 }

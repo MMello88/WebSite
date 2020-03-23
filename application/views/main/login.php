@@ -36,7 +36,8 @@
     <!-- Google font -->
     <link href="https://fonts.googleapis.com/css?family=Fira+Sans:400,500,600" rel="stylesheet"><!-- End Google font -->
     <!-- BEGIN PLUGINS STYLES -->
-    <link rel="stylesheet" href="<?= base_url('assets/vendor/fontawesome/css/all.css') ?>"><!-- END PLUGINS STYLES -->
+    <link rel="stylesheet" href="<?= base_url('assets/vendor/fontawesome/css/all.css') ?>">
+    <link rel="stylesheet" href="<?= base_url('assets/vendor/toastr/toastr.min.css') ?>"><!-- END PLUGINS STYLES -->
     <!-- BEGIN THEME STYLES -->
     <link rel="stylesheet" href="<?= base_url('assets/stylesheets/theme.min.css') ?>" data-skin="default">
     <link rel="stylesheet" href="<?= base_url('assets/stylesheets/theme-dark.min.css') ?>" data-skin="dark">
@@ -70,21 +71,27 @@
             </g>
           </svg> <span class="sr-only">Sign In</span>
         </h1>
-        <p> Don't have a account? <a href="<?= base_url('user/create') ?>">Create One</a>
+        <p> Don't have a account? <a href="<?= base_url('user/singin') ?>">Create One</a>
         </p>
       </header><!-- form -->
-      <form class="auth-form">
+      <?= form_open('user/login', ["class" => "auth-form", "id" => "formLoginUser"]); ?>
         <!-- .form-group -->
         <div class="form-group">
           <div class="form-label-group">
-            <input type="text" id="inputUser" class="form-control" placeholder="Username" autofocus=""> <label for="inputUser">Username</label>
+            <input type="email" name='Email' id='Email' class='form-control' placeholder="Email" value="<?= set_value('Email') ?>" required> <label for="Email">E-mail</label>
           </div>
+          <?php if(isset($response)): ?>
+          <div class="invalid-feedback" style="display:block"><?= isset($response->error->Email) ? $response->error->Email : ""; ?></div>
+          <?php endif; ?>
         </div><!-- /.form-group -->
         <!-- .form-group -->
         <div class="form-group">
           <div class="form-label-group">
-            <input type="password" id="inputPassword" class="form-control" placeholder="Password"> <label for="inputPassword">Password</label>
+            <input type="password" name='Senha' id='Senha' class='form-control' placeholder="Senha" value="<?= set_value('Senha') ?>" required> <label for="Senha">Senha</label>
           </div>
+          <?php if(isset($response)): ?>
+          <div class="invalid-feedback" style="display:block"><?= isset($response->error->Senha) ? $response->error->Senha : ""; ?></div>
+          <?php endif; ?>
         </div><!-- /.form-group -->
         <!-- .form-group -->
         <div class="form-group">
@@ -100,7 +107,7 @@
         <div class="text-center pt-3">
           <a href="<?= base_url('user/forgot') ?>" class="link">Forgot Password?</a>
         </div><!-- /recovery links -->
-      </form><!-- /.auth-form -->
+      <?= form_close() ?><!-- /.auth-form -->
       <!-- copyright -->
       <footer class="auth-footer"> © 2018 All Rights Reserved. <a href="#">Privacy</a> and <a href="#">Terms</a>
       </footer>
@@ -111,6 +118,7 @@
     <script src="<?= base_url('assets/vendor/bootstrap/js/bootstrap.min.js') ?>"></script> <!-- END BASE JS -->
     <!-- BEGIN PLUGINS JS -->
     <script src="<?= base_url('assets/vendor/particles.js/particles.min.js') ?>"></script>
+    <script src="<?= base_url('assets/vendor/toastr/toastr.min.js') ?>"></script>
     <script>
       /**
        * Keep in mind that your scripts may not always be executed after the theme is completely ready,
@@ -124,5 +132,16 @@
     </script> <!-- END PLUGINS JS -->
     <!-- BEGIN THEME JS -->
     <script src="<?= base_url('assets/javascript/theme.min.js') ?>"></script> <!-- END THEME JS -->
+    <script>
+      <?php if($response->status === "TRUE"): ?>
+        $(document).on('theme:init', function () {
+          toastr.options.onHidden = function() { location.href = "<?= base_url() ?>" }
+          toastr.success(' <?= $response->message ?> ', ' Sucesso! ', {timeOut: 2500})
+        });
+        $('#formCadastroUser').find('input').each(function() {
+            $(this).val('');
+        });
+      <?php endif; ?>
+    </script>
   </body>
 </html>

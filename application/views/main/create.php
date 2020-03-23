@@ -36,7 +36,8 @@
     <!-- GOOGLE FONT -->
     <link href="https://fonts.googleapis.com/css?family=Fira+Sans:400,500,600" rel="stylesheet"><!-- End GOOGLE FONT -->
     <!-- BEGIN PLUGINS STYLES -->
-    <link rel="stylesheet" href="<?= base_url('assets/vendor/aos/aos.css') ?>"><!-- END PLUGINS STYLES -->
+    <link rel="stylesheet" href="<?= base_url('assets/vendor/aos/aos.css') ?>">
+    <link rel="stylesheet" href="<?= base_url('assets/vendor/toastr/toastr.min.css') ?>"><!-- END PLUGINS STYLES -->
     <!-- BEGIN THEME STYLES -->
     <link rel="stylesheet" href="<?= base_url('assets/stylesheets/theme.min.css') ?>" data-skin="default">
     <link rel="stylesheet" href="<?= base_url('assets/stylesheets/theme-dark.min.css') ?>" data-skin="dark">
@@ -74,34 +75,47 @@
         </p>
       </header>
       <!-- form -->
-      <?= form_open('user/cadastrar', ["class" => "auth-form"]); ?>
+      <?= form_open('user/singin', ["class" => "auth-form", "id" => "formCadastroUser"]); ?>
         <!-- .form-group -->
         <div class="form-group">
           <div class="form-label-group">
-            <input type="email" id="inputEmail" class="form-control" placeholder="Email" required="" autofocus=""> <label for="inputEmail">Email</label>
+            <input type='text' name='Nome' id='Nome' class='form-control' placeholder='Nome' value="<?= set_value('Nome') ?>" required> <label for="Nome">Nome</label>
           </div>
+          <?php if(isset($response)): ?>
+          <div class="invalid-feedback" style="display:block"><?= isset($response->error->Nome) ? $response->error->Nome : ""; ?></div>
+          <?php endif; ?>
         </div><!-- /.form-group -->
 
 
         <!-- .form-group -->
         <div class="form-group">
           <div class="form-label-group">
-            <input type="email" id="inputEmail" class="form-control" placeholder="Email" required="" autofocus=""> <label for="inputEmail">Email</label>
+            <input type="email" name='Email' id='Email' class='form-control' placeholder="Email" value="<?= set_value('Email') ?>" required> <label for="Email">E-mail</label>
           </div>
+          <?php if(isset($response)): ?>
+          <div class="invalid-feedback" style="display:block"><?= isset($response->error->Email) ? $response->error->Email : ""; ?></div>
+          <?php endif; ?>
+        </div><!-- /.form-group -->
+
+
+        <!-- .form-group -->
+        <div class="form-group">
+          <div class="form-label-group">
+            <input type="password" name='Senha' id='Senha' class='form-control' placeholder="Senha" value="<?= set_value('Senha') ?>" required> <label for="Senha">Senha</label>
+          </div>
+          <?php if(isset($response)): ?>
+          <div class="invalid-feedback" style="display:block"><?= isset($response->error->Senha) ? $response->error->Senha : ""; ?></div>
+          <?php endif; ?>
         </div><!-- /.form-group -->
 
         <!-- .form-group -->
         <div class="form-group">
           <div class="form-label-group">
-            <input type="text" id="inputUser" class="form-control" placeholder="Username" required=""> <label for="inputUser">Username</label>
+            <input type="password" name='SenhaConfirm' id='SenhaConfirm' class='form-control' placeholder="Confirmar Senha" required> <label for="SenhaConfirm">Confirmar Senha</label>
           </div>
-        </div><!-- /.form-group -->
-
-        <!-- .form-group -->
-        <div class="form-group">
-          <div class="form-label-group">
-            <input type="password" id="inputPassword" class="form-control" placeholder="Password" required=""> <label for="inputPassword">Password</label>
-          </div>
+          <?php if(isset($response)): ?>
+          <div class="invalid-feedback" style="display:block"><?= isset($response->error->SenhaConf) ? $response->error->SenhaConf : ""; ?></div>
+          <?php endif; ?>
         </div><!-- /.form-group -->
         
         <!-- .form-group -->
@@ -112,7 +126,7 @@
         <p class="text-center text-muted mb-0"> By creating an account you agree to the <a href="#">Terms of Use</a> and <a href="#">Privacy Policy</a>. </p><!-- /recovery links -->
       <?= form_close() ?><!-- /.auth-form -->
       <!-- copyright -->
-      <footer class="auth-footer"> © 2018 All Rights Reserved. </footer>
+      <footer class="auth-footer"> © <span id="year"></span> All Rights Reserved. </footer>
     </main><!-- /.auth -->
     <!-- BEGIN BASE JS -->
     <script src="<?= base_url('assets/vendor/jquery/jquery.min.js') ?>"></script>
@@ -120,6 +134,7 @@
     <script src="<?= base_url('assets/vendor/bootstrap/js/bootstrap.min.js') ?>"></script> <!-- END BASE JS -->
     <!-- BEGIN PLUGINS JS -->
     <script src="<?= base_url('assets/vendor/particles.js/particles.min.js') ?>"></script>
+    <script src="<?= base_url('assets/vendor/toastr/toastr.min.js') ?>"></script>
     <script>
       /**
        * Keep in mind that your scripts may not always be executed after the theme is completely ready,
@@ -133,5 +148,18 @@
     </script> <!-- END PLUGINS JS -->
     <!-- BEGIN THEME JS -->
     <script src="<?= base_url('assets/javascript/theme.min.js') ?>"></script> <!-- END THEME JS -->
+    <script>
+      document.getElementById("year").innerHTML = new Date().getFullYear();
+
+      <?php if($response->status === "TRUE"): ?>
+        $(document).on('theme:init', function () {
+          toastr.options.onHidden = function() { location.href = "<?= base_url("user/login") ?>" }
+          toastr.success(' <?= $response->message ?> ', ' Sucesso! ', {timeOut: 2500})
+        });
+        $('#formCadastroUser').find('input').each(function() {
+            $(this).val('');
+        });
+      <?php endif; ?>
+    </script>
   </body>
 </html>

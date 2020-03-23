@@ -90,10 +90,19 @@
               <li class="nav-item mr-lg-3">
                 <a class="nav-link py-2" href="#">Contact</a>
               </li>
+              <?php if($login === null): ?>
               <li class="nav-item mr-lg-3">
-                <a class="nav-link py-2" href="<?= base_url('user/create') ?>">create</a>
+                <a class="nav-link py-2" href="<?= base_url('user/singin') ?>">create</a>
                 <a class="nav-link py-2" href="<?= base_url('user/login') ?>">login</a>
               </li>
+              <?php else: ?>
+              <li class="nav-item mr-lg-3">
+                <a href="<?= base_url('user/index') ?>" class="nav-link py-2">Dashboard <?= $login->data->Nome ?></a>
+              </li>
+              <li class="nav-item mr-lg-3">
+                <a href="<?= base_url('user/logout') ?>" class="nav-link py-2">Logout</a>
+              </li>
+              <?php endif; ?>
             </ul>
           </div><!-- /.navbar-collapse -->
         </div><!-- /.container -->

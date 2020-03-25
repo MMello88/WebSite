@@ -97,7 +97,7 @@
               </li>
               <?php else: ?>
               <li class="nav-item mr-lg-3">
-                <a href="<?= base_url('user/index') ?>" class="nav-link py-2">Dashboard <?= $login->data->Nome ?></a>
+                <a href="<?= base_url('dashboard/index') ?>" class="nav-link py-2">Dashboard <?= $login->data->Nome ?></a>
               </li>
               <li class="nav-item mr-lg-3">
                 <a href="<?= base_url('user/logout') ?>" class="nav-link py-2">Logout</a>

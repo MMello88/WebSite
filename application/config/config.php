@@ -3,6 +3,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 /*
 |--------------------------------------------------------------------------
+| Nome Fantasia da Empresa
+|--------------------------------------------------------------------------
+|
+| Utilizar esta configuração para pegar o Nome da Empresa que foi configurada.
+| 
+*/
+$config['base_api'] = "http://localhost/WebApi/";
+/*
+|--------------------------------------------------------------------------
 | Base Site URL
 |--------------------------------------------------------------------------
 |

@@ -1,3 +1,4 @@
+<?php print_r($perfis); ?>
 <!DOCTYPE html>
 <html lang="en">
   <head>

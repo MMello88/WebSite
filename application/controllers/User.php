@@ -11,7 +11,7 @@ class User extends CI_Controller {
 		if ($this->input->post())
 	    {
 	    	$data["response"] = $this->sendPost(
-		    	"http://localhost/WebApi/api/Users/add",
+		    	"api/Users/add",
 		    	[
 		    		"Nome" => $this->input->post("Nome"),
 		    		"Email" => $this->input->post("Email"),
@@ -36,7 +36,7 @@ class User extends CI_Controller {
 		if ($this->input->post())
 	    {
 	    	$data["response"] = $this->sendPost(
-		    	"http://localhost/WebApi/api/Users/login",
+		    	"api/Users/login",
 		    	[
 		    		"Email" => $this->input->post("Email"),
 	    			"Senha" => $this->input->post("Senha")
@@ -70,7 +70,7 @@ class User extends CI_Controller {
 			if ($this->input->post())
 		    {
 		    	$data["response"] = $this->sendPost(
-			    	"http://localhost/WebApi/api/Users/forgot",
+			    	"api/Users/forgot",
 			    	[
 			    		"Email" => $this->input->post("Email")
 			    	]
@@ -83,7 +83,7 @@ class User extends CI_Controller {
 		} else {
 			if ($this->input->post()){
 				$data["response"] = $this->sendPost(
-			    	"http://localhost/WebApi/api/Users/forgot/$paraHash",
+			    	"api/Users/forgot/$paraHash",
 			    	[
 			    		"Senha" => $this->input->post("Senha"),
 		    			"SenhaConf" => $this->input->post("SenhaConfirm")
@@ -104,15 +104,19 @@ class User extends CI_Controller {
 	}
 
 	private function sendPost($url, $data){
-
-        $curl = curl_init($url);
-        curl_setopt($curl, CURLOPT_RETURNTRANSFER,  true);
-        curl_setopt($curl, CURLOPT_POST,  true);
-        curl_setopt($curl, CURLOPT_POSTFIELDS,  $data);
+    $url = $this->base_api($url);
+    $curl = curl_init($url);
+    curl_setopt($curl, CURLOPT_RETURNTRANSFER,  true);
+    curl_setopt($curl, CURLOPT_POST,  true);
+    curl_setopt($curl, CURLOPT_POSTFIELDS,  $data);
 		
 		$response = curl_exec( $curl);
 		curl_close($curl);
 
 		return json_decode($response);		
 	}
+
+  private function base_api($url){
+    return $this->CI->config->item('base_api') . $url;
+  }
 }

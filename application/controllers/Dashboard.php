@@ -10,11 +10,10 @@ class Dashboard extends MY_Controller {
 	 * router /
 	 */
 	public function index(){
-    $this->data['perfis'] = $this->SendGet("api/Menus/getPerfilMenu", $this->data['login']->data->token)->data;
-     
-
 		$this->load->view('dashboard/template/header', $this->data);
 		$this->load->view('dashboard/index', $this->data);
 		$this->load->view('dashboard/template/footer', $this->data);
 	}
+
+
 }

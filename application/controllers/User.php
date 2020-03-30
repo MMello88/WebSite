@@ -34,21 +34,22 @@ class User extends CI_Controller {
 	public function login(){
 
 		if ($this->input->post())
-	    {
-	    	$data["response"] = $this->sendPost(
-		    	"api/Users/login",
-		    	[
-		    		"Email" => $this->input->post("Email"),
-	    			"Senha" => $this->input->post("Senha")
-		    	]
-	    	);
+		{
+			$data["response"] = $this->sendPost(
+				"api/Users/login",
+				[
+					"Email" => $this->input->post("Email"),
+					"Senha" => $this->input->post("Senha")
+				]
+			);
 
+			$data["response"]->data->PerfisId = "";
 			$this->session->set_userdata(["login" => $data["response"]]);
 
 			$this->load->view('main/login', $data);
-	    }
-	    else
-	    {
+		}
+		else
+		{
 			$this->load->view('main/login');
 		}
 	}
@@ -62,7 +63,7 @@ class User extends CI_Controller {
 	}
 
 	/*
-	 * router /user/forgot
+	 * router /user/forgot/$paraHash
 	 */
 	public function forgot($paraHash = ""){
 		$data["hash"] = $paraHash;
@@ -96,13 +97,6 @@ class User extends CI_Controller {
 		}
 	}
 
-	/*
-	 * router /user/recuperar/senha
-	 */
-	public function recuperar(){
-
-	}
-
 	private function sendPost($url, $data){
     $url = $this->base_api($url);
     $curl = curl_init($url);
@@ -117,6 +111,6 @@ class User extends CI_Controller {
 	}
 
   private function base_api($url){
-    return $this->CI->config->item('base_api') . $url;
+    return $this->config->item('base_api') . $url;
   }
 }

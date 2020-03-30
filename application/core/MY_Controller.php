@@ -14,13 +14,20 @@ class MY_Controller extends CI_Controller {
     }
 
     $this->data["login"] = $this->session->userdata('login');
+
+    if(empty($this->data["login"]->data->PerfisId) && $this->router->class <> "perfis"){
+      redirect("perfis");
+    }
+    
+    $PerfisId = $this->data['login']->data->PerfisId;
+    $this->data['menus'] = $this->SendGet("api/Menus/getPerfilMenu/{$PerfisId}", $this->data['login']->data->token)->data;
   }
 
   protected function base_api($url = ""){
     return $this->config->item('base_api') . $url;
   }
 
-  protected function sendPost($url, $data){
+  protected function sendPost($url, $token, $data){
     $url = $this->base_api($url);
     if($this->isOn){
       $curl = curl_init($url);

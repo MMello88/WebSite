@@ -6,10 +6,6 @@ class Perfis extends MY_Controller {
 	public function  __construct() {
     parent::__construct();
     $this->data['menus'] = [];
-    if(!empty($this->data['login']->data->PerfisId)){
-      $PerfisId = $this->data['login']->data->PerfisId;
-      $this->data['menus'] = $this->SendGet("api/Menus/getPerfilMenu/{$PerfisId}", $this->data['login']->data->token)->data;
-    }
 	}
 
   public function index(){

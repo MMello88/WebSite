@@ -37,7 +37,8 @@
     <link href="https://fonts.googleapis.com/css?family=Fira+Sans:400,500,600" rel="stylesheet"><!-- End GOOGLE FONT -->
     <!-- BEGIN PLUGINS STYLES -->
     <link rel="stylesheet" href="<?= base_url('assets/vendor/open-iconic/css/open-iconic-bootstrap.min.css') ?>">
-    <link rel="stylesheet" href="<?= base_url('assets/vendor/fontawesome/css/all.css') ?>"><!-- END PLUGINS STYLES -->
+    <link rel="stylesheet" href="<?= base_url('assets/vendor/fontawesome/css/all.css') ?>">
+    <link rel="stylesheet" href="<?= base_url('assets/vendor/datatables/extensions/buttons/buttons.bootstrap4.min.css') ?>"><!-- END PLUGINS STYLES -->
     <!-- BEGIN THEME STYLES -->
     <link rel="stylesheet" href="<?= base_url('assets/stylesheets/theme.min.css') ?>" data-skin="default">
     <link rel="stylesheet" href="<?= base_url('assets/stylesheets/theme-dark.min.css') ?>" data-skin="dark">
@@ -304,8 +305,17 @@
                       <a href="#" class="menu-link"><span class="menu-icon oi oi-wrench <?= $menu->Icone ?>"></span> <span class="menu-text"><?= $menu->Nome ?></span></a> <!-- child menu -->
                       <ul class="menu">
                     <?php foreach ($menu->submenus as $key1 => $submenu): ?>
-                        <li class="menu-item"> <!-- class="has-active" --> <!-- Precisa desenvolver esta parte do menu ativo -->
-                          <a href="<?= base_url($submenu->Url) ?>" class="menu-link"><?= $submenu->Nome ?></a>
+                        <li class="menu-item <?= (count($submenu->nivel) > 0) ? "has-child has-open" : "" ?>"> <!-- class="has-active" --> <!-- Precisa desenvolver esta parte do menu ativo -->
+                          <a href="<?= (count($submenu->nivel) > 0) ? "#" : base_url($submenu->Url) ?>" class="menu-link"><?= $submenu->Nome ?></a>
+                          <?php if(count($submenu->nivel) > 0): ?>
+                          <ul class="menu">
+                            <?php foreach ($submenu->nivel as $key2 => $n): ?>
+                            <li class="menu-item">
+                              <a href="<?= base_url($n->Url) ?>" class="menu-link"><?= $n->Nome ?></a>
+                            </li>
+                            <?php endforeach; ?>
+                          </ul>
+                          <?php endif; ?>
                         </li>
                     <?php endforeach; ?>
                       </ul><!-- /child menu -->

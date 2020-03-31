@@ -7,6 +7,8 @@ class MY_Controller extends CI_Controller {
 
   public function  __construct() {
     parent::__construct();
+    $this->data["scripts"] = [];
+    
     $this->isOn = $this->session->userdata('login') === NULL ? FALSE : TRUE;
 
     if (!$this->isOn){
@@ -19,8 +21,10 @@ class MY_Controller extends CI_Controller {
       redirect("perfis");
     }
     
-    $PerfisId = $this->data['login']->data->PerfisId;
-    $this->data['menus'] = $this->SendGet("api/Menus/getPerfilMenu/{$PerfisId}", $this->data['login']->data->token)->data;
+    if(!empty($this->data['login']->data->PerfisId)){
+      $PerfisId = $this->data['login']->data->PerfisId;
+      $this->data['menus'] = $this->SendGet("api/Menus/getPerfilMenu/{$PerfisId}", $this->data['login']->data->token)->data;
+    }
   }
 
   protected function base_api($url = ""){
@@ -33,6 +37,26 @@ class MY_Controller extends CI_Controller {
       $curl = curl_init($url);
       curl_setopt($curl, CURLOPT_RETURNTRANSFER,  true);
       curl_setopt($curl, CURLOPT_POST,  true);
+      curl_setopt($curl, CURLOPT_POSTFIELDS,  $data);
+      curl_setopt($curl, CURLOPT_HTTPHEADER, [
+        'Authorization: ' . $token
+      ]);
+
+      $response = curl_exec($curl);
+      curl_close($curl);
+
+      return json_decode($response);    
+    } else {
+      return ["status" => "FALSE", "error" => ["message" => "Por favor realizar Login na aplicação."]];
+    }
+  }
+
+  protected function sendPut($url, $token, $data){
+    $url = $this->base_api($url);
+    if($this->isOn){
+      $curl = curl_init($url);
+      curl_setopt($curl, CURLOPT_RETURNTRANSFER,  true);
+      curl_setopt($curl, CURLOPT_PUT,  true);
       curl_setopt($curl, CURLOPT_POSTFIELDS,  $data);
       curl_setopt($curl, CURLOPT_HTTPHEADER, [
         'Authorization: ' . $token
@@ -63,5 +87,9 @@ class MY_Controller extends CI_Controller {
     } else {
       return ["status" => "FALSE", "error" => ["message" => "Por favor realizar Login na aplicação."]];
     }
+  }
+
+  protected function scripts($location){
+    $this->data['scripts'][] = base_url($location);
   }
 }

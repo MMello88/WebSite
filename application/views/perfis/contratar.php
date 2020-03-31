@@ -24,7 +24,7 @@
               <header class="page-title-bar">
                 <div class="d-flex flex-column flex-md-row">
                   <p class="lead">
-                    <span class="font-weight-bold">Olá, <?= $login->data->Nome ?>.</span> <span class="d-block text-muted">Área de escolha do Perfil.</span>
+                    <span class="font-weight-bold">Olá, <?= $login->data->Nome ?>.</span> <span class="d-block text-muted">Obtenha novos contratos de Perfil.</span>
                   </p>
                 </div>
               </header><!-- /.page-title-bar -->

@@ -9,41 +9,39 @@ class User extends CI_Controller {
 	public function singin(){
 
 		if ($this->input->post())
-	    {
-	    	$data["response"] = $this->sendPost(
-		    	"api/Users/add",
-		    	[
-		    		"Nome" => $this->input->post("Nome"),
-		    		"Email" => $this->input->post("Email"),
-		    		"Senha" => $this->input->post("Senha"),
-		    		"SenhaConf" => $this->input->post("SenhaConfirm")
-		    	]
-	    	);
-
+		{
+			$data["response"] = $this->sendPost(
+				"api/Users/add",
+				[
+					"uu_Nome" => $this->input->post("uu_Nome"),
+					"uu_Email" => $this->input->post("uu_Email"),
+					"uu_Senha" => $this->input->post("uu_Senha"),
+					"uu_SenhaConf" => $this->input->post("uu_SenhaConfirm")
+				]
+			);
 			$this->load->view('main/create', $data);
-	    }
-	    else
-	    {
-	        $this->load->view('main/create');
-	    }
+		}
+		else
+		{
+				$this->load->view('main/create');
+		}
 	}
 
 	/*
 	 * router /user/login
 	 */
 	public function login(){
-
 		if ($this->input->post())
 		{
 			$data["response"] = $this->sendPost(
 				"api/Users/login",
 				[
-					"Email" => $this->input->post("Email"),
-					"Senha" => $this->input->post("Senha")
+					"uu_Email" => $this->input->post("uu_Email"),
+					"uu_Senha" => $this->input->post("uu_Senha")
 				]
 			);
 
-			$data["response"]->data->PerfisId = "";
+			//$data["response"]->data->PerfisId = "";
 			$this->session->set_userdata(["login" => $data["response"]]);
 
 			$this->load->view('main/login', $data);
@@ -73,10 +71,9 @@ class User extends CI_Controller {
 		    	$data["response"] = $this->sendPost(
 			    	"api/Users/forgot",
 			    	[
-			    		"Email" => $this->input->post("Email")
+			    		"uu_Email" => $this->input->post("uu_Email")
 			    	]
 		    	);
-
 		    	$this->load->view('main/forgot',$data);
 		    } else {
 				$this->load->view('main/forgot',$data);
@@ -86,8 +83,8 @@ class User extends CI_Controller {
 				$data["response"] = $this->sendPost(
 			    	"api/Users/forgot/$paraHash",
 			    	[
-			    		"Senha" => $this->input->post("Senha"),
-		    			"SenhaConf" => $this->input->post("SenhaConfirm")
+			    		"uu_Senha" => $this->input->post("uu_Senha"),
+		    			"uu_SenhaConf" => $this->input->post("uu_SenhaConfirm")
 			    	]
 		    	);
 		    	$this->load->view('main/forgot', $data);

@@ -79,10 +79,10 @@
         <!-- .form-group -->
         <div class="form-group">
           <div class="form-label-group">
-            <input type='text' name='Nome' id='Nome' class='form-control' placeholder='Nome' value="<?= set_value('Nome') ?>" required> <label for="Nome">Nome</label>
+            <input type='text' name='uu_Nome' id='uu_Nome' class='form-control' placeholder='Nome' value="<?= set_value('uu_Nome') ?>" required> <label for="uu_Nome">Nome</label>
           </div>
           <?php if(isset($response)): ?>
-          <div class="invalid-feedback" style="display:block"><?= isset($response->error->Nome) ? $response->error->Nome : ""; ?></div>
+          <div class="invalid-feedback" style="display:block"><?= isset($response->error->uu_Nome) ? $response->error->uu_Nome : ""; ?></div>
           <?php endif; ?>
         </div><!-- /.form-group -->
 
@@ -90,10 +90,10 @@
         <!-- .form-group -->
         <div class="form-group">
           <div class="form-label-group">
-            <input type="email" name='Email' id='Email' class='form-control' placeholder="Email" value="<?= set_value('Email') ?>" required> <label for="Email">E-mail</label>
+            <input type="email" name='uu_Email' id='uu_Email' class='form-control' placeholder="Email" value="<?= set_value('uu_Email') ?>" required> <label for="uu_Email">E-mail</label>
           </div>
           <?php if(isset($response)): ?>
-          <div class="invalid-feedback" style="display:block"><?= isset($response->error->Email) ? $response->error->Email : ""; ?></div>
+          <div class="invalid-feedback" style="display:block"><?= isset($response->error->uu_Email) ? $response->error->uu_Email : ""; ?></div>
           <?php endif; ?>
         </div><!-- /.form-group -->
 
@@ -101,20 +101,20 @@
         <!-- .form-group -->
         <div class="form-group">
           <div class="form-label-group">
-            <input type="password" name='Senha' id='Senha' class='form-control' placeholder="Senha" value="<?= set_value('Senha') ?>" required> <label for="Senha">Senha</label>
+            <input type="password" name='uu_Senha' id='uu_Senha' class='form-control' placeholder="Senha" value="<?= set_value('uu_Senha') ?>" required> <label for="uu_Senha">Senha</label>
           </div>
           <?php if(isset($response)): ?>
-          <div class="invalid-feedback" style="display:block"><?= isset($response->error->Senha) ? $response->error->Senha : ""; ?></div>
+          <div class="invalid-feedback" style="display:block"><?= isset($response->error->uu_Senha) ? $response->error->uu_Senha : ""; ?></div>
           <?php endif; ?>
         </div><!-- /.form-group -->
 
         <!-- .form-group -->
         <div class="form-group">
           <div class="form-label-group">
-            <input type="password" name='SenhaConfirm' id='SenhaConfirm' class='form-control' placeholder="Confirmar Senha" required> <label for="SenhaConfirm">Confirmar Senha</label>
+            <input type="password" name='uu_SenhaConfirm' id='uu_SenhaConfirm' class='form-control' placeholder="Confirmar Senha" required> <label for="uu_SenhaConfirm">Confirmar Senha</label>
           </div>
           <?php if(isset($response)): ?>
-          <div class="invalid-feedback" style="display:block"><?= isset($response->error->SenhaConf) ? $response->error->SenhaConf : ""; ?></div>
+          <div class="invalid-feedback" style="display:block"><?= isset($response->error->uu_SenhaConf) ? $response->error->uu_SenhaConf : ""; ?></div>
           <?php endif; ?>
         </div><!-- /.form-group -->
         
@@ -149,7 +149,7 @@
     <!-- BEGIN THEME JS -->
     <script src="<?= base_url('assets/javascript/theme.min.js') ?>"></script> <!-- END THEME JS -->
     <script>
-      document.getElementById("year").innerHTML = new Date().getFullYear();
+      document.getElementById("year").innerHTML = new Date().getFullYear()
 
       <?php if($response->status === "TRUE"): ?>
         $(document).on('theme:init', function () {

@@ -94,17 +94,17 @@
                       <?= form_open(base_url("users/password/{$response->data[0]->Id}")); ?>
                         <fieldset>
                           <div class='form-group'>
-                            <label for='Senha'>Nova Senha</label>
-                            <input type='text' name='Senha' id='Senha' class='form-control' placeholder='Senha' required>
+                            <label for='uu_Senha'>Nova Senha</label>
+                            <input type='text' name='uu_Senha' id='uu_Senha' class='form-control' placeholder='Senha' required>
                             <?php if(isset($response)): ?>
-                              <div class='invalid-feedback' style='display:block'><?= isset($response->error->Senha) ? $response->error->Senha : ''; ?></div>
+                              <div class='invalid-feedback' style='display:block'><?= isset($response->error->uu_Senha) ? $response->error->uu_Senha : ''; ?></div>
                             <?php endif; ?>
                           </div>
                           <div class='form-group'>
-                            <label for='SenhaConf'>Repetir a Senha</label>
-                            <input type='text' name='SenhaConf' id='SenhaConf' class='form-control' placeholder='Repetir a Senha' required>
+                            <label for='uu_SenhaConf'>Repetir a Senha</label>
+                            <input type='text' name='uu_SenhaConf' id='uu_SenhaConf' class='form-control' placeholder='Repetir a Senha' required>
                             <?php if(isset($response)): ?>
-                              <div class='invalid-feedback' style='display:block'><?= isset($response->error->SenhaConf) ? $response->error->SenhaConf : ''; ?></div>
+                              <div class='invalid-feedback' style='display:block'><?= isset($response->error->uu_SenhaConf) ? $response->error->uu_SenhaConf : ''; ?></div>
                             <?php endif; ?>
                           </div>
                           <div class='form-actions'>

@@ -24,7 +24,7 @@
               <header class="page-title-bar">
                 <div class="d-flex flex-column flex-md-row">
                   <p class="lead">
-                    <span class="font-weight-bold">Olá, <?= $login->data->Nome ?>.</span> <span class="d-block text-muted">Obtenha novos contratos de Perfil.</span>
+                    <span class="font-weight-bold">Olá, <?= $login->data->uu_Nome ?>.</span> <span class="d-block text-muted">Obtenha novos contratos de Perfil.</span>
                   </p>
                 </div>
               </header><!-- /.page-title-bar -->
@@ -42,13 +42,13 @@
                         <!-- .user-avatar -->
                         <a href="user-profile.html" class="user-avatar user-avatar-xxl my-3"><img src="<?= base_url('assets/images/avatars/uifaces16.jpg') ?>" alt=""></a> <!-- /.user-avatar -->
                         <h3 class="card-title text-truncate">
-                          <a href="user-profile.html"><?= $perfil->Nome ?></a>
+                          <a href="user-profile.html"><?= $perfil->ps_Nome ?></a>
                         </h3>
-                        <?php if(!empty($perfil->tag)): ?>
+                        <?php if(!empty($perfil->ps_tag)): ?>
                         <!-- .skills -->
                         <p class="skills">
                           <?php 
-                            $pieces = explode(";", $perfil->tag);
+                            $pieces = explode(";", $perfil->ps_tag);
                             foreach ($pieces as $key => $value): 
                           ?>
                             <?php if(!empty($value)): ?>
@@ -57,10 +57,10 @@
                           <?php endforeach; ?>
                         </p><!-- /.skills -->
                         <?php endif; ?>
-                        <p class="text-muted"> <?= $perfil->Descricao ?> </p>
+                        <p class="text-muted"> <?= $perfil->ps_Descricao ?> </p>
                         <?= form_open(base_url("perfis/add"), ["class" => "teste"]) ?>
-                        <input type="hidden" name="PerfisId" value="<?= $perfil->Id ?>">
-                        <input type="hidden" name="UsersId" value="<?= $login->data->Id ?>">
+                        <input type="hidden" name="PerfisId" value="<?= $perfil->ps_Id ?>">
+                        <input type="hidden" name="UsersId" value="<?= $login->data->uu_Id ?>">
                         <p>
                           <button class="btn btn-primary circle" type="submit" >Contratar <i class="fa fa-arrow-right ml-2"></i></button>
                         </p>

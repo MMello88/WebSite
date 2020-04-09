@@ -11,7 +11,7 @@
               <header class="page-title-bar">
                 <div class="d-flex flex-column flex-md-row">
                   <p class="lead">
-                    <span class="font-weight-bold">Olá, <?= $login->data->Nome ?>.</span> <span class="d-block text-muted">Área de escolha do Perfil.</span>
+                    <span class="font-weight-bold">Olá, <?= $login->data->uu_Nome ?>.</span> <span class="d-block text-muted">Área de escolha do Perfil.</span>
                   </p>
                 </div>
               </header><!-- /.page-title-bar -->
@@ -29,13 +29,13 @@
                         <!-- .user-avatar -->
                         <a href="user-profile.html" class="user-avatar user-avatar-xxl my-3"><img src="<?= base_url('assets/images/avatars/uifaces16.jpg') ?>" alt=""></a> <!-- /.user-avatar -->
                         <h3 class="card-title text-truncate">
-                          <a href="user-profile.html"><?= $perfil->Nome ?></a>
+                          <a href="user-profile.html"><?= $perfil->ps_Nome ?></a>
                         </h3>
-                        <?php if(!empty($perfil->tag)): ?>
+                        <?php if(!empty($perfil->ps_tag)): ?>
                         <!-- .skills -->
                         <p class="skills">
                           <?php 
-                            $pieces = explode(";", $perfil->tag);
+                            $pieces = explode(";", $perfil->ps_tag);
                             foreach ($pieces as $key => $value): 
                           ?>
                             <?php if(!empty($value)): ?>
@@ -44,9 +44,9 @@
                           <?php endforeach; ?>
                         </p><!-- /.skills -->
                         <?php endif; ?>
-                        <p class="text-muted"> <?= $perfil->Descricao ?> </p>
+                        <p class="text-muted"> <?= $perfil->ps_Descricao ?> </p>
                         <p>
-                          <a href="<?= base_url("perfis/selecionar/{$perfil->Id}") ?>" class="btn btn-primary circle">Entrar <i class="fa fa-arrow-right ml-2"></i></a>
+                          <a href="<?= base_url("perfis/selecionar/{$perfil->ps_Id}") ?>" class="btn btn-primary circle">Entrar <i class="fa fa-arrow-right ml-2"></i></a>
                         </p>
                       </div><!-- /.card-body -->
                     </div><!-- /.card -->

@@ -11,10 +11,10 @@ class Users extends MY_Controller {
     if ($this->session->flashdata("response")){
       $this->data["response"] = $this->session->flashdata("response");
       if($this->data["response"]->status == "FALSE"){
-        $this->data["response"]->data = $this->sendGet("api/users/get/{$this->data['login']->data->Id}", $this->data['login']->data->token)->data;
+        $this->data["response"]->data = $this->sendGet("api/users/get/{$this->data['login']->data->uu_Id}", $this->data['login']->data->token)->data;
       }
     } else {
-      $this->data["response"] = $this->sendGet("api/users/get/{$this->data['login']->data->Id}", $this->data['login']->data->token);
+      $this->data["response"] = $this->sendGet("api/users/get/{$this->data['login']->data->uu_Id}", $this->data['login']->data->token);
     }
 
     $this->load->view('dashboard/template/header', $this->data);

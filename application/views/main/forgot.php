@@ -61,15 +61,15 @@
       <?php if(isset($response)): ?>
         <?php if($response->status === "TRUE"): ?>
         <div class="alert alert-success alert-dismissible fade show">
-          <button type="button" class="close" data-dismiss="alert">×</button> <strong>Pronto!</strong> <?= $response->message ?> </a>. 
+          <button type="button" class="close" data-dismiss="alert">×</button> <strong>Pronto!</strong> <?= $response->message ?>. 
         </div>
         <?php elseif($response->status === "FALSE"): ?>
-          <?php print_r($response); ?>
-        <div class="alert alert-warning has-icon" role="alert">
+        <div class="alert alert-warning alert-dismissible has-icon fade show" role="alert">
           <div class="alert-icon">
             <span class="fa fa-bullhorn"></span>
-            <button type="button" class="close" data-dismiss="alert">×</button> <strong>Pronto!</strong> <?= isset($response->error->Email) ? $response->error->Email : "" ?> </a>
           </div>
+          <button type="button" class="close" data-dismiss="alert">×</button> 
+          <strong> <?= isset($response->error->uu_Email) ? $response->error->uu_Email : "" ?>.  </strong>
         </div>
         <?php endif; ?>
       <?php endif; ?>
@@ -83,7 +83,7 @@
         </div>
         <p class="mb-4"> Tempora. iusto officia magnam fugiat sequi aliquam cum consectetur aperiam beatae, rerum obcaecati ea. </p><!-- .form-group -->
         <div class="form-group mb-4">
-          <label class="d-block text-left" for="Email">E-mail</label> <input type="email" name='Email' id='Email' class='form-control' placeholder="Email" value="<?= set_value('Email') ?>" required>
+          <label class="d-block text-left" for="uu_Email">E-mail</label> <input type="email" name='uu_Email' id='uu_Email' class='form-control' placeholder="Email" value="<?= set_value('uu_Email') ?>" required>
           <p class="text-muted">
             <small>We'll send password reset link to your email.</small>
           </p>
@@ -130,14 +130,14 @@
 
         <!-- .form-group -->
         <div class="form-group mb-4">
-          <label class="d-block text-left" for="Senha">Senha</label> 
-          <input type="password" name='Senha' id='Senha' class='form-control' value="<?= set_value('Senha') ?>" placeholder="Senha" required>
-          <div class="invalid-feedback" style="display:block"><?= isset($response->error->Senha) ? $response->error->Senha : ""; ?></div>
+          <label class="d-block text-left" for="uu_Senha">Senha</label> 
+          <input type="password" name='uu_Senha' id='uu_Senha' class='form-control' value="<?= set_value('uu_Senha') ?>" placeholder="Senha" required>
+          <div class="invalid-feedback" style="display:block"><?= isset($response->error->uu_Senha) ? $response->error->uu_Senha : ""; ?></div>
         </div>
         <div class="form-group mb-4">
-          <label class="d-block text-left" for="SenhaConfirm">Confirmar Senha</label> 
-          <input type="password" name='SenhaConfirm' id='SenhaConfirm' class='form-control' value="<?= set_value('SenhaConfirm') ?>" placeholder="Confirmar Senha" required>
-          <div class="invalid-feedback" style="display:block"><?= isset($response->error->SenhaConf) ? $response->error->SenhaConf : ""; ?></div>
+          <label class="d-block text-left" for="uu_SenhaConfirm">Confirmar Senha</label> 
+          <input type="password" name='uu_SenhaConfirm' id='uu_SenhaConfirm' class='form-control' value="<?= set_value('uu_SenhaConfirm') ?>" placeholder="Confirmar Senha" required>
+          <div class="invalid-feedback" style="display:block"><?= isset($response->error->uu_SenhaConf) ? $response->error->uu_SenhaConf : ""; ?></div>
         </div><!-- /.form-group -->
         <!-- actions -->
 

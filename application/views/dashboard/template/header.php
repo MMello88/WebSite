@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -7,7 +8,7 @@
     <!-- Begin SEO tag -->
     <title> Starter Template | Looper - Bootstrap 4 Admin Theme </title>
     <meta property="og:title" content="Starter Template">
-    <meta name="author" content="<?= $login->data->Nome ?>">
+    <meta name="author" content="<?= $login->data->uu_Nome ?>">
     <meta property="og:locale" content="en_US">
     <meta name="description" content="Responsive admin theme build on top of Bootstrap 4">
     <meta property="og:description" content="Responsive admin theme build on top of Bootstrap 4">
@@ -21,7 +22,7 @@
         "author":
         {
           "@type": "Person",
-          "name": "<?= $login->data->Nome ?>"
+          "name": "<?= $login->data->uu_Nome ?>"
         },
         "@type": "WebSite",
         "url": "",
@@ -55,6 +56,8 @@
     </script><!-- END THEME STYLES -->
   </head>
   <body>
+
+
     <!-- .app -->
     <div class="app">
       <!--[if lt IE 10]>
@@ -240,16 +243,16 @@
               <div class="dropdown d-flex">
                 <button class="btn-account d-none d-md-flex" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   <span class="user-avatar user-avatar-md">
-                    <img src="<?= base_url('assets/images/avatars/' . (empty($login->data->UrlFoto) ? "profile.jpg" : $login->data->UrlFoto)) ?>" alt="">
+                    <img src="<?= base_url('assets/images/avatars/' . (empty($login->data->uu_UrlFoto) ? "profile.jpg" : $login->data->uu_UrlFoto)) ?>" alt="">
                   </span>
                   <span class="account-summary pr-lg-4 d-none d-lg-block">
-                    <span class="account-name"><?= $login->data->Nome ?></span>
+                    <span class="account-name"><?= $login->data->uu_Nome ?></span>
                     <span class="account-description">Marketing Manager</span>
                   </span>
                 </button> <!-- .dropdown-menu -->
                 <div class="dropdown-menu">
                   <div class="dropdown-arrow ml-3"></div>
-                  <h6 class="dropdown-header d-none d-md-block d-lg-none"> <?= $login->data->Nome ?> </h6>
+                  <h6 class="dropdown-header d-none d-md-block d-lg-none"> <?= $login->data->uu_Nome ?> </h6>
                   <a class="dropdown-item" href="<?= base_url("users") ?>"><span class="dropdown-icon oi oi-person"></span> Usuário </a> 
                   <a class="dropdown-item" href="<?= base_url("user/logout") ?>"><span class="dropdown-icon oi oi-account-logout"></span> Sair </a>
                   <div class="dropdown-divider"></div>
@@ -263,7 +266,7 @@
         </div><!-- /.top-bar -->
       </header><!-- /.app-header -->
 
-
+      
       <!-- .app-aside -->
       <aside class="app-aside app-aside-expand-md app-aside-light">
         <!-- .aside-content -->
@@ -272,9 +275,9 @@
           <header class="aside-header d-block d-md-none">
             <!-- .btn-account -->
             <button class="btn-account" type="button" data-toggle="collapse" data-target="#dropdown-aside">
-              <span class="user-avatar user-avatar-lg"><img src="<?= base_url('assets/images/avatars/' . (empty($login->data->UrlFoto) ? "profile.jpg" : $login->data->UrlFoto)) ?>" alt=""></span>
+              <span class="user-avatar user-avatar-lg"><img src="<?= base_url('assets/images/avatars/' . (empty($login->data->uu_UrlFoto) ? "profile.jpg" : $login->data->uu_UrlFoto)) ?>" alt=""></span>
               <span class="account-icon"><span class="fa fa-caret-down fa-lg"></span></span>
-              <span class="account-summary"><span class="account-name"><?= $login->data->Nome ?></span>
+              <span class="account-summary"><span class="account-name"><?= $login->data->uu_Nome ?></span>
               <!--<span class="account-description"></span></span>-->
             </button> <!-- /.btn-account -->
             <!-- .dropdown-aside -->
@@ -290,10 +293,13 @@
               </div><!-- /dropdown-items -->
             </div><!-- /.dropdown-aside -->
           </header><!-- /.aside-header -->
+
           <!-- .aside-menu -->
           <div class="aside-menu overflow-hidden">
             <!-- .stacked-menu -->
+            
             <nav id="stacked-menu" class="stacked-menu">
+            
               <?php if(count($menus) > 0): ?>
                 <!-- .menu -->
                 <ul class="menu">
@@ -302,16 +308,16 @@
                   <?php if(count($menu->submenus) > 0): ?>
                     <!-- .menu-item -->
                     <li class="menu-item has-child"> <!-- class="has-active" -->
-                      <a href="#" class="menu-link"><span class="menu-icon oi oi-wrench <?= $menu->Icone ?>"></span> <span class="menu-text"><?= $menu->Nome ?></span></a> <!-- child menu -->
+                      <a href="#" class="menu-link"><span class="menu-icon oi oi-wrench <?= $menu->mns_Icone ?>"></span> <span class="menu-text"><?= $menu->mns_Nome ?></span></a> <!-- child menu -->
                       <ul class="menu">
                     <?php foreach ($menu->submenus as $key1 => $submenu): ?>
-                        <li class="menu-item <?= (count($submenu->nivel) > 0) ? "has-child has-open" : "" ?>"> <!-- class="has-active" --> <!-- Precisa desenvolver esta parte do menu ativo -->
-                          <a href="<?= (count($submenu->nivel) > 0) ? "#" : base_url($submenu->Url) ?>" class="menu-link"><?= $submenu->Nome ?></a>
-                          <?php if(count($submenu->nivel) > 0): ?>
+                        <li class="menu-item <?= (count($submenu->sbm_nivel) > 0) ? "has-child has-open" : "" ?>"> <!-- class="has-active" --> <!-- Precisa desenvolver esta parte do menu ativo -->
+                          <a href="<?= (count($submenu->sbm_nivel) > 0) ? "#" : base_url($submenu->sbm_Url) ?>" class="menu-link"><?= $submenu->sbm_Nome ?></a>
+                          <?php if(count($submenu->sbm_nivel) > 0): ?>
                           <ul class="menu">
-                            <?php foreach ($submenu->nivel as $key2 => $n): ?>
+                            <?php foreach ($submenu->sbm_nivel as $key2 => $n): ?>
                             <li class="menu-item">
-                              <a href="<?= base_url($n->Url) ?>" class="menu-link"><?= $n->Nome ?></a>
+                              <a href="<?= base_url($n->sbm_Url) ?>" class="menu-link"><?= $n->sbm_Nome ?></a>
                             </li>
                             <?php endforeach; ?>
                           </ul>
@@ -323,15 +329,19 @@
                   <?php else: ?>
                     <!-- .menu-item -->
                     <li class="menu-item">
-                      <a href="<?= base_url($menu->url) ?>" class="menu-link"><span class="menu-icon fas fa-home <?= $menu->Icone ?>"></span> <span class="menu-text"><?= $menu->Nome ?></span></a>
+                      <a href="<?= base_url($menu->mns_url) ?>" class="menu-link"><span class="menu-icon fas fa-home <?= $menu->mns_Icone ?>"></span> <span class="menu-text"><?= $menu->mns_Nome ?></span></a>
                     </li><!-- /.menu-item -->
                   <?php endif; ?>
                 <?php endforeach; ?>
                 <!-- /.menu -->
                 </ul>
               <?php endif; ?>
+  
             </nav><!-- /.stacked-menu -->
+            
           </div><!-- /.aside-menu -->
+
+       
           <!-- Skin changer -->
           <footer class="aside-footer border-top p-2">
             <button class="btn btn-light btn-block text-primary" data-toggle="skin"><span class="d-compact-menu-none">Night mode</span> <i class="fas fa-moon ml-1"></i></button>

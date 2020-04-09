@@ -15,6 +15,7 @@
     <script src="<?= base_url('assets/vendor/datatables/extensions/buttons/buttons.print.min.js') ?>"></script> <!-- END PLUGINS JS -->
     <!-- BEGIN THEME JS -->
     <script src="<?= base_url('assets/javascript/theme.min.js') ?>"></script>
+    <script src="<?= base_url('assets/javascript/pages/dataTables.bootstrap.js') ?>"></script>
     <?php foreach($scripts as $script): ?>
     <script src="<?= $script ?>"></script> 
     <?php endforeach; ?> <!-- END THEME JS -->

@@ -14,12 +14,16 @@ class Regs0000efdc extends MY_Controller {
         $this->data["response"]->data = $this->sendGet("api/regs0000efdc/get", $this->data['login']->data->token)->data;
       }
     } else {
-      $this->data["response"] = $this->sendGet("api/users/get", $this->data['login']->data->token);
+      $this->data["response"] = $this->sendGet("api/regs0000efdc/get", $this->data['login']->data->token);
     }
 
-    $this->scripts("assets/javascript/api/regs0000efdc.js");
+    $this->scripts("assets/javascript/api/regs0000efdc/regs0000efdc.js");
     $this->load->view('dashboard/template/header', $this->data);
-		$this->load->view('regs0000efdc/regs0000efdc', $this->data);
+		$this->load->view('api/regs0000efdc/regs0000efdc', $this->data);
 		$this->load->view('dashboard/template/footer', $this->data);
+  }
+
+  public function get(){
+    echo json_encode(["data" => $this->sendGet("api/regs0000efdc/get", $this->data['login']->data->token)->data]);
   }
 }

@@ -10,7 +10,7 @@ class Perfis extends MY_Controller {
 
   public function index(){
     $this->data['perfis'] = $this->SendGet("api/Perfisuser/get", $this->data['login']->data->token)->data;
-    
+
 		$this->load->view('dashboard/template/header', $this->data);
 		$this->load->view('perfis/selecionar', $this->data);
 		$this->load->view('dashboard/template/footer', $this->data);

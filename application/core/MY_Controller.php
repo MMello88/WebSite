@@ -10,11 +10,11 @@ class MY_Controller extends CI_Controller {
     $this->data["scripts"] = [];
     
     $this->isOn = $this->session->userdata('login') === NULL ? FALSE : TRUE;
-
+    
     if (!$this->isOn){
     	redirect("user/login");
     }
-
+    
     $this->data["login"] = $this->session->userdata('login');
 
     if(empty($this->data["login"]->data->PerfisId) && $this->router->class <> "perfis"){

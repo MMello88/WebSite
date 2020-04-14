@@ -59,8 +59,8 @@
                         <?php endif; ?>
                         <p class="text-muted"> <?= $perfil->ps_Descricao ?> </p>
                         <?= form_open(base_url("perfis/add"), ["class" => "teste"]) ?>
-                        <input type="hidden" name="PerfisId" value="<?= $perfil->ps_Id ?>">
-                        <input type="hidden" name="UsersId" value="<?= $login->data->uu_Id ?>">
+                        <input type="hidden" name="pu_PerfisId" value="<?= $perfil->ps_Id ?>">
+                        <input type="hidden" name="pu_UsersId" value="<?= $login->data->uu_Id ?>">
                         <p>
                           <button class="btn btn-primary circle" type="submit" >Contratar <i class="fa fa-arrow-right ml-2"></i></button>
                         </p>

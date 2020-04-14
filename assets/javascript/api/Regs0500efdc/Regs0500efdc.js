@@ -24,7 +24,7 @@ function () {
       return $('#myTable').DataTable({
         dom: "<'text-muted'Bi>\n        <'table-responsive'tr>\n        <'mt-4'p>",
         buttons: ['copyHtml5', {
-          extend: 'print',
+          extend: 'print', 
           autoPrint: false
         }],
         language: {
@@ -36,68 +36,68 @@ function () {
         autoWidth: false,
         ajax: url_get,
         deferRender: true,
-        order: [1, 'asc'],
+        order: [14, 'desc'],
         columns: [
   				{
-					data: 'Id',
+					data: '0500_Id',
 					className: 'col-checker align-middle',
 					orderable: false,
 					searchable: false
 				},
 				{
-					data: 'Reg',
+					data: '0500_Reg',
 					className: 'align-middle',
 				},
 				{
-					data: 'DtAlteracao',
+					data: '0500_DtAlteracao',
 					className: 'align-middle',
 				},
 				{
-					data: 'CodNatCC',
+					data: '0500_CodNatCC',
 					className: 'align-middle',
 				},
 				{
-					data: 'IndCTA',
+					data: '0500_IndCTA',
 					className: 'align-middle',
 				},
 				{
-					data: 'Nivel',
+					data: '0500_Nivel',
 					className: 'align-middle',
 				},
 				{
-					data: 'CodCTA',
+					data: '0500_CodCTA',
 					className: 'align-middle',
 				},
 				{
-					data: 'NomeCTA',
+					data: '0500_NomeCTA',
 					className: 'align-middle',
 				},
 				{
-					data: 'CodCTARef',
+					data: '0500_CodCTARef',
 					className: 'align-middle',
 				},
 				{
-					data: 'CNPJEstab',
+					data: '0500_CNPJEstab',
 					className: 'align-middle',
 				},
 				{
-					data: 'DtIni',
+					data: '0500_DtIni',
 					className: 'align-middle',
 				},
 				{
-					data: 'DtFin',
+					data: '0500_DtFin',
 					className: 'align-middle',
 				},
 				{
-					data: 'PessoaJuridicaId',
+					data: '0500_PessoaJuridicaId',
 					className: 'align-middle',
 				},
 				{
-					data: 'UsersId',
+					data: '0500_UsersId',
 					className: 'align-middle',
 				},
 				{
-					data: 'Id',
+					data: '0500_Id',
 					className: 'align-middle text-right',
 					orderable: false,
 					searchable: false
@@ -105,10 +105,19 @@ function () {
 
         ],
         columnDefs: [{
-          targets: 15,
+          targets: 0,
           render: function render(data, type, row, meta) {
             return `
-            <a class='btn btn-sm btn-icon btn-secondary' href='#${data}'>
+            <div class='custom-control custom-control-nolabel custom-checkbox'>
+              <input type='checkbox' class='custom-control-input' name='selectedRow[]' id='p${row['0500_Id']}' value='${row['0500_Id']}'>
+              <label class='custom-control-label' for='p${row['0500_Id']}'></label>
+            </div>`;
+          }
+        },{
+          targets: 14,
+          render: function render(data, type, row, meta) {
+            return `
+            <a class='btn btn-sm btn-icon btn-secondary' href='${url_upd}/${data}'>
               <i class='fa fa-pencil-alt'></i>
             </a>
             <a class='btn btn-sm btn-icon btn-secondary' href='#${data}'>
@@ -118,8 +127,15 @@ function () {
         }]
       });
     }
-  }, {
-    
+  },{
+    key: 'setbtnFloatedAdd',
+    value: function setbtnFloatedAdd(){
+      var self = this;
+      $('#btnFloatedAdd').on('click', function(e){
+        self.table.ajax.reload();
+      })
+    }
+  },{
     key: "searchRecords",
     value: function searchRecords() {
       var self = this;

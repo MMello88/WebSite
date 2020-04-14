@@ -39,7 +39,7 @@
                 </ol>
               </nav><!-- /.breadcrumb -->
               <!-- floating action -->
-              <button type='button' class='btn btn-success btn-floated'><span class='fa fa-plus'></span></button> <!-- /floating action -->
+              <button type='button' class='btn btn-success btn-floated' onclick="window.location.href='<?= base_url('Regs0200efdc/create') ?>'"><span class='fa fa-plus'></span></button> <!-- /floating action -->
             </header><!-- /.page-title-bar -->
             <!-- .page-section -->
             <div class='page-section'>
@@ -49,6 +49,14 @@
                 <div class='card-header d-md-flex align-items-md-start'>
                   <h1 class='page-title mr-sm-auto'> Identificação do Item (Produtos e Serviços) </h1><!-- .btn-toolbar -->
                   <div id='dt-buttons' class='btn-toolbar'></div><!-- /.btn-toolbar -->
+                  <div class='dropdown'>
+                  <button type='button' class='btn btn-icon btn-light' data-toggle='dropdown'>
+                  <i class='fa fa-ellipsis-v'></i></button>
+                  <div class='dropdown-menu dropdown-menu-right'>
+                    <div class='dropdown-arrow'></div>
+                    <a href='#' class='dropdown-item' id='btnFloatedAdd'>Atualizar</a>
+                  </div>
+                </div>
                 </div><!-- /.card-header -->
                 <!-- .card-body -->
                 <div class='card-body'>
@@ -58,28 +66,27 @@
                     <div class='input-group input-group-alt'>
                       <!-- .input-group-prepend -->
                       <div class='input-group-prepend'>
-                        <select id='filterBy' class='custom-select'>
+                        <select id='filterBy' class='custom-select' style='width: 150px'>
                           <option value='' selected> Filtrar por </option>
-													<option value='0'> 0200_Id </option>
-													<option value='1'> 0200_Reg </option>
-													<option value='2'> 0200_CodItem </option>
-													<option value='3'> 0200_DescricaoItem </option>
-													<option value='4'> 0200_CodBarra </option>
-													<option value='5'> 0200_CodAntItem </option>
-													<option value='6'> Reg0190EFDCId </option>
-													<option value='7'> 0200_TipoItem </option>
-													<option value='8'> 0200_CodNcm </option>
-													<option value='9'> 0200_ExIpi </option>
-													<option value='10'> 0200_CodGen </option>
-													<option value='11'> 0200_CodLst </option>
-													<option value='12'> 0200_AliqIcms </option>
-													<option value='13'> 0200_DtIni </option>
-													<option value='14'> 0200_DtFin </option>
-													<option value='15'> PessoaJuridicaId </option>
-													<option value='16'> UsersId </option>
-													<option value='17'> Reg0205EFDCId </option>
-													<option value='18'> Reg0206EFDCId </option>
-													<option value='19'> Reg020EFDCId </option>
+													<option value='1'> Registro </option>
+													<option value='2'> Código do Item </option>
+													<option value='3'> Descrição </option>
+													<option value='4'> Código de Barra </option>
+													<option value='5'> Código Anterior do Item </option>
+													<option value='6'> Unidades de Medida </option>
+													<option value='7'> Tipo do item </option>
+													<option value='8'> NCM </option>
+													<option value='9'> Código EX TIPI </option>
+													<option value='10'> Código Gênero Item </option>
+													<option value='11'> Código do Serviço </option>
+													<option value='12'> Alíquota de ICMS </option>
+													<option value='13'> Data Inicial </option>
+													<option value='14'> Data Final </option>
+													<option value='15'> Pessoa Juridica </option>
+													<option value='16'> Usuário </option>
+													<option value='17'> Alteração do Item </option>
+													<option value='18'> Código de Produto Conforme Tabela ANP </option>
+													<option value='19'> Código de Grupos por Marca Comercial </option>
 
                         </select>
                       </div><!-- /.input-group-prepend -->
@@ -100,7 +107,7 @@
                     <!-- thead -->
                     <thead>
                       <tr>
-                        <th colspan='2' style='min-width: 320px;'>
+                        <th>
                           <div class='thead-dd dropdown'>
                             <span class='custom-control custom-control-nolabel custom-checkbox'><input type='checkbox' class='custom-control-input' id='check-handle'> <label class='custom-control-label' for='check-handle'></label></span>
                             <div class='thead-btn' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
@@ -117,26 +124,26 @@
                             </div>
                           </div>
                         </th>
-													<th> 0200_Reg </th>
-													<th> 0200_CodItem </th>
-													<th> 0200_DescricaoItem </th>
-													<th> 0200_CodBarra </th>
-													<th> 0200_CodAntItem </th>
-													<th> Reg0190EFDCId </th>
-													<th> 0200_TipoItem </th>
-													<th> 0200_CodNcm </th>
-													<th> 0200_ExIpi </th>
-													<th> 0200_CodGen </th>
-													<th> 0200_CodLst </th>
-													<th> 0200_AliqIcms </th>
-													<th> 0200_DtIni </th>
-													<th> 0200_DtFin </th>
-													<th> PessoaJuridicaId </th>
-													<th> UsersId </th>
-													<th> Reg0205EFDCId </th>
-													<th> Reg0206EFDCId </th>
-													<th> Reg020EFDCId </th>
-													<th style='width:100px; min-width:100px;'> &nbsp; </th>
+												<th> Registro </th>
+												<th> Código do Item </th>
+												<th> Descrição </th>
+												<th> Código de Barra </th>
+												<th> Código Anterior do Item </th>
+												<th> Unidades de Medida </th>
+												<th> Tipo do item </th>
+												<th> NCM </th>
+												<th> Código EX TIPI </th>
+												<th> Código Gênero Item </th>
+												<th> Código do Serviço </th>
+												<th> Alíquota de ICMS </th>
+												<th> Data Inicial </th>
+												<th> Data Final </th>
+												<th> Pessoa Juridica </th>
+												<th> Usuário </th>
+												<th> Alteração do Item </th>
+												<th> Código de Produto Conforme Tabela ANP </th>
+												<th> Código de Grupos por Marca Comercial </th>
+												<th style='width:100px; min-width:100px;'> &nbsp; </th>
 
                       </tr>
                     </thead><!-- /thead -->
@@ -144,26 +151,26 @@
                     <tbody>
                       <!-- create empty row to passing html validator -->
                       <tr>
-													<td></td>
-													<td></td>
-													<td></td>
-													<td></td>
-													<td></td>
-													<td></td>
-													<td></td>
-													<td></td>
-													<td></td>
-													<td></td>
-													<td></td>
-													<td></td>
-													<td></td>
-													<td></td>
-													<td></td>
-													<td></td>
-													<td></td>
-													<td></td>
-													<td></td>
-													<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
 
                       </tr>
                     </tbody><!-- /tbody -->
@@ -182,4 +189,5 @@
     <title>Identificação do Item (Produtos e Serviços)</title>
 <script>
 var url_get = '<?= base_url('regs0200efdc/get'); ?>';
+var url_upd = '<?= base_url('regs0200efdc/edit'); ?>';
 </script>

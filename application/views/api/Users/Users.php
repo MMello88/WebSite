@@ -39,7 +39,7 @@
                 </ol>
               </nav><!-- /.breadcrumb -->
               <!-- floating action -->
-              <button type='button' class='btn btn-success btn-floated'><span class='fa fa-plus'></span></button> <!-- /floating action -->
+              <button type='button' class='btn btn-success btn-floated' onclick="window.location.href='<?= base_url('Users/create') ?>'"><span class='fa fa-plus'></span></button> <!-- /floating action -->
             </header><!-- /.page-title-bar -->
             <!-- .page-section -->
             <div class='page-section'>
@@ -49,6 +49,14 @@
                 <div class='card-header d-md-flex align-items-md-start'>
                   <h1 class='page-title mr-sm-auto'> Usuários </h1><!-- .btn-toolbar -->
                   <div id='dt-buttons' class='btn-toolbar'></div><!-- /.btn-toolbar -->
+                  <div class='dropdown'>
+                  <button type='button' class='btn btn-icon btn-light' data-toggle='dropdown'>
+                  <i class='fa fa-ellipsis-v'></i></button>
+                  <div class='dropdown-menu dropdown-menu-right'>
+                    <div class='dropdown-arrow'></div>
+                    <a href='#' class='dropdown-item' id='btnFloatedAdd'>Atualizar</a>
+                  </div>
+                </div>
                 </div><!-- /.card-header -->
                 <!-- .card-body -->
                 <div class='card-body'>
@@ -58,19 +66,18 @@
                     <div class='input-group input-group-alt'>
                       <!-- .input-group-prepend -->
                       <div class='input-group-prepend'>
-                        <select id='filterBy' class='custom-select'>
+                        <select id='filterBy' class='custom-select' style='width: 150px'>
                           <option value='' selected> Filtrar por </option>
-													<option value='0'> uu_Id </option>
-													<option value='1'> uu_Nome </option>
-													<option value='2'> uu_Sobrenome </option>
-													<option value='3'> uu_DataNascimento </option>
-													<option value='4'> uu_UrlFoto </option>
-													<option value='5'> uu_Ativo </option>
-													<option value='6'> uu_Criacao </option>
-													<option value='7'> uu_Email </option>
-													<option value='8'> uu_Senha </option>
-													<option value='9'> uu_DataReset </option>
-													<option value='10'> uu_IdReset </option>
+													<option value='1'> Nome </option>
+													<option value='2'> Sobrenome </option>
+													<option value='3'> Data Nascimento </option>
+													<option value='4'> Foto </option>
+													<option value='5'> Ativo </option>
+													<option value='6'>  </option>
+													<option value='7'> E-mail </option>
+													<option value='8'> Senha </option>
+													<option value='9'>  </option>
+													<option value='10'>  </option>
 
                         </select>
                       </div><!-- /.input-group-prepend -->
@@ -91,7 +98,7 @@
                     <!-- thead -->
                     <thead>
                       <tr>
-                        <th colspan='2' style='min-width: 320px;'>
+                        <th>
                           <div class='thead-dd dropdown'>
                             <span class='custom-control custom-control-nolabel custom-checkbox'><input type='checkbox' class='custom-control-input' id='check-handle'> <label class='custom-control-label' for='check-handle'></label></span>
                             <div class='thead-btn' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
@@ -108,17 +115,17 @@
                             </div>
                           </div>
                         </th>
-													<th> uu_Nome </th>
-													<th> uu_Sobrenome </th>
-													<th> uu_DataNascimento </th>
-													<th> uu_UrlFoto </th>
-													<th> uu_Ativo </th>
-													<th> uu_Criacao </th>
-													<th> uu_Email </th>
-													<th> uu_Senha </th>
-													<th> uu_DataReset </th>
-													<th> uu_IdReset </th>
-													<th style='width:100px; min-width:100px;'> &nbsp; </th>
+												<th> Nome </th>
+												<th> Sobrenome </th>
+												<th> Data Nascimento </th>
+												<th> Foto </th>
+												<th> Ativo </th>
+												<th>  </th>
+												<th> E-mail </th>
+												<th> Senha </th>
+												<th>  </th>
+												<th>  </th>
+												<th style='width:100px; min-width:100px;'> &nbsp; </th>
 
                       </tr>
                     </thead><!-- /thead -->
@@ -126,17 +133,17 @@
                     <tbody>
                       <!-- create empty row to passing html validator -->
                       <tr>
-													<td></td>
-													<td></td>
-													<td></td>
-													<td></td>
-													<td></td>
-													<td></td>
-													<td></td>
-													<td></td>
-													<td></td>
-													<td></td>
-													<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
 
                       </tr>
                     </tbody><!-- /tbody -->
@@ -155,4 +162,5 @@
     <title>Usuários</title>
 <script>
 var url_get = '<?= base_url('users/get'); ?>';
+var url_upd = '<?= base_url('users/edit'); ?>';
 </script>

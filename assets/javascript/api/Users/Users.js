@@ -24,7 +24,7 @@ function () {
       return $('#myTable').DataTable({
         dom: "<'text-muted'Bi>\n        <'table-responsive'tr>\n        <'mt-4'p>",
         buttons: ['copyHtml5', {
-          extend: 'print',
+          extend: 'print', 
           autoPrint: false
         }],
         language: {
@@ -36,56 +36,56 @@ function () {
         autoWidth: false,
         ajax: url_get,
         deferRender: true,
-        order: [1, 'asc'],
+        order: [11, 'desc'],
         columns: [
   				{
-					data: 'Id',
+					data: 'uu_Id',
 					className: 'col-checker align-middle',
 					orderable: false,
 					searchable: false
 				},
 				{
-					data: 'Nome',
+					data: 'uu_Nome',
 					className: 'align-middle',
 				},
 				{
-					data: 'Sobrenome',
+					data: 'uu_Sobrenome',
 					className: 'align-middle',
 				},
 				{
-					data: 'DataNascimento',
+					data: 'uu_DataNascimento',
 					className: 'align-middle',
 				},
 				{
-					data: 'UrlFoto',
+					data: 'uu_UrlFoto',
 					className: 'align-middle',
 				},
 				{
-					data: 'Ativo',
+					data: 'uu_Ativo',
 					className: 'align-middle',
 				},
 				{
-					data: 'Criacao',
+					data: 'uu_Criacao',
 					className: 'align-middle',
 				},
 				{
-					data: 'Email',
+					data: 'uu_Email',
 					className: 'align-middle',
 				},
 				{
-					data: 'Senha',
+					data: 'uu_Senha',
 					className: 'align-middle',
 				},
 				{
-					data: 'DataReset',
+					data: 'uu_DataReset',
 					className: 'align-middle',
 				},
 				{
-					data: 'IdReset',
+					data: 'uu_IdReset',
 					className: 'align-middle',
 				},
 				{
-					data: 'Id',
+					data: 'uu_Id',
 					className: 'align-middle text-right',
 					orderable: false,
 					searchable: false
@@ -93,10 +93,19 @@ function () {
 
         ],
         columnDefs: [{
-          targets: 12,
+          targets: 0,
           render: function render(data, type, row, meta) {
             return `
-            <a class='btn btn-sm btn-icon btn-secondary' href='#${data}'>
+            <div class='custom-control custom-control-nolabel custom-checkbox'>
+              <input type='checkbox' class='custom-control-input' name='selectedRow[]' id='p${row['uu_Id']}' value='${row['uu_Id']}'>
+              <label class='custom-control-label' for='p${row['uu_Id']}'></label>
+            </div>`;
+          }
+        },{
+          targets: 11,
+          render: function render(data, type, row, meta) {
+            return `
+            <a class='btn btn-sm btn-icon btn-secondary' href='${url_upd}/${data}'>
               <i class='fa fa-pencil-alt'></i>
             </a>
             <a class='btn btn-sm btn-icon btn-secondary' href='#${data}'>
@@ -106,8 +115,15 @@ function () {
         }]
       });
     }
-  }, {
-    
+  },{
+    key: 'setbtnFloatedAdd',
+    value: function setbtnFloatedAdd(){
+      var self = this;
+      $('#btnFloatedAdd').on('click', function(e){
+        self.table.ajax.reload();
+      })
+    }
+  },{
     key: "searchRecords",
     value: function searchRecords() {
       var self = this;

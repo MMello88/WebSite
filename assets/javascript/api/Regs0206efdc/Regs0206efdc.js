@@ -24,7 +24,7 @@ function () {
       return $('#myTable').DataTable({
         dom: "<'text-muted'Bi>\n        <'table-responsive'tr>\n        <'mt-4'p>",
         buttons: ['copyHtml5', {
-          extend: 'print',
+          extend: 'print', 
           autoPrint: false
         }],
         language: {
@@ -36,24 +36,24 @@ function () {
         autoWidth: false,
         ajax: url_get,
         deferRender: true,
-        order: [1, 'asc'],
+        order: [3, 'desc'],
         columns: [
   				{
-					data: 'Id',
+					data: '0206_Id',
 					className: 'col-checker align-middle',
 					orderable: false,
 					searchable: false
 				},
 				{
-					data: 'Reg',
+					data: '0206_Reg',
 					className: 'align-middle',
 				},
 				{
-					data: 'CodComb',
+					data: '0206_CodComb',
 					className: 'align-middle',
 				},
 				{
-					data: 'Id',
+					data: '0206_Id',
 					className: 'align-middle text-right',
 					orderable: false,
 					searchable: false
@@ -61,10 +61,19 @@ function () {
 
         ],
         columnDefs: [{
-          targets: 4,
+          targets: 0,
           render: function render(data, type, row, meta) {
             return `
-            <a class='btn btn-sm btn-icon btn-secondary' href='#${data}'>
+            <div class='custom-control custom-control-nolabel custom-checkbox'>
+              <input type='checkbox' class='custom-control-input' name='selectedRow[]' id='p${row['0206_Id']}' value='${row['0206_Id']}'>
+              <label class='custom-control-label' for='p${row['0206_Id']}'></label>
+            </div>`;
+          }
+        },{
+          targets: 3,
+          render: function render(data, type, row, meta) {
+            return `
+            <a class='btn btn-sm btn-icon btn-secondary' href='${url_upd}/${data}'>
               <i class='fa fa-pencil-alt'></i>
             </a>
             <a class='btn btn-sm btn-icon btn-secondary' href='#${data}'>
@@ -74,8 +83,15 @@ function () {
         }]
       });
     }
-  }, {
-    
+  },{
+    key: 'setbtnFloatedAdd',
+    value: function setbtnFloatedAdd(){
+      var self = this;
+      $('#btnFloatedAdd').on('click', function(e){
+        self.table.ajax.reload();
+      })
+    }
+  },{
     key: "searchRecords",
     value: function searchRecords() {
       var self = this;

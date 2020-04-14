@@ -39,7 +39,7 @@
                 </ol>
               </nav><!-- /.breadcrumb -->
               <!-- floating action -->
-              <button type='button' class='btn btn-success btn-floated'><span class='fa fa-plus'></span></button> <!-- /floating action -->
+              <button type='button' class='btn btn-success btn-floated' onclick="window.location.href='<?= base_url('Regsa170efdc/create') ?>'"><span class='fa fa-plus'></span></button> <!-- /floating action -->
             </header><!-- /.page-title-bar -->
             <!-- .page-section -->
             <div class='page-section'>
@@ -49,6 +49,14 @@
                 <div class='card-header d-md-flex align-items-md-start'>
                   <h1 class='page-title mr-sm-auto'> Complemento do Documento - Itens do Documento </h1><!-- .btn-toolbar -->
                   <div id='dt-buttons' class='btn-toolbar'></div><!-- /.btn-toolbar -->
+                  <div class='dropdown'>
+                  <button type='button' class='btn btn-icon btn-light' data-toggle='dropdown'>
+                  <i class='fa fa-ellipsis-v'></i></button>
+                  <div class='dropdown-menu dropdown-menu-right'>
+                    <div class='dropdown-arrow'></div>
+                    <a href='#' class='dropdown-item' id='btnFloatedAdd'>Atualizar</a>
+                  </div>
+                </div>
                 </div><!-- /.card-header -->
                 <!-- .card-body -->
                 <div class='card-body'>
@@ -58,29 +66,28 @@
                     <div class='input-group input-group-alt'>
                       <!-- .input-group-prepend -->
                       <div class='input-group-prepend'>
-                        <select id='filterBy' class='custom-select'>
+                        <select id='filterBy' class='custom-select' style='width: 150px'>
                           <option value='' selected> Filtrar por </option>
-													<option value='0'> a170_Id </option>
-													<option value='1'> a170_Reg </option>
-													<option value='2'> a170_NumItem </option>
-													<option value='3'> Reg0200EFDCId </option>
-													<option value='4'> a170_DescricaoComplementar </option>
-													<option value='5'> a170_VlItem </option>
-													<option value='6'> a170_VlDesconto </option>
-													<option value='7'> Ref431Id </option>
-													<option value='8'> a170_IndicadorOrigemCredito </option>
-													<option value='9'> Ref433Id </option>
-													<option value='10'> a170_VlBcPis </option>
-													<option value='11'> a170_VlAliqPis </option>
-													<option value='12'> a170_VlPis </option>
-													<option value='13'> Ref434Id </option>
-													<option value='14'> a170_VlBcCofins </option>
-													<option value='15'> a170_VlAliqCofins </option>
-													<option value='16'> a170_VlCofins </option>
-													<option value='17'> Reg0500EFDCId </option>
-													<option value='18'> Reg0600EFDCId </option>
-													<option value='19'> RegA100EFDCId </option>
-													<option value='20'> UsersId </option>
+													<option value='1'> Registro </option>
+													<option value='2'> Sequencia </option>
+													<option value='3'> Código do Item </option>
+													<option value='4'> Descrição complementar </option>
+													<option value='5'> Valor Total do Item </option>
+													<option value='6'> Valor do Desconto </option>
+													<option value='7'> Código da Situação Tributária </option>
+													<option value='8'> Origem do Crédito </option>
+													<option value='9'> Código da Situação Tributária Referente ao PIS/Pasep </option>
+													<option value='10'> Valor BC PIS </option>
+													<option value='11'> Valor Alíquota do PIS </option>
+													<option value='12'> Valor PIS </option>
+													<option value='13'> Código da Situação Tributária Referente à Cofins </option>
+													<option value='14'> Valor BC COFINS </option>
+													<option value='15'> Valor Alíquota do COFINS </option>
+													<option value='16'> Valor da COFINS </option>
+													<option value='17'> Plano de Conta </option>
+													<option value='18'> Centro de Custo </option>
+													<option value='19'> Documento - Nota Fiscal de Serviço </option>
+													<option value='20'> Usuários </option>
 
                         </select>
                       </div><!-- /.input-group-prepend -->
@@ -101,7 +108,7 @@
                     <!-- thead -->
                     <thead>
                       <tr>
-                        <th colspan='2' style='min-width: 320px;'>
+                        <th>
                           <div class='thead-dd dropdown'>
                             <span class='custom-control custom-control-nolabel custom-checkbox'><input type='checkbox' class='custom-control-input' id='check-handle'> <label class='custom-control-label' for='check-handle'></label></span>
                             <div class='thead-btn' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
@@ -118,27 +125,27 @@
                             </div>
                           </div>
                         </th>
-													<th> a170_Reg </th>
-													<th> a170_NumItem </th>
-													<th> Reg0200EFDCId </th>
-													<th> a170_DescricaoComplementar </th>
-													<th> a170_VlItem </th>
-													<th> a170_VlDesconto </th>
-													<th> Ref431Id </th>
-													<th> a170_IndicadorOrigemCredito </th>
-													<th> Ref433Id </th>
-													<th> a170_VlBcPis </th>
-													<th> a170_VlAliqPis </th>
-													<th> a170_VlPis </th>
-													<th> Ref434Id </th>
-													<th> a170_VlBcCofins </th>
-													<th> a170_VlAliqCofins </th>
-													<th> a170_VlCofins </th>
-													<th> Reg0500EFDCId </th>
-													<th> Reg0600EFDCId </th>
-													<th> RegA100EFDCId </th>
-													<th> UsersId </th>
-													<th style='width:100px; min-width:100px;'> &nbsp; </th>
+												<th> Registro </th>
+												<th> Sequencia </th>
+												<th> Código do Item </th>
+												<th> Descrição complementar </th>
+												<th> Valor Total do Item </th>
+												<th> Valor do Desconto </th>
+												<th> Código da Situação Tributária </th>
+												<th> Origem do Crédito </th>
+												<th> Código da Situação Tributária Referente ao PIS/Pasep </th>
+												<th> Valor BC PIS </th>
+												<th> Valor Alíquota do PIS </th>
+												<th> Valor PIS </th>
+												<th> Código da Situação Tributária Referente à Cofins </th>
+												<th> Valor BC COFINS </th>
+												<th> Valor Alíquota do COFINS </th>
+												<th> Valor da COFINS </th>
+												<th> Plano de Conta </th>
+												<th> Centro de Custo </th>
+												<th> Documento - Nota Fiscal de Serviço </th>
+												<th> Usuários </th>
+												<th style='width:100px; min-width:100px;'> &nbsp; </th>
 
                       </tr>
                     </thead><!-- /thead -->
@@ -146,27 +153,27 @@
                     <tbody>
                       <!-- create empty row to passing html validator -->
                       <tr>
-													<td></td>
-													<td></td>
-													<td></td>
-													<td></td>
-													<td></td>
-													<td></td>
-													<td></td>
-													<td></td>
-													<td></td>
-													<td></td>
-													<td></td>
-													<td></td>
-													<td></td>
-													<td></td>
-													<td></td>
-													<td></td>
-													<td></td>
-													<td></td>
-													<td></td>
-													<td></td>
-													<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
 
                       </tr>
                     </tbody><!-- /tbody -->
@@ -185,4 +192,5 @@
     <title>Complemento do Documento - Itens do Documento</title>
 <script>
 var url_get = '<?= base_url('regsa170efdc/get'); ?>';
+var url_upd = '<?= base_url('regsa170efdc/edit'); ?>';
 </script>

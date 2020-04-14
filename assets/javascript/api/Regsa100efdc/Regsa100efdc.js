@@ -24,7 +24,7 @@ function () {
       return $('#myTable').DataTable({
         dom: "<'text-muted'Bi>\n        <'table-responsive'tr>\n        <'mt-4'p>",
         buttons: ['copyHtml5', {
-          extend: 'print',
+          extend: 'print', 
           autoPrint: false
         }],
         language: {
@@ -36,28 +36,28 @@ function () {
         autoWidth: false,
         ajax: url_get,
         deferRender: true,
-        order: [1, 'asc'],
+        order: [27, 'desc'],
         columns: [
   				{
-					data: 'Id',
+					data: 'a100_Id',
 					className: 'col-checker align-middle',
 					orderable: false,
 					searchable: false
 				},
 				{
-					data: 'Reg',
+					data: 'a100_Reg',
 					className: 'align-middle',
 				},
 				{
-					data: 'CNPJ',
+					data: 'a100_CNPJ',
 					className: 'align-middle',
 				},
 				{
-					data: 'IndicadorTipoOperacao',
+					data: 'a100_IndicadorTipoOperacao',
 					className: 'align-middle',
 				},
 				{
-					data: 'IndicadorEmitenteDocumento',
+					data: 'a100_IndicadorEmitenteDocumento',
 					className: 'align-middle',
 				},
 				{
@@ -65,91 +65,91 @@ function () {
 					className: 'align-middle',
 				},
 				{
-					data: 'SituacaoDocumentoFiscal',
+					data: 'a100_SituacaoDocumentoFiscal',
 					className: 'align-middle',
 				},
 				{
-					data: 'Ser',
+					data: 'a100_Ser',
 					className: 'align-middle',
 				},
 				{
-					data: 'Sub',
+					data: 'a100_Sub',
 					className: 'align-middle',
 				},
 				{
-					data: 'NumDoc',
+					data: 'a100_NumDoc',
 					className: 'align-middle',
 				},
 				{
-					data: 'ChaveEletronica',
+					data: 'a100_ChaveEletronica',
 					className: 'align-middle',
 				},
 				{
-					data: 'DtEmissaoDoc',
+					data: 'a100_DtEmissaoDoc',
 					className: 'align-middle',
 				},
 				{
-					data: 'DtConclusaoServico',
+					data: 'a100_DtConclusaoServico',
 					className: 'align-middle',
 				},
 				{
-					data: 'VlDocumento',
+					data: 'a100_VlDocumento',
 					className: 'align-middle',
 				},
 				{
-					data: 'IndicadorTipoPagamento',
+					data: 'a100_IndicadorTipoPagamento',
 					className: 'align-middle',
 				},
 				{
-					data: 'VlDesconto',
+					data: 'a100_VlDesconto',
 					className: 'align-middle',
 				},
 				{
-					data: 'VlBcPis',
+					data: 'a100_VlBcPis',
 					className: 'align-middle',
 				},
 				{
-					data: 'VlPis',
+					data: 'a100_VlPis',
 					className: 'align-middle',
 				},
 				{
-					data: 'VlBcCofins',
+					data: 'a100_VlBcCofins',
 					className: 'align-middle',
 				},
 				{
-					data: 'VlCofins',
+					data: 'a100_VlCofins',
 					className: 'align-middle',
 				},
 				{
-					data: 'VlPisRetido',
+					data: 'a100_VlPisRetido',
 					className: 'align-middle',
 				},
 				{
-					data: 'VlConfinsRetido',
+					data: 'a100_VlConfinsRetido',
 					className: 'align-middle',
 				},
 				{
-					data: 'VlIss',
+					data: 'a100_VlIss',
 					className: 'align-middle',
 				},
 				{
-					data: 'DtIni',
+					data: 'a100_DtIni',
 					className: 'align-middle',
 				},
 				{
-					data: 'DtFin',
+					data: 'a100_DtFin',
 					className: 'align-middle',
 				},
 				{
-					data: 'PessoaJuridicaId',
+					data: 'a100_PessoaJuridicaId',
 					className: 'align-middle',
 				},
 				{
-					data: 'UsersId',
+					data: 'a100_UsersId',
 					className: 'align-middle',
 				},
 				{
-					data: 'Id',
+					data: 'a100_Id',
 					className: 'align-middle text-right',
 					orderable: false,
 					searchable: false
@@ -157,10 +157,19 @@ function () {
 
         ],
         columnDefs: [{
-          targets: 28,
+          targets: 0,
           render: function render(data, type, row, meta) {
             return `
-            <a class='btn btn-sm btn-icon btn-secondary' href='#${data}'>
+            <div class='custom-control custom-control-nolabel custom-checkbox'>
+              <input type='checkbox' class='custom-control-input' name='selectedRow[]' id='p${row['a100_Id']}' value='${row['a100_Id']}'>
+              <label class='custom-control-label' for='p${row['a100_Id']}'></label>
+            </div>`;
+          }
+        },{
+          targets: 27,
+          render: function render(data, type, row, meta) {
+            return `
+            <a class='btn btn-sm btn-icon btn-secondary' href='${url_upd}/${data}'>
               <i class='fa fa-pencil-alt'></i>
             </a>
             <a class='btn btn-sm btn-icon btn-secondary' href='#${data}'>
@@ -170,8 +179,15 @@ function () {
         }]
       });
     }
-  }, {
-    
+  },{
+    key: 'setbtnFloatedAdd',
+    value: function setbtnFloatedAdd(){
+      var self = this;
+      $('#btnFloatedAdd').on('click', function(e){
+        self.table.ajax.reload();
+      })
+    }
+  },{
     key: "searchRecords",
     value: function searchRecords() {
       var self = this;

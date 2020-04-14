@@ -24,7 +24,7 @@ function () {
       return $('#myTable').DataTable({
         dom: "<'text-muted'Bi>\n        <'table-responsive'tr>\n        <'mt-4'p>",
         buttons: ['copyHtml5', {
-          extend: 'print',
+          extend: 'print', 
           autoPrint: false
         }],
         language: {
@@ -36,60 +36,60 @@ function () {
         autoWidth: false,
         ajax: url_get,
         deferRender: true,
-        order: [1, 'asc'],
+        order: [12, 'desc'],
         columns: [
   				{
-					data: 'Id',
+					data: 'a120_Id',
 					className: 'col-checker align-middle',
 					orderable: false,
 					searchable: false
 				},
 				{
-					data: 'Reg',
+					data: 'a120_Reg',
 					className: 'align-middle',
 				},
 				{
-					data: 'VlTotalServico',
+					data: 'a120_VlTotalServico',
 					className: 'align-middle',
 				},
 				{
-					data: 'VlBcPis',
+					data: 'a120_VlBcPis',
 					className: 'align-middle',
 				},
 				{
-					data: 'VlPisImportacao',
+					data: 'a120_VlPisImportacao',
 					className: 'align-middle',
 				},
 				{
-					data: 'DtPgtoPisImportacao',
+					data: 'a120_DtPgtoPisImportacao',
 					className: 'align-middle',
 				},
 				{
-					data: 'VlBcCofins',
+					data: 'a120_VlBcCofins',
 					className: 'align-middle',
 				},
 				{
-					data: 'VlCofinsImportacao',
+					data: 'a120_VlCofinsImportacao',
 					className: 'align-middle',
 				},
 				{
-					data: 'DtPgtoCofinsImportacao',
+					data: 'a120_DtPgtoCofinsImportacao',
 					className: 'align-middle',
 				},
 				{
-					data: 'IndicadorLocalExecucaoServico',
+					data: 'a120_IndicadorLocalExecucaoServico',
 					className: 'align-middle',
 				},
 				{
-					data: 'RegA100EFDCId',
+					data: 'a120_RegA100EFDCId',
 					className: 'align-middle',
 				},
 				{
-					data: 'UsersId',
+					data: 'a120_UsersId',
 					className: 'align-middle',
 				},
 				{
-					data: 'Id',
+					data: 'a120_Id',
 					className: 'align-middle text-right',
 					orderable: false,
 					searchable: false
@@ -97,10 +97,19 @@ function () {
 
         ],
         columnDefs: [{
-          targets: 13,
+          targets: 0,
           render: function render(data, type, row, meta) {
             return `
-            <a class='btn btn-sm btn-icon btn-secondary' href='#${data}'>
+            <div class='custom-control custom-control-nolabel custom-checkbox'>
+              <input type='checkbox' class='custom-control-input' name='selectedRow[]' id='p${row['a120_Id']}' value='${row['a120_Id']}'>
+              <label class='custom-control-label' for='p${row['a120_Id']}'></label>
+            </div>`;
+          }
+        },{
+          targets: 12,
+          render: function render(data, type, row, meta) {
+            return `
+            <a class='btn btn-sm btn-icon btn-secondary' href='${url_upd}/${data}'>
               <i class='fa fa-pencil-alt'></i>
             </a>
             <a class='btn btn-sm btn-icon btn-secondary' href='#${data}'>
@@ -110,8 +119,15 @@ function () {
         }]
       });
     }
-  }, {
-    
+  },{
+    key: 'setbtnFloatedAdd',
+    value: function setbtnFloatedAdd(){
+      var self = this;
+      $('#btnFloatedAdd').on('click', function(e){
+        self.table.ajax.reload();
+      })
+    }
+  },{
     key: "searchRecords",
     value: function searchRecords() {
       var self = this;

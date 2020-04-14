@@ -39,7 +39,7 @@
                 </ol>
               </nav><!-- /.breadcrumb -->
               <!-- floating action -->
-              <button type='button' class='btn btn-success btn-floated'><span class='fa fa-plus'></span></button> <!-- /floating action -->
+              <button type='button' class='btn btn-success btn-floated' onclick="window.location.href='<?= base_url('Regs0001efdc/create') ?>'"><span class='fa fa-plus'></span></button> <!-- /floating action -->
             </header><!-- /.page-title-bar -->
             <!-- .page-section -->
             <div class='page-section'>
@@ -49,6 +49,14 @@
                 <div class='card-header d-md-flex align-items-md-start'>
                   <h1 class='page-title mr-sm-auto'> Abertura do Bloco 0 </h1><!-- .btn-toolbar -->
                   <div id='dt-buttons' class='btn-toolbar'></div><!-- /.btn-toolbar -->
+                  <div class='dropdown'>
+                  <button type='button' class='btn btn-icon btn-light' data-toggle='dropdown'>
+                  <i class='fa fa-ellipsis-v'></i></button>
+                  <div class='dropdown-menu dropdown-menu-right'>
+                    <div class='dropdown-arrow'></div>
+                    <a href='#' class='dropdown-item' id='btnFloatedAdd'>Atualizar</a>
+                  </div>
+                </div>
                 </div><!-- /.card-header -->
                 <!-- .card-body -->
                 <div class='card-body'>
@@ -58,11 +66,10 @@
                     <div class='input-group input-group-alt'>
                       <!-- .input-group-prepend -->
                       <div class='input-group-prepend'>
-                        <select id='filterBy' class='custom-select'>
+                        <select id='filterBy' class='custom-select' style='width: 150px'>
                           <option value='' selected> Filtrar por </option>
-													<option value='0'> 0001_Id </option>
-													<option value='1'> 0001_Reg </option>
-													<option value='2'> 0001_IndicadorMovimento </option>
+													<option value='1'> Registro </option>
+													<option value='2'> Indicador Movimento </option>
 
                         </select>
                       </div><!-- /.input-group-prepend -->
@@ -83,7 +90,7 @@
                     <!-- thead -->
                     <thead>
                       <tr>
-                        <th colspan='2' style='min-width: 320px;'>
+                        <th>
                           <div class='thead-dd dropdown'>
                             <span class='custom-control custom-control-nolabel custom-checkbox'><input type='checkbox' class='custom-control-input' id='check-handle'> <label class='custom-control-label' for='check-handle'></label></span>
                             <div class='thead-btn' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
@@ -100,9 +107,9 @@
                             </div>
                           </div>
                         </th>
-													<th> 0001_Reg </th>
-													<th> 0001_IndicadorMovimento </th>
-													<th style='width:100px; min-width:100px;'> &nbsp; </th>
+												<th> Registro </th>
+												<th> Indicador Movimento </th>
+												<th style='width:100px; min-width:100px;'> &nbsp; </th>
 
                       </tr>
                     </thead><!-- /thead -->
@@ -110,9 +117,9 @@
                     <tbody>
                       <!-- create empty row to passing html validator -->
                       <tr>
-													<td></td>
-													<td></td>
-													<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
 
                       </tr>
                     </tbody><!-- /tbody -->
@@ -131,4 +138,5 @@
     <title>Abertura do Bloco 0</title>
 <script>
 var url_get = '<?= base_url('regs0001efdc/get'); ?>';
+var url_upd = '<?= base_url('regs0001efdc/edit'); ?>';
 </script>

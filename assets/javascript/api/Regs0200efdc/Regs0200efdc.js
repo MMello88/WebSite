@@ -24,7 +24,7 @@ function () {
       return $('#myTable').DataTable({
         dom: "<'text-muted'Bi>\n        <'table-responsive'tr>\n        <'mt-4'p>",
         buttons: ['copyHtml5', {
-          extend: 'print',
+          extend: 'print', 
           autoPrint: false
         }],
         language: {
@@ -36,92 +36,92 @@ function () {
         autoWidth: false,
         ajax: url_get,
         deferRender: true,
-        order: [1, 'asc'],
+        order: [20, 'desc'],
         columns: [
   				{
-					data: 'Id',
+					data: '0200_Id',
 					className: 'col-checker align-middle',
 					orderable: false,
 					searchable: false
 				},
 				{
-					data: 'Reg',
+					data: '0200_Reg',
 					className: 'align-middle',
 				},
 				{
-					data: 'CodItem',
+					data: '0200_CodItem',
 					className: 'align-middle',
 				},
 				{
-					data: 'DescricaoItem',
+					data: '0200_DescricaoItem',
 					className: 'align-middle',
 				},
 				{
-					data: 'CodBarra',
+					data: '0200_CodBarra',
 					className: 'align-middle',
 				},
 				{
-					data: 'CodAntItem',
+					data: '0200_CodAntItem',
 					className: 'align-middle',
 				},
 				{
-					data: 'Reg0190EFDCId',
+					data: '0200_Reg0190EFDCId',
 					className: 'align-middle',
 				},
 				{
-					data: 'TipoItem',
+					data: '0200_TipoItem',
 					className: 'align-middle',
 				},
 				{
-					data: 'CodNcm',
+					data: '0200_CodNcm',
 					className: 'align-middle',
 				},
 				{
-					data: 'ExIpi',
+					data: '0200_ExIpi',
 					className: 'align-middle',
 				},
 				{
-					data: 'CodGen',
+					data: '0200_CodGen',
 					className: 'align-middle',
 				},
 				{
-					data: 'CodLst',
+					data: '0200_CodLst',
 					className: 'align-middle',
 				},
 				{
-					data: 'AliqIcms',
+					data: '0200_AliqIcms',
 					className: 'align-middle',
 				},
 				{
-					data: 'DtIni',
+					data: '0200_DtIni',
 					className: 'align-middle',
 				},
 				{
-					data: 'DtFin',
+					data: '0200_DtFin',
 					className: 'align-middle',
 				},
 				{
-					data: 'PessoaJuridicaId',
+					data: '0200_PessoaJuridicaId',
 					className: 'align-middle',
 				},
 				{
-					data: 'UsersId',
+					data: '0200_UsersId',
 					className: 'align-middle',
 				},
 				{
-					data: 'Reg0205EFDCId',
+					data: '0200_Reg0205EFDCId',
 					className: 'align-middle',
 				},
 				{
-					data: 'Reg0206EFDCId',
+					data: '0200_Reg0206EFDCId',
 					className: 'align-middle',
 				},
 				{
-					data: 'Reg020EFDCId',
+					data: '0200_Reg020EFDCId',
 					className: 'align-middle',
 				},
 				{
-					data: 'Id',
+					data: '0200_Id',
 					className: 'align-middle text-right',
 					orderable: false,
 					searchable: false
@@ -129,10 +129,19 @@ function () {
 
         ],
         columnDefs: [{
-          targets: 21,
+          targets: 0,
           render: function render(data, type, row, meta) {
             return `
-            <a class='btn btn-sm btn-icon btn-secondary' href='#${data}'>
+            <div class='custom-control custom-control-nolabel custom-checkbox'>
+              <input type='checkbox' class='custom-control-input' name='selectedRow[]' id='p${row['0200_Id']}' value='${row['0200_Id']}'>
+              <label class='custom-control-label' for='p${row['0200_Id']}'></label>
+            </div>`;
+          }
+        },{
+          targets: 20,
+          render: function render(data, type, row, meta) {
+            return `
+            <a class='btn btn-sm btn-icon btn-secondary' href='${url_upd}/${data}'>
               <i class='fa fa-pencil-alt'></i>
             </a>
             <a class='btn btn-sm btn-icon btn-secondary' href='#${data}'>
@@ -142,8 +151,15 @@ function () {
         }]
       });
     }
-  }, {
-    
+  },{
+    key: 'setbtnFloatedAdd',
+    value: function setbtnFloatedAdd(){
+      var self = this;
+      $('#btnFloatedAdd').on('click', function(e){
+        self.table.ajax.reload();
+      })
+    }
+  },{
     key: "searchRecords",
     value: function searchRecords() {
       var self = this;

@@ -24,7 +24,7 @@ function () {
       return $('#myTable').DataTable({
         dom: "<'text-muted'Bi>\n        <'table-responsive'tr>\n        <'mt-4'p>",
         buttons: ['copyHtml5', {
-          extend: 'print',
+          extend: 'print', 
           autoPrint: false
         }],
         language: {
@@ -36,96 +36,96 @@ function () {
         autoWidth: false,
         ajax: url_get,
         deferRender: true,
-        order: [1, 'asc'],
+        order: [21, 'desc'],
         columns: [
   				{
-					data: 'Id',
+					data: 'a170_Id',
 					className: 'col-checker align-middle',
 					orderable: false,
 					searchable: false
 				},
 				{
-					data: 'Reg',
+					data: 'a170_Reg',
 					className: 'align-middle',
 				},
 				{
-					data: 'NumItem',
+					data: 'a170_NumItem',
 					className: 'align-middle',
 				},
 				{
-					data: 'Reg0200EFDCId',
+					data: 'a170_Reg0200EFDCId',
 					className: 'align-middle',
 				},
 				{
-					data: 'DescricaoComplementar',
+					data: 'a170_DescricaoComplementar',
 					className: 'align-middle',
 				},
 				{
-					data: 'VlItem',
+					data: 'a170_VlItem',
 					className: 'align-middle',
 				},
 				{
-					data: 'VlDesconto',
+					data: 'a170_VlDesconto',
 					className: 'align-middle',
 				},
 				{
-					data: 'Ref431Id',
+					data: 'a170_Ref431Id',
 					className: 'align-middle',
 				},
 				{
-					data: 'IndicadorOrigemCredito',
+					data: 'a170_IndicadorOrigemCredito',
 					className: 'align-middle',
 				},
 				{
-					data: 'Ref433Id',
+					data: 'a170_Ref433Id',
 					className: 'align-middle',
 				},
 				{
-					data: 'VlBcPis',
+					data: 'a170_VlBcPis',
 					className: 'align-middle',
 				},
 				{
-					data: 'VlAliqPis',
+					data: 'a170_VlAliqPis',
 					className: 'align-middle',
 				},
 				{
-					data: 'VlPis',
+					data: 'a170_VlPis',
 					className: 'align-middle',
 				},
 				{
-					data: 'Ref434Id',
+					data: 'a170_Ref434Id',
 					className: 'align-middle',
 				},
 				{
-					data: 'VlBcCofins',
+					data: 'a170_VlBcCofins',
 					className: 'align-middle',
 				},
 				{
-					data: 'VlAliqCofins',
+					data: 'a170_VlAliqCofins',
 					className: 'align-middle',
 				},
 				{
-					data: 'VlCofins',
+					data: 'a170_VlCofins',
 					className: 'align-middle',
 				},
 				{
-					data: 'Reg0500EFDCId',
+					data: 'a170_Reg0500EFDCId',
 					className: 'align-middle',
 				},
 				{
-					data: 'Reg0600EFDCId',
+					data: 'a170_Reg0600EFDCId',
 					className: 'align-middle',
 				},
 				{
-					data: 'RegA100EFDCId',
+					data: 'a170_RegA100EFDCId',
 					className: 'align-middle',
 				},
 				{
-					data: 'UsersId',
+					data: 'a170_UsersId',
 					className: 'align-middle',
 				},
 				{
-					data: 'Id',
+					data: 'a170_Id',
 					className: 'align-middle text-right',
 					orderable: false,
 					searchable: false
@@ -133,10 +133,19 @@ function () {
 
         ],
         columnDefs: [{
-          targets: 22,
+          targets: 0,
           render: function render(data, type, row, meta) {
             return `
-            <a class='btn btn-sm btn-icon btn-secondary' href='#${data}'>
+            <div class='custom-control custom-control-nolabel custom-checkbox'>
+              <input type='checkbox' class='custom-control-input' name='selectedRow[]' id='p${row['a170_Id']}' value='${row['a170_Id']}'>
+              <label class='custom-control-label' for='p${row['a170_Id']}'></label>
+            </div>`;
+          }
+        },{
+          targets: 21,
+          render: function render(data, type, row, meta) {
+            return `
+            <a class='btn btn-sm btn-icon btn-secondary' href='${url_upd}/${data}'>
               <i class='fa fa-pencil-alt'></i>
             </a>
             <a class='btn btn-sm btn-icon btn-secondary' href='#${data}'>
@@ -146,8 +155,15 @@ function () {
         }]
       });
     }
-  }, {
-    
+  },{
+    key: 'setbtnFloatedAdd',
+    value: function setbtnFloatedAdd(){
+      var self = this;
+      $('#btnFloatedAdd').on('click', function(e){
+        self.table.ajax.reload();
+      })
+    }
+  },{
     key: "searchRecords",
     value: function searchRecords() {
       var self = this;

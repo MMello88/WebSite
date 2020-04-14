@@ -39,7 +39,7 @@
                 </ol>
               </nav><!-- /.breadcrumb -->
               <!-- floating action -->
-              <button type='button' class='btn btn-success btn-floated'><span class='fa fa-plus'></span></button> <!-- /floating action -->
+              <button type='button' class='btn btn-success btn-floated' onclick="window.location.href='<?= base_url('Pessoasjuridica/create') ?>'"><span class='fa fa-plus'></span></button> <!-- /floating action -->
             </header><!-- /.page-title-bar -->
             <!-- .page-section -->
             <div class='page-section'>
@@ -49,6 +49,14 @@
                 <div class='card-header d-md-flex align-items-md-start'>
                   <h1 class='page-title mr-sm-auto'> Pessoa Juridica </h1><!-- .btn-toolbar -->
                   <div id='dt-buttons' class='btn-toolbar'></div><!-- /.btn-toolbar -->
+                  <div class='dropdown'>
+                  <button type='button' class='btn btn-icon btn-light' data-toggle='dropdown'>
+                  <i class='fa fa-ellipsis-v'></i></button>
+                  <div class='dropdown-menu dropdown-menu-right'>
+                    <div class='dropdown-arrow'></div>
+                    <a href='#' class='dropdown-item' id='btnFloatedAdd'>Atualizar</a>
+                  </div>
+                </div>
                 </div><!-- /.card-header -->
                 <!-- .card-body -->
                 <div class='card-body'>
@@ -58,32 +66,31 @@
                     <div class='input-group input-group-alt'>
                       <!-- .input-group-prepend -->
                       <div class='input-group-prepend'>
-                        <select id='filterBy' class='custom-select'>
+                        <select id='filterBy' class='custom-select' style='width: 150px'>
                           <option value='' selected> Filtrar por </option>
-													<option value='0'> pj_Id </option>
-													<option value='1'> pj_Nome </option>
-													<option value='2'> pj_NomeFantasia </option>
-													<option value='3'> pj_Matriz </option>
-													<option value='4'> pj_Endereco </option>
-													<option value='5'> pj_Numero </option>
-													<option value='6'> pj_Complemento </option>
-													<option value='7'> pj_Bairro </option>
-													<option value='8'> pj_CEP </option>
-													<option value='9'> pj_Telefone </option>
-													<option value='10'> pj_Celular </option>
-													<option value='11'> pj_Email </option>
-													<option value='12'> pj_InscricaoEstadual </option>
-													<option value='13'> pj_Cnpj </option>
-													<option value='14'> pj_CNAE </option>
-													<option value='15'> pj_InscricaoMunicipal </option>
-													<option value='16'> pj_NrSuframa </option>
-													<option value='17'> pj_NaturezaJuridica </option>
-													<option value='18'> pj_NomeContato </option>
-													<option value='19'> pj_WebSite </option>
-													<option value='20'> pj_DmContribuicao </option>
-													<option value='21'> MunicipioId </option>
-													<option value='22'> PessoaFisicaId </option>
-													<option value='23'> pj_Ativo </option>
+													<option value='1'> Nome </option>
+													<option value='2'> Nome Fantasia </option>
+													<option value='3'> Matriz </option>
+													<option value='4'> Endereço </option>
+													<option value='5'> Numero </option>
+													<option value='6'> Complemento </option>
+													<option value='7'> Bairro </option>
+													<option value='8'> Cep </option>
+													<option value='9'> Telefone </option>
+													<option value='10'> Celular </option>
+													<option value='11'> E-mail </option>
+													<option value='12'> Inscrição Estadual </option>
+													<option value='13'> CNPJ </option>
+													<option value='14'> CNAE </option>
+													<option value='15'> Inscrição Municipal </option>
+													<option value='16'> Numero Suframa </option>
+													<option value='17'> Natureza Juridica </option>
+													<option value='18'> Nome do Contato </option>
+													<option value='19'> Web Site </option>
+													<option value='20'> Contribuinte </option>
+													<option value='21'> Municipio </option>
+													<option value='22'> Pessoa Fisica </option>
+													<option value='23'> Ativo </option>
 
                         </select>
                       </div><!-- /.input-group-prepend -->
@@ -104,7 +111,7 @@
                     <!-- thead -->
                     <thead>
                       <tr>
-                        <th colspan='2' style='min-width: 320px;'>
+                        <th>
                           <div class='thead-dd dropdown'>
                             <span class='custom-control custom-control-nolabel custom-checkbox'><input type='checkbox' class='custom-control-input' id='check-handle'> <label class='custom-control-label' for='check-handle'></label></span>
                             <div class='thead-btn' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
@@ -121,30 +128,30 @@
                             </div>
                           </div>
                         </th>
-													<th> pj_Nome </th>
-													<th> pj_NomeFantasia </th>
-													<th> pj_Matriz </th>
-													<th> pj_Endereco </th>
-													<th> pj_Numero </th>
-													<th> pj_Complemento </th>
-													<th> pj_Bairro </th>
-													<th> pj_CEP </th>
-													<th> pj_Telefone </th>
-													<th> pj_Celular </th>
-													<th> pj_Email </th>
-													<th> pj_InscricaoEstadual </th>
-													<th> pj_Cnpj </th>
-													<th> pj_CNAE </th>
-													<th> pj_InscricaoMunicipal </th>
-													<th> pj_NrSuframa </th>
-													<th> pj_NaturezaJuridica </th>
-													<th> pj_NomeContato </th>
-													<th> pj_WebSite </th>
-													<th> pj_DmContribuicao </th>
-													<th> MunicipioId </th>
-													<th> PessoaFisicaId </th>
-													<th> pj_Ativo </th>
-													<th style='width:100px; min-width:100px;'> &nbsp; </th>
+												<th> Nome </th>
+												<th> Nome Fantasia </th>
+												<th> Matriz </th>
+												<th> Endereço </th>
+												<th> Numero </th>
+												<th> Complemento </th>
+												<th> Bairro </th>
+												<th> Cep </th>
+												<th> Telefone </th>
+												<th> Celular </th>
+												<th> E-mail </th>
+												<th> Inscrição Estadual </th>
+												<th> CNPJ </th>
+												<th> CNAE </th>
+												<th> Inscrição Municipal </th>
+												<th> Numero Suframa </th>
+												<th> Natureza Juridica </th>
+												<th> Nome do Contato </th>
+												<th> Web Site </th>
+												<th> Contribuinte </th>
+												<th> Municipio </th>
+												<th> Pessoa Fisica </th>
+												<th> Ativo </th>
+												<th style='width:100px; min-width:100px;'> &nbsp; </th>
 
                       </tr>
                     </thead><!-- /thead -->
@@ -152,30 +159,30 @@
                     <tbody>
                       <!-- create empty row to passing html validator -->
                       <tr>
-													<td></td>
-													<td></td>
-													<td></td>
-													<td></td>
-													<td></td>
-													<td></td>
-													<td></td>
-													<td></td>
-													<td></td>
-													<td></td>
-													<td></td>
-													<td></td>
-													<td></td>
-													<td></td>
-													<td></td>
-													<td></td>
-													<td></td>
-													<td></td>
-													<td></td>
-													<td></td>
-													<td></td>
-													<td></td>
-													<td></td>
-													<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
 
                       </tr>
                     </tbody><!-- /tbody -->
@@ -194,4 +201,5 @@
     <title>Pessoa Juridica</title>
 <script>
 var url_get = '<?= base_url('pessoasjuridica/get'); ?>';
+var url_upd = '<?= base_url('pessoasjuridica/edit'); ?>';
 </script>

@@ -36,37 +36,37 @@
                 <div class="section-block">
                   <div class="card" id="floating-label">
                     <div class='card-body'>
-                      <?= form_open(base_url("users/update/{$response->data[0]->Id}")); ?>
+                      <?= form_open(base_url("users/update/{$response->data[0]->uu_Id}")); ?>
                         <fieldset>
-                          <input type='hidden' name='Criacao' value="<?= $response->data[0]->Criacao ?>">
-                          <input type='hidden' name='Ativo' value="<?= $response->data[0]->Ativo ?>">
+                          <input type='hidden' name='uu_Criacao' value="<?= $response->data[0]->uu_Criacao ?>">
+                          <input type='hidden' name='uu_Ativo' value="<?= $response->data[0]->uu_Ativo ?>">
                           <div class='form-group'>
-                            <label for='Nome'>Nome</label>
-                            <input type='text' id='Nome' class='form-control' placeholder='Nome' value="<?= $response->data[0]->Nome ?>" required disabled>
-                            <input type='hidden' name='Nome' value="<?= $response->data[0]->Nome ?>">
+                            <label for='uu_Nome'>Nome</label>
+                            <input type='text' id='uu_Nome' class='form-control' placeholder='Nome' value="<?= $response->data[0]->uu_Nome ?>" required disabled>
+                            <input type='hidden' name='uu_Nome' value="<?= $response->data[0]->uu_Nome ?>">
                           </div>
                           <div class='form-group'>
-                            <label for='Sobrenome'>Sobrenome</label>
-                            <input type='text' name='Sobrenome' id='Sobrenome' class='form-control' placeholder='Sobrenome' value="<?= $response->data[0]->Sobrenome ?>" >
+                            <label for='uu_Sobrenome'>Sobrenome</label>
+                            <input type='text' name='uu_Sobrenome' id='uu_Sobrenome' class='form-control' placeholder='Sobrenome' value="<?= $response->data[0]->uu_Sobrenome ?>" >
                             <?php if(isset($response)): ?>
-                              <div class="invalid-feedback" style="display:block"><?= isset($response->error->Sobrenome) ? $response->error->Sobrenome : ""; ?></div>
+                              <div class="invalid-feedback" style="display:block"><?= isset($response->error->uu_Sobrenome) ? $response->error->uu_Sobrenome : ""; ?></div>
                             <?php endif; ?>
                           </div>
                           <div class='form-group'>
-                            <label for='DataNascimento'>Data Nascimento</label>
-                            <input type='date' name='DataNascimento' id='DataNascimento' class='form-control' value="<?= $response->data[0]->DataNascimento ?>" placeholder='Data Nascimento' required>
+                            <label for='uu_DataNascimento'>Data Nascimento</label>
+                            <input type='date' name='uu_DataNascimento' id='uu_DataNascimento' class='form-control' value="<?= $response->data[0]->uu_DataNascimento ?>" placeholder='Data Nascimento' required>
                             <?php if(isset($response)): ?>
-                              <div class="invalid-feedback" style="display:block"><?= isset($response->error->DataNascimento) ? $response->error->DataNascimento : ""; ?></div>
+                              <div class="invalid-feedback" style="display:block"><?= isset($response->error->uu_DataNascimento) ? $response->error->uu_DataNascimento : ""; ?></div>
                             <?php endif; ?>
                           </div>
                           <div class='form-group'>
-                            <label for='UrlFoto'>Foto</label>
-                            <input type='text' name='UrlFoto' id='UrlFoto' class='form-control' value="<?= $response->data[0]->UrlFoto ?>" placeholder='Foto' >
+                            <label for='uu_UrlFoto'>Foto</label>
+                            <input type='text' name='uu_UrlFoto' id='uu_UrlFoto' class='form-control' value="<?= $response->data[0]->uu_UrlFoto ?>" placeholder='Foto' >
                           </div>
                           <div class='form-group'>
-                            <label for='Email'>E-mail</label>
-                            <input type='text' id='Email' class='form-control' value="<?= $response->data[0]->Email ?>" placeholder='E-mail' required disabled>
-                            <input type='hidden' name='Email' value="<?= $response->data[0]->Email ?>">
+                            <label for='uu_Email'>E-mail</label>
+                            <input type='text' id='uu_Email' class='form-control' value="<?= $response->data[0]->uu_Email ?>" placeholder='E-mail' required disabled>
+                            <input type='hidden' name='uu_Email' value="<?= $response->data[0]->uu_Email ?>">
                           </div>
                           <div class='form-actions'>
                             <button class='btn btn-primary mr-auto' type='submit'>Salvar</button>
@@ -91,18 +91,18 @@
                 <div class="section-block">
                   <div class="card" id="floating-label">
                     <div class='card-body'>
-                      <?= form_open(base_url("users/password/{$response->data[0]->Id}")); ?>
+                      <?= form_open(base_url("users/password/{$response->data[0]->uu_Id}")); ?>
                         <fieldset>
                           <div class='form-group'>
                             <label for='uu_Senha'>Nova Senha</label>
-                            <input type='text' name='uu_Senha' id='uu_Senha' class='form-control' placeholder='Senha' required>
+                            <input type='password' name='uu_Senha' id='uu_Senha' class='form-control' placeholder='Senha' value="<?php echo set_value('uu_Senha'); ?>" required>
                             <?php if(isset($response)): ?>
                               <div class='invalid-feedback' style='display:block'><?= isset($response->error->uu_Senha) ? $response->error->uu_Senha : ''; ?></div>
                             <?php endif; ?>
                           </div>
                           <div class='form-group'>
                             <label for='uu_SenhaConf'>Repetir a Senha</label>
-                            <input type='text' name='uu_SenhaConf' id='uu_SenhaConf' class='form-control' placeholder='Repetir a Senha' required>
+                            <input type='password' name='uu_SenhaConf' id='uu_SenhaConf' class='form-control' placeholder='Repetir a Senha' value="<?php echo set_value('uu_SenhaConf'); ?>" required>
                             <?php if(isset($response)): ?>
                               <div class='invalid-feedback' style='display:block'><?= isset($response->error->uu_SenhaConf) ? $response->error->uu_SenhaConf : ''; ?></div>
                             <?php endif; ?>

@@ -20,7 +20,7 @@ class MY_Controller extends CI_Controller {
     if(empty($this->data["login"]->data->PerfisId) && $this->router->class <> "perfis"){
       redirect("perfis");
     }
-    
+
     if(!empty($this->data['login']->data->PerfisId)){
       $PerfisId = $this->data['login']->data->PerfisId;
       $this->data['menus'] = $this->SendGet("api/Menus/getPerfilMenu/{$PerfisId}", $this->data['login']->data->token)->data;
@@ -31,7 +31,7 @@ class MY_Controller extends CI_Controller {
     return $this->config->item('base_api') . $url;
   }
 
-  protected function sendPost($url, $token, $data){
+  protected function sendPost($url, $token, $data, $toArray = FALSE){
     $url = $this->base_api($url);
     if($this->isOn){
       $curl = curl_init($url);
@@ -45,7 +45,7 @@ class MY_Controller extends CI_Controller {
       $response = curl_exec($curl);
       curl_close($curl);
 
-      return json_decode($response);    
+      return json_decode($response, $toArray);    
     } else {
       return ["status" => "FALSE", "error" => ["message" => "Por favor realizar Login na aplicação."]];
     }
@@ -71,7 +71,7 @@ class MY_Controller extends CI_Controller {
     }
   }
 
-  protected function sendGet($url, $token){
+  protected function sendGet($url, $token, $toArray = FALSE){
     $url = $this->base_api($url);
     if($this->isOn){
       $base_api = $this->base_api();
@@ -83,7 +83,7 @@ class MY_Controller extends CI_Controller {
       $response = curl_exec($curl);
       curl_close($curl);
 
-      return json_decode($response);
+      return json_decode($response, $toArray);
     } else {
       return ["status" => "FALSE", "error" => ["message" => "Por favor realizar Login na aplicação."]];
     }

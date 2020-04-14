@@ -24,7 +24,7 @@ function () {
       return $('#myTable').DataTable({
         dom: "<'text-muted'Bi>\n        <'table-responsive'tr>\n        <'mt-4'p>",
         buttons: ['copyHtml5', {
-          extend: 'print',
+          extend: 'print', 
           autoPrint: false
         }],
         language: {
@@ -36,7 +36,7 @@ function () {
         autoWidth: false,
         ajax: url_get,
         deferRender: true,
-        order: [1, 'asc'],
+        order: [3, 'desc'],
         columns: [
   				{
 					data: 'pm_Id',
@@ -45,11 +45,11 @@ function () {
 					searchable: false
 				},
 				{
-					data: 'MenusId',
+					data: 'pm_MenusId',
 					className: 'align-middle',
 				},
 				{
-					data: 'PerfisId',
+					data: 'pm_PerfisId',
 					className: 'align-middle',
 				},
 				{
@@ -61,10 +61,19 @@ function () {
 
         ],
         columnDefs: [{
-          targets: 4,
+          targets: 0,
           render: function render(data, type, row, meta) {
             return `
-            <a class='btn btn-sm btn-icon btn-secondary' href='#${data}'>
+            <div class='custom-control custom-control-nolabel custom-checkbox'>
+              <input type='checkbox' class='custom-control-input' name='selectedRow[]' id='p${row['pm_Id']}' value='${row['pm_Id']}'>
+              <label class='custom-control-label' for='p${row['pm_Id']}'></label>
+            </div>`;
+          }
+        },{
+          targets: 3,
+          render: function render(data, type, row, meta) {
+            return `
+            <a class='btn btn-sm btn-icon btn-secondary' href='${url_upd}/${data}'>
               <i class='fa fa-pencil-alt'></i>
             </a>
             <a class='btn btn-sm btn-icon btn-secondary' href='#${data}'>
@@ -74,8 +83,15 @@ function () {
         }]
       });
     }
-  }, {
-    
+  },{
+    key: 'setbtnFloatedAdd',
+    value: function setbtnFloatedAdd(){
+      var self = this;
+      $('#btnFloatedAdd').on('click', function(e){
+        self.table.ajax.reload();
+      })
+    }
+  },{
     key: "searchRecords",
     value: function searchRecords() {
       var self = this;

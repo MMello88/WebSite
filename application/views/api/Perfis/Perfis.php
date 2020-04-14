@@ -39,7 +39,7 @@
                 </ol>
               </nav><!-- /.breadcrumb -->
               <!-- floating action -->
-              <button type='button' class='btn btn-success btn-floated'><span class='fa fa-plus'></span></button> <!-- /floating action -->
+              <button type='button' class='btn btn-success btn-floated' onclick="window.location.href='<?= base_url('Perfis/create') ?>'"><span class='fa fa-plus'></span></button> <!-- /floating action -->
             </header><!-- /.page-title-bar -->
             <!-- .page-section -->
             <div class='page-section'>
@@ -49,6 +49,14 @@
                 <div class='card-header d-md-flex align-items-md-start'>
                   <h1 class='page-title mr-sm-auto'> Perfil </h1><!-- .btn-toolbar -->
                   <div id='dt-buttons' class='btn-toolbar'></div><!-- /.btn-toolbar -->
+                  <div class='dropdown'>
+                  <button type='button' class='btn btn-icon btn-light' data-toggle='dropdown'>
+                  <i class='fa fa-ellipsis-v'></i></button>
+                  <div class='dropdown-menu dropdown-menu-right'>
+                    <div class='dropdown-arrow'></div>
+                    <a href='#' class='dropdown-item' id='btnFloatedAdd'>Atualizar</a>
+                  </div>
+                </div>
                 </div><!-- /.card-header -->
                 <!-- .card-body -->
                 <div class='card-body'>
@@ -58,14 +66,13 @@
                     <div class='input-group input-group-alt'>
                       <!-- .input-group-prepend -->
                       <div class='input-group-prepend'>
-                        <select id='filterBy' class='custom-select'>
+                        <select id='filterBy' class='custom-select' style='width: 150px'>
                           <option value='' selected> Filtrar por </option>
-													<option value='0'> ps_Id </option>
-													<option value='1'> ps_Nome </option>
-													<option value='2'> ps_Ativo </option>
-													<option value='3'> ps_Descricao </option>
-													<option value='4'> ps_tag </option>
-													<option value='5'> ps_Imagem </option>
+													<option value='1'> Nome do Perfil </option>
+													<option value='2'> Ativo </option>
+													<option value='3'> Descrição </option>
+													<option value='4'> Tags do Perfil </option>
+													<option value='5'> Imagem </option>
 
                         </select>
                       </div><!-- /.input-group-prepend -->
@@ -86,7 +93,7 @@
                     <!-- thead -->
                     <thead>
                       <tr>
-                        <th colspan='2' style='min-width: 320px;'>
+                        <th>
                           <div class='thead-dd dropdown'>
                             <span class='custom-control custom-control-nolabel custom-checkbox'><input type='checkbox' class='custom-control-input' id='check-handle'> <label class='custom-control-label' for='check-handle'></label></span>
                             <div class='thead-btn' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
@@ -103,12 +110,12 @@
                             </div>
                           </div>
                         </th>
-													<th> ps_Nome </th>
-													<th> ps_Ativo </th>
-													<th> ps_Descricao </th>
-													<th> ps_tag </th>
-													<th> ps_Imagem </th>
-													<th style='width:100px; min-width:100px;'> &nbsp; </th>
+												<th> Nome do Perfil </th>
+												<th> Ativo </th>
+												<th> Descrição </th>
+												<th> Tags do Perfil </th>
+												<th> Imagem </th>
+												<th style='width:100px; min-width:100px;'> &nbsp; </th>
 
                       </tr>
                     </thead><!-- /thead -->
@@ -116,12 +123,12 @@
                     <tbody>
                       <!-- create empty row to passing html validator -->
                       <tr>
-													<td></td>
-													<td></td>
-													<td></td>
-													<td></td>
-													<td></td>
-													<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
 
                       </tr>
                     </tbody><!-- /tbody -->
@@ -140,4 +147,5 @@
     <title>Perfil</title>
 <script>
 var url_get = '<?= base_url('perfis/get'); ?>';
+var url_upd = '<?= base_url('perfis/edit'); ?>';
 </script>

@@ -39,7 +39,7 @@
                 </ol>
               </nav><!-- /.breadcrumb -->
               <!-- floating action -->
-              <button type='button' class='btn btn-success btn-floated'><span class='fa fa-plus'></span></button> <!-- /floating action -->
+              <button type='button' class='btn btn-success btn-floated' onclick="window.location.href='<?= base_url('Regs0100efdc/create') ?>'"><span class='fa fa-plus'></span></button> <!-- /floating action -->
             </header><!-- /.page-title-bar -->
             <!-- .page-section -->
             <div class='page-section'>
@@ -49,6 +49,14 @@
                 <div class='card-header d-md-flex align-items-md-start'>
                   <h1 class='page-title mr-sm-auto'> Dados do Contabilista </h1><!-- .btn-toolbar -->
                   <div id='dt-buttons' class='btn-toolbar'></div><!-- /.btn-toolbar -->
+                  <div class='dropdown'>
+                  <button type='button' class='btn btn-icon btn-light' data-toggle='dropdown'>
+                  <i class='fa fa-ellipsis-v'></i></button>
+                  <div class='dropdown-menu dropdown-menu-right'>
+                    <div class='dropdown-arrow'></div>
+                    <a href='#' class='dropdown-item' id='btnFloatedAdd'>Atualizar</a>
+                  </div>
+                </div>
                 </div><!-- /.card-header -->
                 <!-- .card-body -->
                 <div class='card-body'>
@@ -58,27 +66,26 @@
                     <div class='input-group input-group-alt'>
                       <!-- .input-group-prepend -->
                       <div class='input-group-prepend'>
-                        <select id='filterBy' class='custom-select'>
+                        <select id='filterBy' class='custom-select' style='width: 150px'>
                           <option value='' selected> Filtrar por </option>
-													<option value='0'> 0100_Id </option>
-													<option value='1'> 0100_Reg </option>
-													<option value='2'> 0100_Nome </option>
-													<option value='3'> 0100_CPF </option>
-													<option value='4'> 0100_CRC </option>
-													<option value='5'> 0100_CNPJ </option>
-													<option value='6'> 0100_CEP </option>
-													<option value='7'> 0100_End </option>
-													<option value='8'> 0100_Num </option>
-													<option value='9'> 0100_Compl </option>
-													<option value='10'> 0100_Bairro </option>
-													<option value='11'> 0100_Fone </option>
-													<option value='12'> 0100_Fax </option>
-													<option value='13'> 0100_Email </option>
-													<option value='14'> MunicipioId </option>
-													<option value='15'> 0100_DtIni </option>
-													<option value='16'> 0100_DtFin </option>
-													<option value='17'> PessoaJuridicaId </option>
-													<option value='18'> UsersId </option>
+													<option value='1'> Registro </option>
+													<option value='2'> Nome </option>
+													<option value='3'> CPF </option>
+													<option value='4'> CRC </option>
+													<option value='5'> CNPJ </option>
+													<option value='6'> CEP </option>
+													<option value='7'> Endereço </option>
+													<option value='8'> Número </option>
+													<option value='9'> Complemento </option>
+													<option value='10'> Bairro </option>
+													<option value='11'> Fone </option>
+													<option value='12'> Fax </option>
+													<option value='13'> E-mail </option>
+													<option value='14'> Municipio </option>
+													<option value='15'> Data Inicial </option>
+													<option value='16'> Data Final </option>
+													<option value='17'> Pessoa Juridica </option>
+													<option value='18'> Usuário </option>
 
                         </select>
                       </div><!-- /.input-group-prepend -->
@@ -99,7 +106,7 @@
                     <!-- thead -->
                     <thead>
                       <tr>
-                        <th colspan='2' style='min-width: 320px;'>
+                        <th>
                           <div class='thead-dd dropdown'>
                             <span class='custom-control custom-control-nolabel custom-checkbox'><input type='checkbox' class='custom-control-input' id='check-handle'> <label class='custom-control-label' for='check-handle'></label></span>
                             <div class='thead-btn' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
@@ -116,25 +123,25 @@
                             </div>
                           </div>
                         </th>
-													<th> 0100_Reg </th>
-													<th> 0100_Nome </th>
-													<th> 0100_CPF </th>
-													<th> 0100_CRC </th>
-													<th> 0100_CNPJ </th>
-													<th> 0100_CEP </th>
-													<th> 0100_End </th>
-													<th> 0100_Num </th>
-													<th> 0100_Compl </th>
-													<th> 0100_Bairro </th>
-													<th> 0100_Fone </th>
-													<th> 0100_Fax </th>
-													<th> 0100_Email </th>
-													<th> MunicipioId </th>
-													<th> 0100_DtIni </th>
-													<th> 0100_DtFin </th>
-													<th> PessoaJuridicaId </th>
-													<th> UsersId </th>
-													<th style='width:100px; min-width:100px;'> &nbsp; </th>
+												<th> Registro </th>
+												<th> Nome </th>
+												<th> CPF </th>
+												<th> CRC </th>
+												<th> CNPJ </th>
+												<th> CEP </th>
+												<th> Endereço </th>
+												<th> Número </th>
+												<th> Complemento </th>
+												<th> Bairro </th>
+												<th> Fone </th>
+												<th> Fax </th>
+												<th> E-mail </th>
+												<th> Municipio </th>
+												<th> Data Inicial </th>
+												<th> Data Final </th>
+												<th> Pessoa Juridica </th>
+												<th> Usuário </th>
+												<th style='width:100px; min-width:100px;'> &nbsp; </th>
 
                       </tr>
                     </thead><!-- /thead -->
@@ -142,25 +149,25 @@
                     <tbody>
                       <!-- create empty row to passing html validator -->
                       <tr>
-													<td></td>
-													<td></td>
-													<td></td>
-													<td></td>
-													<td></td>
-													<td></td>
-													<td></td>
-													<td></td>
-													<td></td>
-													<td></td>
-													<td></td>
-													<td></td>
-													<td></td>
-													<td></td>
-													<td></td>
-													<td></td>
-													<td></td>
-													<td></td>
-													<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
 
                       </tr>
                     </tbody><!-- /tbody -->
@@ -179,4 +186,5 @@
     <title>Dados do Contabilista</title>
 <script>
 var url_get = '<?= base_url('regs0100efdc/get'); ?>';
+var url_upd = '<?= base_url('regs0100efdc/edit'); ?>';
 </script>

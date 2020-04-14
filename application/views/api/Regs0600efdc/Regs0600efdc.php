@@ -39,7 +39,7 @@
                 </ol>
               </nav><!-- /.breadcrumb -->
               <!-- floating action -->
-              <button type='button' class='btn btn-success btn-floated'><span class='fa fa-plus'></span></button> <!-- /floating action -->
+              <button type='button' class='btn btn-success btn-floated' onclick="window.location.href='<?= base_url('Regs0600efdc/create') ?>'"><span class='fa fa-plus'></span></button> <!-- /floating action -->
             </header><!-- /.page-title-bar -->
             <!-- .page-section -->
             <div class='page-section'>
@@ -49,6 +49,14 @@
                 <div class='card-header d-md-flex align-items-md-start'>
                   <h1 class='page-title mr-sm-auto'> Centro de Custos </h1><!-- .btn-toolbar -->
                   <div id='dt-buttons' class='btn-toolbar'></div><!-- /.btn-toolbar -->
+                  <div class='dropdown'>
+                  <button type='button' class='btn btn-icon btn-light' data-toggle='dropdown'>
+                  <i class='fa fa-ellipsis-v'></i></button>
+                  <div class='dropdown-menu dropdown-menu-right'>
+                    <div class='dropdown-arrow'></div>
+                    <a href='#' class='dropdown-item' id='btnFloatedAdd'>Atualizar</a>
+                  </div>
+                </div>
                 </div><!-- /.card-header -->
                 <!-- .card-body -->
                 <div class='card-body'>
@@ -58,17 +66,16 @@
                     <div class='input-group input-group-alt'>
                       <!-- .input-group-prepend -->
                       <div class='input-group-prepend'>
-                        <select id='filterBy' class='custom-select'>
+                        <select id='filterBy' class='custom-select' style='width: 150px'>
                           <option value='' selected> Filtrar por </option>
-													<option value='0'> 0600_Id </option>
-													<option value='1'> 0600_Reg </option>
-													<option value='2'> 0600_DtAlteracao </option>
-													<option value='3'> 0600_CodCCusto </option>
-													<option value='4'> 0600_NomeCCusto </option>
-													<option value='5'> 0600_DtIni </option>
-													<option value='6'> 0600_DtFin </option>
-													<option value='7'> PessoaJuridicaId </option>
-													<option value='8'> UsersId </option>
+													<option value='1'> Registro </option>
+													<option value='2'> Data Alteração </option>
+													<option value='3'> Código </option>
+													<option value='4'> Nome </option>
+													<option value='5'> Data Inicial </option>
+													<option value='6'> Data Final </option>
+													<option value='7'> Pessoa Juridica </option>
+													<option value='8'> Usuário </option>
 
                         </select>
                       </div><!-- /.input-group-prepend -->
@@ -89,7 +96,7 @@
                     <!-- thead -->
                     <thead>
                       <tr>
-                        <th colspan='2' style='min-width: 320px;'>
+                        <th>
                           <div class='thead-dd dropdown'>
                             <span class='custom-control custom-control-nolabel custom-checkbox'><input type='checkbox' class='custom-control-input' id='check-handle'> <label class='custom-control-label' for='check-handle'></label></span>
                             <div class='thead-btn' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
@@ -106,15 +113,15 @@
                             </div>
                           </div>
                         </th>
-													<th> 0600_Reg </th>
-													<th> 0600_DtAlteracao </th>
-													<th> 0600_CodCCusto </th>
-													<th> 0600_NomeCCusto </th>
-													<th> 0600_DtIni </th>
-													<th> 0600_DtFin </th>
-													<th> PessoaJuridicaId </th>
-													<th> UsersId </th>
-													<th style='width:100px; min-width:100px;'> &nbsp; </th>
+												<th> Registro </th>
+												<th> Data Alteração </th>
+												<th> Código </th>
+												<th> Nome </th>
+												<th> Data Inicial </th>
+												<th> Data Final </th>
+												<th> Pessoa Juridica </th>
+												<th> Usuário </th>
+												<th style='width:100px; min-width:100px;'> &nbsp; </th>
 
                       </tr>
                     </thead><!-- /thead -->
@@ -122,15 +129,15 @@
                     <tbody>
                       <!-- create empty row to passing html validator -->
                       <tr>
-													<td></td>
-													<td></td>
-													<td></td>
-													<td></td>
-													<td></td>
-													<td></td>
-													<td></td>
-													<td></td>
-													<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
 
                       </tr>
                     </tbody><!-- /tbody -->
@@ -149,4 +156,5 @@
     <title>Centro de Custos</title>
 <script>
 var url_get = '<?= base_url('regs0600efdc/get'); ?>';
+var url_upd = '<?= base_url('regs0600efdc/edit'); ?>';
 </script>

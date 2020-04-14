@@ -39,7 +39,7 @@
                 </ol>
               </nav><!-- /.breadcrumb -->
               <!-- floating action -->
-              <button type='button' class='btn btn-success btn-floated'><span class='fa fa-plus'></span></button> <!-- /floating action -->
+              <button type='button' class='btn btn-success btn-floated' onclick="window.location.href='<?= base_url('Ref436/create') ?>'"><span class='fa fa-plus'></span></button> <!-- /floating action -->
             </header><!-- /.page-title-bar -->
             <!-- .page-section -->
             <div class='page-section'>
@@ -49,6 +49,14 @@
                 <div class='card-header d-md-flex align-items-md-start'>
                   <h1 class='page-title mr-sm-auto'> Código de Tipo de Crédito </h1><!-- .btn-toolbar -->
                   <div id='dt-buttons' class='btn-toolbar'></div><!-- /.btn-toolbar -->
+                  <div class='dropdown'>
+                  <button type='button' class='btn btn-icon btn-light' data-toggle='dropdown'>
+                  <i class='fa fa-ellipsis-v'></i></button>
+                  <div class='dropdown-menu dropdown-menu-right'>
+                    <div class='dropdown-arrow'></div>
+                    <a href='#' class='dropdown-item' id='btnFloatedAdd'>Atualizar</a>
+                  </div>
+                </div>
                 </div><!-- /.card-header -->
                 <!-- .card-body -->
                 <div class='card-body'>
@@ -58,13 +66,12 @@
                     <div class='input-group input-group-alt'>
                       <!-- .input-group-prepend -->
                       <div class='input-group-prepend'>
-                        <select id='filterBy' class='custom-select'>
+                        <select id='filterBy' class='custom-select' style='width: 150px'>
                           <option value='' selected> Filtrar por </option>
-													<option value='0'> 436_Id </option>
-													<option value='1'> 436_Codigo </option>
-													<option value='2'> 436_Descricao </option>
-													<option value='3'> 436_DtIni </option>
-													<option value='4'> 436_DtFin </option>
+													<option value='1'> Código </option>
+													<option value='2'> Descrição </option>
+													<option value='3'> Data Inicial </option>
+													<option value='4'> Data Final </option>
 
                         </select>
                       </div><!-- /.input-group-prepend -->
@@ -85,7 +92,7 @@
                     <!-- thead -->
                     <thead>
                       <tr>
-                        <th colspan='2' style='min-width: 320px;'>
+                        <th>
                           <div class='thead-dd dropdown'>
                             <span class='custom-control custom-control-nolabel custom-checkbox'><input type='checkbox' class='custom-control-input' id='check-handle'> <label class='custom-control-label' for='check-handle'></label></span>
                             <div class='thead-btn' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
@@ -102,11 +109,11 @@
                             </div>
                           </div>
                         </th>
-													<th> 436_Codigo </th>
-													<th> 436_Descricao </th>
-													<th> 436_DtIni </th>
-													<th> 436_DtFin </th>
-													<th style='width:100px; min-width:100px;'> &nbsp; </th>
+												<th> Código </th>
+												<th> Descrição </th>
+												<th> Data Inicial </th>
+												<th> Data Final </th>
+												<th style='width:100px; min-width:100px;'> &nbsp; </th>
 
                       </tr>
                     </thead><!-- /thead -->
@@ -114,11 +121,11 @@
                     <tbody>
                       <!-- create empty row to passing html validator -->
                       <tr>
-													<td></td>
-													<td></td>
-													<td></td>
-													<td></td>
-													<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
 
                       </tr>
                     </tbody><!-- /tbody -->
@@ -137,4 +144,5 @@
     <title>Código de Tipo de Crédito</title>
 <script>
 var url_get = '<?= base_url('ref436/get'); ?>';
+var url_upd = '<?= base_url('ref436/edit'); ?>';
 </script>

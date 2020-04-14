@@ -39,7 +39,7 @@
                 </ol>
               </nav><!-- /.breadcrumb -->
               <!-- floating action -->
-              <button type='button' class='btn btn-success btn-floated'><span class='fa fa-plus'></span></button> <!-- /floating action -->
+              <button type='button' class='btn btn-success btn-floated' onclick="window.location.href='<?= base_url('Regsa120efdc/create') ?>'"><span class='fa fa-plus'></span></button> <!-- /floating action -->
             </header><!-- /.page-title-bar -->
             <!-- .page-section -->
             <div class='page-section'>
@@ -49,6 +49,14 @@
                 <div class='card-header d-md-flex align-items-md-start'>
                   <h1 class='page-title mr-sm-auto'> Informação Complementar - Operações de Importação </h1><!-- .btn-toolbar -->
                   <div id='dt-buttons' class='btn-toolbar'></div><!-- /.btn-toolbar -->
+                  <div class='dropdown'>
+                  <button type='button' class='btn btn-icon btn-light' data-toggle='dropdown'>
+                  <i class='fa fa-ellipsis-v'></i></button>
+                  <div class='dropdown-menu dropdown-menu-right'>
+                    <div class='dropdown-arrow'></div>
+                    <a href='#' class='dropdown-item' id='btnFloatedAdd'>Atualizar</a>
+                  </div>
+                </div>
                 </div><!-- /.card-header -->
                 <!-- .card-body -->
                 <div class='card-body'>
@@ -58,20 +66,19 @@
                     <div class='input-group input-group-alt'>
                       <!-- .input-group-prepend -->
                       <div class='input-group-prepend'>
-                        <select id='filterBy' class='custom-select'>
+                        <select id='filterBy' class='custom-select' style='width: 150px'>
                           <option value='' selected> Filtrar por </option>
-													<option value='0'> a120_Id </option>
-													<option value='1'> a120_Reg </option>
-													<option value='2'> a120_VlTotalServico </option>
-													<option value='3'> a120_VlBcPis </option>
-													<option value='4'> a120_VlPisImportacao </option>
-													<option value='5'> a120_DtPgtoPisImportacao </option>
-													<option value='6'> a120_VlBcCofins </option>
-													<option value='7'> a120_VlCofinsImportacao </option>
-													<option value='8'> a120_DtPgtoCofinsImportacao </option>
-													<option value='9'> a120_IndicadorLocalExecucaoServico </option>
-													<option value='10'> RegA100EFDCId </option>
-													<option value='11'> UsersId </option>
+													<option value='1'> Registro </option>
+													<option value='2'> Valor Total do Serviço </option>
+													<option value='3'> Valor BC PIS </option>
+													<option value='4'> Valor Pago PIS </option>
+													<option value='5'> Data Pgto PIS </option>
+													<option value='6'> Valor BC COFINS </option>
+													<option value='7'> Valor Pago COFINS </option>
+													<option value='8'> Data do Pgto COFINS </option>
+													<option value='9'> Local da execução do serviço </option>
+													<option value='10'> Documento - Nota Fiscal de Serviço </option>
+													<option value='11'> Usuário </option>
 
                         </select>
                       </div><!-- /.input-group-prepend -->
@@ -92,7 +99,7 @@
                     <!-- thead -->
                     <thead>
                       <tr>
-                        <th colspan='2' style='min-width: 320px;'>
+                        <th>
                           <div class='thead-dd dropdown'>
                             <span class='custom-control custom-control-nolabel custom-checkbox'><input type='checkbox' class='custom-control-input' id='check-handle'> <label class='custom-control-label' for='check-handle'></label></span>
                             <div class='thead-btn' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
@@ -109,18 +116,18 @@
                             </div>
                           </div>
                         </th>
-													<th> a120_Reg </th>
-													<th> a120_VlTotalServico </th>
-													<th> a120_VlBcPis </th>
-													<th> a120_VlPisImportacao </th>
-													<th> a120_DtPgtoPisImportacao </th>
-													<th> a120_VlBcCofins </th>
-													<th> a120_VlCofinsImportacao </th>
-													<th> a120_DtPgtoCofinsImportacao </th>
-													<th> a120_IndicadorLocalExecucaoServico </th>
-													<th> RegA100EFDCId </th>
-													<th> UsersId </th>
-													<th style='width:100px; min-width:100px;'> &nbsp; </th>
+												<th> Registro </th>
+												<th> Valor Total do Serviço </th>
+												<th> Valor BC PIS </th>
+												<th> Valor Pago PIS </th>
+												<th> Data Pgto PIS </th>
+												<th> Valor BC COFINS </th>
+												<th> Valor Pago COFINS </th>
+												<th> Data do Pgto COFINS </th>
+												<th> Local da execução do serviço </th>
+												<th> Documento - Nota Fiscal de Serviço </th>
+												<th> Usuário </th>
+												<th style='width:100px; min-width:100px;'> &nbsp; </th>
 
                       </tr>
                     </thead><!-- /thead -->
@@ -128,18 +135,18 @@
                     <tbody>
                       <!-- create empty row to passing html validator -->
                       <tr>
-													<td></td>
-													<td></td>
-													<td></td>
-													<td></td>
-													<td></td>
-													<td></td>
-													<td></td>
-													<td></td>
-													<td></td>
-													<td></td>
-													<td></td>
-													<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
 
                       </tr>
                     </tbody><!-- /tbody -->
@@ -158,4 +165,5 @@
     <title>Informação Complementar - Operações de Importação</title>
 <script>
 var url_get = '<?= base_url('regsa120efdc/get'); ?>';
+var url_upd = '<?= base_url('regsa120efdc/edit'); ?>';
 </script>

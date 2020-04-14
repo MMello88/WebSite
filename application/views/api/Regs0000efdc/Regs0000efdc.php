@@ -39,7 +39,7 @@
                 </ol>
               </nav><!-- /.breadcrumb -->
               <!-- floating action -->
-              <button type='button' class='btn btn-success btn-floated'><span class='fa fa-plus'></span></button> <!-- /floating action -->
+              <button type='button' class='btn btn-success btn-floated' onclick="window.location.href='<?= base_url('Regs0000efdc/create') ?>'"><span class='fa fa-plus'></span></button> <!-- /floating action -->
             </header><!-- /.page-title-bar -->
             <!-- .page-section -->
             <div class='page-section'>
@@ -49,6 +49,14 @@
                 <div class='card-header d-md-flex align-items-md-start'>
                   <h1 class='page-title mr-sm-auto'> Abertura do Arquivo Digital e Identificação da Pessoa Jurídica </h1><!-- .btn-toolbar -->
                   <div id='dt-buttons' class='btn-toolbar'></div><!-- /.btn-toolbar -->
+                  <div class='dropdown'>
+                  <button type='button' class='btn btn-icon btn-light' data-toggle='dropdown'>
+                  <i class='fa fa-ellipsis-v'></i></button>
+                  <div class='dropdown-menu dropdown-menu-right'>
+                    <div class='dropdown-arrow'></div>
+                    <a href='#' class='dropdown-item' id='btnFloatedAdd'>Atualizar</a>
+                  </div>
+                </div>
                 </div><!-- /.card-header -->
                 <!-- .card-body -->
                 <div class='card-body'>
@@ -58,22 +66,21 @@
                     <div class='input-group input-group-alt'>
                       <!-- .input-group-prepend -->
                       <div class='input-group-prepend'>
-                        <select id='filterBy' class='custom-select'>
+                        <select id='filterBy' class='custom-select' style='width: 150px'>
                           <option value='' selected> Filtrar por </option>
-													<option value='0'> 0000_Id </option>
-													<option value='1'> 0000_Reg </option>
-													<option value='2'> Ref311Id </option>
-													<option value='3'> 0000_TipoEscrit </option>
-													<option value='4'> 0000_IndSitEsp </option>
-													<option value='5'> 0000_NumRecAnterior </option>
-													<option value='6'> 0000_DtIni </option>
-													<option value='7'> 0000_DtFin </option>
-													<option value='8'> 0000_IndNatPj </option>
-													<option value='9'> 0000_IndAtiv </option>
-													<option value='10'> PessoaJuridicaId </option>
-													<option value='11'> UsersId </option>
-													<option value='12'> Reg0001EFDCId </option>
-													<option value='13'> Regs0110EFDCId </option>
+													<option value='1'> Registro </option>
+													<option value='2'> Código Versão Leiaute </option>
+													<option value='3'> Tipo Escrituração </option>
+													<option value='4'> Indicador Situação Especial </option>
+													<option value='5'> Número Recibo Escrituração Anterior </option>
+													<option value='6'> Data Inicial </option>
+													<option value='7'> Data Final </option>
+													<option value='8'> Indicador da Natureza </option>
+													<option value='9'> Indicador Tipo Atividade Preponderante </option>
+													<option value='10'> Pessoa Juridica </option>
+													<option value='11'> Usuário </option>
+													<option value='12'> Abertura Bloco 0 </option>
+													<option value='13'> Regimes de Apuração da Contribuição Social e de Apropriação de Crédito </option>
 
                         </select>
                       </div><!-- /.input-group-prepend -->
@@ -94,7 +101,7 @@
                     <!-- thead -->
                     <thead>
                       <tr>
-                        <th colspan='2' style='min-width: 320px;'>
+                        <th>
                           <div class='thead-dd dropdown'>
                             <span class='custom-control custom-control-nolabel custom-checkbox'><input type='checkbox' class='custom-control-input' id='check-handle'> <label class='custom-control-label' for='check-handle'></label></span>
                             <div class='thead-btn' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
@@ -111,20 +118,20 @@
                             </div>
                           </div>
                         </th>
-													<th> 0000_Reg </th>
-													<th> Ref311Id </th>
-													<th> 0000_TipoEscrit </th>
-													<th> 0000_IndSitEsp </th>
-													<th> 0000_NumRecAnterior </th>
-													<th> 0000_DtIni </th>
-													<th> 0000_DtFin </th>
-													<th> 0000_IndNatPj </th>
-													<th> 0000_IndAtiv </th>
-													<th> PessoaJuridicaId </th>
-													<th> UsersId </th>
-													<th> Reg0001EFDCId </th>
-													<th> Regs0110EFDCId </th>
-													<th style='width:100px; min-width:100px;'> &nbsp; </th>
+												<th> Registro </th>
+												<th> Código Versão Leiaute </th>
+												<th> Tipo Escrituração </th>
+												<th> Indicador Situação Especial </th>
+												<th> Número Recibo Escrituração Anterior </th>
+												<th> Data Inicial </th>
+												<th> Data Final </th>
+												<th> Indicador da Natureza </th>
+												<th> Indicador Tipo Atividade Preponderante </th>
+												<th> Pessoa Juridica </th>
+												<th> Usuário </th>
+												<th> Abertura Bloco 0 </th>
+												<th> Regimes de Apuração da Contribuição Social e de Apropriação de Crédito </th>
+												<th style='width:100px; min-width:100px;'> &nbsp; </th>
 
                       </tr>
                     </thead><!-- /thead -->
@@ -132,20 +139,20 @@
                     <tbody>
                       <!-- create empty row to passing html validator -->
                       <tr>
-													<td></td>
-													<td></td>
-													<td></td>
-													<td></td>
-													<td></td>
-													<td></td>
-													<td></td>
-													<td></td>
-													<td></td>
-													<td></td>
-													<td></td>
-													<td></td>
-													<td></td>
-													<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
 
                       </tr>
                     </tbody><!-- /tbody -->
@@ -164,4 +171,5 @@
     <title>Abertura do Arquivo Digital e Identificação da Pessoa Jurídica</title>
 <script>
 var url_get = '<?= base_url('regs0000efdc/get'); ?>';
+var url_upd = '<?= base_url('regs0000efdc/edit'); ?>';
 </script>

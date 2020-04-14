@@ -24,7 +24,7 @@ function () {
       return $('#myTable').DataTable({
         dom: "<'text-muted'Bi>\n        <'table-responsive'tr>\n        <'mt-4'p>",
         buttons: ['copyHtml5', {
-          extend: 'print',
+          extend: 'print', 
           autoPrint: false
         }],
         language: {
@@ -36,36 +36,36 @@ function () {
         autoWidth: false,
         ajax: url_get,
         deferRender: true,
-        order: [1, 'asc'],
+        order: [6, 'desc'],
         columns: [
   				{
-					data: 'Id',
+					data: 'a110_Id',
 					className: 'col-checker align-middle',
 					orderable: false,
 					searchable: false
 				},
 				{
-					data: 'Reg',
+					data: 'a110_Reg',
 					className: 'align-middle',
 				},
 				{
-					data: 'Reg0450EFDCId',
+					data: 'a110_Reg0450EFDCId',
 					className: 'align-middle',
 				},
 				{
-					data: 'TxtComplementar',
+					data: 'a110_TxtComplementar',
 					className: 'align-middle',
 				},
 				{
-					data: 'RegA100EFDCId',
+					data: 'a110_RegA100EFDCId',
 					className: 'align-middle',
 				},
 				{
-					data: 'UsersId',
+					data: 'a110_UsersId',
 					className: 'align-middle',
 				},
 				{
-					data: 'Id',
+					data: 'a110_Id',
 					className: 'align-middle text-right',
 					orderable: false,
 					searchable: false
@@ -73,10 +73,19 @@ function () {
 
         ],
         columnDefs: [{
-          targets: 7,
+          targets: 0,
           render: function render(data, type, row, meta) {
             return `
-            <a class='btn btn-sm btn-icon btn-secondary' href='#${data}'>
+            <div class='custom-control custom-control-nolabel custom-checkbox'>
+              <input type='checkbox' class='custom-control-input' name='selectedRow[]' id='p${row['a110_Id']}' value='${row['a110_Id']}'>
+              <label class='custom-control-label' for='p${row['a110_Id']}'></label>
+            </div>`;
+          }
+        },{
+          targets: 6,
+          render: function render(data, type, row, meta) {
+            return `
+            <a class='btn btn-sm btn-icon btn-secondary' href='${url_upd}/${data}'>
               <i class='fa fa-pencil-alt'></i>
             </a>
             <a class='btn btn-sm btn-icon btn-secondary' href='#${data}'>
@@ -86,8 +95,15 @@ function () {
         }]
       });
     }
-  }, {
-    
+  },{
+    key: 'setbtnFloatedAdd',
+    value: function setbtnFloatedAdd(){
+      var self = this;
+      $('#btnFloatedAdd').on('click', function(e){
+        self.table.ajax.reload();
+      })
+    }
+  },{
     key: "searchRecords",
     value: function searchRecords() {
       var self = this;

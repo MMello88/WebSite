@@ -39,7 +39,7 @@
                 </ol>
               </nav><!-- /.breadcrumb -->
               <!-- floating action -->
-              <button type='button' class='btn btn-success btn-floated'><span class='fa fa-plus'></span></button> <!-- /floating action -->
+              <button type='button' class='btn btn-success btn-floated' onclick="window.location.href='<?= base_url('Regsa100efdc/create') ?>'"><span class='fa fa-plus'></span></button> <!-- /floating action -->
             </header><!-- /.page-title-bar -->
             <!-- .page-section -->
             <div class='page-section'>
@@ -49,6 +49,14 @@
                 <div class='card-header d-md-flex align-items-md-start'>
                   <h1 class='page-title mr-sm-auto'> Documento - Nota Fiscal de Serviço </h1><!-- .btn-toolbar -->
                   <div id='dt-buttons' class='btn-toolbar'></div><!-- /.btn-toolbar -->
+                  <div class='dropdown'>
+                  <button type='button' class='btn btn-icon btn-light' data-toggle='dropdown'>
+                  <i class='fa fa-ellipsis-v'></i></button>
+                  <div class='dropdown-menu dropdown-menu-right'>
+                    <div class='dropdown-arrow'></div>
+                    <a href='#' class='dropdown-item' id='btnFloatedAdd'>Atualizar</a>
+                  </div>
+                </div>
                 </div><!-- /.card-header -->
                 <!-- .card-body -->
                 <div class='card-body'>
@@ -58,35 +66,34 @@
                     <div class='input-group input-group-alt'>
                       <!-- .input-group-prepend -->
                       <div class='input-group-prepend'>
-                        <select id='filterBy' class='custom-select'>
+                        <select id='filterBy' class='custom-select' style='width: 150px'>
                           <option value='' selected> Filtrar por </option>
-													<option value='0'> a100_Id </option>
-													<option value='1'> a100_Reg </option>
-													<option value='2'> a100_CNPJ </option>
-													<option value='3'> a100_IndicadorTipoOperacao </option>
-													<option value='4'> a100_IndicadorEmitenteDocumento </option>
-													<option value='5'> Reg0150EFDCId </option>
-													<option value='6'> a100_SituacaoDocumentoFiscal </option>
-													<option value='7'> a100_Ser </option>
-													<option value='8'> a100_Sub </option>
-													<option value='9'> a100_NumDoc </option>
-													<option value='10'> a100_ChaveEletronica </option>
-													<option value='11'> a100_DtEmissaoDoc </option>
-													<option value='12'> a100_DtConclusaoServico </option>
-													<option value='13'> a100_VlDocumento </option>
-													<option value='14'> a100_IndicadorTipoPagamento </option>
-													<option value='15'> a100_VlDesconto </option>
-													<option value='16'> a100_VlBcPis </option>
-													<option value='17'> a100_VlPis </option>
-													<option value='18'> a100_VlBcCofins </option>
-													<option value='19'> a100_VlCofins </option>
-													<option value='20'> a100_VlPisRetido </option>
-													<option value='21'> a100_VlConfinsRetido </option>
-													<option value='22'> a100_VlIss </option>
-													<option value='23'> a100_DtIni </option>
-													<option value='24'> a100_DtFin </option>
-													<option value='25'> PessoaJuridicaId </option>
-													<option value='26'> UsersId </option>
+													<option value='1'> Registro </option>
+													<option value='2'> CNPJ </option>
+													<option value='3'> Indicador Tipo Operação </option>
+													<option value='4'> Indicador Emitente </option>
+													<option value='5'> Participante </option>
+													<option value='6'> Código Situação </option>
+													<option value='7'> Série </option>
+													<option value='8'> Subserie </option>
+													<option value='9'> Número Documento </option>
+													<option value='10'> Chave Eletrônica </option>
+													<option value='11'> Data Emissão Documento </option>
+													<option value='12'> Data Conclusão do Serviço </option>
+													<option value='13'> Valor Total </option>
+													<option value='14'> Tipo de Pagamento </option>
+													<option value='15'> Valor Total do Desconto </option>
+													<option value='16'> Valor Base Cálculo PIS/PASEP </option>
+													<option value='17'> Valor Total do PIS </option>
+													<option value='18'> Valor Base Cálculo COFINS </option>
+													<option value='19'> Valor Total COFINS </option>
+													<option value='20'> Valor Total do PIS Retido na Fonte </option>
+													<option value='21'> Valor Total da COFINS Retido na Fonte </option>
+													<option value='22'> Valor do ISS </option>
+													<option value='23'> Data Inicial </option>
+													<option value='24'> Data Final </option>
+													<option value='25'> Pessoa Juridica </option>
+													<option value='26'> Usuário </option>
 
                         </select>
                       </div><!-- /.input-group-prepend -->
@@ -107,7 +114,7 @@
                     <!-- thead -->
                     <thead>
                       <tr>
-                        <th colspan='2' style='min-width: 320px;'>
+                        <th>
                           <div class='thead-dd dropdown'>
                             <span class='custom-control custom-control-nolabel custom-checkbox'><input type='checkbox' class='custom-control-input' id='check-handle'> <label class='custom-control-label' for='check-handle'></label></span>
                             <div class='thead-btn' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
@@ -124,33 +131,33 @@
                             </div>
                           </div>
                         </th>
-													<th> a100_Reg </th>
-													<th> a100_CNPJ </th>
-													<th> a100_IndicadorTipoOperacao </th>
-													<th> a100_IndicadorEmitenteDocumento </th>
-													<th> Reg0150EFDCId </th>
-													<th> a100_SituacaoDocumentoFiscal </th>
-													<th> a100_Ser </th>
-													<th> a100_Sub </th>
-													<th> a100_NumDoc </th>
-													<th> a100_ChaveEletronica </th>
-													<th> a100_DtEmissaoDoc </th>
-													<th> a100_DtConclusaoServico </th>
-													<th> a100_VlDocumento </th>
-													<th> a100_IndicadorTipoPagamento </th>
-													<th> a100_VlDesconto </th>
-													<th> a100_VlBcPis </th>
-													<th> a100_VlPis </th>
-													<th> a100_VlBcCofins </th>
-													<th> a100_VlCofins </th>
-													<th> a100_VlPisRetido </th>
-													<th> a100_VlConfinsRetido </th>
-													<th> a100_VlIss </th>
-													<th> a100_DtIni </th>
-													<th> a100_DtFin </th>
-													<th> PessoaJuridicaId </th>
-													<th> UsersId </th>
-													<th style='width:100px; min-width:100px;'> &nbsp; </th>
+												<th> Registro </th>
+												<th> CNPJ </th>
+												<th> Indicador Tipo Operação </th>
+												<th> Indicador Emitente </th>
+												<th> Participante </th>
+												<th> Código Situação </th>
+												<th> Série </th>
+												<th> Subserie </th>
+												<th> Número Documento </th>
+												<th> Chave Eletrônica </th>
+												<th> Data Emissão Documento </th>
+												<th> Data Conclusão do Serviço </th>
+												<th> Valor Total </th>
+												<th> Tipo de Pagamento </th>
+												<th> Valor Total do Desconto </th>
+												<th> Valor Base Cálculo PIS/PASEP </th>
+												<th> Valor Total do PIS </th>
+												<th> Valor Base Cálculo COFINS </th>
+												<th> Valor Total COFINS </th>
+												<th> Valor Total do PIS Retido na Fonte </th>
+												<th> Valor Total da COFINS Retido na Fonte </th>
+												<th> Valor do ISS </th>
+												<th> Data Inicial </th>
+												<th> Data Final </th>
+												<th> Pessoa Juridica </th>
+												<th> Usuário </th>
+												<th style='width:100px; min-width:100px;'> &nbsp; </th>
 
                       </tr>
                     </thead><!-- /thead -->
@@ -158,33 +165,33 @@
                     <tbody>
                       <!-- create empty row to passing html validator -->
                       <tr>
-													<td></td>
-													<td></td>
-													<td></td>
-													<td></td>
-													<td></td>
-													<td></td>
-													<td></td>
-													<td></td>
-													<td></td>
-													<td></td>
-													<td></td>
-													<td></td>
-													<td></td>
-													<td></td>
-													<td></td>
-													<td></td>
-													<td></td>
-													<td></td>
-													<td></td>
-													<td></td>
-													<td></td>
-													<td></td>
-													<td></td>
-													<td></td>
-													<td></td>
-													<td></td>
-													<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
 
                       </tr>
                     </tbody><!-- /tbody -->
@@ -203,4 +210,5 @@
     <title>Documento - Nota Fiscal de Serviço</title>
 <script>
 var url_get = '<?= base_url('regsa100efdc/get'); ?>';
+var url_upd = '<?= base_url('regsa100efdc/edit'); ?>';
 </script>

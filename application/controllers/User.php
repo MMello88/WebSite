@@ -41,7 +41,6 @@ class User extends CI_Controller {
 				]
 			);
 
-			//$data["response"]->data->PerfisId = "";
 			$this->session->set_userdata(["login" => $data["response"]]);
 
 			$this->load->view('main/login', $data);

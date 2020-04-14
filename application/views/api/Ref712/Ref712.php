@@ -39,7 +39,7 @@
                 </ol>
               </nav><!-- /.breadcrumb -->
               <!-- floating action -->
-              <button type='button' class='btn btn-success btn-floated'><span class='fa fa-plus'></span></button> <!-- /floating action -->
+              <button type='button' class='btn btn-success btn-floated' onclick="window.location.href='<?= base_url('Ref712/create') ?>'"><span class='fa fa-plus'></span></button> <!-- /floating action -->
             </header><!-- /.page-title-bar -->
             <!-- .page-section -->
             <div class='page-section'>
@@ -49,6 +49,14 @@
                 <div class='card-header d-md-flex align-items-md-start'>
                   <h1 class='page-title mr-sm-auto'> Composição das Deduções e Exclusões </h1><!-- .btn-toolbar -->
                   <div id='dt-buttons' class='btn-toolbar'></div><!-- /.btn-toolbar -->
+                  <div class='dropdown'>
+                  <button type='button' class='btn btn-icon btn-light' data-toggle='dropdown'>
+                  <i class='fa fa-ellipsis-v'></i></button>
+                  <div class='dropdown-menu dropdown-menu-right'>
+                    <div class='dropdown-arrow'></div>
+                    <a href='#' class='dropdown-item' id='btnFloatedAdd'>Atualizar</a>
+                  </div>
+                </div>
                 </div><!-- /.card-header -->
                 <!-- .card-body -->
                 <div class='card-body'>
@@ -58,18 +66,17 @@
                     <div class='input-group input-group-alt'>
                       <!-- .input-group-prepend -->
                       <div class='input-group-prepend'>
-                        <select id='filterBy' class='custom-select'>
+                        <select id='filterBy' class='custom-select' style='width: 150px'>
                           <option value='' selected> Filtrar por </option>
-													<option value='0'> 712_Id </option>
-													<option value='1'> 712_Codigo </option>
-													<option value='2'> 712_Descricao </option>
-													<option value='3'> 712_DtIni </option>
-													<option value='4'> 712_DtFin </option>
-													<option value='5'> 712_IndTipoAtividade </option>
-													<option value='6'> 712_IndAjuste </option>
-													<option value='7'> 712_Grupo </option>
-													<option value='8'> 712_IndOutros </option>
-													<option value='9'> 712_IndTipoDeducoes </option>
+													<option value='1'> Código </option>
+													<option value='2'> Descrição </option>
+													<option value='3'> Data Inicial </option>
+													<option value='4'> Data Final </option>
+													<option value='5'> Indicador Tipo Atividade </option>
+													<option value='6'> Indicador Ajuste </option>
+													<option value='7'> Cód. Grupo </option>
+													<option value='8'> Indicador Outros </option>
+													<option value='9'> Geral/Específica </option>
 
                         </select>
                       </div><!-- /.input-group-prepend -->
@@ -90,7 +97,7 @@
                     <!-- thead -->
                     <thead>
                       <tr>
-                        <th colspan='2' style='min-width: 320px;'>
+                        <th>
                           <div class='thead-dd dropdown'>
                             <span class='custom-control custom-control-nolabel custom-checkbox'><input type='checkbox' class='custom-control-input' id='check-handle'> <label class='custom-control-label' for='check-handle'></label></span>
                             <div class='thead-btn' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
@@ -107,16 +114,16 @@
                             </div>
                           </div>
                         </th>
-													<th> 712_Codigo </th>
-													<th> 712_Descricao </th>
-													<th> 712_DtIni </th>
-													<th> 712_DtFin </th>
-													<th> 712_IndTipoAtividade </th>
-													<th> 712_IndAjuste </th>
-													<th> 712_Grupo </th>
-													<th> 712_IndOutros </th>
-													<th> 712_IndTipoDeducoes </th>
-													<th style='width:100px; min-width:100px;'> &nbsp; </th>
+												<th> Código </th>
+												<th> Descrição </th>
+												<th> Data Inicial </th>
+												<th> Data Final </th>
+												<th> Indicador Tipo Atividade </th>
+												<th> Indicador Ajuste </th>
+												<th> Cód. Grupo </th>
+												<th> Indicador Outros </th>
+												<th> Geral/Específica </th>
+												<th style='width:100px; min-width:100px;'> &nbsp; </th>
 
                       </tr>
                     </thead><!-- /thead -->
@@ -124,16 +131,16 @@
                     <tbody>
                       <!-- create empty row to passing html validator -->
                       <tr>
-													<td></td>
-													<td></td>
-													<td></td>
-													<td></td>
-													<td></td>
-													<td></td>
-													<td></td>
-													<td></td>
-													<td></td>
-													<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
 
                       </tr>
                     </tbody><!-- /tbody -->
@@ -152,4 +159,5 @@
     <title>Composição das Deduções e Exclusões</title>
 <script>
 var url_get = '<?= base_url('ref712/get'); ?>';
+var url_upd = '<?= base_url('ref712/edit'); ?>';
 </script>

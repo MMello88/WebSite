@@ -39,7 +39,7 @@
                 </ol>
               </nav><!-- /.breadcrumb -->
               <!-- floating action -->
-              <button type='button' class='btn btn-success btn-floated'><span class='fa fa-plus'></span></button> <!-- /floating action -->
+              <button type='button' class='btn btn-success btn-floated' onclick="window.location.href='<?= base_url('Ref4318/create') ?>'"><span class='fa fa-plus'></span></button> <!-- /floating action -->
             </header><!-- /.page-title-bar -->
             <!-- .page-section -->
             <div class='page-section'>
@@ -49,6 +49,14 @@
                 <div class='card-header d-md-flex align-items-md-start'>
                   <h1 class='page-title mr-sm-auto'> Código de Ajuste da Base de Cálculo Mensal das Contribuições </h1><!-- .btn-toolbar -->
                   <div id='dt-buttons' class='btn-toolbar'></div><!-- /.btn-toolbar -->
+                  <div class='dropdown'>
+                  <button type='button' class='btn btn-icon btn-light' data-toggle='dropdown'>
+                  <i class='fa fa-ellipsis-v'></i></button>
+                  <div class='dropdown-menu dropdown-menu-right'>
+                    <div class='dropdown-arrow'></div>
+                    <a href='#' class='dropdown-item' id='btnFloatedAdd'>Atualizar</a>
+                  </div>
+                </div>
                 </div><!-- /.card-header -->
                 <!-- .card-body -->
                 <div class='card-body'>
@@ -58,14 +66,13 @@
                     <div class='input-group input-group-alt'>
                       <!-- .input-group-prepend -->
                       <div class='input-group-prepend'>
-                        <select id='filterBy' class='custom-select'>
+                        <select id='filterBy' class='custom-select' style='width: 150px'>
                           <option value='' selected> Filtrar por </option>
-													<option value='0'> 4318_Id </option>
-													<option value='1'> 4318_Codigo </option>
-													<option value='2'> 4318_Descricao </option>
-													<option value='3'> 4318_Obrigatorio </option>
-													<option value='4'> 4318_DtIni </option>
-													<option value='5'> 4318_DtFin </option>
+													<option value='1'> Código </option>
+													<option value='2'> Descrição </option>
+													<option value='3'> Obrigatório </option>
+													<option value='4'> Data Inicial </option>
+													<option value='5'> Data Final </option>
 
                         </select>
                       </div><!-- /.input-group-prepend -->
@@ -86,7 +93,7 @@
                     <!-- thead -->
                     <thead>
                       <tr>
-                        <th colspan='2' style='min-width: 320px;'>
+                        <th>
                           <div class='thead-dd dropdown'>
                             <span class='custom-control custom-control-nolabel custom-checkbox'><input type='checkbox' class='custom-control-input' id='check-handle'> <label class='custom-control-label' for='check-handle'></label></span>
                             <div class='thead-btn' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
@@ -103,12 +110,12 @@
                             </div>
                           </div>
                         </th>
-													<th> 4318_Codigo </th>
-													<th> 4318_Descricao </th>
-													<th> 4318_Obrigatorio </th>
-													<th> 4318_DtIni </th>
-													<th> 4318_DtFin </th>
-													<th style='width:100px; min-width:100px;'> &nbsp; </th>
+												<th> Código </th>
+												<th> Descrição </th>
+												<th> Obrigatório </th>
+												<th> Data Inicial </th>
+												<th> Data Final </th>
+												<th style='width:100px; min-width:100px;'> &nbsp; </th>
 
                       </tr>
                     </thead><!-- /thead -->
@@ -116,12 +123,12 @@
                     <tbody>
                       <!-- create empty row to passing html validator -->
                       <tr>
-													<td></td>
-													<td></td>
-													<td></td>
-													<td></td>
-													<td></td>
-													<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
 
                       </tr>
                     </tbody><!-- /tbody -->
@@ -140,4 +147,5 @@
     <title>Código de Ajuste da Base de Cálculo Mensal das Contribuições</title>
 <script>
 var url_get = '<?= base_url('ref4318/get'); ?>';
+var url_upd = '<?= base_url('ref4318/edit'); ?>';
 </script>

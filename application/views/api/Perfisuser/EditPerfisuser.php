@@ -92,4 +92,5 @@
 <script>
   var url_get = '<?= base_url('perfisuser/get'); ?>';
   var url_upd = '<?= base_url('perfisuser/edit'); ?>';
+  var url_view = '<?= base_url('perfisuser/view'); ?>';
 </script>

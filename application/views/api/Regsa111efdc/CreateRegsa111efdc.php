@@ -69,14 +69,14 @@
                         <legend>Adicionar um novo registro</legend> <!-- .form-group -->
 							<div class='form-group'>
 								<label for='a111_Reg'>Registro</label>
-							<input type='text' name='a111_Reg' id='a111_Reg' class='form-control' placeholder='Registro' value='' required>
+							<input type='text' name='a111_Reg' id='a111_Reg' class='form-control' placeholder='Registro' value='<?= isset($response['data']['a111_Reg']) ? $response['data']['a111_Reg'] : '' ?>' required>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['a111_Reg']) ? $response['error']['a111_Reg'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='a111_NumProcesso'>Número do Processo</label>
-							<input type='text' name='a111_NumProcesso' id='a111_NumProcesso' class='form-control' placeholder='Número do Processo' value='' required>
+							<input type='text' name='a111_NumProcesso' id='a111_NumProcesso' class='form-control' placeholder='Número do Processo' value='<?= isset($response['data']['a111_NumProcesso']) ? $response['data']['a111_NumProcesso'] : '' ?>' required>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['a111_NumProcesso']) ? $response['error']['a111_NumProcesso'] : ''; ?></div>
 							<?php endif; ?>
@@ -85,23 +85,18 @@
 								<label for='a111_IndicadorOrigemProcesso'>Origem do Processo</label>
 							<select name='a111_IndicadorOrigemProcesso' id='a111_IndicadorOrigemProcesso' class='custom-select' placeholder='Origem do Processo' required>
 								<option value=''> Selecione </option>
-								<option value='1 - Justiça Federal'> 1 - Justiça Federal </option>
-								<option value='3 – Secretaria da Receita Federal do Brasil'> 3 – Secretaria da Receita Federal do Brasil </option>
-								<option value='9 - Outros'> 9 - Outros </option>
+								<option value='1 - Justiça Federal' <?= isset($response['data']['a111_IndicadorOrigemProcesso']) ? $response['data']['a111_IndicadorOrigemProcesso'] == '1 - Justiça Federal' ? 'selected' : '' : '' ?>> 1 - Justiça Federal </option>
+								<option value='3 – Secretaria da Receita Federal do Brasil' <?= isset($response['data']['a111_IndicadorOrigemProcesso']) ? $response['data']['a111_IndicadorOrigemProcesso'] == '3 – Secretaria da Receita Federal do Brasil' ? 'selected' : '' : '' ?>> 3 – Secretaria da Receita Federal do Brasil </option>
+								<option value='9 - Outros' <?= isset($response['data']['a111_IndicadorOrigemProcesso']) ? $response['data']['a111_IndicadorOrigemProcesso'] == '9 - Outros' ? 'selected' : '' : '' ?>> 9 - Outros </option>
 							</select>
 						</div>
 							<div class='form-group'>
 								<label for='a111_RegA100EFDCId'>Documento - Nota Fiscal de Serviço</label>
-							<input type='number' name='a111_RegA100EFDCId' id='a111_RegA100EFDCId' class='form-control' placeholder='Documento - Nota Fiscal de Serviço' value='' >
+							<select name='a111_RegA100EFDCId' id='a111_RegA100EFDCId' class='custom-select' placeholder='Documento - Nota Fiscal de Serviço' >
+								<?= getOptionToSelect('regsa100efdc','a100_Id', '', isset($response['data']['a111_RegA100EFDCId']) ? $response['data']['a111_RegA100EFDCId'] : '', $login->data->token) ?>
+							</select>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['a111_RegA100EFDCId']) ? $response['error']['a111_RegA100EFDCId'] : ''; ?></div>
-							<?php endif; ?>
-						</div>
-							<div class='form-group'>
-								<label for='a111_UsersId'>Usuário</label>
-							<input type='number' name='a111_UsersId' id='a111_UsersId' class='form-control' placeholder='Usuário' value='' required>
-							<?php if(isset($response)): ?>
-								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['a111_UsersId']) ? $response['error']['a111_UsersId'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 
@@ -122,4 +117,5 @@
 <script>
   var url_get = '<?= base_url('regsa111efdc/create'); ?>';
   var url_upd = '<?= base_url('regsa111efdc/edit'); ?>';
+  var url_view = '<?= base_url('regsa111efdc/view'); ?>';
 </script>

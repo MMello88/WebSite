@@ -69,14 +69,18 @@
                         <legend>Adicionar um novo registro</legend> <!-- .form-group -->
 							<div class='form-group'>
 								<label for='pm_MenusId'>Menu</label>
-							<input type='number' name='pm_MenusId' id='pm_MenusId' class='form-control' placeholder='Menu' value='' required>
+							<select name='pm_MenusId' id='pm_MenusId' class='custom-select' placeholder='Menu' required>
+								<?= getOptionToSelect('menus','mns_Id', '', isset($response['data']['pm_MenusId']) ? $response['data']['pm_MenusId'] : '', $login->data->token) ?>
+							</select>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['pm_MenusId']) ? $response['error']['pm_MenusId'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='pm_PerfisId'>Perfil</label>
-							<input type='number' name='pm_PerfisId' id='pm_PerfisId' class='form-control' placeholder='Perfil' value='' required>
+							<select name='pm_PerfisId' id='pm_PerfisId' class='custom-select' placeholder='Perfil' required>
+								<?= getOptionToSelect('perfis','ps_Id', '', isset($response['data']['pm_PerfisId']) ? $response['data']['pm_PerfisId'] : '', $login->data->token) ?>
+							</select>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['pm_PerfisId']) ? $response['error']['pm_PerfisId'] : ''; ?></div>
 							<?php endif; ?>
@@ -99,4 +103,5 @@
 <script>
   var url_get = '<?= base_url('perfismenu/create'); ?>';
   var url_upd = '<?= base_url('perfismenu/edit'); ?>';
+  var url_view = '<?= base_url('perfismenu/view'); ?>';
 </script>

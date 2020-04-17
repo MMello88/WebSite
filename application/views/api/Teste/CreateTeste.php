@@ -69,42 +69,42 @@
                         <legend>Adicionar um novo registro</legend> <!-- .form-group -->
 							<div class='form-group'>
 								<label for='Nome'>Nome</label>
-							<input type='text' name='Nome' id='Nome' class='form-control' placeholder='Nome' value='' required>
+							<input type='text' name='Nome' id='Nome' class='form-control' placeholder='Nome' value='<?= isset($response['data']['Nome']) ? $response['data']['Nome'] : '' ?>' required>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['Nome']) ? $response['error']['Nome'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='Valor'></label>
-							<input type='number' name='Valor' id='Valor' class='form-control' placeholder='' value='' required>
+							<input type='number' name='Valor' id='Valor' class='form-control' placeholder='' value='<?= isset($response['data']['Valor']) ? $response['data']['Valor'] : '' ?>' required>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['Valor']) ? $response['error']['Valor'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='Desconto'></label>
-							<input type='' name='Desconto' id='Desconto' class='form-control' placeholder='' value='0.00' >
+							<input type='' name='Desconto' id='Desconto' class='form-control' placeholder='' value='<?= isset($response['data']['Desconto']) ? $response['data']['Desconto'] : '0.00' ?>' >
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['Desconto']) ? $response['error']['Desconto'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='Total'></label>
-							<input type='' name='Total' id='Total' class='form-control' placeholder='' value='' >
+							<input type='' name='Total' id='Total' class='form-control' placeholder='' value='<?= isset($response['data']['Total']) ? $response['data']['Total'] : '' ?>' >
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['Total']) ? $response['error']['Total'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='VlIcms'></label>
-							<input type='' name='VlIcms' id='VlIcms' class='form-control' placeholder='' value='' >
+							<input type='' name='VlIcms' id='VlIcms' class='form-control' placeholder='' value='<?= isset($response['data']['VlIcms']) ? $response['data']['VlIcms'] : '' ?>' >
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['VlIcms']) ? $response['error']['VlIcms'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='Periodo'></label>
-							<input type='datetime-local' name='Periodo' id='Periodo' class='form-control' placeholder='' value='' >
+							<input type='datetime-local' name='Periodo' id='Periodo' class='form-control' placeholder='' value='<?= isset($response['data']['Periodo']) ? $response['data']['Periodo'] : '' ?>' >
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['Periodo']) ? $response['error']['Periodo'] : ''; ?></div>
 							<?php endif; ?>
@@ -113,15 +113,15 @@
 								<label for='Tipo'></label>
 							<select name='Tipo' id='Tipo' class='custom-select' placeholder='' >
 								<option value=''> Selecione </option>
-								<option value='masculino'> masculino </option>
-								<option value='feminino'> feminino </option>
-								<option value='trans'> trans </option>
-								<option value='gay'> gay </option>
+								<option value='masculino' <?= isset($response['data']['Tipo']) ? $response['data']['Tipo'] == 'masculino' ? 'selected' : '' : '' ?>> masculino </option>
+								<option value='feminino' <?= isset($response['data']['Tipo']) ? $response['data']['Tipo'] == 'feminino' ? 'selected' : '' : '' ?>> feminino </option>
+								<option value='trans' <?= isset($response['data']['Tipo']) ? $response['data']['Tipo'] == 'trans' ? 'selected' : '' : '' ?>> trans </option>
+								<option value='gay' <?= isset($response['data']['Tipo']) ? $response['data']['Tipo'] == 'gay' ? 'selected' : '' : '' ?>> gay </option>
 							</select>
 						</div>
 							<div class='form-group'>
 								<label for='Ativo'>Ativo</label>
-							<input type='' name='Ativo' id='Ativo' class='form-control' placeholder='Ativo' value='' >
+							<input type='' name='Ativo' id='Ativo' class='form-control' placeholder='Ativo' value='<?= isset($response['data']['Ativo']) ? $response['data']['Ativo'] : '' ?>' >
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['Ativo']) ? $response['error']['Ativo'] : ''; ?></div>
 							<?php endif; ?>
@@ -144,4 +144,5 @@
 <script>
   var url_get = '<?= base_url('teste/create'); ?>';
   var url_upd = '<?= base_url('teste/edit'); ?>';
+  var url_view = '<?= base_url('teste/view'); ?>';
 </script>

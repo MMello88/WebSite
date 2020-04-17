@@ -92,4 +92,5 @@
 <script>
   var url_get = '<?= base_url('__efmigrationshistory/get'); ?>';
   var url_upd = '<?= base_url('__efmigrationshistory/edit'); ?>';
+  var url_view = '<?= base_url('__efmigrationshistory/view'); ?>';
 </script>

@@ -69,7 +69,7 @@
                         <legend>Adicionar um novo registro</legend> <!-- .form-group -->
 							<div class='form-group'>
 								<label for='0001_Reg'>Registro</label>
-							<input type='text' name='0001_Reg' id='0001_Reg' class='form-control' placeholder='Registro' value='0001' required>
+							<input type='text' name='0001_Reg' id='0001_Reg' class='form-control' placeholder='Registro' value='<?= isset($response['data']['0001_Reg']) ? $response['data']['0001_Reg'] : '0001' ?>' required>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['0001_Reg']) ? $response['error']['0001_Reg'] : ''; ?></div>
 							<?php endif; ?>
@@ -78,8 +78,8 @@
 								<label for='0001_IndicadorMovimento'>Indicador Movimento</label>
 							<select name='0001_IndicadorMovimento' id='0001_IndicadorMovimento' class='custom-select' placeholder='Indicador Movimento' required>
 								<option value=''> Selecione </option>
-								<option value='0 - Bloco com dados informados'> 0 - Bloco com dados informados </option>
-								<option value='1 – Bloco sem dados informados'> 1 – Bloco sem dados informados </option>
+								<option value='0 - Bloco com dados informados' <?= isset($response['data']['0001_IndicadorMovimento']) ? $response['data']['0001_IndicadorMovimento'] == '0 - Bloco com dados informados' ? 'selected' : '' : '' ?>> 0 - Bloco com dados informados </option>
+								<option value='1 – Bloco sem dados informados' <?= isset($response['data']['0001_IndicadorMovimento']) ? $response['data']['0001_IndicadorMovimento'] == '1 – Bloco sem dados informados' ? 'selected' : '' : '' ?>> 1 – Bloco sem dados informados </option>
 							</select>
 						</div>
 
@@ -100,4 +100,5 @@
 <script>
   var url_get = '<?= base_url('regs0001efdc/create'); ?>';
   var url_upd = '<?= base_url('regs0001efdc/edit'); ?>';
+  var url_view = '<?= base_url('regs0001efdc/view'); ?>';
 </script>

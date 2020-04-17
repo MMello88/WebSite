@@ -120,4 +120,5 @@
 <script>
   var url_get = '<?= base_url('api_limit/get'); ?>';
   var url_upd = '<?= base_url('api_limit/edit'); ?>';
+  var url_view = '<?= base_url('api_limit/view'); ?>';
 </script>

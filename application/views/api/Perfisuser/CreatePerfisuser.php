@@ -68,15 +68,10 @@
                       <fieldset>
                         <legend>Adicionar um novo registro</legend> <!-- .form-group -->
 							<div class='form-group'>
-								<label for='pu_UsersId'>Users</label>
-							<input type='number' name='pu_UsersId' id='pu_UsersId' class='form-control' placeholder='Users' value='' required>
-							<?php if(isset($response)): ?>
-								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['pu_UsersId']) ? $response['error']['pu_UsersId'] : ''; ?></div>
-							<?php endif; ?>
-						</div>
-							<div class='form-group'>
 								<label for='pu_PerfisId'>Perfil</label>
-							<input type='number' name='pu_PerfisId' id='pu_PerfisId' class='form-control' placeholder='Perfil' value='' required>
+							<select name='pu_PerfisId' id='pu_PerfisId' class='custom-select' placeholder='Perfil' required>
+								<?= getOptionToSelect('perfis','ps_Id', '', isset($response['data']['pu_PerfisId']) ? $response['data']['pu_PerfisId'] : '', $login->data->token) ?>
+							</select>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['pu_PerfisId']) ? $response['error']['pu_PerfisId'] : ''; ?></div>
 							<?php endif; ?>
@@ -99,4 +94,5 @@
 <script>
   var url_get = '<?= base_url('perfisuser/create'); ?>';
   var url_upd = '<?= base_url('perfisuser/edit'); ?>';
+  var url_view = '<?= base_url('perfisuser/view'); ?>';
 </script>

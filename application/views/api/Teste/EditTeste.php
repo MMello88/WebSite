@@ -144,4 +144,5 @@
 <script>
   var url_get = '<?= base_url('teste/get'); ?>';
   var url_upd = '<?= base_url('teste/edit'); ?>';
+  var url_view = '<?= base_url('teste/view'); ?>';
 </script>

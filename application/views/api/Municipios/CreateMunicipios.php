@@ -69,21 +69,21 @@
                         <legend>Adicionar um novo registro</legend> <!-- .form-group -->
 							<div class='form-group'>
 								<label for='mun_CdMunicipio'>Cód. Municipio</label>
-							<input type='text' name='mun_CdMunicipio' id='mun_CdMunicipio' class='form-control' placeholder='Cód. Municipio' value='' required>
+							<input type='text' name='mun_CdMunicipio' id='mun_CdMunicipio' class='form-control' placeholder='Cód. Municipio' value='<?= isset($response['data']['mun_CdMunicipio']) ? $response['data']['mun_CdMunicipio'] : '' ?>' required>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['mun_CdMunicipio']) ? $response['error']['mun_CdMunicipio'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='mun_Nome'>Nome</label>
-							<input type='text' name='mun_Nome' id='mun_Nome' class='form-control' placeholder='Nome' value='' required>
+							<input type='text' name='mun_Nome' id='mun_Nome' class='form-control' placeholder='Nome' value='<?= isset($response['data']['mun_Nome']) ? $response['data']['mun_Nome'] : '' ?>' required>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['mun_Nome']) ? $response['error']['mun_Nome'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='mun_Uf'>UF</label>
-							<input type='text' name='mun_Uf' id='mun_Uf' class='form-control' placeholder='UF' value='' required>
+							<input type='text' name='mun_Uf' id='mun_Uf' class='form-control' placeholder='UF' value='<?= isset($response['data']['mun_Uf']) ? $response['data']['mun_Uf'] : '' ?>' required>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['mun_Uf']) ? $response['error']['mun_Uf'] : ''; ?></div>
 							<?php endif; ?>
@@ -106,4 +106,5 @@
 <script>
   var url_get = '<?= base_url('municipios/create'); ?>';
   var url_upd = '<?= base_url('municipios/edit'); ?>';
+  var url_view = '<?= base_url('municipios/view'); ?>';
 </script>

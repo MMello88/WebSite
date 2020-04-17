@@ -69,7 +69,7 @@
                         <legend>Adicionar um novo registro</legend> <!-- .form-group -->
 							<div class='form-group'>
 								<label for='ProductVersion'></label>
-							<input type='text' name='ProductVersion' id='ProductVersion' class='form-control' placeholder='' value='' required>
+							<input type='text' name='ProductVersion' id='ProductVersion' class='form-control' placeholder='' value='<?= isset($response['data']['ProductVersion']) ? $response['data']['ProductVersion'] : '' ?>' required>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['ProductVersion']) ? $response['error']['ProductVersion'] : ''; ?></div>
 							<?php endif; ?>
@@ -92,4 +92,5 @@
 <script>
   var url_get = '<?= base_url('__efmigrationshistory/create'); ?>';
   var url_upd = '<?= base_url('__efmigrationshistory/edit'); ?>';
+  var url_view = '<?= base_url('__efmigrationshistory/view'); ?>';
 </script>

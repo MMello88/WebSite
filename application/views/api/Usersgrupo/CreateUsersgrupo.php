@@ -71,8 +71,8 @@
 								<label for='ug_Ativo'>Ativo</label>
 							<select name='ug_Ativo' id='ug_Ativo' class='custom-select' placeholder='Ativo' required>
 								<option value=''> Selecione </option>
-								<option value='True'> True </option>
-								<option value='False'> False </option>
+								<option value='True' <?= isset($response['data']['ug_Ativo']) ? $response['data']['ug_Ativo'] == 'True' ? 'selected' : '' : '' ?>> True </option>
+								<option value='False' <?= isset($response['data']['ug_Ativo']) ? $response['data']['ug_Ativo'] == 'False' ? 'selected' : '' : '' ?>> False </option>
 							</select>
 						</div>
 
@@ -93,4 +93,5 @@
 <script>
   var url_get = '<?= base_url('usersgrupo/create'); ?>';
   var url_upd = '<?= base_url('usersgrupo/edit'); ?>';
+  var url_view = '<?= base_url('usersgrupo/view'); ?>';
 </script>

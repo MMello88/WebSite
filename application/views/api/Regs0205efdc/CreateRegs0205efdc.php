@@ -69,35 +69,35 @@
                         <legend>Adicionar um novo registro</legend> <!-- .form-group -->
 							<div class='form-group'>
 								<label for='0205_Reg'>Registro</label>
-							<input type='text' name='0205_Reg' id='0205_Reg' class='form-control' placeholder='Registro' value='' required>
+							<input type='text' name='0205_Reg' id='0205_Reg' class='form-control' placeholder='Registro' value='<?= isset($response['data']['0205_Reg']) ? $response['data']['0205_Reg'] : '' ?>' required>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['0205_Reg']) ? $response['error']['0205_Reg'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='0205_DescricaoAntItem'>Descrição Anterior do Item</label>
-							<input type='text' name='0205_DescricaoAntItem' id='0205_DescricaoAntItem' class='form-control' placeholder='Descrição Anterior do Item' value='' required>
+							<input type='text' name='0205_DescricaoAntItem' id='0205_DescricaoAntItem' class='form-control' placeholder='Descrição Anterior do Item' value='<?= isset($response['data']['0205_DescricaoAntItem']) ? $response['data']['0205_DescricaoAntItem'] : '' ?>' required>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['0205_DescricaoAntItem']) ? $response['error']['0205_DescricaoAntItem'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='0205_CodAntItem'>Código Anterior Item</label>
-							<input type='text' name='0205_CodAntItem' id='0205_CodAntItem' class='form-control' placeholder='Código Anterior Item' value='' >
+							<input type='text' name='0205_CodAntItem' id='0205_CodAntItem' class='form-control' placeholder='Código Anterior Item' value='<?= isset($response['data']['0205_CodAntItem']) ? $response['data']['0205_CodAntItem'] : '' ?>' >
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['0205_CodAntItem']) ? $response['error']['0205_CodAntItem'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='0205_DtIni'>Data Inicial</label>
-							<input type='date' name='0205_DtIni' id='0205_DtIni' class='form-control' placeholder='Data Inicial' value='' required>
+							<input type='date' name='0205_DtIni' id='0205_DtIni' class='form-control' placeholder='Data Inicial' value='<?= isset($response['data']['0205_DtIni']) ? $response['data']['0205_DtIni'] : '' ?>' required>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['0205_DtIni']) ? $response['error']['0205_DtIni'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='0205_DtFin'>Data Final</label>
-							<input type='date' name='0205_DtFin' id='0205_DtFin' class='form-control' placeholder='Data Final' value='' >
+							<input type='date' name='0205_DtFin' id='0205_DtFin' class='form-control' placeholder='Data Final' value='<?= isset($response['data']['0205_DtFin']) ? $response['data']['0205_DtFin'] : '' ?>' >
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['0205_DtFin']) ? $response['error']['0205_DtFin'] : ''; ?></div>
 							<?php endif; ?>
@@ -120,4 +120,5 @@
 <script>
   var url_get = '<?= base_url('regs0205efdc/create'); ?>';
   var url_upd = '<?= base_url('regs0205efdc/edit'); ?>';
+  var url_view = '<?= base_url('regs0205efdc/view'); ?>';
 </script>

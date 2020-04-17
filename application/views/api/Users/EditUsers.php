@@ -156,4 +156,5 @@
 <script>
   var url_get = '<?= base_url('users/get'); ?>';
   var url_upd = '<?= base_url('users/edit'); ?>';
+  var url_view = '<?= base_url('users/view'); ?>';
 </script>

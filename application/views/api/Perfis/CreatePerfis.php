@@ -69,7 +69,7 @@
                         <legend>Adicionar um novo registro</legend> <!-- .form-group -->
 							<div class='form-group'>
 								<label for='ps_Nome'>Nome do Perfil</label>
-							<input type='text' name='ps_Nome' id='ps_Nome' class='form-control' placeholder='Nome do Perfil' value='' required>
+							<input type='text' name='ps_Nome' id='ps_Nome' class='form-control' placeholder='Nome do Perfil' value='<?= isset($response['data']['ps_Nome']) ? $response['data']['ps_Nome'] : '' ?>' required>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['ps_Nome']) ? $response['error']['ps_Nome'] : ''; ?></div>
 							<?php endif; ?>
@@ -78,27 +78,27 @@
 								<label for='ps_Ativo'>Ativo</label>
 							<select name='ps_Ativo' id='ps_Ativo' class='custom-select' placeholder='Ativo' required>
 								<option value=''> Selecione </option>
-								<option value='True'> True </option>
-								<option value='False'> False </option>
+								<option value='True' <?= isset($response['data']['ps_Ativo']) ? $response['data']['ps_Ativo'] == 'True' ? 'selected' : '' : '' ?>> True </option>
+								<option value='False' <?= isset($response['data']['ps_Ativo']) ? $response['data']['ps_Ativo'] == 'False' ? 'selected' : '' : '' ?>> False </option>
 							</select>
 						</div>
 							<div class='form-group'>
 								<label for='ps_Descricao'>Descrição</label>
-							<input type='text' name='ps_Descricao' id='ps_Descricao' class='form-control' placeholder='Descrição' value='' required>
+							<input type='text' name='ps_Descricao' id='ps_Descricao' class='form-control' placeholder='Descrição' value='<?= isset($response['data']['ps_Descricao']) ? $response['data']['ps_Descricao'] : '' ?>' required>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['ps_Descricao']) ? $response['error']['ps_Descricao'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='ps_tag'>Tags do Perfil</label>
-							<input type='text' name='ps_tag' id='ps_tag' class='form-control' placeholder='Tags do Perfil' value='' >
+							<input type='text' name='ps_tag' id='ps_tag' class='form-control' placeholder='Tags do Perfil' value='<?= isset($response['data']['ps_tag']) ? $response['data']['ps_tag'] : '' ?>' >
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['ps_tag']) ? $response['error']['ps_tag'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='ps_Imagem'>Imagem</label>
-							<input type='' name='ps_Imagem' id='ps_Imagem' class='form-control' placeholder='Imagem' value='' required>
+							<input type='' name='ps_Imagem' id='ps_Imagem' class='form-control' placeholder='Imagem' value='<?= isset($response['data']['ps_Imagem']) ? $response['data']['ps_Imagem'] : '' ?>' required>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['ps_Imagem']) ? $response['error']['ps_Imagem'] : ''; ?></div>
 							<?php endif; ?>
@@ -121,4 +121,5 @@
 <script>
   var url_get = '<?= base_url('perfis/create'); ?>';
   var url_upd = '<?= base_url('perfis/edit'); ?>';
+  var url_view = '<?= base_url('perfis/view'); ?>';
 </script>

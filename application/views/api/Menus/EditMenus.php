@@ -114,4 +114,5 @@
 <script>
   var url_get = '<?= base_url('menus/get'); ?>';
   var url_upd = '<?= base_url('menus/edit'); ?>';
+  var url_view = '<?= base_url('menus/view'); ?>';
 </script>

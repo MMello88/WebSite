@@ -93,4 +93,5 @@
 <script>
   var url_get = '<?= base_url('usersgrupo/get'); ?>';
   var url_upd = '<?= base_url('usersgrupo/edit'); ?>';
+  var url_view = '<?= base_url('usersgrupo/view'); ?>';
 </script>

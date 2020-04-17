@@ -113,4 +113,5 @@
 <script>
   var url_get = '<?= base_url('ref435/get'); ?>';
   var url_upd = '<?= base_url('ref435/edit'); ?>';
+  var url_view = '<?= base_url('ref435/view'); ?>';
 </script>

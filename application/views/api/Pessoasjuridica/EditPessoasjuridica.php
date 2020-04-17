@@ -247,4 +247,5 @@
 <script>
   var url_get = '<?= base_url('pessoasjuridica/get'); ?>';
   var url_upd = '<?= base_url('pessoasjuridica/edit'); ?>';
+  var url_view = '<?= base_url('pessoasjuridica/view'); ?>';
 </script>

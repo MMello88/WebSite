@@ -99,4 +99,5 @@
 <script>
   var url_get = '<?= base_url('regs0206efdc/get'); ?>';
   var url_upd = '<?= base_url('regs0206efdc/edit'); ?>';
+  var url_view = '<?= base_url('regs0206efdc/view'); ?>';
 </script>

@@ -106,4 +106,5 @@
 <script>
   var url_get = '<?= base_url('municipios/get'); ?>';
   var url_upd = '<?= base_url('municipios/edit'); ?>';
+  var url_view = '<?= base_url('municipios/view'); ?>';
 </script>

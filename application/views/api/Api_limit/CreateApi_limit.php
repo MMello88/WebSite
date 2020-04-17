@@ -69,35 +69,35 @@
                         <legend>Adicionar um novo registro</legend> <!-- .form-group -->
 							<div class='form-group'>
 								<label for='uri'></label>
-							<input type='text' name='uri' id='uri' class='form-control' placeholder='' value='' required>
+							<input type='text' name='uri' id='uri' class='form-control' placeholder='' value='<?= isset($response['data']['uri']) ? $response['data']['uri'] : '' ?>' required>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['uri']) ? $response['error']['uri'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='class'></label>
-							<input type='text' name='class' id='class' class='form-control' placeholder='' value='' required>
+							<input type='text' name='class' id='class' class='form-control' placeholder='' value='<?= isset($response['data']['class']) ? $response['data']['class'] : '' ?>' required>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['class']) ? $response['error']['class'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='method'></label>
-							<input type='text' name='method' id='method' class='form-control' placeholder='' value='' required>
+							<input type='text' name='method' id='method' class='form-control' placeholder='' value='<?= isset($response['data']['method']) ? $response['data']['method'] : '' ?>' required>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['method']) ? $response['error']['method'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='ip_address'></label>
-							<input type='text' name='ip_address' id='ip_address' class='form-control' placeholder='' value='' required>
+							<input type='text' name='ip_address' id='ip_address' class='form-control' placeholder='' value='<?= isset($response['data']['ip_address']) ? $response['data']['ip_address'] : '' ?>' required>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['ip_address']) ? $response['error']['ip_address'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='time'></label>
-							<input type='' name='time' id='time' class='form-control' placeholder='' value='' required>
+							<input type='' name='time' id='time' class='form-control' placeholder='' value='<?= isset($response['data']['time']) ? $response['data']['time'] : '' ?>' required>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['time']) ? $response['error']['time'] : ''; ?></div>
 							<?php endif; ?>
@@ -120,4 +120,5 @@
 <script>
   var url_get = '<?= base_url('api_limit/create'); ?>';
   var url_upd = '<?= base_url('api_limit/edit'); ?>';
+  var url_view = '<?= base_url('api_limit/view'); ?>';
 </script>

@@ -127,4 +127,5 @@
 <script>
   var url_get = '<?= base_url('regs0400efdc/get'); ?>';
   var url_upd = '<?= base_url('regs0400efdc/edit'); ?>';
+  var url_view = '<?= base_url('regs0400efdc/view'); ?>';
 </script>

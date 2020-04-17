@@ -69,7 +69,7 @@
                         <legend>Adicionar um novo registro</legend> <!-- .form-group -->
 							<div class='form-group'>
 								<label for='a001_Reg'>Registro</label>
-							<input type='text' name='a001_Reg' id='a001_Reg' class='form-control' placeholder='Registro' value='' required>
+							<input type='text' name='a001_Reg' id='a001_Reg' class='form-control' placeholder='Registro' value='<?= isset($response['data']['a001_Reg']) ? $response['data']['a001_Reg'] : '' ?>' required>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['a001_Reg']) ? $response['error']['a001_Reg'] : ''; ?></div>
 							<?php endif; ?>
@@ -78,36 +78,31 @@
 								<label for='a001_IndicadorMovimento'>Indicador Movimento</label>
 							<select name='a001_IndicadorMovimento' id='a001_IndicadorMovimento' class='custom-select' placeholder='Indicador Movimento' required>
 								<option value=''> Selecione </option>
-								<option value='0 - Bloco com dados informados'> 0 - Bloco com dados informados </option>
-								<option value='1 - Bloco sem dados informados'> 1 - Bloco sem dados informados </option>
+								<option value='0 - Bloco com dados informados' <?= isset($response['data']['a001_IndicadorMovimento']) ? $response['data']['a001_IndicadorMovimento'] == '0 - Bloco com dados informados' ? 'selected' : '' : '' ?>> 0 - Bloco com dados informados </option>
+								<option value='1 - Bloco sem dados informados' <?= isset($response['data']['a001_IndicadorMovimento']) ? $response['data']['a001_IndicadorMovimento'] == '1 - Bloco sem dados informados' ? 'selected' : '' : '' ?>> 1 - Bloco sem dados informados </option>
 							</select>
 						</div>
 							<div class='form-group'>
 								<label for='a001_DtIni'>Data Inicial</label>
-							<input type='date' name='a001_DtIni' id='a001_DtIni' class='form-control' placeholder='Data Inicial' value='' required>
+							<input type='date' name='a001_DtIni' id='a001_DtIni' class='form-control' placeholder='Data Inicial' value='<?= isset($response['data']['a001_DtIni']) ? $response['data']['a001_DtIni'] : '' ?>' required>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['a001_DtIni']) ? $response['error']['a001_DtIni'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='a001_DtFin'>Data Final</label>
-							<input type='date' name='a001_DtFin' id='a001_DtFin' class='form-control' placeholder='Data Final' value='' >
+							<input type='date' name='a001_DtFin' id='a001_DtFin' class='form-control' placeholder='Data Final' value='<?= isset($response['data']['a001_DtFin']) ? $response['data']['a001_DtFin'] : '' ?>' >
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['a001_DtFin']) ? $response['error']['a001_DtFin'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='a001_PessoaJuridicaId'>Pessoa Juridica</label>
-							<input type='number' name='a001_PessoaJuridicaId' id='a001_PessoaJuridicaId' class='form-control' placeholder='Pessoa Juridica' value='' >
+							<select name='a001_PessoaJuridicaId' id='a001_PessoaJuridicaId' class='custom-select' placeholder='Pessoa Juridica' >
+								<?= getOptionToSelect('pessoasjuridica','pj_Id', '', isset($response['data']['a001_PessoaJuridicaId']) ? $response['data']['a001_PessoaJuridicaId'] : '', $login->data->token) ?>
+							</select>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['a001_PessoaJuridicaId']) ? $response['error']['a001_PessoaJuridicaId'] : ''; ?></div>
-							<?php endif; ?>
-						</div>
-							<div class='form-group'>
-								<label for='a001_UsersId'>Usuário</label>
-							<input type='number' name='a001_UsersId' id='a001_UsersId' class='form-control' placeholder='Usuário' value='' >
-							<?php if(isset($response)): ?>
-								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['a001_UsersId']) ? $response['error']['a001_UsersId'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 
@@ -128,4 +123,5 @@
 <script>
   var url_get = '<?= base_url('regsa001efdc/create'); ?>';
   var url_upd = '<?= base_url('regsa001efdc/edit'); ?>';
+  var url_view = '<?= base_url('regsa001efdc/view'); ?>';
 </script>

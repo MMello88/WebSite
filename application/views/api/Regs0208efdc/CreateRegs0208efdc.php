@@ -69,7 +69,7 @@
                         <legend>Adicionar um novo registro</legend> <!-- .form-group -->
 							<div class='form-group'>
 								<label for='0208_Reg'>Registro</label>
-							<input type='text' name='0208_Reg' id='0208_Reg' class='form-control' placeholder='Registro' value='' required>
+							<input type='text' name='0208_Reg' id='0208_Reg' class='form-control' placeholder='Registro' value='<?= isset($response['data']['0208_Reg']) ? $response['data']['0208_Reg'] : '' ?>' required>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['0208_Reg']) ? $response['error']['0208_Reg'] : ''; ?></div>
 							<?php endif; ?>
@@ -78,31 +78,31 @@
 								<label for='0208_CodTabIncidencia'>Código Tabela de Incidência</label>
 							<select name='0208_CodTabIncidencia' id='0208_CodTabIncidencia' class='custom-select' placeholder='Código Tabela de Incidência' required>
 								<option value=''> Selecione </option>
-								<option value='01 – Tabela I'> 01 – Tabela I </option>
-								<option value='02 – Tabela II'> 02 – Tabela II </option>
-								<option value='03 – Tabela III'> 03 – Tabela III </option>
-								<option value='04 – Tabela IV'> 04 – Tabela IV </option>
-								<option value='05 – Tabela V'> 05 – Tabela V </option>
-								<option value='06 – Tabela VI'> 06 – Tabela VI </option>
-								<option value='07 – Tabela VII'> 07 – Tabela VII </option>
-								<option value='08– Tabela VIII'> 08– Tabela VIII </option>
-								<option value='09 – Tabela IX'> 09 – Tabela IX </option>
-								<option value='10 – Tabela X'> 10 – Tabela X </option>
-								<option value='11 – Tabela XI'> 11 – Tabela XI </option>
-								<option value='12 – Tabela XII'> 12 – Tabela XII </option>
-								<option value='13 – Tabela XIII'> 13 – Tabela XIII </option>
+								<option value='01 – Tabela I' <?= isset($response['data']['0208_CodTabIncidencia']) ? $response['data']['0208_CodTabIncidencia'] == '01 – Tabela I' ? 'selected' : '' : '' ?>> 01 – Tabela I </option>
+								<option value='02 – Tabela II' <?= isset($response['data']['0208_CodTabIncidencia']) ? $response['data']['0208_CodTabIncidencia'] == '02 – Tabela II' ? 'selected' : '' : '' ?>> 02 – Tabela II </option>
+								<option value='03 – Tabela III' <?= isset($response['data']['0208_CodTabIncidencia']) ? $response['data']['0208_CodTabIncidencia'] == '03 – Tabela III' ? 'selected' : '' : '' ?>> 03 – Tabela III </option>
+								<option value='04 – Tabela IV' <?= isset($response['data']['0208_CodTabIncidencia']) ? $response['data']['0208_CodTabIncidencia'] == '04 – Tabela IV' ? 'selected' : '' : '' ?>> 04 – Tabela IV </option>
+								<option value='05 – Tabela V' <?= isset($response['data']['0208_CodTabIncidencia']) ? $response['data']['0208_CodTabIncidencia'] == '05 – Tabela V' ? 'selected' : '' : '' ?>> 05 – Tabela V </option>
+								<option value='06 – Tabela VI' <?= isset($response['data']['0208_CodTabIncidencia']) ? $response['data']['0208_CodTabIncidencia'] == '06 – Tabela VI' ? 'selected' : '' : '' ?>> 06 – Tabela VI </option>
+								<option value='07 – Tabela VII' <?= isset($response['data']['0208_CodTabIncidencia']) ? $response['data']['0208_CodTabIncidencia'] == '07 – Tabela VII' ? 'selected' : '' : '' ?>> 07 – Tabela VII </option>
+								<option value='08– Tabela VIII' <?= isset($response['data']['0208_CodTabIncidencia']) ? $response['data']['0208_CodTabIncidencia'] == '08– Tabela VIII' ? 'selected' : '' : '' ?>> 08– Tabela VIII </option>
+								<option value='09 – Tabela IX' <?= isset($response['data']['0208_CodTabIncidencia']) ? $response['data']['0208_CodTabIncidencia'] == '09 – Tabela IX' ? 'selected' : '' : '' ?>> 09 – Tabela IX </option>
+								<option value='10 – Tabela X' <?= isset($response['data']['0208_CodTabIncidencia']) ? $response['data']['0208_CodTabIncidencia'] == '10 – Tabela X' ? 'selected' : '' : '' ?>> 10 – Tabela X </option>
+								<option value='11 – Tabela XI' <?= isset($response['data']['0208_CodTabIncidencia']) ? $response['data']['0208_CodTabIncidencia'] == '11 – Tabela XI' ? 'selected' : '' : '' ?>> 11 – Tabela XI </option>
+								<option value='12 – Tabela XII' <?= isset($response['data']['0208_CodTabIncidencia']) ? $response['data']['0208_CodTabIncidencia'] == '12 – Tabela XII' ? 'selected' : '' : '' ?>> 12 – Tabela XII </option>
+								<option value='13 – Tabela XIII' <?= isset($response['data']['0208_CodTabIncidencia']) ? $response['data']['0208_CodTabIncidencia'] == '13 – Tabela XIII' ? 'selected' : '' : '' ?>> 13 – Tabela XIII </option>
 							</select>
 						</div>
 							<div class='form-group'>
 								<label for='0208_CodGrupo'>Código Grupo</label>
-							<input type='text' name='0208_CodGrupo' id='0208_CodGrupo' class='form-control' placeholder='Código Grupo' value='' required>
+							<input type='text' name='0208_CodGrupo' id='0208_CodGrupo' class='form-control' placeholder='Código Grupo' value='<?= isset($response['data']['0208_CodGrupo']) ? $response['data']['0208_CodGrupo'] : '' ?>' required>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['0208_CodGrupo']) ? $response['error']['0208_CodGrupo'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='0208_MarcaComercial'>Marca Comercial</label>
-							<input type='text' name='0208_MarcaComercial' id='0208_MarcaComercial' class='form-control' placeholder='Marca Comercial' value='' required>
+							<input type='text' name='0208_MarcaComercial' id='0208_MarcaComercial' class='form-control' placeholder='Marca Comercial' value='<?= isset($response['data']['0208_MarcaComercial']) ? $response['data']['0208_MarcaComercial'] : '' ?>' required>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['0208_MarcaComercial']) ? $response['error']['0208_MarcaComercial'] : ''; ?></div>
 							<?php endif; ?>
@@ -125,4 +125,5 @@
 <script>
   var url_get = '<?= base_url('regs0208efdc/create'); ?>';
   var url_upd = '<?= base_url('regs0208efdc/edit'); ?>';
+  var url_view = '<?= base_url('regs0208efdc/view'); ?>';
 </script>

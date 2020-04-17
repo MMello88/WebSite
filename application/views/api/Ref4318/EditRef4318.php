@@ -120,4 +120,5 @@
 <script>
   var url_get = '<?= base_url('ref4318/get'); ?>';
   var url_upd = '<?= base_url('ref4318/edit'); ?>';
+  var url_view = '<?= base_url('ref4318/view'); ?>';
 </script>

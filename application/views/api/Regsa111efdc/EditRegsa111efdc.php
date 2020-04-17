@@ -115,4 +115,5 @@
 <script>
   var url_get = '<?= base_url('regsa111efdc/get'); ?>';
   var url_upd = '<?= base_url('regsa111efdc/edit'); ?>';
+  var url_view = '<?= base_url('regsa111efdc/view'); ?>';
 </script>

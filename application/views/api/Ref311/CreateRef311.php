@@ -69,35 +69,35 @@
                         <legend>Adicionar um novo registro</legend> <!-- .form-group -->
 							<div class='form-group'>
 								<label for='311_Codigo'>Código</label>
-							<input type='text' name='311_Codigo' id='311_Codigo' class='form-control' placeholder='Código' value='' required>
+							<input type='text' name='311_Codigo' id='311_Codigo' class='form-control' placeholder='Código' value='<?= isset($response['data']['311_Codigo']) ? $response['data']['311_Codigo'] : '' ?>' required>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['311_Codigo']) ? $response['error']['311_Codigo'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='311_Versao'>Versão</label>
-							<input type='text' name='311_Versao' id='311_Versao' class='form-control' placeholder='Versão' value='' required>
+							<input type='text' name='311_Versao' id='311_Versao' class='form-control' placeholder='Versão' value='<?= isset($response['data']['311_Versao']) ? $response['data']['311_Versao'] : '' ?>' required>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['311_Versao']) ? $response['error']['311_Versao'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='311_Leiaout'>Leiaout Instituído</label>
-							<input type='text' name='311_Leiaout' id='311_Leiaout' class='form-control' placeholder='Leiaout Instituído' value='' required>
+							<input type='text' name='311_Leiaout' id='311_Leiaout' class='form-control' placeholder='Leiaout Instituído' value='<?= isset($response['data']['311_Leiaout']) ? $response['data']['311_Leiaout'] : '' ?>' required>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['311_Leiaout']) ? $response['error']['311_Leiaout'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='311_DtIni'>Data Inicial</label>
-							<input type='date' name='311_DtIni' id='311_DtIni' class='form-control' placeholder='Data Inicial' value='' required>
+							<input type='date' name='311_DtIni' id='311_DtIni' class='form-control' placeholder='Data Inicial' value='<?= isset($response['data']['311_DtIni']) ? $response['data']['311_DtIni'] : '' ?>' required>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['311_DtIni']) ? $response['error']['311_DtIni'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='311_DtFin'>Data Final</label>
-							<input type='date' name='311_DtFin' id='311_DtFin' class='form-control' placeholder='Data Final' value='' >
+							<input type='date' name='311_DtFin' id='311_DtFin' class='form-control' placeholder='Data Final' value='<?= isset($response['data']['311_DtFin']) ? $response['data']['311_DtFin'] : '' ?>' >
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['311_DtFin']) ? $response['error']['311_DtFin'] : ''; ?></div>
 							<?php endif; ?>
@@ -120,4 +120,5 @@
 <script>
   var url_get = '<?= base_url('ref311/create'); ?>';
   var url_upd = '<?= base_url('ref311/edit'); ?>';
+  var url_view = '<?= base_url('ref311/view'); ?>';
 </script>

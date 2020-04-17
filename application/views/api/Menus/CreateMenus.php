@@ -69,7 +69,7 @@
                         <legend>Adicionar um novo registro</legend> <!-- .form-group -->
 							<div class='form-group'>
 								<label for='mns_Nome'>Nome do Menu</label>
-							<input type='text' name='mns_Nome' id='mns_Nome' class='form-control' placeholder='Nome do Menu' value='' required>
+							<input type='text' name='mns_Nome' id='mns_Nome' class='form-control' placeholder='Nome do Menu' value='<?= isset($response['data']['mns_Nome']) ? $response['data']['mns_Nome'] : '' ?>' required>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['mns_Nome']) ? $response['error']['mns_Nome'] : ''; ?></div>
 							<?php endif; ?>
@@ -78,20 +78,20 @@
 								<label for='mns_Ativo'>Ativo</label>
 							<select name='mns_Ativo' id='mns_Ativo' class='custom-select' placeholder='Ativo' required>
 								<option value=''> Selecione </option>
-								<option value='True'> True </option>
-								<option value='False'> False </option>
+								<option value='True' <?= isset($response['data']['mns_Ativo']) ? $response['data']['mns_Ativo'] == 'True' ? 'selected' : '' : '' ?>> True </option>
+								<option value='False' <?= isset($response['data']['mns_Ativo']) ? $response['data']['mns_Ativo'] == 'False' ? 'selected' : '' : '' ?>> False </option>
 							</select>
 						</div>
 							<div class='form-group'>
 								<label for='mns_Icone'>Icone</label>
-							<input type='' name='mns_Icone' id='mns_Icone' class='form-control' placeholder='Icone' value='' >
+							<input type='' name='mns_Icone' id='mns_Icone' class='form-control' placeholder='Icone' value='<?= isset($response['data']['mns_Icone']) ? $response['data']['mns_Icone'] : '' ?>' >
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['mns_Icone']) ? $response['error']['mns_Icone'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='mns_url'>Url</label>
-							<input type='' name='mns_url' id='mns_url' class='form-control' placeholder='Url' value='' required>
+							<input type='' name='mns_url' id='mns_url' class='form-control' placeholder='Url' value='<?= isset($response['data']['mns_url']) ? $response['data']['mns_url'] : '' ?>' required>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['mns_url']) ? $response['error']['mns_url'] : ''; ?></div>
 							<?php endif; ?>
@@ -114,4 +114,5 @@
 <script>
   var url_get = '<?= base_url('menus/create'); ?>';
   var url_upd = '<?= base_url('menus/edit'); ?>';
+  var url_view = '<?= base_url('menus/view'); ?>';
 </script>

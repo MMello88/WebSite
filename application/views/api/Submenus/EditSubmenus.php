@@ -128,4 +128,5 @@
 <script>
   var url_get = '<?= base_url('submenus/get'); ?>';
   var url_upd = '<?= base_url('submenus/edit'); ?>';
+  var url_view = '<?= base_url('submenus/view'); ?>';
 </script>

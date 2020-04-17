@@ -16,6 +16,8 @@ function () {
       this.searchRecords();
       this.selecter();
       this.clearSelected();
+      this.setbtnFloatedAdd();
+      this.setDeleteClick();
       this.table.buttons().container().appendTo('#dt-buttons').unwrap();
     }
   }, {
@@ -45,6 +47,12 @@ function () {
 					searchable: false
 				},
 				{
+					data: '431_Id',
+					className: 'align-middle text-right',
+					orderable: false,
+					searchable: false
+				},
+				{
 					data: '431_Codigo',
 					className: 'align-middle',
 				},
@@ -60,12 +68,6 @@ function () {
 					data: '431_DtFin',
 					className: 'align-middle',
 				},
-				{
-					data: '431_Id',
-					className: 'align-middle text-right',
-					orderable: false,
-					searchable: false
-				}
 
         ],
         columnDefs: [{
@@ -78,15 +80,19 @@ function () {
             </div>`;
           }
         },{
-          targets: 5,
+          targets: 1,
           render: function render(data, type, row, meta) {
             return `
+            <a class='btn btn-sm btn-icon btn-secondary' href='${url_view}/${data}'>
+              <i class='fa fa-eye'></i>
+            </a>
             <a class='btn btn-sm btn-icon btn-secondary' href='${url_upd}/${data}'>
               <i class='fa fa-pencil-alt'></i>
             </a>
-            <a class='btn btn-sm btn-icon btn-secondary' href='#${data}'>
+            <a class='btn btn-sm btn-icon btn-secondary' id='btnDeleteClick' data-toggle='modal' data-target='#modalDeleteRegistro' data-id='${data}' href='#${data}'>
               <i class='far fa-trash-alt'></i>
-            </a>`;
+            </a>
+            `;
           }
         }]
       });
@@ -97,6 +103,14 @@ function () {
       var self = this;
       $('#btnFloatedAdd').on('click', function(e){
         self.table.ajax.reload();
+      })
+    }
+  },{
+    key: 'setDeleteClick',
+    value: function setDeleteClick(){
+      var self = this;
+      $('#modalDeleteRegistro').on('show.bs.modal', function (event) {
+        document.getElementById('DeleteById').value = $(event.relatedTarget).data('id');
       })
     }
   },{

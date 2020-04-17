@@ -69,35 +69,35 @@
                         <legend>Adicionar um novo registro</legend> <!-- .form-group -->
 							<div class='form-group'>
 								<label for='4318_Codigo'>Código</label>
-							<input type='text' name='4318_Codigo' id='4318_Codigo' class='form-control' placeholder='Código' value='' required>
+							<input type='text' name='4318_Codigo' id='4318_Codigo' class='form-control' placeholder='Código' value='<?= isset($response['data']['4318_Codigo']) ? $response['data']['4318_Codigo'] : '' ?>' required>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['4318_Codigo']) ? $response['error']['4318_Codigo'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='4318_Descricao'>Descrição</label>
-							<input type='text' name='4318_Descricao' id='4318_Descricao' class='form-control' placeholder='Descrição' value='' required>
+							<input type='text' name='4318_Descricao' id='4318_Descricao' class='form-control' placeholder='Descrição' value='<?= isset($response['data']['4318_Descricao']) ? $response['data']['4318_Descricao'] : '' ?>' required>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['4318_Descricao']) ? $response['error']['4318_Descricao'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='4318_Obrigatorio'>Obrigatório</label>
-							<input type='text' name='4318_Obrigatorio' id='4318_Obrigatorio' class='form-control' placeholder='Obrigatório' value='' >
+							<input type='text' name='4318_Obrigatorio' id='4318_Obrigatorio' class='form-control' placeholder='Obrigatório' value='<?= isset($response['data']['4318_Obrigatorio']) ? $response['data']['4318_Obrigatorio'] : '' ?>' >
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['4318_Obrigatorio']) ? $response['error']['4318_Obrigatorio'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='4318_DtIni'>Data Inicial</label>
-							<input type='date' name='4318_DtIni' id='4318_DtIni' class='form-control' placeholder='Data Inicial' value='' required>
+							<input type='date' name='4318_DtIni' id='4318_DtIni' class='form-control' placeholder='Data Inicial' value='<?= isset($response['data']['4318_DtIni']) ? $response['data']['4318_DtIni'] : '' ?>' required>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['4318_DtIni']) ? $response['error']['4318_DtIni'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='4318_DtFin'>Data Final</label>
-							<input type='date' name='4318_DtFin' id='4318_DtFin' class='form-control' placeholder='Data Final' value='' >
+							<input type='date' name='4318_DtFin' id='4318_DtFin' class='form-control' placeholder='Data Final' value='<?= isset($response['data']['4318_DtFin']) ? $response['data']['4318_DtFin'] : '' ?>' >
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['4318_DtFin']) ? $response['error']['4318_DtFin'] : ''; ?></div>
 							<?php endif; ?>
@@ -120,4 +120,5 @@
 <script>
   var url_get = '<?= base_url('ref4318/create'); ?>';
   var url_upd = '<?= base_url('ref4318/edit'); ?>';
+  var url_view = '<?= base_url('ref4318/view'); ?>';
 </script>

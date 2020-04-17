@@ -121,4 +121,5 @@
 <script>
   var url_get = '<?= base_url('perfis/get'); ?>';
   var url_upd = '<?= base_url('perfis/edit'); ?>';
+  var url_view = '<?= base_url('perfis/view'); ?>';
 </script>

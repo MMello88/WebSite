@@ -128,4 +128,5 @@
 <script>
   var url_get = '<?= base_url('pessoasfisica/get'); ?>';
   var url_upd = '<?= base_url('pessoasfisica/edit'); ?>';
+  var url_view = '<?= base_url('pessoasfisica/view'); ?>';
 </script>

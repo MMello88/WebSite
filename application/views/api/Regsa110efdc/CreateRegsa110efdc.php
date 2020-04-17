@@ -69,37 +69,34 @@
                         <legend>Adicionar um novo registro</legend> <!-- .form-group -->
 							<div class='form-group'>
 								<label for='a110_Reg'>Registro</label>
-							<input type='text' name='a110_Reg' id='a110_Reg' class='form-control' placeholder='Registro' value='' required>
+							<input type='text' name='a110_Reg' id='a110_Reg' class='form-control' placeholder='Registro' value='<?= isset($response['data']['a110_Reg']) ? $response['data']['a110_Reg'] : '' ?>' required>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['a110_Reg']) ? $response['error']['a110_Reg'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='a110_Reg0450EFDCId'>Informação Complementar</label>
-							<input type='number' name='a110_Reg0450EFDCId' id='a110_Reg0450EFDCId' class='form-control' placeholder='Informação Complementar' value='' >
+							<select name='a110_Reg0450EFDCId' id='a110_Reg0450EFDCId' class='custom-select' placeholder='Informação Complementar' >
+								<?= getOptionToSelect('regs0450efdc','0450_Id', '', isset($response['data']['a110_Reg0450EFDCId']) ? $response['data']['a110_Reg0450EFDCId'] : '', $login->data->token) ?>
+							</select>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['a110_Reg0450EFDCId']) ? $response['error']['a110_Reg0450EFDCId'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='a110_TxtComplementar'>Informação Complementar do Documento Fiscal</label>
-							<input type='text' name='a110_TxtComplementar' id='a110_TxtComplementar' class='form-control' placeholder='Informação Complementar do Documento Fiscal' value='' >
+							<input type='text' name='a110_TxtComplementar' id='a110_TxtComplementar' class='form-control' placeholder='Informação Complementar do Documento Fiscal' value='<?= isset($response['data']['a110_TxtComplementar']) ? $response['data']['a110_TxtComplementar'] : '' ?>' >
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['a110_TxtComplementar']) ? $response['error']['a110_TxtComplementar'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='a110_RegA100EFDCId'>Documento - Nota Fiscal de Serviço</label>
-							<input type='number' name='a110_RegA100EFDCId' id='a110_RegA100EFDCId' class='form-control' placeholder='Documento - Nota Fiscal de Serviço' value='' required>
+							<select name='a110_RegA100EFDCId' id='a110_RegA100EFDCId' class='custom-select' placeholder='Documento - Nota Fiscal de Serviço' required>
+								<?= getOptionToSelect('regsa100efdc','a100_Id', '', isset($response['data']['a110_RegA100EFDCId']) ? $response['data']['a110_RegA100EFDCId'] : '', $login->data->token) ?>
+							</select>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['a110_RegA100EFDCId']) ? $response['error']['a110_RegA100EFDCId'] : ''; ?></div>
-							<?php endif; ?>
-						</div>
-							<div class='form-group'>
-								<label for='a110_UsersId'>Usuário</label>
-							<input type='number' name='a110_UsersId' id='a110_UsersId' class='form-control' placeholder='Usuário' value='' required>
-							<?php if(isset($response)): ?>
-								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['a110_UsersId']) ? $response['error']['a110_UsersId'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 
@@ -120,4 +117,5 @@
 <script>
   var url_get = '<?= base_url('regsa110efdc/create'); ?>';
   var url_upd = '<?= base_url('regsa110efdc/edit'); ?>';
+  var url_view = '<?= base_url('regsa110efdc/view'); ?>';
 </script>

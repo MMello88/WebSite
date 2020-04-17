@@ -100,4 +100,5 @@
 <script>
   var url_get = '<?= base_url('grupousers/get'); ?>';
   var url_upd = '<?= base_url('grupousers/edit'); ?>';
+  var url_view = '<?= base_url('grupousers/view'); ?>';
 </script>

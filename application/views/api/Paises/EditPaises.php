@@ -99,4 +99,5 @@
 <script>
   var url_get = '<?= base_url('paises/get'); ?>';
   var url_upd = '<?= base_url('paises/edit'); ?>';
+  var url_view = '<?= base_url('paises/view'); ?>';
 </script>

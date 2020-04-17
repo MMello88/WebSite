@@ -55,8 +55,8 @@ class MY_Controller extends CI_Controller {
     $url = $this->base_api($url);
     if($this->isOn){
       $curl = curl_init($url);
-      curl_setopt($curl, CURLOPT_RETURNTRANSFER,  true);
-      curl_setopt($curl, CURLOPT_PUT,  true);
+      curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+      curl_setopt($curl, CURLOPT_PUT, true);
       curl_setopt($curl, CURLOPT_POSTFIELDS,  $data);
       curl_setopt($curl, CURLOPT_HTTPHEADER, [
         'Authorization: ' . $token
@@ -74,9 +74,26 @@ class MY_Controller extends CI_Controller {
   protected function sendGet($url, $token, $toArray = FALSE){
     $url = $this->base_api($url);
     if($this->isOn){
-      $base_api = $this->base_api();
       $curl = curl_init($url);
       curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+      curl_setopt($curl, CURLOPT_HTTPHEADER, [
+        'Authorization: ' . $token
+      ]);
+      $response = curl_exec($curl);
+      curl_close($curl);
+
+      return json_decode($response, $toArray);
+    } else {
+      return ["status" => "FALSE", "error" => ["message" => "Por favor realizar Login na aplicação."]];
+    }
+  }
+
+  protected function sendDelete($url, $token, $toArray = FALSE){
+    $url = $this->base_api($url);
+    if($this->isOn){
+      $curl = curl_init($url);
+      curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+      curl_setopt($curl, CURLOPT_CUSTOMREQUEST, "DELETE");
       curl_setopt($curl, CURLOPT_HTTPHEADER, [
         'Authorization: ' . $token
       ]);
@@ -92,4 +109,6 @@ class MY_Controller extends CI_Controller {
   protected function scripts($location){
     $this->data['scripts'][] = base_url($location);
   }
+
+
 }

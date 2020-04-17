@@ -69,7 +69,7 @@
                         <legend>Adicionar um novo registro</legend> <!-- .form-group -->
 							<div class='form-group'>
 								<label for='gpu_Nome'>Nome</label>
-							<input type='text' name='gpu_Nome' id='gpu_Nome' class='form-control' placeholder='Nome' value='' required>
+							<input type='text' name='gpu_Nome' id='gpu_Nome' class='form-control' placeholder='Nome' value='<?= isset($response['data']['gpu_Nome']) ? $response['data']['gpu_Nome'] : '' ?>' required>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['gpu_Nome']) ? $response['error']['gpu_Nome'] : ''; ?></div>
 							<?php endif; ?>
@@ -78,8 +78,8 @@
 								<label for='gpu_Ativo'>Ativo</label>
 							<select name='gpu_Ativo' id='gpu_Ativo' class='custom-select' placeholder='Ativo' required>
 								<option value=''> Selecione </option>
-								<option value='True'> True </option>
-								<option value='False'> False </option>
+								<option value='True' <?= isset($response['data']['gpu_Ativo']) ? $response['data']['gpu_Ativo'] == 'True' ? 'selected' : '' : '' ?>> True </option>
+								<option value='False' <?= isset($response['data']['gpu_Ativo']) ? $response['data']['gpu_Ativo'] == 'False' ? 'selected' : '' : '' ?>> False </option>
 							</select>
 						</div>
 
@@ -100,4 +100,5 @@
 <script>
   var url_get = '<?= base_url('grupousers/create'); ?>';
   var url_upd = '<?= base_url('grupousers/edit'); ?>';
+  var url_view = '<?= base_url('grupousers/view'); ?>';
 </script>

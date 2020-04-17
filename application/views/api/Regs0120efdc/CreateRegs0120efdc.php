@@ -69,51 +69,46 @@
                         <legend>Adicionar um novo registro</legend> <!-- .form-group -->
 							<div class='form-group'>
 								<label for='0120_Reg'>Registro</label>
-							<input type='text' name='0120_Reg' id='0120_Reg' class='form-control' placeholder='Registro' value='0120' required>
+							<input type='text' name='0120_Reg' id='0120_Reg' class='form-control' placeholder='Registro' value='<?= isset($response['data']['0120_Reg']) ? $response['data']['0120_Reg'] : '0120' ?>' required>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['0120_Reg']) ? $response['error']['0120_Reg'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='0120_MesRefer'>Mês de referência</label>
-							<input type='date' name='0120_MesRefer' id='0120_MesRefer' class='form-control' placeholder='Mês de referência' value='' required>
+							<input type='date' name='0120_MesRefer' id='0120_MesRefer' class='form-control' placeholder='Mês de referência' value='<?= isset($response['data']['0120_MesRefer']) ? $response['data']['0120_MesRefer'] : '' ?>' required>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['0120_MesRefer']) ? $response['error']['0120_MesRefer'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='0120_InfoCompl'>Informação complementar</label>
-							<input type='number' name='0120_InfoCompl' id='0120_InfoCompl' class='form-control' placeholder='Informação complementar' value='' required>
+							<input type='number' name='0120_InfoCompl' id='0120_InfoCompl' class='form-control' placeholder='Informação complementar' value='<?= isset($response['data']['0120_InfoCompl']) ? $response['data']['0120_InfoCompl'] : '' ?>' required>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['0120_InfoCompl']) ? $response['error']['0120_InfoCompl'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='0120_DtIni'>Data Inicial</label>
-							<input type='date' name='0120_DtIni' id='0120_DtIni' class='form-control' placeholder='Data Inicial' value='' required>
+							<input type='date' name='0120_DtIni' id='0120_DtIni' class='form-control' placeholder='Data Inicial' value='<?= isset($response['data']['0120_DtIni']) ? $response['data']['0120_DtIni'] : '' ?>' required>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['0120_DtIni']) ? $response['error']['0120_DtIni'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='0120_DtFin'>Data Final</label>
-							<input type='date' name='0120_DtFin' id='0120_DtFin' class='form-control' placeholder='Data Final' value='' >
+							<input type='date' name='0120_DtFin' id='0120_DtFin' class='form-control' placeholder='Data Final' value='<?= isset($response['data']['0120_DtFin']) ? $response['data']['0120_DtFin'] : '' ?>' >
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['0120_DtFin']) ? $response['error']['0120_DtFin'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='0120_PessoaJuridicaId'>Pessoa Juridica</label>
-							<input type='number' name='0120_PessoaJuridicaId' id='0120_PessoaJuridicaId' class='form-control' placeholder='Pessoa Juridica' value='' >
+							<select name='0120_PessoaJuridicaId' id='0120_PessoaJuridicaId' class='custom-select' placeholder='Pessoa Juridica' >
+								<?= getOptionToSelect('pessoasjuridica','pj_Id', '', isset($response['data']['0120_PessoaJuridicaId']) ? $response['data']['0120_PessoaJuridicaId'] : '', $login->data->token) ?>
+							</select>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['0120_PessoaJuridicaId']) ? $response['error']['0120_PessoaJuridicaId'] : ''; ?></div>
-							<?php endif; ?>
-						</div>
-							<div class='form-group'>
-								<label for='0120_UsersId'>Usuário</label>
-							<input type='number' name='0120_UsersId' id='0120_UsersId' class='form-control' placeholder='Usuário' value='' >
-							<?php if(isset($response)): ?>
-								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['0120_UsersId']) ? $response['error']['0120_UsersId'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 
@@ -134,4 +129,5 @@
 <script>
   var url_get = '<?= base_url('regs0120efdc/create'); ?>';
   var url_upd = '<?= base_url('regs0120efdc/edit'); ?>';
+  var url_view = '<?= base_url('regs0120efdc/view'); ?>';
 </script>

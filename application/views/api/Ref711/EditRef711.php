@@ -141,4 +141,5 @@
 <script>
   var url_get = '<?= base_url('ref711/get'); ?>';
   var url_upd = '<?= base_url('ref711/edit'); ?>';
+  var url_view = '<?= base_url('ref711/view'); ?>';
 </script>

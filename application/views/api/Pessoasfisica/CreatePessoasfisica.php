@@ -69,28 +69,28 @@
                         <legend>Adicionar um novo registro</legend> <!-- .form-group -->
 							<div class='form-group'>
 								<label for='pf_Nome'>Nome</label>
-							<input type='text' name='pf_Nome' id='pf_Nome' class='form-control' placeholder='Nome' value='' required>
+							<input type='text' name='pf_Nome' id='pf_Nome' class='form-control' placeholder='Nome' value='<?= isset($response['data']['pf_Nome']) ? $response['data']['pf_Nome'] : '' ?>' required>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['pf_Nome']) ? $response['error']['pf_Nome'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='pf_Sobrenome'>Sobrenome</label>
-							<input type='text' name='pf_Sobrenome' id='pf_Sobrenome' class='form-control' placeholder='Sobrenome' value='' required>
+							<input type='text' name='pf_Sobrenome' id='pf_Sobrenome' class='form-control' placeholder='Sobrenome' value='<?= isset($response['data']['pf_Sobrenome']) ? $response['data']['pf_Sobrenome'] : '' ?>' required>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['pf_Sobrenome']) ? $response['error']['pf_Sobrenome'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='pf_DataNascimento'>Data Nascimento</label>
-							<input type='date' name='pf_DataNascimento' id='pf_DataNascimento' class='form-control' placeholder='Data Nascimento' value='' required>
+							<input type='date' name='pf_DataNascimento' id='pf_DataNascimento' class='form-control' placeholder='Data Nascimento' value='<?= isset($response['data']['pf_DataNascimento']) ? $response['data']['pf_DataNascimento'] : '' ?>' required>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['pf_DataNascimento']) ? $response['error']['pf_DataNascimento'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='pf_UrlFoto'>Foto Perfil</label>
-							<input type='text' name='pf_UrlFoto' id='pf_UrlFoto' class='form-control' placeholder='Foto Perfil' value='' >
+							<input type='text' name='pf_UrlFoto' id='pf_UrlFoto' class='form-control' placeholder='Foto Perfil' value='<?= isset($response['data']['pf_UrlFoto']) ? $response['data']['pf_UrlFoto'] : '' ?>' >
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['pf_UrlFoto']) ? $response['error']['pf_UrlFoto'] : ''; ?></div>
 							<?php endif; ?>
@@ -99,13 +99,13 @@
 								<label for='pf_Ativo'>Ativo</label>
 							<select name='pf_Ativo' id='pf_Ativo' class='custom-select' placeholder='Ativo' required>
 								<option value=''> Selecione </option>
-								<option value='True'> True </option>
-								<option value='False'> False </option>
+								<option value='True' <?= isset($response['data']['pf_Ativo']) ? $response['data']['pf_Ativo'] == 'True' ? 'selected' : '' : '' ?>> True </option>
+								<option value='False' <?= isset($response['data']['pf_Ativo']) ? $response['data']['pf_Ativo'] == 'False' ? 'selected' : '' : '' ?>> False </option>
 							</select>
 						</div>
 							<div class='form-group'>
 								<label for='pf_Criacao'></label>
-							<input type='datetime-local' name='pf_Criacao' id='pf_Criacao' class='form-control' placeholder='' value='CURRENT_TIMESTAMP(6)' required>
+							<input type='datetime-local' name='pf_Criacao' id='pf_Criacao' class='form-control' placeholder='' value='<?= isset($response['data']['pf_Criacao']) ? $response['data']['pf_Criacao'] : 'CURRENT_TIMESTAMP(6)' ?>' required>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['pf_Criacao']) ? $response['error']['pf_Criacao'] : ''; ?></div>
 							<?php endif; ?>
@@ -128,4 +128,5 @@
 <script>
   var url_get = '<?= base_url('pessoasfisica/create'); ?>';
   var url_upd = '<?= base_url('pessoasfisica/edit'); ?>';
+  var url_view = '<?= base_url('pessoasfisica/view'); ?>';
 </script>

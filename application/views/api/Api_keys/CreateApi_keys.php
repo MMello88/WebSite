@@ -69,28 +69,28 @@
                         <legend>Adicionar um novo registro</legend> <!-- .form-group -->
 							<div class='form-group'>
 								<label for='api_key'></label>
-							<input type='text' name='api_key' id='api_key' class='form-control' placeholder='' value='' required>
+							<input type='text' name='api_key' id='api_key' class='form-control' placeholder='' value='<?= isset($response['data']['api_key']) ? $response['data']['api_key'] : '' ?>' required>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['api_key']) ? $response['error']['api_key'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='controller'></label>
-							<input type='text' name='controller' id='controller' class='form-control' placeholder='' value='' required>
+							<input type='text' name='controller' id='controller' class='form-control' placeholder='' value='<?= isset($response['data']['controller']) ? $response['data']['controller'] : '' ?>' required>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['controller']) ? $response['error']['controller'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='date_created'></label>
-							<input type='date' name='date_created' id='date_created' class='form-control' placeholder='' value='' >
+							<input type='date' name='date_created' id='date_created' class='form-control' placeholder='' value='<?= isset($response['data']['date_created']) ? $response['data']['date_created'] : '' ?>' >
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['date_created']) ? $response['error']['date_created'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='date_modified'></label>
-							<input type='date' name='date_modified' id='date_modified' class='form-control' placeholder='' value='' >
+							<input type='date' name='date_modified' id='date_modified' class='form-control' placeholder='' value='<?= isset($response['data']['date_modified']) ? $response['data']['date_modified'] : '' ?>' >
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['date_modified']) ? $response['error']['date_modified'] : ''; ?></div>
 							<?php endif; ?>
@@ -113,4 +113,5 @@
 <script>
   var url_get = '<?= base_url('api_keys/create'); ?>';
   var url_upd = '<?= base_url('api_keys/edit'); ?>';
+  var url_view = '<?= base_url('api_keys/view'); ?>';
 </script>

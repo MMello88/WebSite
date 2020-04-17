@@ -69,28 +69,28 @@
                         <legend>Adicionar um novo registro</legend> <!-- .form-group -->
 							<div class='form-group'>
 								<label for='uu_Nome'>Nome</label>
-							<input type='text' name='uu_Nome' id='uu_Nome' class='form-control' placeholder='Nome' value='' required>
+							<input type='text' name='uu_Nome' id='uu_Nome' class='form-control' placeholder='Nome' value='<?= isset($response['data']['uu_Nome']) ? $response['data']['uu_Nome'] : '' ?>' required>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['uu_Nome']) ? $response['error']['uu_Nome'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='uu_Sobrenome'>Sobrenome</label>
-							<input type='text' name='uu_Sobrenome' id='uu_Sobrenome' class='form-control' placeholder='Sobrenome' value='' required>
+							<input type='text' name='uu_Sobrenome' id='uu_Sobrenome' class='form-control' placeholder='Sobrenome' value='<?= isset($response['data']['uu_Sobrenome']) ? $response['data']['uu_Sobrenome'] : '' ?>' required>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['uu_Sobrenome']) ? $response['error']['uu_Sobrenome'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='uu_DataNascimento'>Data Nascimento</label>
-							<input type='date' name='uu_DataNascimento' id='uu_DataNascimento' class='form-control' placeholder='Data Nascimento' value='' required>
+							<input type='date' name='uu_DataNascimento' id='uu_DataNascimento' class='form-control' placeholder='Data Nascimento' value='<?= isset($response['data']['uu_DataNascimento']) ? $response['data']['uu_DataNascimento'] : '' ?>' required>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['uu_DataNascimento']) ? $response['error']['uu_DataNascimento'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='uu_UrlFoto'>Foto</label>
-							<input type='text' name='uu_UrlFoto' id='uu_UrlFoto' class='form-control' placeholder='Foto' value='' >
+							<input type='text' name='uu_UrlFoto' id='uu_UrlFoto' class='form-control' placeholder='Foto' value='<?= isset($response['data']['uu_UrlFoto']) ? $response['data']['uu_UrlFoto'] : '' ?>' >
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['uu_UrlFoto']) ? $response['error']['uu_UrlFoto'] : ''; ?></div>
 							<?php endif; ?>
@@ -99,41 +99,41 @@
 								<label for='uu_Ativo'>Ativo</label>
 							<select name='uu_Ativo' id='uu_Ativo' class='custom-select' placeholder='Ativo' required>
 								<option value=''> Selecione </option>
-								<option value='True'> True </option>
-								<option value='False'> False </option>
+								<option value='True' <?= isset($response['data']['uu_Ativo']) ? $response['data']['uu_Ativo'] == 'True' ? 'selected' : '' : '' ?>> True </option>
+								<option value='False' <?= isset($response['data']['uu_Ativo']) ? $response['data']['uu_Ativo'] == 'False' ? 'selected' : '' : '' ?>> False </option>
 							</select>
 						</div>
 							<div class='form-group'>
 								<label for='uu_Criacao'></label>
-							<input type='datetime-local' name='uu_Criacao' id='uu_Criacao' class='form-control' placeholder='' value='CURRENT_TIMESTAMP(6)' required>
+							<input type='datetime-local' name='uu_Criacao' id='uu_Criacao' class='form-control' placeholder='' value='<?= isset($response['data']['uu_Criacao']) ? $response['data']['uu_Criacao'] : 'CURRENT_TIMESTAMP(6)' ?>' required>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['uu_Criacao']) ? $response['error']['uu_Criacao'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='uu_Email'>E-mail</label>
-							<input type='text' name='uu_Email' id='uu_Email' class='form-control' placeholder='E-mail' value='' required>
+							<input type='text' name='uu_Email' id='uu_Email' class='form-control' placeholder='E-mail' value='<?= isset($response['data']['uu_Email']) ? $response['data']['uu_Email'] : '' ?>' required>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['uu_Email']) ? $response['error']['uu_Email'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='uu_Senha'>Senha</label>
-							<input type='text' name='uu_Senha' id='uu_Senha' class='form-control' placeholder='Senha' value='' required>
+							<input type='text' name='uu_Senha' id='uu_Senha' class='form-control' placeholder='Senha' value='<?= isset($response['data']['uu_Senha']) ? $response['data']['uu_Senha'] : '' ?>' required>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['uu_Senha']) ? $response['error']['uu_Senha'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='uu_DataReset'></label>
-							<input type='datetime-local' name='uu_DataReset' id='uu_DataReset' class='form-control' placeholder='' value='' >
+							<input type='datetime-local' name='uu_DataReset' id='uu_DataReset' class='form-control' placeholder='' value='<?= isset($response['data']['uu_DataReset']) ? $response['data']['uu_DataReset'] : '' ?>' >
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['uu_DataReset']) ? $response['error']['uu_DataReset'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='uu_IdReset'></label>
-							<input type='text' name='uu_IdReset' id='uu_IdReset' class='form-control' placeholder='' value='' >
+							<input type='text' name='uu_IdReset' id='uu_IdReset' class='form-control' placeholder='' value='<?= isset($response['data']['uu_IdReset']) ? $response['data']['uu_IdReset'] : '' ?>' >
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['uu_IdReset']) ? $response['error']['uu_IdReset'] : ''; ?></div>
 							<?php endif; ?>
@@ -156,4 +156,5 @@
 <script>
   var url_get = '<?= base_url('users/create'); ?>';
   var url_upd = '<?= base_url('users/edit'); ?>';
+  var url_view = '<?= base_url('users/view'); ?>';
 </script>

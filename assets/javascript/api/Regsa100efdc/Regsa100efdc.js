@@ -23,7 +23,7 @@ function () {
   }, {
     key: "table",
     value: function table() {
-      return $('#myTable').DataTable({
+      return $('#myTableRegsa100efdc').DataTable({
         dom: "<'text-muted'Bi>\n        <'table-responsive'tr>\n        <'mt-4'p>",
         buttons: ['copyHtml5', {
           extend: 'print', 
@@ -266,7 +266,7 @@ function () {
     value: function clearSelected() {
       var self = this; // clear selected rows
 
-      $('#myTable').on('page.dt', function () {
+      $('#myTableRegsa100efdc').on('page.dt', function () {
         self.clearSelectedRows();
       });
       $('#clear-search').on('click', function () {

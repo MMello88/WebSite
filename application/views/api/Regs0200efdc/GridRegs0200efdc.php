@@ -103,7 +103,7 @@
                     </div><!-- /.input-group -->
                   </div><!-- /.form-group -->
                   <!-- .table -->
-                  <table id='myTable' class='table'>
+                  <table id='myTableRegs0200efdc' class='table'>
                     <!-- thead -->
                     <thead>
                       <tr>

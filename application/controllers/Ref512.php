@@ -39,19 +39,29 @@
     
       public function add(){
         if($_POST){
+          $salvarEVoltar = isset($_POST['cbxSaveBack']) ? TRUE : FALSE;
+          unset($_POST['cbxSaveBack']);
+
           $response = $this->sendPost('api/ref512/create', $this->data['login']->data->token, $this->input->post(), true);
-          $response['data'] = $_POST;
+
+          if($response['status'] == 'FALSE')
+            $response['data'] = $_POST;
+          
+          if($salvarEVoltar) $response['data']['cbxSaveBack'] = 'on';
+          
           $this->session->set_flashdata('response', $response); 
-          redirect('ref512/create');
+
+          if($response['status'] == 'FALSE'){
+            redirect('ref512/create');
+          } else {
+            $salvarEVoltar ? redirect('ref512') : redirect('ref512/edit/'.$response['data'][0]['512_Id']);
+          }
         }
       }
     
       public function edit($Id){
         if ($this->session->flashdata('response')){
           $this->data['response'] = $this->session->flashdata('response');
-          if($this->data['response']['status'] == 'FALSE'){
-            $this->data['response']['data'] = $this->sendGet('api/ref512/get/'.$Id, $this->data['login']->data->token, true)['data'];
-          }
         } else {
           $this->data['response'] = $this->sendGet('api/ref512/get/'.$Id, $this->data['login']->data->token, true);
         }
@@ -69,10 +79,25 @@
     
       public function update($Id){
         if($_POST){
+          $salvarEVoltar = isset($_POST['cbxSaveBack']) ? TRUE : FALSE;
+          unset($_POST['cbxSaveBack']);
+
           $response = $this->sendPost('api/ref512/update/'.$Id, $this->data['login']->data->token, $this->input->post(), true);
-          $response['data'] = $_POST;
+
+          if($response['status'] == 'FALSE'){
+            $_POST['512_Id'] = $Id;
+            $response['data'][0] = $_POST;
+          }
+
+          if($salvarEVoltar) $response['data']['cbxSaveBack'] = 'on';
+
           $this->session->set_flashdata('response', $response); 
-          redirect('ref512/edit/'.$Id);
+          
+          if($response['status'] == 'FALSE'){
+            redirect('ref512/edit/'.$Id);
+          } else {
+            $salvarEVoltar ? redirect('ref512') : redirect('ref512/edit/'.$Id);
+          }
         }
       }
     

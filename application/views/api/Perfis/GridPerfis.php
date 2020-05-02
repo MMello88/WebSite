@@ -89,7 +89,7 @@
                     </div><!-- /.input-group -->
                   </div><!-- /.form-group -->
                   <!-- .table -->
-                  <table id='myTable' class='table'>
+                  <table id='myTablePerfis' class='table'>
                     <!-- thead -->
                     <thead>
                       <tr>

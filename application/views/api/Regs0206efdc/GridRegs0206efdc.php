@@ -86,7 +86,7 @@
                     </div><!-- /.input-group -->
                   </div><!-- /.form-group -->
                   <!-- .table -->
-                  <table id='myTable' class='table'>
+                  <table id='myTableRegs0206efdc' class='table'>
                     <!-- thead -->
                     <thead>
                       <tr>

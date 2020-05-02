@@ -190,10 +190,12 @@
                 </div><!-- /.base-style -->
               </div><!-- /.section-block -->
             </div><!-- /.page-section -->
+
           </div><!-- /.page-inner -->
         </div><!-- /.page -->
       </div><!-- /.wrapper -->
     </main><!-- /.app-main -->
+
 <script>
   var url_get = '<?= base_url('regs0150efdc/get'); ?>';
   var url_upd = '<?= base_url('regs0150efdc/edit'); ?>';

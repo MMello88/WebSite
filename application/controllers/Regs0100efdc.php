@@ -39,19 +39,29 @@
     
       public function add(){
         if($_POST){
+          $salvarEVoltar = isset($_POST['cbxSaveBack']) ? TRUE : FALSE;
+          unset($_POST['cbxSaveBack']);
+
           $response = $this->sendPost('api/regs0100efdc/create', $this->data['login']->data->token, $this->input->post(), true);
-          $response['data'] = $_POST;
+
+          if($response['status'] == 'FALSE')
+            $response['data'] = $_POST;
+          
+          if($salvarEVoltar) $response['data']['cbxSaveBack'] = 'on';
+          
           $this->session->set_flashdata('response', $response); 
-          redirect('regs0100efdc/create');
+
+          if($response['status'] == 'FALSE'){
+            redirect('regs0100efdc/create');
+          } else {
+            $salvarEVoltar ? redirect('regs0100efdc') : redirect('regs0100efdc/edit/'.$response['data'][0]['0100_Id']);
+          }
         }
       }
     
       public function edit($Id){
         if ($this->session->flashdata('response')){
           $this->data['response'] = $this->session->flashdata('response');
-          if($this->data['response']['status'] == 'FALSE'){
-            $this->data['response']['data'] = $this->sendGet('api/regs0100efdc/get/'.$Id, $this->data['login']->data->token, true)['data'];
-          }
         } else {
           $this->data['response'] = $this->sendGet('api/regs0100efdc/get/'.$Id, $this->data['login']->data->token, true);
         }
@@ -69,10 +79,25 @@
     
       public function update($Id){
         if($_POST){
+          $salvarEVoltar = isset($_POST['cbxSaveBack']) ? TRUE : FALSE;
+          unset($_POST['cbxSaveBack']);
+
           $response = $this->sendPost('api/regs0100efdc/update/'.$Id, $this->data['login']->data->token, $this->input->post(), true);
-          $response['data'] = $_POST;
+
+          if($response['status'] == 'FALSE'){
+            $_POST['0100_Id'] = $Id;
+            $response['data'][0] = $_POST;
+          }
+
+          if($salvarEVoltar) $response['data']['cbxSaveBack'] = 'on';
+
           $this->session->set_flashdata('response', $response); 
-          redirect('regs0100efdc/edit/'.$Id);
+          
+          if($response['status'] == 'FALSE'){
+            redirect('regs0100efdc/edit/'.$Id);
+          } else {
+            $salvarEVoltar ? redirect('regs0100efdc') : redirect('regs0100efdc/edit/'.$Id);
+          }
         }
       }
     

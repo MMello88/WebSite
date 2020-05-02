@@ -219,6 +219,29 @@
                 </div><!-- /.base-style -->
               </div><!-- /.section-block -->
             </div><!-- /.page-section -->
+
+      <!-- .page-section -->
+      <div class='page-section'>
+
+        <!-- .card -->
+        <div class='card card-fluid'>
+
+          <!-- .card-header -->
+          <div class='card-header d-md-flex align-items-md-start'>
+            <ul class='nav nav-tabs card-header-tabs'>                
+            </ul>
+          </div><!-- /.card-header -->
+
+          <!-- .card-body -->
+          <div class='card-body'>
+            <!-- .tab-content -->
+            <div id='myTabContent' class='tab-content'>
+          
+      </div><!-- /.tab-content -->
+    </div><!-- /.card-body -->
+  </div><!-- /.card -->
+</div><!-- /.page-section -->
+    
           </div><!-- /.page-inner -->
         </div><!-- /.page -->
       </div><!-- /.wrapper -->

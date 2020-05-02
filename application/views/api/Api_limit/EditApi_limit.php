@@ -113,10 +113,12 @@
                 </div><!-- /.base-style -->
               </div><!-- /.section-block -->
             </div><!-- /.page-section -->
+
           </div><!-- /.page-inner -->
         </div><!-- /.page -->
       </div><!-- /.wrapper -->
     </main><!-- /.app-main -->
+
 <script>
   var url_get = '<?= base_url('api_limit/get'); ?>';
   var url_upd = '<?= base_url('api_limit/edit'); ?>';

@@ -80,6 +80,7 @@
                 </div><!-- /.base-style -->
               </div><!-- /.section-block -->
             </div><!-- /.page-section -->
+
           </div><!-- /.page-inner -->
         </div><!-- /.page -->
       </div><!-- /.wrapper -->

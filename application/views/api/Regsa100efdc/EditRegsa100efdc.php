@@ -17,7 +17,7 @@
               </div><!-- /.page-message -->
               <?php else: ?>
               <!-- .page-message -->
-              <div class='page-message bg-success' role='alert>
+              <div class='page-message bg-success' role='alert'>
                 <span class='mr-5'><?= $response['message'] ?></span>
                 <a href='#' class='btn btn-sm btn-icon btn-success' aria-label='Close' onclick='$(this).parent().fadeOut()'>
                   <span aria-hidden='true'><i class='fa fa-times'></i></span>
@@ -97,7 +97,9 @@
 						</div>
 							<div class='form-group'>
 								<label for='Reg0150EFDCId'>Participante</label>
-							<input type='number' name='Reg0150EFDCId' id='Reg0150EFDCId' class='form-control' placeholder='Participante' value='<?= $response['data'][0]['Reg0150EFDCId'] ?>' >
+							<select name='Reg0150EFDCId' id='Reg0150EFDCId' class='custom-select' placeholder='Participante' >
+								<?= getOptionToSelect('regs0150efdc','0150_Id', '', $response['data'][0]['Reg0150EFDCId'], $login->data->token) ?>
+							</select>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['Reg0150EFDCId']) ? $response['error']['Reg0150EFDCId'] : ''; ?></div>
 							<?php endif; ?>
@@ -239,7 +241,9 @@
 						</div>
 							<div class='form-group'>
 								<label for='a100_PessoaJuridicaId'>Pessoa Juridica</label>
-							<input type='number' name='a100_PessoaJuridicaId' id='a100_PessoaJuridicaId' class='form-control' placeholder='Pessoa Juridica' value='<?= $response['data'][0]['a100_PessoaJuridicaId'] ?>' >
+							<select name='a100_PessoaJuridicaId' id='a100_PessoaJuridicaId' class='custom-select' placeholder='Pessoa Juridica' >
+								<?= getOptionToSelect('pessoasjuridica','pj_Id', '', $response['data'][0]['a100_PessoaJuridicaId'], $login->data->token) ?>
+							</select>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['a100_PessoaJuridicaId']) ? $response['error']['a100_PessoaJuridicaId'] : ''; ?></div>
 							<?php endif; ?>
@@ -291,7 +295,11 @@
                   <!-- .tab-pane -->
                   <div class='tab-pane fade active show' id='TabRef0'>
                     <div class='d-flex align-items-center mb-4'>
-                      <button type='button' class='btn btn-outline-success' onclick="window.location.href='<?= base_url('Regsa110efdc/create') ?>'">
+                      <?php if(isset($response['data'][0]['a100_Id'])): ?>
+                      <button type='button' class='btn btn-outline-success' onclick="window.location.href='<?= base_url('Regsa110efdc/create/'.$nameView.'/'. $response['data'][0]['a100_Id']) ?>'">
+                      <?php else: ?>
+                      <button type='button' class='btn btn-outline-success' onclick="window.location.href='<?= base_url('Regsa110efdc/create/'.$nameView.'/') ?>'" disabled>
+                      <?php endif; ?>
                         <span class='fa fa-plus'></span>
                       </button> <!-- /floating action -->
                       <div class='dropdown ml-auto'>
@@ -333,7 +341,7 @@
                       </div><!-- /.input-group -->
                     </div><!-- /.form-group -->
                     <!-- .table -->
-                    <table id='myTable' class='table'>
+                    <table id='myTableRegsa110efdc' class='table'>
                       <!-- thead -->
                       <thead>
                         <tr>
@@ -383,7 +391,11 @@
                   <!-- .tab-pane -->
                   <div class='tab-pane fade ' id='TabRef1'>
                     <div class='d-flex align-items-center mb-4'>
-                      <button type='button' class='btn btn-outline-success' onclick="window.location.href='<?= base_url('Regsa120efdc/create') ?>'">
+                      <?php if(isset($response['data'][0]['a100_Id'])): ?>
+                      <button type='button' class='btn btn-outline-success' onclick="window.location.href='<?= base_url('Regsa120efdc/create/'.$nameView.'/'. $response['data'][0]['a100_Id']) ?>'">
+                      <?php else: ?>
+                      <button type='button' class='btn btn-outline-success' onclick="window.location.href='<?= base_url('Regsa120efdc/create/'.$nameView.'/') ?>'" disabled>
+                      <?php endif; ?>
                         <span class='fa fa-plus'></span>
                       </button> <!-- /floating action -->
                       <div class='dropdown ml-auto'>
@@ -431,7 +443,7 @@
                       </div><!-- /.input-group -->
                     </div><!-- /.form-group -->
                     <!-- .table -->
-                    <table id='myTable' class='table'>
+                    <table id='myTableRegsa120efdc' class='table'>
                       <!-- thead -->
                       <thead>
                         <tr>
@@ -519,6 +531,14 @@
           </div><!-- /.modal-content -->
         </div><!-- /.modal-dialog -->
       </div><!-- /.modal -->
+
+<?php if(isset($response['data'][0]['a100_Id'])): ?>
+  <script>
+  var url_get_regsa110efdc = '<?= base_url('regsa110efdc/get/'.$response['data'][0]['a100_Id']); ?>';
+  var url_upd_regsa110efdc = '<?= base_url('regsa110efdc/edit/'.$nameView.'/'. $response['data'][0]['a100_Id']); ?>';
+  var url_view_regsa110efdc = '<?= base_url('regsa110efdc/view/'.$nameView.'/'. $response['data'][0]['a100_Id']); ?>';
+</script>
+<?php endif; ?>
       
       <!-- Central modal -->
       <div class='modal fade' id='modalDeleteRegistro' tabindex='-1' role='dialog' aria-labelledby='ModalDeleteLabel' aria-hidden='true'>
@@ -544,14 +564,17 @@
           </div><!-- /.modal-content -->
         </div><!-- /.modal-dialog -->
       </div><!-- /.modal -->
+
+<?php if(isset($response['data'][0]['a100_Id'])): ?>
+  <script>
+  var url_get_regsa120efdc = '<?= base_url('regsa120efdc/get/'.$response['data'][0]['a100_Id']); ?>';
+  var url_upd_regsa120efdc = '<?= base_url('regsa120efdc/edit/'.$nameView.'/'. $response['data'][0]['a100_Id']); ?>';
+  var url_view_regsa120efdc = '<?= base_url('regsa120efdc/view/'.$nameView.'/'. $response['data'][0]['a100_Id']); ?>';
+</script>
+<?php endif; ?>
       
           </div><!-- /.page-inner -->
         </div><!-- /.page -->
       </div><!-- /.wrapper -->
     </main><!-- /.app-main -->
 
-<script>
-  var url_get = '<?= base_url('regsa100efdc/get'); ?>';
-  var url_upd = '<?= base_url('regsa100efdc/edit'); ?>';
-  var url_view = '<?= base_url('regsa100efdc/view'); ?>';
-</script>

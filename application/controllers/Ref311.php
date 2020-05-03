@@ -29,6 +29,7 @@
       }
     
       public function create(){
+        $this->data['nameView'] = 'create';
         if($this->session->flashdata('response'))
           $this->data['response'] = $this->session->flashdata('response');
         
@@ -60,12 +61,14 @@
       }
     
       public function edit($Id){
+        $this->data['nameView'] = 'edit';
         if ($this->session->flashdata('response')){
           $this->data['response'] = $this->session->flashdata('response');
         } else {
           $this->data['response'] = $this->sendGet('api/ref311/get/'.$Id, $this->data['login']->data->token, true);
         }
-    
+
+
         if(empty($this->data['response']['data'])){
           $this->data['heading'] = 'Dado não encontrado.';
           $this->data['message'] = 'Não foi encontrado nenhum dado para este identificador.';
@@ -120,7 +123,9 @@
       }
 
       public function view($Id){
+        $this->data['nameView'] = 'view';
         $this->data['response'] = $this->sendGet('api/ref311/get/'.$Id, $this->data['login']->data->token, true);
+
 
         $this->load->view('dashboard/template/header', $this->data);
         $this->load->view('api/ref311/ViewRef311', $this->data);

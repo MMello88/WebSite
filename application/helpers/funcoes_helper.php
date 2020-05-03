@@ -30,3 +30,13 @@ function getOptionToSelect($class, $columnId, $columnDisplay = "", $valor = "", 
   }
   return $opt;
 }
+
+function last_url(){
+  $urls = $this->session->userdata('url_segments');
+  $segments = $urls[count($urls)-2];
+  $url = "";
+  foreach ($segments as $value) {
+    $url .= "$values/";
+  }
+  return $url;
+}

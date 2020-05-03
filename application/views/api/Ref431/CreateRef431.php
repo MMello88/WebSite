@@ -17,7 +17,7 @@
               </div><!-- /.page-message -->
               <?php else: ?>
               <!-- .page-message -->
-              <div class='page-message bg-success' role='alert>
+              <div class='page-message bg-success' role='alert'>
                 <span class='mr-5'><?= $response['message'] ?></span>
                 <a href='#' class='btn btn-sm btn-icon btn-success' aria-label='Close' onclick='$(this).parent().fadeOut()'>
                   <span aria-hidden='true'><i class='fa fa-times'></i></span>
@@ -116,34 +116,7 @@
               </div><!-- /.section-block -->
             </div><!-- /.page-section -->
 
-      <!-- .page-section -->
-      <div class='page-section'>
-
-        <!-- .card -->
-        <div class='card card-fluid'>
-
-          <!-- .card-header -->
-          <div class='card-header d-md-flex align-items-md-start'>
-            <ul class='nav nav-tabs card-header-tabs'>                
-            </ul>
-          </div><!-- /.card-header -->
-
-          <!-- .card-body -->
-          <div class='card-body'>
-            <!-- .tab-content -->
-            <div id='myTabContent' class='tab-content'>
-          
-      </div><!-- /.tab-content -->
-    </div><!-- /.card-body -->
-  </div><!-- /.card -->
-</div><!-- /.page-section -->
-    
           </div><!-- /.page-inner -->
         </div><!-- /.page -->
       </div><!-- /.wrapper -->
     </main><!-- /.app-main -->
-<script>
-  var url_get = '<?= base_url('ref431/create'); ?>';
-  var url_upd = '<?= base_url('ref431/edit'); ?>';
-  var url_view = '<?= base_url('ref431/view'); ?>';
-</script>

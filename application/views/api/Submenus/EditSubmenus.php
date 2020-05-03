@@ -17,7 +17,7 @@
               </div><!-- /.page-message -->
               <?php else: ?>
               <!-- .page-message -->
-              <div class='page-message bg-success' role='alert>
+              <div class='page-message bg-success' role='alert'>
                 <span class='mr-5'><?= $response['message'] ?></span>
                 <a href='#' class='btn btn-sm btn-icon btn-success' aria-label='Close' onclick='$(this).parent().fadeOut()'>
                   <span aria-hidden='true'><i class='fa fa-times'></i></span>
@@ -69,7 +69,9 @@
                         <legend>Alteração do registro</legend> <!-- .form-group -->
 							<div class='form-group'>
 								<label for='sbm_MenusId'>Menu</label>
-							<input type='number' name='sbm_MenusId' id='sbm_MenusId' class='form-control' placeholder='Menu' value='<?= $response['data'][0]['sbm_MenusId'] ?>' required>
+							<select name='sbm_MenusId' id='sbm_MenusId' class='custom-select' placeholder='Menu' required>
+								<?= getOptionToSelect('menus','mns_Id', '', $response['data'][0]['sbm_MenusId'], $login->data->token) ?>
+							</select>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['sbm_MenusId']) ? $response['error']['sbm_MenusId'] : ''; ?></div>
 							<?php endif; ?>
@@ -131,35 +133,8 @@
               </div><!-- /.section-block -->
             </div><!-- /.page-section -->
 
-      <!-- .page-section -->
-      <div class='page-section'>
-
-        <!-- .card -->
-        <div class='card card-fluid'>
-
-          <!-- .card-header -->
-          <div class='card-header d-md-flex align-items-md-start'>
-            <ul class='nav nav-tabs card-header-tabs'>                
-            </ul>
-          </div><!-- /.card-header -->
-
-          <!-- .card-body -->
-          <div class='card-body'>
-            <!-- .tab-content -->
-            <div id='myTabContent' class='tab-content'>
-          
-      </div><!-- /.tab-content -->
-    </div><!-- /.card-body -->
-  </div><!-- /.card -->
-</div><!-- /.page-section -->
-    
           </div><!-- /.page-inner -->
         </div><!-- /.page -->
       </div><!-- /.wrapper -->
     </main><!-- /.app-main -->
 
-<script>
-  var url_get = '<?= base_url('submenus/get'); ?>';
-  var url_upd = '<?= base_url('submenus/edit'); ?>';
-  var url_view = '<?= base_url('submenus/view'); ?>';
-</script>

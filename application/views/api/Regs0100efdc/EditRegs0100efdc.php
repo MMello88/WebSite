@@ -17,7 +17,7 @@
               </div><!-- /.page-message -->
               <?php else: ?>
               <!-- .page-message -->
-              <div class='page-message bg-success' role='alert>
+              <div class='page-message bg-success' role='alert'>
                 <span class='mr-5'><?= $response['message'] ?></span>
                 <a href='#' class='btn btn-sm btn-icon btn-success' aria-label='Close' onclick='$(this).parent().fadeOut()'>
                   <span aria-hidden='true'><i class='fa fa-times'></i></span>
@@ -160,7 +160,9 @@
 						</div>
 							<div class='form-group'>
 								<label for='0100_MunicipioId'>Municipio</label>
-							<input type='number' name='0100_MunicipioId' id='0100_MunicipioId' class='form-control' placeholder='Municipio' value='<?= $response['data'][0]['0100_MunicipioId'] ?>' required>
+							<select name='0100_MunicipioId' id='0100_MunicipioId' class='custom-select' placeholder='Municipio' required>
+								<?= getOptionToSelect('municipios','mun_Id', '', $response['data'][0]['0100_MunicipioId'], $login->data->token) ?>
+							</select>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['0100_MunicipioId']) ? $response['error']['0100_MunicipioId'] : ''; ?></div>
 							<?php endif; ?>
@@ -181,7 +183,9 @@
 						</div>
 							<div class='form-group'>
 								<label for='0100_PessoaJuridicaId'>Pessoa Juridica</label>
-							<input type='number' name='0100_PessoaJuridicaId' id='0100_PessoaJuridicaId' class='form-control' placeholder='Pessoa Juridica' value='<?= $response['data'][0]['0100_PessoaJuridicaId'] ?>' >
+							<select name='0100_PessoaJuridicaId' id='0100_PessoaJuridicaId' class='custom-select' placeholder='Pessoa Juridica' >
+								<?= getOptionToSelect('pessoasjuridica','pj_Id', '', $response['data'][0]['0100_PessoaJuridicaId'], $login->data->token) ?>
+							</select>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['0100_PessoaJuridicaId']) ? $response['error']['0100_PessoaJuridicaId'] : ''; ?></div>
 							<?php endif; ?>
@@ -207,35 +211,8 @@
               </div><!-- /.section-block -->
             </div><!-- /.page-section -->
 
-      <!-- .page-section -->
-      <div class='page-section'>
-
-        <!-- .card -->
-        <div class='card card-fluid'>
-
-          <!-- .card-header -->
-          <div class='card-header d-md-flex align-items-md-start'>
-            <ul class='nav nav-tabs card-header-tabs'>                
-            </ul>
-          </div><!-- /.card-header -->
-
-          <!-- .card-body -->
-          <div class='card-body'>
-            <!-- .tab-content -->
-            <div id='myTabContent' class='tab-content'>
-          
-      </div><!-- /.tab-content -->
-    </div><!-- /.card-body -->
-  </div><!-- /.card -->
-</div><!-- /.page-section -->
-    
           </div><!-- /.page-inner -->
         </div><!-- /.page -->
       </div><!-- /.wrapper -->
     </main><!-- /.app-main -->
 
-<script>
-  var url_get = '<?= base_url('regs0100efdc/get'); ?>';
-  var url_upd = '<?= base_url('regs0100efdc/edit'); ?>';
-  var url_view = '<?= base_url('regs0100efdc/view'); ?>';
-</script>

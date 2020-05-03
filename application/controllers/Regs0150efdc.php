@@ -24,11 +24,17 @@
         $this->load->view('dashboard/template/footer', $this->data);
       }
     
-      public function get(){
-        echo json_encode(['data' => $this->sendGet('api/regs0150efdc/get', $this->data['login']->data->token)->data]);
+      public function get($IdParent, $Id = ''){
+        if(empty($Id))
+          echo json_encode(['data' => $this->sendGet('api/regs0150efdc/getByParent/'.$IdParent, $this->data['login']->data->token)->data]);
+        else 
+          echo json_encode(['data' => $this->sendGet('api/regs0150efdc/getByParent/'.$IdParent.'/'.$Id, $this->data['login']->data->token)->data]);
       }
     
-      public function create(){
+      public function create($parentView, $IdParent){
+        $this->data['nameView'] = 'create';
+        $this->data['IdParent'] = $IdParent;
+        $this->data['parentView'] = $parentView;
         if($this->session->flashdata('response'))
           $this->data['response'] = $this->session->flashdata('response');
         
@@ -37,7 +43,7 @@
         $this->load->view('dashboard/template/footer', $this->data);
       }
     
-      public function add(){
+      public function add($parentView, $IdParent){
         if($_POST){
           $salvarEVoltar = isset($_POST['cbxSaveBack']) ? TRUE : FALSE;
           unset($_POST['cbxSaveBack']);
@@ -52,20 +58,24 @@
           $this->session->set_flashdata('response', $response); 
 
           if($response['status'] == 'FALSE'){
-            redirect('regs0150efdc/create');
+            redirect('regs0150efdc/create/'.$parentView.'/'.$IdParent);
           } else {
-            $salvarEVoltar ? redirect('regs0150efdc') : redirect('regs0150efdc/edit/'.$response['data'][0]['0150_Id']);
+            $salvarEVoltar ? redirect('municipios/'.$parentView.'/'.$IdParent) : redirect('regs0150efdc/edit/'.$parentView.'/'.$IdParent.'/'.$response['data'][0]['0150_Id']);
           }
         }
       }
     
-      public function edit($Id){
+      public function edit($parentView, $IdParent, $Id){
+        $this->data['nameView'] = 'edit';
+        $this->data['IdParent'] = $IdParent;
+        $this->data['parentView'] = $parentView;
         if ($this->session->flashdata('response')){
           $this->data['response'] = $this->session->flashdata('response');
         } else {
           $this->data['response'] = $this->sendGet('api/regs0150efdc/get/'.$Id, $this->data['login']->data->token, true);
         }
-    
+        
+
         if(empty($this->data['response']['data'])){
           $this->data['heading'] = 'Dado não encontrado.';
           $this->data['message'] = 'Não foi encontrado nenhum dado para este identificador.';
@@ -77,7 +87,7 @@
         }
       }
     
-      public function update($Id){
+      public function update($parentView, $IdParent, $Id){
         if($_POST){
           $salvarEVoltar = isset($_POST['cbxSaveBack']) ? TRUE : FALSE;
           unset($_POST['cbxSaveBack']);
@@ -94,9 +104,9 @@
           $this->session->set_flashdata('response', $response); 
           
           if($response['status'] == 'FALSE'){
-            redirect('regs0150efdc/edit/'.$Id);
+            redirect('regs0150efdc/edit/'.$parentView.'/'.$IdParent.'/'.$Id);
           } else {
-            $salvarEVoltar ? redirect('regs0150efdc') : redirect('regs0150efdc/edit/'.$Id);
+            $salvarEVoltar ? redirect('municipios/'.$parentView.'/'.$IdParent) : redirect('regs0150efdc/edit/'.$parentView.'/'.$IdParent.'/'.$Id);
           }
         }
       }
@@ -120,7 +130,9 @@
       }
 
       public function view($Id){
+        $this->data['nameView'] = 'view';
         $this->data['response'] = $this->sendGet('api/regs0150efdc/get/'.$Id, $this->data['login']->data->token, true);
+
 
         $this->load->view('dashboard/template/header', $this->data);
         $this->load->view('api/regs0150efdc/ViewRegs0150efdc', $this->data);

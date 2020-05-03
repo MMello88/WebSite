@@ -29,6 +29,7 @@
       }
     
       public function create(){
+        $this->data['nameView'] = 'create';
         if($this->session->flashdata('response'))
           $this->data['response'] = $this->session->flashdata('response');
         
@@ -60,12 +61,17 @@
       }
     
       public function edit($Id){
+        $this->data['nameView'] = 'edit';
         if ($this->session->flashdata('response')){
           $this->data['response'] = $this->session->flashdata('response');
         } else {
           $this->data['response'] = $this->sendGet('api/municipios/get/'.$Id, $this->data['login']->data->token, true);
         }
-    
+
+				$this->scripts('assets/javascript/api/pessoasjuridica/pessoasjuridica.js');
+				$this->scripts('assets/javascript/api/regs0140efdc/regs0140efdc.js');
+				$this->scripts('assets/javascript/api/regs0150efdc/regs0150efdc.js');
+
         if(empty($this->data['response']['data'])){
           $this->data['heading'] = 'Dado não encontrado.';
           $this->data['message'] = 'Não foi encontrado nenhum dado para este identificador.';
@@ -120,7 +126,12 @@
       }
 
       public function view($Id){
+        $this->data['nameView'] = 'view';
         $this->data['response'] = $this->sendGet('api/municipios/get/'.$Id, $this->data['login']->data->token, true);
+
+				$this->scripts('assets/javascript/api/pessoasjuridica/pessoasjuridica.js');
+				$this->scripts('assets/javascript/api/regs0140efdc/regs0140efdc.js');
+				$this->scripts('assets/javascript/api/regs0150efdc/regs0150efdc.js');
 
         $this->load->view('dashboard/template/header', $this->data);
         $this->load->view('api/municipios/ViewMunicipios', $this->data);

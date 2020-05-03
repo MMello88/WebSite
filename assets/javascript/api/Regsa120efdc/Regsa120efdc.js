@@ -36,7 +36,7 @@ function () {
           }
         },
         autoWidth: false,
-        ajax: url_get,
+        ajax: url_get_regsa120efdc,
         deferRender: true,
         order: [12, 'desc'],
         columns: [
@@ -111,10 +111,10 @@ function () {
           targets: 1,
           render: function render(data, type, row, meta) {
             return `
-            <a class='btn btn-sm btn-icon btn-secondary' href='${url_view}/${data}'>
+            <a class='btn btn-sm btn-icon btn-secondary' href='${url_view_regsa120efdc}/${data}'>
               <i class='fa fa-eye'></i>
             </a>
-            <a class='btn btn-sm btn-icon btn-secondary' href='${url_upd}/${data}'>
+            <a class='btn btn-sm btn-icon btn-secondary' href='${url_upd_regsa120efdc}/${data}'>
               <i class='fa fa-pencil-alt'></i>
             </a>
             <a class='btn btn-sm btn-icon btn-secondary' id='btnDeleteClick' data-toggle='modal' data-target='#modalDeleteRegistro' data-id='${data}' href='#${data}'>

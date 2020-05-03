@@ -17,7 +17,7 @@
               </div><!-- /.page-message -->
               <?php else: ?>
               <!-- .page-message -->
-              <div class='page-message bg-success' role='alert>
+              <div class='page-message bg-success' role='alert'>
                 <span class='mr-5'><?= $response['message'] ?></span>
                 <a href='#' class='btn btn-sm btn-icon btn-success' aria-label='Close' onclick='$(this).parent().fadeOut()'>
                   <span aria-hidden='true'><i class='fa fa-times'></i></span>
@@ -44,7 +44,7 @@
               <nav aria-label='breadcrumb'>
                 <ol class='breadcrumb'>
                   <li class='breadcrumb-item active'>
-                    <a href='<?= base_url('Regsa120efdc') ?>'><i class='breadcrumb-icon fa fa-angle-left mr-2'></i>Voltar</a>
+                    <a href='<?= base_url('Regsa100efdc/'.$parentView.'/'.$IdParent) ?>'><i class='breadcrumb-icon fa fa-angle-left mr-2'></i>Voltar Matheus</a>
                   </li>
                 </ol>
               </nav><!-- /.breadcrumb -->
@@ -63,7 +63,7 @@
                   <!-- .card-body -->
                   <div class='card-body'>
                     <!-- .form -->
-                    <?= form_open(base_url('Regsa120efdc/add')); ?>
+                    <?= form_open(base_url('Regsa120efdc/add/'.$parentView.'/'.$IdParent)); ?>
                       <!-- .fieldset -->
                       <fieldset>
                         <legend>Adicionar um novo registro</legend> <!-- .form-group -->
@@ -134,8 +134,9 @@
 						</div>
 							<div class='form-group'>
 								<label for='a120_RegA100EFDCId'>Documento - Nota Fiscal de Serviço</label>
-							<select name='a120_RegA100EFDCId' id='a120_RegA100EFDCId' class='custom-select' placeholder='Documento - Nota Fiscal de Serviço' >
-								<?= getOptionToSelect('regsa100efdc','a100_Id', '', isset($response['data']['a120_RegA100EFDCId']) ? $response['data']['a120_RegA100EFDCId'] : '', $login->data->token) ?>
+							<input type='hidden' name='a120_RegA100EFDCId' value='<?= $IdParent ?>' required>
+							<select name='a120_RegA100EFDCId' id='a120_RegA100EFDCId' class='custom-select' placeholder='Documento - Nota Fiscal de Serviço'  disabled>
+								<?= getOptionToSelect('regsa100efdc','a100_Id', '', $IdParent, $login->data->token) ?>
 							</select>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['a120_RegA100EFDCId']) ? $response['error']['a120_RegA100EFDCId'] : ''; ?></div>
@@ -153,7 +154,7 @@
 														</label>
 														<span>Salvar e voltar?</span>
 													</div>
-                          <button class='btn btn-secondary ml-auto' type='button' onclick="window.location.href='<?= base_url('Regsa120efdc') ?>'">Cancelar</button>
+                          <button class='btn btn-secondary ml-auto' type='button' onclick="window.location.href='<?= base_url('Regsa100efdc/'.$parentView.'/'.$IdParent) ?>'">Cancelar</button>
                         </div>
                       </fieldset><!-- /.fieldset -->
                     <?= form_close(); ?><!-- /.form -->
@@ -166,8 +167,3 @@
         </div><!-- /.page -->
       </div><!-- /.wrapper -->
     </main><!-- /.app-main -->
-<script>
-  var url_get = '<?= base_url('regsa120efdc/create'); ?>';
-  var url_upd = '<?= base_url('regsa120efdc/edit'); ?>';
-  var url_view = '<?= base_url('regsa120efdc/view'); ?>';
-</script>

@@ -17,7 +17,7 @@
               </div><!-- /.page-message -->
               <?php else: ?>
               <!-- .page-message -->
-              <div class='page-message bg-success' role='alert>
+              <div class='page-message bg-success' role='alert'>
                 <span class='mr-5'><?= $response['message'] ?></span>
                 <a href='#' class='btn btn-sm btn-icon btn-success' aria-label='Close' onclick='$(this).parent().fadeOut()'>
                   <span aria-hidden='true'><i class='fa fa-times'></i></span>
@@ -123,7 +123,11 @@
                   <!-- .tab-pane -->
                   <div class='tab-pane fade active show' id='TabRef0'>
                     <div class='d-flex align-items-center mb-4'>
-                      <button type='button' class='btn btn-outline-success' onclick="window.location.href='<?= base_url('Pessoasjuridica/create') ?>'">
+                      <?php if(isset($response['data'][0]['mun_Id'])): ?>
+                      <button type='button' class='btn btn-outline-success' onclick="window.location.href='<?= base_url('Pessoasjuridica/create/'.$nameView.'/'. $response['data'][0]['mun_Id']) ?>'">
+                      <?php else: ?>
+                      <button type='button' class='btn btn-outline-success' onclick="window.location.href='<?= base_url('Pessoasjuridica/create/'.$nameView.'/') ?>'" disabled>
+                      <?php endif; ?>
                         <span class='fa fa-plus'></span>
                       </button> <!-- /floating action -->
                       <div class='dropdown ml-auto'>
@@ -183,7 +187,7 @@
                       </div><!-- /.input-group -->
                     </div><!-- /.form-group -->
                     <!-- .table -->
-                    <table id='myTable' class='table'>
+                    <table id='myTablePessoasjuridica' class='table'>
                       <!-- thead -->
                       <thead>
                         <tr>
@@ -269,7 +273,11 @@
                   <!-- .tab-pane -->
                   <div class='tab-pane fade ' id='TabRef1'>
                     <div class='d-flex align-items-center mb-4'>
-                      <button type='button' class='btn btn-outline-success' onclick="window.location.href='<?= base_url('Regs0140efdc/create') ?>'">
+                      <?php if(isset($response['data'][0]['mun_Id'])): ?>
+                      <button type='button' class='btn btn-outline-success' onclick="window.location.href='<?= base_url('Regs0140efdc/create/'.$nameView.'/'. $response['data'][0]['mun_Id']) ?>'">
+                      <?php else: ?>
+                      <button type='button' class='btn btn-outline-success' onclick="window.location.href='<?= base_url('Regs0140efdc/create/'.$nameView.'/') ?>'" disabled>
+                      <?php endif; ?>
                         <span class='fa fa-plus'></span>
                       </button> <!-- /floating action -->
                       <div class='dropdown ml-auto'>
@@ -320,7 +328,7 @@
                       </div><!-- /.input-group -->
                     </div><!-- /.form-group -->
                     <!-- .table -->
-                    <table id='myTable' class='table'>
+                    <table id='myTableRegs0140efdc' class='table'>
                       <!-- thead -->
                       <thead>
                         <tr>
@@ -388,7 +396,11 @@
                   <!-- .tab-pane -->
                   <div class='tab-pane fade ' id='TabRef2'>
                     <div class='d-flex align-items-center mb-4'>
-                      <button type='button' class='btn btn-outline-success' onclick="window.location.href='<?= base_url('Regs0150efdc/create') ?>'">
+                      <?php if(isset($response['data'][0]['mun_Id'])): ?>
+                      <button type='button' class='btn btn-outline-success' onclick="window.location.href='<?= base_url('Regs0150efdc/create/'.$nameView.'/'. $response['data'][0]['mun_Id']) ?>'">
+                      <?php else: ?>
+                      <button type='button' class='btn btn-outline-success' onclick="window.location.href='<?= base_url('Regs0150efdc/create/'.$nameView.'/') ?>'" disabled>
+                      <?php endif; ?>
                         <span class='fa fa-plus'></span>
                       </button> <!-- /floating action -->
                       <div class='dropdown ml-auto'>
@@ -442,7 +454,7 @@
                       </div><!-- /.input-group -->
                     </div><!-- /.form-group -->
                     <!-- .table -->
-                    <table id='myTable' class='table'>
+                    <table id='myTableRegs0150efdc' class='table'>
                       <!-- thead -->
                       <thead>
                         <tr>
@@ -542,6 +554,14 @@
           </div><!-- /.modal-content -->
         </div><!-- /.modal-dialog -->
       </div><!-- /.modal -->
+
+<?php if(isset($response['data'][0]['mun_Id'])): ?>
+  <script>
+  var url_get_pessoasjuridica = '<?= base_url('pessoasjuridica/get/'.$response['data'][0]['mun_Id']); ?>';
+  var url_upd_pessoasjuridica = '<?= base_url('pessoasjuridica/edit/'.$nameView.'/'. $response['data'][0]['mun_Id']); ?>';
+  var url_view_pessoasjuridica = '<?= base_url('pessoasjuridica/view/'.$nameView.'/'. $response['data'][0]['mun_Id']); ?>';
+</script>
+<?php endif; ?>
       
       <!-- Central modal -->
       <div class='modal fade' id='modalDeleteRegistro' tabindex='-1' role='dialog' aria-labelledby='ModalDeleteLabel' aria-hidden='true'>
@@ -567,6 +587,14 @@
           </div><!-- /.modal-content -->
         </div><!-- /.modal-dialog -->
       </div><!-- /.modal -->
+
+<?php if(isset($response['data'][0]['mun_Id'])): ?>
+  <script>
+  var url_get_regs0140efdc = '<?= base_url('regs0140efdc/get/'.$response['data'][0]['mun_Id']); ?>';
+  var url_upd_regs0140efdc = '<?= base_url('regs0140efdc/edit/'.$nameView.'/'. $response['data'][0]['mun_Id']); ?>';
+  var url_view_regs0140efdc = '<?= base_url('regs0140efdc/view/'.$nameView.'/'. $response['data'][0]['mun_Id']); ?>';
+</script>
+<?php endif; ?>
       
       <!-- Central modal -->
       <div class='modal fade' id='modalDeleteRegistro' tabindex='-1' role='dialog' aria-labelledby='ModalDeleteLabel' aria-hidden='true'>
@@ -592,13 +620,16 @@
           </div><!-- /.modal-content -->
         </div><!-- /.modal-dialog -->
       </div><!-- /.modal -->
+
+<?php if(isset($response['data'][0]['mun_Id'])): ?>
+  <script>
+  var url_get_regs0150efdc = '<?= base_url('regs0150efdc/get/'.$response['data'][0]['mun_Id']); ?>';
+  var url_upd_regs0150efdc = '<?= base_url('regs0150efdc/edit/'.$nameView.'/'. $response['data'][0]['mun_Id']); ?>';
+  var url_view_regs0150efdc = '<?= base_url('regs0150efdc/view/'.$nameView.'/'. $response['data'][0]['mun_Id']); ?>';
+</script>
+<?php endif; ?>
       
           </div><!-- /.page-inner -->
         </div><!-- /.page -->
       </div><!-- /.wrapper -->
     </main><!-- /.app-main -->
-<script>
-  var url_get = '<?= base_url('municipios/get'); ?>';
-  var url_upd = '<?= base_url('municipios/edit'); ?>';
-  var url_view = '<?= base_url('municipios/view'); ?>';
-</script>

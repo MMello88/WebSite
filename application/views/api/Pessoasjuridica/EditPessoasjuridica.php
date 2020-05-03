@@ -17,7 +17,7 @@
               </div><!-- /.page-message -->
               <?php else: ?>
               <!-- .page-message -->
-              <div class='page-message bg-success' role='alert>
+              <div class='page-message bg-success' role='alert'>
                 <span class='mr-5'><?= $response['message'] ?></span>
                 <a href='#' class='btn btn-sm btn-icon btn-success' aria-label='Close' onclick='$(this).parent().fadeOut()'>
                   <span aria-hidden='true'><i class='fa fa-times'></i></span>
@@ -44,7 +44,7 @@
               <nav aria-label='breadcrumb'>
                 <ol class='breadcrumb'>
                   <li class='breadcrumb-item active'>
-                    <a href='<?= base_url('Pessoasjuridica') ?>'><i class='breadcrumb-icon fa fa-angle-left mr-2'></i>Voltar</a>
+                    <a href='<?= base_url('Pessoasfisica/'.$parentView.'/'.$IdParent) ?>'><i class='breadcrumb-icon fa fa-angle-left mr-2'></i>Voltar Matheus</a>
                   </li>
                 </ol>
               </nav><!-- /.breadcrumb -->
@@ -63,7 +63,7 @@
                   <!-- .card-body -->
                   <div class='card-body'>
                     <!-- .form -->
-                    <?= form_open(base_url('Pessoasjuridica/update/'.$response['data'][0]['pj_Id'])); ?>
+                    <?= form_open(base_url('Pessoasjuridica/update/'.$parentView.'/'.$IdParent.'/'.$response['data'][0]['pj_Id'])); ?>
                       <!-- .fieldset -->
                       <fieldset>
                         <legend>Alteração do registro</legend> <!-- .form-group -->
@@ -209,14 +209,18 @@
 						</div>
 							<div class='form-group'>
 								<label for='pj_MunicipioId'>Municipio</label>
-							<input type='number' name='pj_MunicipioId' id='pj_MunicipioId' class='form-control' placeholder='Municipio' value='<?= $response['data'][0]['pj_MunicipioId'] ?>' required>
+							<select name='pj_MunicipioId' id='pj_MunicipioId' class='custom-select' placeholder='Municipio' required>
+								<?= getOptionToSelect('municipios','mun_Id', '', $response['data'][0]['pj_MunicipioId'], $login->data->token) ?>
+							</select>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['pj_MunicipioId']) ? $response['error']['pj_MunicipioId'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='pj_PessoaFisicaId'>Pessoa Fisica</label>
-							<input type='number' name='pj_PessoaFisicaId' id='pj_PessoaFisicaId' class='form-control' placeholder='Pessoa Fisica' value='<?= $response['data'][0]['pj_PessoaFisicaId'] ?>' required>
+							<select name='pj_PessoaFisicaId' id='pj_PessoaFisicaId' class='custom-select' placeholder='Pessoa Fisica' required>
+								<?= getOptionToSelect('pessoasfisica','pf_Id', '', $response['data'][0]['pj_PessoaFisicaId'], $login->data->token) ?>
+							</select>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['pj_PessoaFisicaId']) ? $response['error']['pj_PessoaFisicaId'] : ''; ?></div>
 							<?php endif; ?>
@@ -231,8 +235,17 @@
 						</div>
 
                         <div class='form-actions'>
-                          <button class='btn btn-primary mr-auto' type='submit'>Salvar</button>
-                          <button class='btn btn-secondary ml-auto' type='button' onclick="window.location.href='<?= base_url('Pessoasjuridica') ?>'">Cancelar</button>
+                          <button class='btn btn-primary mr-3' type='submit'>Salvar</button>
+                          <div class='form-group mt-2'>
+														<label class='switcher-control'> 
+															<input type='checkbox' name='cbxSaveBack' class='switcher-input' <?= isset($response['data']['cbxSaveBack']) ? 'checked' : '' ?>>
+															<span class='switcher-indicator'></span>
+															<span class='switcher-label-on'><i class='fas fa-check'></i></span>
+															<span class='switcher-label-off'><i class='fas fa-times'></i></span>
+														</label>
+														<span>Salvar e voltar?</span>
+													</div>
+                          <button class='btn btn-secondary ml-auto' type='button' onclick="window.location.href='<?= base_url('Pessoasfisica/'.$parentView.'/'.$IdParent) ?>'">Cancelar</button>
                         </div>
                       </fieldset><!-- /.fieldset -->
                     <?= form_close(); ?><!-- /.form -->
@@ -245,9 +258,3 @@
         </div><!-- /.page -->
       </div><!-- /.wrapper -->
     </main><!-- /.app-main -->
-
-<script>
-  var url_get = '<?= base_url('pessoasjuridica/get'); ?>';
-  var url_upd = '<?= base_url('pessoasjuridica/edit'); ?>';
-  var url_view = '<?= base_url('pessoasjuridica/view'); ?>';
-</script>

@@ -17,7 +17,7 @@
               </div><!-- /.page-message -->
               <?php else: ?>
               <!-- .page-message -->
-              <div class='page-message bg-success' role='alert>
+              <div class='page-message bg-success' role='alert'>
                 <span class='mr-5'><?= $response['message'] ?></span>
                 <a href='#' class='btn btn-sm btn-icon btn-success' aria-label='Close' onclick='$(this).parent().fadeOut()'>
                   <span aria-hidden='true'><i class='fa fa-times'></i></span>
@@ -76,7 +76,9 @@
 						</div>
 							<div class='form-group'>
 								<label for='0000_Ref311Id'>Código Versão Leiaute</label>
-							<input type='number' name='0000_Ref311Id' id='0000_Ref311Id' class='form-control' placeholder='Código Versão Leiaute' value='<?= $response['data'][0]['0000_Ref311Id'] ?>' required>
+							<select name='0000_Ref311Id' id='0000_Ref311Id' class='custom-select' placeholder='Código Versão Leiaute' required>
+								<?= getOptionToSelect('ref311','311_Id', '', $response['data'][0]['0000_Ref311Id'], $login->data->token) ?>
+							</select>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['0000_Ref311Id']) ? $response['error']['0000_Ref311Id'] : ''; ?></div>
 							<?php endif; ?>
@@ -147,28 +149,43 @@
 						</div>
 							<div class='form-group'>
 								<label for='0000_PessoaJuridicaId'>Pessoa Juridica</label>
-							<input type='number' name='0000_PessoaJuridicaId' id='0000_PessoaJuridicaId' class='form-control' placeholder='Pessoa Juridica' value='<?= $response['data'][0]['0000_PessoaJuridicaId'] ?>' >
+							<select name='0000_PessoaJuridicaId' id='0000_PessoaJuridicaId' class='custom-select' placeholder='Pessoa Juridica' >
+								<?= getOptionToSelect('pessoasjuridica','pj_Id', '', $response['data'][0]['0000_PessoaJuridicaId'], $login->data->token) ?>
+							</select>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['0000_PessoaJuridicaId']) ? $response['error']['0000_PessoaJuridicaId'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='0000_Reg0001EFDCId'>Abertura Bloco 0</label>
-							<input type='number' name='0000_Reg0001EFDCId' id='0000_Reg0001EFDCId' class='form-control' placeholder='Abertura Bloco 0' value='<?= $response['data'][0]['0000_Reg0001EFDCId'] ?>' >
+							<select name='0000_Reg0001EFDCId' id='0000_Reg0001EFDCId' class='custom-select' placeholder='Abertura Bloco 0' >
+								<?= getOptionToSelect('regs0001efdc','0001_Id', '', $response['data'][0]['0000_Reg0001EFDCId'], $login->data->token) ?>
+							</select>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['0000_Reg0001EFDCId']) ? $response['error']['0000_Reg0001EFDCId'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='0000_Regs0110EFDCId'>Regimes de Apuração da Contribuição Social e de Apropriação de Crédito</label>
-							<input type='number' name='0000_Regs0110EFDCId' id='0000_Regs0110EFDCId' class='form-control' placeholder='Regimes de Apuração da Contribuição Social e de Apropriação de Crédito' value='<?= $response['data'][0]['0000_Regs0110EFDCId'] ?>' >
+							<select name='0000_Regs0110EFDCId' id='0000_Regs0110EFDCId' class='custom-select' placeholder='Regimes de Apuração da Contribuição Social e de Apropriação de Crédito' >
+								<?= getOptionToSelect('regs0110efdc','0110_Id', '', $response['data'][0]['0000_Regs0110EFDCId'], $login->data->token) ?>
+							</select>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['0000_Regs0110EFDCId']) ? $response['error']['0000_Regs0110EFDCId'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 
                         <div class='form-actions'>
-                          <button class='btn btn-primary mr-auto' type='submit'>Salvar</button>
+                          <button class='btn btn-primary mr-3' type='submit'>Salvar</button>
+                          <div class='form-group mt-2'>
+														<label class='switcher-control'> 
+															<input type='checkbox' name='cbxSaveBack' class='switcher-input' <?= isset($response['data']['cbxSaveBack']) ? 'checked' : '' ?>>
+															<span class='switcher-indicator'></span>
+															<span class='switcher-label-on'><i class='fas fa-check'></i></span>
+															<span class='switcher-label-off'><i class='fas fa-times'></i></span>
+														</label>
+														<span>Salvar e voltar?</span>
+													</div>
                           <button class='btn btn-secondary ml-auto' type='button' onclick="window.location.href='<?= base_url('Regs0000efdc') ?>'">Cancelar</button>
                         </div>
                       </fieldset><!-- /.fieldset -->
@@ -183,8 +200,3 @@
       </div><!-- /.wrapper -->
     </main><!-- /.app-main -->
 
-<script>
-  var url_get = '<?= base_url('regs0000efdc/get'); ?>';
-  var url_upd = '<?= base_url('regs0000efdc/edit'); ?>';
-  var url_view = '<?= base_url('regs0000efdc/view'); ?>';
-</script>

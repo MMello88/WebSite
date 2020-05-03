@@ -17,7 +17,7 @@
               </div><!-- /.page-message -->
               <?php else: ?>
               <!-- .page-message -->
-              <div class='page-message bg-success' role='alert>
+              <div class='page-message bg-success' role='alert'>
                 <span class='mr-5'><?= $response['message'] ?></span>
                 <a href='#' class='btn btn-sm btn-icon btn-success' aria-label='Close' onclick='$(this).parent().fadeOut()'>
                   <span aria-hidden='true'><i class='fa fa-times'></i></span>
@@ -104,7 +104,9 @@
 						</div>
 							<div class='form-group'>
 								<label for='0200_Reg0190EFDCId'>Unidades de Medida</label>
-							<input type='number' name='0200_Reg0190EFDCId' id='0200_Reg0190EFDCId' class='form-control' placeholder='Unidades de Medida' value='<?= $response['data'][0]['0200_Reg0190EFDCId'] ?>' >
+							<select name='0200_Reg0190EFDCId' id='0200_Reg0190EFDCId' class='custom-select' placeholder='Unidades de Medida' >
+								<?= getOptionToSelect('regs0190efdc','0190_Id', '', $response['data'][0]['0200_Reg0190EFDCId'], $login->data->token) ?>
+							</select>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['0200_Reg0190EFDCId']) ? $response['error']['0200_Reg0190EFDCId'] : ''; ?></div>
 							<?php endif; ?>
@@ -178,28 +180,36 @@
 						</div>
 							<div class='form-group'>
 								<label for='0200_PessoaJuridicaId'>Pessoa Juridica</label>
-							<input type='number' name='0200_PessoaJuridicaId' id='0200_PessoaJuridicaId' class='form-control' placeholder='Pessoa Juridica' value='<?= $response['data'][0]['0200_PessoaJuridicaId'] ?>' >
+							<select name='0200_PessoaJuridicaId' id='0200_PessoaJuridicaId' class='custom-select' placeholder='Pessoa Juridica' >
+								<?= getOptionToSelect('pessoasjuridica','pj_Id', '', $response['data'][0]['0200_PessoaJuridicaId'], $login->data->token) ?>
+							</select>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['0200_PessoaJuridicaId']) ? $response['error']['0200_PessoaJuridicaId'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='0200_Reg0205EFDCId'>Alteração do Item</label>
-							<input type='number' name='0200_Reg0205EFDCId' id='0200_Reg0205EFDCId' class='form-control' placeholder='Alteração do Item' value='<?= $response['data'][0]['0200_Reg0205EFDCId'] ?>' >
+							<select name='0200_Reg0205EFDCId' id='0200_Reg0205EFDCId' class='custom-select' placeholder='Alteração do Item' >
+								<?= getOptionToSelect('regs0205efdc','0205_Id', '', $response['data'][0]['0200_Reg0205EFDCId'], $login->data->token) ?>
+							</select>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['0200_Reg0205EFDCId']) ? $response['error']['0200_Reg0205EFDCId'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='0200_Reg0206EFDCId'>Código de Produto Conforme Tabela ANP</label>
-							<input type='number' name='0200_Reg0206EFDCId' id='0200_Reg0206EFDCId' class='form-control' placeholder='Código de Produto Conforme Tabela ANP' value='<?= $response['data'][0]['0200_Reg0206EFDCId'] ?>' >
+							<select name='0200_Reg0206EFDCId' id='0200_Reg0206EFDCId' class='custom-select' placeholder='Código de Produto Conforme Tabela ANP' >
+								<?= getOptionToSelect('regs0206efdc','0206_Id', '', $response['data'][0]['0200_Reg0206EFDCId'], $login->data->token) ?>
+							</select>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['0200_Reg0206EFDCId']) ? $response['error']['0200_Reg0206EFDCId'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='0200_Reg020EFDCId'>Código de Grupos por Marca Comercial</label>
-							<input type='number' name='0200_Reg020EFDCId' id='0200_Reg020EFDCId' class='form-control' placeholder='Código de Grupos por Marca Comercial' value='<?= $response['data'][0]['0200_Reg020EFDCId'] ?>' >
+							<select name='0200_Reg020EFDCId' id='0200_Reg020EFDCId' class='custom-select' placeholder='Código de Grupos por Marca Comercial' >
+								<?= getOptionToSelect('regs0208efdc','0208_Id', '', $response['data'][0]['0200_Reg020EFDCId'], $login->data->token) ?>
+							</select>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['0200_Reg020EFDCId']) ? $response['error']['0200_Reg020EFDCId'] : ''; ?></div>
 							<?php endif; ?>
@@ -225,35 +235,8 @@
               </div><!-- /.section-block -->
             </div><!-- /.page-section -->
 
-      <!-- .page-section -->
-      <div class='page-section'>
-
-        <!-- .card -->
-        <div class='card card-fluid'>
-
-          <!-- .card-header -->
-          <div class='card-header d-md-flex align-items-md-start'>
-            <ul class='nav nav-tabs card-header-tabs'>                
-            </ul>
-          </div><!-- /.card-header -->
-
-          <!-- .card-body -->
-          <div class='card-body'>
-            <!-- .tab-content -->
-            <div id='myTabContent' class='tab-content'>
-          
-      </div><!-- /.tab-content -->
-    </div><!-- /.card-body -->
-  </div><!-- /.card -->
-</div><!-- /.page-section -->
-    
           </div><!-- /.page-inner -->
         </div><!-- /.page -->
       </div><!-- /.wrapper -->
     </main><!-- /.app-main -->
 
-<script>
-  var url_get = '<?= base_url('regs0200efdc/get'); ?>';
-  var url_upd = '<?= base_url('regs0200efdc/edit'); ?>';
-  var url_view = '<?= base_url('regs0200efdc/view'); ?>';
-</script>

@@ -17,7 +17,7 @@
               </div><!-- /.page-message -->
               <?php else: ?>
               <!-- .page-message -->
-              <div class='page-message bg-success' role='alert>
+              <div class='page-message bg-success' role='alert'>
                 <span class='mr-5'><?= $response['message'] ?></span>
                 <a href='#' class='btn btn-sm btn-icon btn-success' aria-label='Close' onclick='$(this).parent().fadeOut()'>
                   <span aria-hidden='true'><i class='fa fa-times'></i></span>
@@ -69,14 +69,18 @@
                         <legend>Alteração do registro</legend> <!-- .form-group -->
 							<div class='form-group'>
 								<label for='pm_MenusId'>Menu</label>
-							<input type='number' name='pm_MenusId' id='pm_MenusId' class='form-control' placeholder='Menu' value='<?= $response['data'][0]['pm_MenusId'] ?>' required>
+							<select name='pm_MenusId' id='pm_MenusId' class='custom-select' placeholder='Menu' required>
+								<?= getOptionToSelect('menus','mns_Id', '', $response['data'][0]['pm_MenusId'], $login->data->token) ?>
+							</select>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['pm_MenusId']) ? $response['error']['pm_MenusId'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='pm_PerfisId'>Perfil</label>
-							<input type='number' name='pm_PerfisId' id='pm_PerfisId' class='form-control' placeholder='Perfil' value='<?= $response['data'][0]['pm_PerfisId'] ?>' required>
+							<select name='pm_PerfisId' id='pm_PerfisId' class='custom-select' placeholder='Perfil' required>
+								<?= getOptionToSelect('perfis','ps_Id', '', $response['data'][0]['pm_PerfisId'], $login->data->token) ?>
+							</select>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['pm_PerfisId']) ? $response['error']['pm_PerfisId'] : ''; ?></div>
 							<?php endif; ?>
@@ -102,35 +106,8 @@
               </div><!-- /.section-block -->
             </div><!-- /.page-section -->
 
-      <!-- .page-section -->
-      <div class='page-section'>
-
-        <!-- .card -->
-        <div class='card card-fluid'>
-
-          <!-- .card-header -->
-          <div class='card-header d-md-flex align-items-md-start'>
-            <ul class='nav nav-tabs card-header-tabs'>                
-            </ul>
-          </div><!-- /.card-header -->
-
-          <!-- .card-body -->
-          <div class='card-body'>
-            <!-- .tab-content -->
-            <div id='myTabContent' class='tab-content'>
-          
-      </div><!-- /.tab-content -->
-    </div><!-- /.card-body -->
-  </div><!-- /.card -->
-</div><!-- /.page-section -->
-    
           </div><!-- /.page-inner -->
         </div><!-- /.page -->
       </div><!-- /.wrapper -->
     </main><!-- /.app-main -->
 
-<script>
-  var url_get = '<?= base_url('perfismenu/get'); ?>';
-  var url_upd = '<?= base_url('perfismenu/edit'); ?>';
-  var url_view = '<?= base_url('perfismenu/view'); ?>';
-</script>

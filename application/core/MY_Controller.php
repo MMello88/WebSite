@@ -25,6 +25,8 @@ class MY_Controller extends CI_Controller {
       $PerfisId = $this->data['login']->data->PerfisId;
       $this->data['menus'] = $this->SendGet("api/Menus/getPerfilMenu/{$PerfisId}", $this->data['login']->data->token)->data;
     }
+
+    $this->addRoute();
   }
 
   protected function base_api($url = ""){
@@ -110,5 +112,25 @@ class MY_Controller extends CI_Controller {
     $this->data['scripts'][] = base_url($location);
   }
 
+  private function addRoute(){
+    if($this->session->userdata('url_segments') === NULL){
+      $url_segments[] = $this->uri->segments;
+      $this->session->set_userdata("url_segments",$url_segments);
+    } else {
+      $url_segments = $this->session->userdata("url_segments");
 
+      $todosDiferentes = FALSE;      
+      foreach ($url_segments as $value) {  
+        if(count(array_diff($value,$this->uri->segments)) == 0){
+          $todosDiferentes = TRUE;
+        }
+      }
+      if(!$todosDiferentes)
+        $url_segments[] = $this->uri->segments;
+
+      $this->session->set_userdata("url_segments",$url_segments);
+    }
+
+ //   print_r($this->session->userdata('url_segments'));
+  }
 }

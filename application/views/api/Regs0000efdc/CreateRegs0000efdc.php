@@ -17,7 +17,7 @@
               </div><!-- /.page-message -->
               <?php else: ?>
               <!-- .page-message -->
-              <div class='page-message bg-success' role='alert>
+              <div class='page-message bg-success' role='alert'>
                 <span class='mr-5'><?= $response['message'] ?></span>
                 <a href='#' class='btn btn-sm btn-icon btn-success' aria-label='Close' onclick='$(this).parent().fadeOut()'>
                   <span aria-hidden='true'><i class='fa fa-times'></i></span>
@@ -176,7 +176,16 @@
 						</div>
 
                         <div class='form-actions'>
-                          <button class='btn btn-primary mr-auto' type='submit'>Salvar</button>
+                          <button class='btn btn-primary mr-3' type='submit'>Salvar</button>
+                          <div class='form-group mt-2'>
+														<label class='switcher-control'> 
+															<input type='checkbox' name='cbxSaveBack' class='switcher-input' <?= isset($response['data']['cbxSaveBack']) ? 'checked' : '' ?>>
+															<span class='switcher-indicator'></span>
+															<span class='switcher-label-on'><i class='fas fa-check'></i></span>
+															<span class='switcher-label-off'><i class='fas fa-times'></i></span>
+														</label>
+														<span>Salvar e voltar?</span>
+													</div>
                           <button class='btn btn-secondary ml-auto' type='button' onclick="window.location.href='<?= base_url('Regs0000efdc') ?>'">Cancelar</button>
                         </div>
                       </fieldset><!-- /.fieldset -->
@@ -190,8 +199,3 @@
         </div><!-- /.page -->
       </div><!-- /.wrapper -->
     </main><!-- /.app-main -->
-<script>
-  var url_get = '<?= base_url('regs0000efdc/create'); ?>';
-  var url_upd = '<?= base_url('regs0000efdc/edit'); ?>';
-  var url_view = '<?= base_url('regs0000efdc/view'); ?>';
-</script>

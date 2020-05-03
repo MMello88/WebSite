@@ -17,7 +17,7 @@
               </div><!-- /.page-message -->
               <?php else: ?>
               <!-- .page-message -->
-              <div class='page-message bg-success' role='alert>
+              <div class='page-message bg-success' role='alert'>
                 <span class='mr-5'><?= $response['message'] ?></span>
                 <a href='#' class='btn btn-sm btn-icon btn-success' aria-label='Close' onclick='$(this).parent().fadeOut()'>
                   <span aria-hidden='true'><i class='fa fa-times'></i></span>
@@ -139,7 +139,11 @@
                   <!-- .tab-pane -->
                   <div class='tab-pane fade active show' id='TabRef0'>
                     <div class='d-flex align-items-center mb-4'>
-                      <button type='button' class='btn btn-outline-success' onclick="window.location.href='<?= base_url('Pessoasjuridica/create') ?>'">
+                      <?php if(isset($response['data'][0]['pf_Id'])): ?>
+                      <button type='button' class='btn btn-outline-success' onclick="window.location.href='<?= base_url('Pessoasjuridica/create/'.$nameView.'/'. $response['data'][0]['pf_Id']) ?>'">
+                      <?php else: ?>
+                      <button type='button' class='btn btn-outline-success' onclick="window.location.href='<?= base_url('Pessoasjuridica/create/'.$nameView.'/') ?>'" disabled>
+                      <?php endif; ?>
                         <span class='fa fa-plus'></span>
                       </button> <!-- /floating action -->
                       <div class='dropdown ml-auto'>
@@ -199,7 +203,7 @@
                       </div><!-- /.input-group -->
                     </div><!-- /.form-group -->
                     <!-- .table -->
-                    <table id='myTable' class='table'>
+                    <table id='myTablePessoasjuridica' class='table'>
                       <!-- thead -->
                       <thead>
                         <tr>
@@ -311,13 +315,16 @@
           </div><!-- /.modal-content -->
         </div><!-- /.modal-dialog -->
       </div><!-- /.modal -->
+
+<?php if(isset($response['data'][0]['pf_Id'])): ?>
+  <script>
+  var url_get_pessoasjuridica = '<?= base_url('pessoasjuridica/get/'.$response['data'][0]['pf_Id']); ?>';
+  var url_upd_pessoasjuridica = '<?= base_url('pessoasjuridica/edit/'.$nameView.'/'. $response['data'][0]['pf_Id']); ?>';
+  var url_view_pessoasjuridica = '<?= base_url('pessoasjuridica/view/'.$nameView.'/'. $response['data'][0]['pf_Id']); ?>';
+</script>
+<?php endif; ?>
       
           </div><!-- /.page-inner -->
         </div><!-- /.page -->
       </div><!-- /.wrapper -->
     </main><!-- /.app-main -->
-<script>
-  var url_get = '<?= base_url('pessoasfisica/get'); ?>';
-  var url_upd = '<?= base_url('pessoasfisica/edit'); ?>';
-  var url_view = '<?= base_url('pessoasfisica/view'); ?>';
-</script>

@@ -17,7 +17,7 @@
               </div><!-- /.page-message -->
               <?php else: ?>
               <!-- .page-message -->
-              <div class='page-message bg-success' role='alert>
+              <div class='page-message bg-success' role='alert'>
                 <span class='mr-5'><?= $response['message'] ?></span>
                 <a href='#' class='btn btn-sm btn-icon btn-success' aria-label='Close' onclick='$(this).parent().fadeOut()'>
                   <span aria-hidden='true'><i class='fa fa-times'></i></span>
@@ -69,7 +69,9 @@
                         <legend>Alteração do registro</legend> <!-- .form-group -->
 							<div class='form-group'>
 								<label for='pu_PerfisId'>Perfil</label>
-							<input type='number' name='pu_PerfisId' id='pu_PerfisId' class='form-control' placeholder='Perfil' value='<?= $response['data'][0]['pu_PerfisId'] ?>' required>
+							<select name='pu_PerfisId' id='pu_PerfisId' class='custom-select' placeholder='Perfil' required>
+								<?= getOptionToSelect('perfis','ps_Id', '', $response['data'][0]['pu_PerfisId'], $login->data->token) ?>
+							</select>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['pu_PerfisId']) ? $response['error']['pu_PerfisId'] : ''; ?></div>
 							<?php endif; ?>
@@ -95,35 +97,8 @@
               </div><!-- /.section-block -->
             </div><!-- /.page-section -->
 
-      <!-- .page-section -->
-      <div class='page-section'>
-
-        <!-- .card -->
-        <div class='card card-fluid'>
-
-          <!-- .card-header -->
-          <div class='card-header d-md-flex align-items-md-start'>
-            <ul class='nav nav-tabs card-header-tabs'>                
-            </ul>
-          </div><!-- /.card-header -->
-
-          <!-- .card-body -->
-          <div class='card-body'>
-            <!-- .tab-content -->
-            <div id='myTabContent' class='tab-content'>
-          
-      </div><!-- /.tab-content -->
-    </div><!-- /.card-body -->
-  </div><!-- /.card -->
-</div><!-- /.page-section -->
-    
           </div><!-- /.page-inner -->
         </div><!-- /.page -->
       </div><!-- /.wrapper -->
     </main><!-- /.app-main -->
 
-<script>
-  var url_get = '<?= base_url('perfisuser/get'); ?>';
-  var url_upd = '<?= base_url('perfisuser/edit'); ?>';
-  var url_view = '<?= base_url('perfisuser/view'); ?>';
-</script>

@@ -17,7 +17,7 @@
               </div><!-- /.page-message -->
               <?php else: ?>
               <!-- .page-message -->
-              <div class='page-message bg-success' role='alert>
+              <div class='page-message bg-success' role='alert'>
                 <span class='mr-5'><?= $response['message'] ?></span>
                 <a href='#' class='btn btn-sm btn-icon btn-success' aria-label='Close' onclick='$(this).parent().fadeOut()'>
                   <span aria-hidden='true'><i class='fa fa-times'></i></span>
@@ -83,7 +83,9 @@
 						</div>
 							<div class='form-group'>
 								<label for='a170_Reg0200EFDCId'>Código do Item</label>
-							<input type='number' name='a170_Reg0200EFDCId' id='a170_Reg0200EFDCId' class='form-control' placeholder='Código do Item' value='<?= $response['data'][0]['a170_Reg0200EFDCId'] ?>' >
+							<select name='a170_Reg0200EFDCId' id='a170_Reg0200EFDCId' class='custom-select' placeholder='Código do Item' >
+								<?= getOptionToSelect('regs0200efdc','0200_Id', '', $response['data'][0]['a170_Reg0200EFDCId'], $login->data->token) ?>
+							</select>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['a170_Reg0200EFDCId']) ? $response['error']['a170_Reg0200EFDCId'] : ''; ?></div>
 							<?php endif; ?>
@@ -111,7 +113,9 @@
 						</div>
 							<div class='form-group'>
 								<label for='a170_Ref431Id'>Código da Situação Tributária</label>
-							<input type='number' name='a170_Ref431Id' id='a170_Ref431Id' class='form-control' placeholder='Código da Situação Tributária' value='<?= $response['data'][0]['a170_Ref431Id'] ?>' >
+							<select name='a170_Ref431Id' id='a170_Ref431Id' class='custom-select' placeholder='Código da Situação Tributária' >
+								<?= getOptionToSelect('ref431','431_Id', '', $response['data'][0]['a170_Ref431Id'], $login->data->token) ?>
+							</select>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['a170_Ref431Id']) ? $response['error']['a170_Ref431Id'] : ''; ?></div>
 							<?php endif; ?>
@@ -126,7 +130,9 @@
 						</div>
 							<div class='form-group'>
 								<label for='a170_Ref433Id'>Código da Situação Tributária Referente ao PIS/Pasep</label>
-							<input type='number' name='a170_Ref433Id' id='a170_Ref433Id' class='form-control' placeholder='Código da Situação Tributária Referente ao PIS/Pasep' value='<?= $response['data'][0]['a170_Ref433Id'] ?>' >
+							<select name='a170_Ref433Id' id='a170_Ref433Id' class='custom-select' placeholder='Código da Situação Tributária Referente ao PIS/Pasep' >
+								<?= getOptionToSelect('ref433','433_Id', '', $response['data'][0]['a170_Ref433Id'], $login->data->token) ?>
+							</select>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['a170_Ref433Id']) ? $response['error']['a170_Ref433Id'] : ''; ?></div>
 							<?php endif; ?>
@@ -154,7 +160,9 @@
 						</div>
 							<div class='form-group'>
 								<label for='a170_Ref434Id'>Código da Situação Tributária Referente à Cofins</label>
-							<input type='number' name='a170_Ref434Id' id='a170_Ref434Id' class='form-control' placeholder='Código da Situação Tributária Referente à Cofins' value='<?= $response['data'][0]['a170_Ref434Id'] ?>' >
+							<select name='a170_Ref434Id' id='a170_Ref434Id' class='custom-select' placeholder='Código da Situação Tributária Referente à Cofins' >
+								<?= getOptionToSelect('ref434','434_Id', '', $response['data'][0]['a170_Ref434Id'], $login->data->token) ?>
+							</select>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['a170_Ref434Id']) ? $response['error']['a170_Ref434Id'] : ''; ?></div>
 							<?php endif; ?>
@@ -182,21 +190,27 @@
 						</div>
 							<div class='form-group'>
 								<label for='a170_Reg0500EFDCId'>Plano de Conta</label>
-							<input type='number' name='a170_Reg0500EFDCId' id='a170_Reg0500EFDCId' class='form-control' placeholder='Plano de Conta' value='<?= $response['data'][0]['a170_Reg0500EFDCId'] ?>' >
+							<select name='a170_Reg0500EFDCId' id='a170_Reg0500EFDCId' class='custom-select' placeholder='Plano de Conta' >
+								<?= getOptionToSelect('regs0500efdc','0500_Id', '', $response['data'][0]['a170_Reg0500EFDCId'], $login->data->token) ?>
+							</select>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['a170_Reg0500EFDCId']) ? $response['error']['a170_Reg0500EFDCId'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='a170_Reg0600EFDCId'>Centro de Custo</label>
-							<input type='number' name='a170_Reg0600EFDCId' id='a170_Reg0600EFDCId' class='form-control' placeholder='Centro de Custo' value='<?= $response['data'][0]['a170_Reg0600EFDCId'] ?>' >
+							<select name='a170_Reg0600EFDCId' id='a170_Reg0600EFDCId' class='custom-select' placeholder='Centro de Custo' >
+								<?= getOptionToSelect('regs0600efdc','0600_Id', '', $response['data'][0]['a170_Reg0600EFDCId'], $login->data->token) ?>
+							</select>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['a170_Reg0600EFDCId']) ? $response['error']['a170_Reg0600EFDCId'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='a170_RegA100EFDCId'>Documento - Nota Fiscal de Serviço</label>
-							<input type='number' name='a170_RegA100EFDCId' id='a170_RegA100EFDCId' class='form-control' placeholder='Documento - Nota Fiscal de Serviço' value='<?= $response['data'][0]['a170_RegA100EFDCId'] ?>' >
+							<select name='a170_RegA100EFDCId' id='a170_RegA100EFDCId' class='custom-select' placeholder='Documento - Nota Fiscal de Serviço' >
+								<?= getOptionToSelect('regsa100efdc','a100_Id', '', $response['data'][0]['a170_RegA100EFDCId'], $login->data->token) ?>
+							</select>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['a170_RegA100EFDCId']) ? $response['error']['a170_RegA100EFDCId'] : ''; ?></div>
 							<?php endif; ?>
@@ -222,35 +236,8 @@
               </div><!-- /.section-block -->
             </div><!-- /.page-section -->
 
-      <!-- .page-section -->
-      <div class='page-section'>
-
-        <!-- .card -->
-        <div class='card card-fluid'>
-
-          <!-- .card-header -->
-          <div class='card-header d-md-flex align-items-md-start'>
-            <ul class='nav nav-tabs card-header-tabs'>                
-            </ul>
-          </div><!-- /.card-header -->
-
-          <!-- .card-body -->
-          <div class='card-body'>
-            <!-- .tab-content -->
-            <div id='myTabContent' class='tab-content'>
-          
-      </div><!-- /.tab-content -->
-    </div><!-- /.card-body -->
-  </div><!-- /.card -->
-</div><!-- /.page-section -->
-    
           </div><!-- /.page-inner -->
         </div><!-- /.page -->
       </div><!-- /.wrapper -->
     </main><!-- /.app-main -->
 
-<script>
-  var url_get = '<?= base_url('regsa170efdc/get'); ?>';
-  var url_upd = '<?= base_url('regsa170efdc/edit'); ?>';
-  var url_view = '<?= base_url('regsa170efdc/view'); ?>';
-</script>

@@ -17,7 +17,7 @@
               </div><!-- /.page-message -->
               <?php else: ?>
               <!-- .page-message -->
-              <div class='page-message bg-success' role='alert>
+              <div class='page-message bg-success' role='alert'>
                 <span class='mr-5'><?= $response['message'] ?></span>
                 <a href='#' class='btn btn-sm btn-icon btn-success' aria-label='Close' onclick='$(this).parent().fadeOut()'>
                   <span aria-hidden='true'><i class='fa fa-times'></i></span>
@@ -153,7 +153,11 @@
                   <!-- .tab-pane -->
                   <div class='tab-pane fade active show' id='TabRef0'>
                     <div class='d-flex align-items-center mb-4'>
-                      <button type='button' class='btn btn-outline-success' onclick="window.location.href='<?= base_url('Regs0110efdc/create') ?>'">
+                      <?php if(isset($response['data'][0]['0111_Id'])): ?>
+                      <button type='button' class='btn btn-outline-success' onclick="window.location.href='<?= base_url('Regs0110efdc/create/'.$nameView.'/'. $response['data'][0]['0111_Id']) ?>'">
+                      <?php else: ?>
+                      <button type='button' class='btn btn-outline-success' onclick="window.location.href='<?= base_url('Regs0110efdc/create/'.$nameView.'/') ?>'" disabled>
+                      <?php endif; ?>
                         <span class='fa fa-plus'></span>
                       </button> <!-- /floating action -->
                       <div class='dropdown ml-auto'>
@@ -200,7 +204,7 @@
                       </div><!-- /.input-group -->
                     </div><!-- /.form-group -->
                     <!-- .table -->
-                    <table id='myTable' class='table'>
+                    <table id='myTableRegs0110efdc' class='table'>
                       <!-- thead -->
                       <thead>
                         <tr>
@@ -286,13 +290,16 @@
           </div><!-- /.modal-content -->
         </div><!-- /.modal-dialog -->
       </div><!-- /.modal -->
+
+<?php if(isset($response['data'][0]['0111_Id'])): ?>
+  <script>
+  var url_get_regs0110efdc = '<?= base_url('regs0110efdc/get/'.$response['data'][0]['0111_Id']); ?>';
+  var url_upd_regs0110efdc = '<?= base_url('regs0110efdc/edit/'.$nameView.'/'. $response['data'][0]['0111_Id']); ?>';
+  var url_view_regs0110efdc = '<?= base_url('regs0110efdc/view/'.$nameView.'/'. $response['data'][0]['0111_Id']); ?>';
+</script>
+<?php endif; ?>
       
           </div><!-- /.page-inner -->
         </div><!-- /.page -->
       </div><!-- /.wrapper -->
     </main><!-- /.app-main -->
-<script>
-  var url_get = '<?= base_url('regs0111efdc/create'); ?>';
-  var url_upd = '<?= base_url('regs0111efdc/edit'); ?>';
-  var url_view = '<?= base_url('regs0111efdc/view'); ?>';
-</script>

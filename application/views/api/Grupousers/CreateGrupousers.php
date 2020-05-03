@@ -17,7 +17,7 @@
               </div><!-- /.page-message -->
               <?php else: ?>
               <!-- .page-message -->
-              <div class='page-message bg-success' role='alert>
+              <div class='page-message bg-success' role='alert'>
                 <span class='mr-5'><?= $response['message'] ?></span>
                 <a href='#' class='btn btn-sm btn-icon btn-success' aria-label='Close' onclick='$(this).parent().fadeOut()'>
                   <span aria-hidden='true'><i class='fa fa-times'></i></span>
@@ -126,7 +126,11 @@
                   <!-- .tab-pane -->
                   <div class='tab-pane fade active show' id='TabRef0'>
                     <div class='d-flex align-items-center mb-4'>
-                      <button type='button' class='btn btn-outline-success' onclick="window.location.href='<?= base_url('Usersgrupo/create') ?>'">
+                      <?php if(isset($response['data'][0]['gpu_Id'])): ?>
+                      <button type='button' class='btn btn-outline-success' onclick="window.location.href='<?= base_url('Usersgrupo/create/'.$nameView.'/'. $response['data'][0]['gpu_Id']) ?>'">
+                      <?php else: ?>
+                      <button type='button' class='btn btn-outline-success' onclick="window.location.href='<?= base_url('Usersgrupo/create/'.$nameView.'/') ?>'" disabled>
+                      <?php endif; ?>
                         <span class='fa fa-plus'></span>
                       </button> <!-- /floating action -->
                       <div class='dropdown ml-auto'>
@@ -164,7 +168,7 @@
                       </div><!-- /.input-group -->
                     </div><!-- /.form-group -->
                     <!-- .table -->
-                    <table id='myTable' class='table'>
+                    <table id='myTableUsersgrupo' class='table'>
                       <!-- thead -->
                       <thead>
                         <tr>
@@ -234,13 +238,16 @@
           </div><!-- /.modal-content -->
         </div><!-- /.modal-dialog -->
       </div><!-- /.modal -->
+
+<?php if(isset($response['data'][0]['gpu_Id'])): ?>
+  <script>
+  var url_get_usersgrupo = '<?= base_url('usersgrupo/get/'.$response['data'][0]['gpu_Id']); ?>';
+  var url_upd_usersgrupo = '<?= base_url('usersgrupo/edit/'.$nameView.'/'. $response['data'][0]['gpu_Id']); ?>';
+  var url_view_usersgrupo = '<?= base_url('usersgrupo/view/'.$nameView.'/'. $response['data'][0]['gpu_Id']); ?>';
+</script>
+<?php endif; ?>
       
           </div><!-- /.page-inner -->
         </div><!-- /.page -->
       </div><!-- /.wrapper -->
     </main><!-- /.app-main -->
-<script>
-  var url_get = '<?= base_url('grupousers/create'); ?>';
-  var url_upd = '<?= base_url('grupousers/edit'); ?>';
-  var url_view = '<?= base_url('grupousers/view'); ?>';
-</script>

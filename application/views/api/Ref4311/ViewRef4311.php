@@ -68,70 +68,70 @@
                         <legend>Alteração do registro</legend> <!-- .form-group -->
 							<div class='form-group'>
 								<label for='4311_Codigo'>Código</label>
-							<input type='text' name='4311_Codigo' id='4311_Codigo' class='form-control' placeholder='Código' value='<?= isset($response['data'][0]['4311_Codigo']) ? $response['data'][0]['4311_Codigo'] : '' ?>' required disabled>
+							<input type='text'  name='4311_Codigo' id='4311_Codigo' class='form-control' placeholder='Código' value='<?= isset($response['data'][0]['4311_Codigo']) ? $response['data'][0]['4311_Codigo'] : '' ?>' required disabled>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['4311_Codigo']) ? $response['error']['4311_Codigo'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='4311_Descricao'>Descrição</label>
-							<input type='text' name='4311_Descricao' id='4311_Descricao' class='form-control' placeholder='Descrição' value='<?= isset($response['data'][0]['4311_Descricao']) ? $response['data'][0]['4311_Descricao'] : '' ?>' required disabled>
+							<input type='text'  name='4311_Descricao' id='4311_Descricao' class='form-control' placeholder='Descrição' value='<?= isset($response['data'][0]['4311_Descricao']) ? $response['data'][0]['4311_Descricao'] : '' ?>' required disabled>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['4311_Descricao']) ? $response['error']['4311_Descricao'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='4311_DtIni'>Data Inicial</label>
-							<input type='date' name='4311_DtIni' id='4311_DtIni' class='form-control' placeholder='Data Inicial' value='<?= isset($response['data'][0]['4311_DtIni']) ? $response['data'][0]['4311_DtIni'] : '' ?>' required disabled>
+							<input type='date'  name='4311_DtIni' id='4311_DtIni' class='form-control' placeholder='Data Inicial' value='<?= isset($response['data'][0]['4311_DtIni']) ? $response['data'][0]['4311_DtIni'] : '' ?>' required disabled>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['4311_DtIni']) ? $response['error']['4311_DtIni'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='4311_DtFin'>Data Final</label>
-							<input type='date' name='4311_DtFin' id='4311_DtFin' class='form-control' placeholder='Data Final' value='<?= isset($response['data'][0]['4311_DtFin']) ? $response['data'][0]['4311_DtFin'] : '' ?>'  disabled>
+							<input type='date'  name='4311_DtFin' id='4311_DtFin' class='form-control' placeholder='Data Final' value='<?= isset($response['data'][0]['4311_DtFin']) ? $response['data'][0]['4311_DtFin'] : '' ?>'  disabled>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['4311_DtFin']) ? $response['error']['4311_DtFin'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='4311_Ncm'>NCM</label>
-							<input type='text' name='4311_Ncm' id='4311_Ncm' class='form-control' placeholder='NCM' value='<?= isset($response['data'][0]['4311_Ncm']) ? $response['data'][0]['4311_Ncm'] : '' ?>' required disabled>
+							<input type='text'  name='4311_Ncm' id='4311_Ncm' class='form-control' placeholder='NCM' value='<?= isset($response['data'][0]['4311_Ncm']) ? $response['data'][0]['4311_Ncm'] : '' ?>' required disabled>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['4311_Ncm']) ? $response['error']['4311_Ncm'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='4311_NcmEx'>Exceto NCM</label>
-							<input type='text' name='4311_NcmEx' id='4311_NcmEx' class='form-control' placeholder='Exceto NCM' value='<?= isset($response['data'][0]['4311_NcmEx']) ? $response['data'][0]['4311_NcmEx'] : '' ?>'  disabled>
+							<input type='text'  name='4311_NcmEx' id='4311_NcmEx' class='form-control' placeholder='Exceto NCM' value='<?= isset($response['data'][0]['4311_NcmEx']) ? $response['data'][0]['4311_NcmEx'] : '' ?>'  disabled>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['4311_NcmEx']) ? $response['error']['4311_NcmEx'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='4311_ExIpi'>Código EX TIPI</label>
-							<input type='text' name='4311_ExIpi' id='4311_ExIpi' class='form-control' placeholder='Código EX TIPI' value='<?= isset($response['data'][0]['4311_ExIpi']) ? $response['data'][0]['4311_ExIpi'] : '' ?>'  disabled>
+							<input type='text'  name='4311_ExIpi' id='4311_ExIpi' class='form-control' placeholder='Código EX TIPI' value='<?= isset($response['data'][0]['4311_ExIpi']) ? $response['data'][0]['4311_ExIpi'] : '' ?>'  disabled>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['4311_ExIpi']) ? $response['error']['4311_ExIpi'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='4311_Unid'>Unidade</label>
-							<input type='text' name='4311_Unid' id='4311_Unid' class='form-control' placeholder='Unidade' value='<?= isset($response['data'][0]['4311_Unid']) ? $response['data'][0]['4311_Unid'] : '' ?>'  disabled>
+							<input type='text'  name='4311_Unid' id='4311_Unid' class='form-control' placeholder='Unidade' value='<?= isset($response['data'][0]['4311_Unid']) ? $response['data'][0]['4311_Unid'] : '' ?>'  disabled>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['4311_Unid']) ? $response['error']['4311_Unid'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='4311_AliqPis'>Alíquota do PIS %</label>
-							<input type='number' name='4311_AliqPis' id='4311_AliqPis' class='form-control' placeholder='Alíquota do PIS %' value='<?= isset($response['data'][0]['4311_AliqPis']) ? $response['data'][0]['4311_AliqPis'] : '' ?>'  disabled>
+							<input type='number' step='0.01' name='4311_AliqPis' id='4311_AliqPis' class='form-control' placeholder='Alíquota do PIS %' value='<?= isset($response['data'][0]['4311_AliqPis']) ? $response['data'][0]['4311_AliqPis'] : '' ?>'  disabled>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['4311_AliqPis']) ? $response['error']['4311_AliqPis'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='4311_AliqCofins'>Alíquota da COFINS %</label>
-							<input type='number' name='4311_AliqCofins' id='4311_AliqCofins' class='form-control' placeholder='Alíquota da COFINS %' value='<?= isset($response['data'][0]['4311_AliqCofins']) ? $response['data'][0]['4311_AliqCofins'] : '' ?>'  disabled>
+							<input type='number' step='0.01' name='4311_AliqCofins' id='4311_AliqCofins' class='form-control' placeholder='Alíquota da COFINS %' value='<?= isset($response['data'][0]['4311_AliqCofins']) ? $response['data'][0]['4311_AliqCofins'] : '' ?>'  disabled>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['4311_AliqCofins']) ? $response['error']['4311_AliqCofins'] : ''; ?></div>
 							<?php endif; ?>

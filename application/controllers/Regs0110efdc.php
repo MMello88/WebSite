@@ -9,6 +9,7 @@
       }
     
       public function index(){
+        /*
         if ($this->session->flashdata('response')){
           $this->data['response'] = $this->session->flashdata('response');
           if($this->data['response']['status'] == 'FALSE'){
@@ -22,6 +23,7 @@
         $this->load->view('dashboard/template/header', $this->data);
         $this->load->view('api/regs0110efdc/GridRegs0110efdc', $this->data);
         $this->load->view('dashboard/template/footer', $this->data);
+        */
       }
     
       public function get($IdParent, $Id = ''){
@@ -50,8 +52,11 @@
 
           $response = $this->sendPost('api/regs0110efdc/create', $this->data['login']->data->token, $this->input->post(), true);
 
-          if($response['status'] == 'FALSE')
+          if($response['status'] == 'FALSE'){
             $response['data'] = $_POST;
+          } else {
+            $response['comeFromChild'] = 'TRUE';
+          }
           
           if($salvarEVoltar) $response['data']['cbxSaveBack'] = 'on';
           
@@ -97,6 +102,8 @@
           if($response['status'] == 'FALSE'){
             $_POST['0110_Id'] = $Id;
             $response['data'][0] = $_POST;
+          } else {
+            $response['comeFromChild'] = 'TRUE';
           }
 
           if($salvarEVoltar) $response['data']['cbxSaveBack'] = 'on';
@@ -111,11 +118,11 @@
         }
       }
     
-      public function delete(){
+      public function delete($parentView, $IdParent){
         if($_POST){
           $Id = $_POST['Id'];
     
-          $response = $this->sendGet('api/regs0110efdc/get/'.$Id, $this->data['login']->data->token, true);    
+          $response = $this->sendGet('api/regs0110efdc/getByParent/'.$IdParent.'/'.$Id, $this->data['login']->data->token, true);    
     
           if(empty($response['data'])){
             $this->data['heading'] = 'Dado não encontrado.';
@@ -123,15 +130,18 @@
             $this->load->view('errors/html/my_error_404', $this->data);
           } else {
             $response = $this->sendDelete('api/regs0110efdc/delete/'.$Id, $this->data['login']->data->token, true);
+            $response['comeFromChild'] = 'TRUE';
             $this->session->set_flashdata('response', $response); 
-            redirect('regs0110efdc');
+            redirect('regs0111efdc/'.$parentView.'/'.$IdParent);
           }
         }
       }
 
-      public function view($Id){
+      public function view($parentView, $IdParent, $Id){
         $this->data['nameView'] = 'view';
-        $this->data['response'] = $this->sendGet('api/regs0110efdc/get/'.$Id, $this->data['login']->data->token, true);
+        $this->data['IdParent'] = $IdParent;
+        $this->data['parentView'] = $parentView;
+        $this->data['response'] = $this->sendGet('api/regs0110efdc/getByParent/'.$IdParent.'/'.$Id, $this->data['login']->data->token, true);
 
 
         $this->load->view('dashboard/template/header', $this->data);

@@ -69,7 +69,7 @@
                         <legend>Adicionar um novo registro</legend> <!-- .form-group -->
 							<div class='form-group'>
 								<label for='a110_Reg'>Registro</label>
-							<input type='text' name='a110_Reg' id='a110_Reg' class='form-control' placeholder='Registro' value='<?= isset($response['data']['a110_Reg']) ? $response['data']['a110_Reg'] : '' ?>' required>
+							<input type='text'  name='a110_Reg' id='a110_Reg' class='form-control' placeholder='Registro' value='<?= isset($response['data']['a110_Reg']) ? $response['data']['a110_Reg'] : '' ?>' required>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['a110_Reg']) ? $response['error']['a110_Reg'] : ''; ?></div>
 							<?php endif; ?>
@@ -85,7 +85,7 @@
 						</div>
 							<div class='form-group'>
 								<label for='a110_TxtComplementar'>Informação Complementar do Documento Fiscal</label>
-							<input type='text' name='a110_TxtComplementar' id='a110_TxtComplementar' class='form-control' placeholder='Informação Complementar do Documento Fiscal' value='<?= isset($response['data']['a110_TxtComplementar']) ? $response['data']['a110_TxtComplementar'] : '' ?>' >
+							<input type='text'  name='a110_TxtComplementar' id='a110_TxtComplementar' class='form-control' placeholder='Informação Complementar do Documento Fiscal' value='<?= isset($response['data']['a110_TxtComplementar']) ? $response['data']['a110_TxtComplementar'] : '' ?>' >
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['a110_TxtComplementar']) ? $response['error']['a110_TxtComplementar'] : ''; ?></div>
 							<?php endif; ?>

@@ -69,35 +69,35 @@
                         <legend>Adicionar um novo registro</legend> <!-- .form-group -->
 							<div class='form-group'>
 								<label for='0450_Reg'>Registro</label>
-							<input type='text' name='0450_Reg' id='0450_Reg' class='form-control' placeholder='Registro' value='<?= isset($response['data']['0450_Reg']) ? $response['data']['0450_Reg'] : '' ?>' required>
+							<input type='text'  name='0450_Reg' id='0450_Reg' class='form-control' placeholder='Registro' value='<?= isset($response['data']['0450_Reg']) ? $response['data']['0450_Reg'] : '' ?>' required>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['0450_Reg']) ? $response['error']['0450_Reg'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='0450_CodInf'>Código</label>
-							<input type='text' name='0450_CodInf' id='0450_CodInf' class='form-control' placeholder='Código' value='<?= isset($response['data']['0450_CodInf']) ? $response['data']['0450_CodInf'] : '' ?>' required>
+							<input type='text'  name='0450_CodInf' id='0450_CodInf' class='form-control' placeholder='Código' value='<?= isset($response['data']['0450_CodInf']) ? $response['data']['0450_CodInf'] : '' ?>' required>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['0450_CodInf']) ? $response['error']['0450_CodInf'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='0450_Txt'>Informação Complementar</label>
-							<input type='text' name='0450_Txt' id='0450_Txt' class='form-control' placeholder='Informação Complementar' value='<?= isset($response['data']['0450_Txt']) ? $response['data']['0450_Txt'] : '' ?>' required>
+							<input type='text'  name='0450_Txt' id='0450_Txt' class='form-control' placeholder='Informação Complementar' value='<?= isset($response['data']['0450_Txt']) ? $response['data']['0450_Txt'] : '' ?>' required>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['0450_Txt']) ? $response['error']['0450_Txt'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='0450_DtIni'>Data Inicial</label>
-							<input type='date' name='0450_DtIni' id='0450_DtIni' class='form-control' placeholder='Data Inicial' value='<?= isset($response['data']['0450_DtIni']) ? $response['data']['0450_DtIni'] : '' ?>' required>
+							<input type='date'  name='0450_DtIni' id='0450_DtIni' class='form-control' placeholder='Data Inicial' value='<?= isset($response['data']['0450_DtIni']) ? $response['data']['0450_DtIni'] : '' ?>' required>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['0450_DtIni']) ? $response['error']['0450_DtIni'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='0450_DtFin'>Data Final</label>
-							<input type='date' name='0450_DtFin' id='0450_DtFin' class='form-control' placeholder='Data Final' value='<?= isset($response['data']['0450_DtFin']) ? $response['data']['0450_DtFin'] : '' ?>' >
+							<input type='date'  name='0450_DtFin' id='0450_DtFin' class='form-control' placeholder='Data Final' value='<?= isset($response['data']['0450_DtFin']) ? $response['data']['0450_DtFin'] : '' ?>' >
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['0450_DtFin']) ? $response['error']['0450_DtFin'] : ''; ?></div>
 							<?php endif; ?>

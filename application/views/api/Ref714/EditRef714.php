@@ -69,63 +69,63 @@
                         <legend>Alteração do registro</legend> <!-- .form-group -->
 							<div class='form-group'>
 								<label for='714_Codigo'>Código</label>
-							<input type='text' name='714_Codigo' id='714_Codigo' class='form-control' placeholder='Código' value='<?= $response['data'][0]['714_Codigo'] ?>' required>
+							<input type='text'  name='714_Codigo' id='714_Codigo' class='form-control' placeholder='Código' value='<?= $response['data'][0]['714_Codigo'] ?>' required>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['714_Codigo']) ? $response['error']['714_Codigo'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='714_Descricao'>Descrição</label>
-							<input type='text' name='714_Descricao' id='714_Descricao' class='form-control' placeholder='Descrição' value='<?= $response['data'][0]['714_Descricao'] ?>' required>
+							<input type='text'  name='714_Descricao' id='714_Descricao' class='form-control' placeholder='Descrição' value='<?= $response['data'][0]['714_Descricao'] ?>' required>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['714_Descricao']) ? $response['error']['714_Descricao'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='714_DtIni'>Data Inicial</label>
-							<input type='date' name='714_DtIni' id='714_DtIni' class='form-control' placeholder='Data Inicial' value='<?= $response['data'][0]['714_DtIni'] ?>' required>
+							<input type='date'  name='714_DtIni' id='714_DtIni' class='form-control' placeholder='Data Inicial' value='<?= $response['data'][0]['714_DtIni'] ?>' required>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['714_DtIni']) ? $response['error']['714_DtIni'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='714_DtFin'>Data Final</label>
-							<input type='date' name='714_DtFin' id='714_DtFin' class='form-control' placeholder='Data Final' value='<?= $response['data'][0]['714_DtFin'] ?>' >
+							<input type='date'  name='714_DtFin' id='714_DtFin' class='form-control' placeholder='Data Final' value='<?= $response['data'][0]['714_DtFin'] ?>' >
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['714_DtFin']) ? $response['error']['714_DtFin'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='714_IndTipoAtividade'>Indicador Tipo Atividade</label>
-							<input type='text' name='714_IndTipoAtividade' id='714_IndTipoAtividade' class='form-control' placeholder='Indicador Tipo Atividade' value='<?= $response['data'][0]['714_IndTipoAtividade'] ?>' >
+							<input type='text'  name='714_IndTipoAtividade' id='714_IndTipoAtividade' class='form-control' placeholder='Indicador Tipo Atividade' value='<?= $response['data'][0]['714_IndTipoAtividade'] ?>' >
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['714_IndTipoAtividade']) ? $response['error']['714_IndTipoAtividade'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='714_IndAjuste'>Indicador Ajuste</label>
-							<input type='text' name='714_IndAjuste' id='714_IndAjuste' class='form-control' placeholder='Indicador Ajuste' value='<?= $response['data'][0]['714_IndAjuste'] ?>' >
+							<input type='text'  name='714_IndAjuste' id='714_IndAjuste' class='form-control' placeholder='Indicador Ajuste' value='<?= $response['data'][0]['714_IndAjuste'] ?>' >
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['714_IndAjuste']) ? $response['error']['714_IndAjuste'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='714_Grupo'>Cód. Grupo</label>
-							<input type='text' name='714_Grupo' id='714_Grupo' class='form-control' placeholder='Cód. Grupo' value='<?= $response['data'][0]['714_Grupo'] ?>' >
+							<input type='text'  name='714_Grupo' id='714_Grupo' class='form-control' placeholder='Cód. Grupo' value='<?= $response['data'][0]['714_Grupo'] ?>' >
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['714_Grupo']) ? $response['error']['714_Grupo'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='714_SubGrupo'>Cód. SubGrupo</label>
-							<input type='text' name='714_SubGrupo' id='714_SubGrupo' class='form-control' placeholder='Cód. SubGrupo' value='<?= $response['data'][0]['714_SubGrupo'] ?>' >
+							<input type='text'  name='714_SubGrupo' id='714_SubGrupo' class='form-control' placeholder='Cód. SubGrupo' value='<?= $response['data'][0]['714_SubGrupo'] ?>' >
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['714_SubGrupo']) ? $response['error']['714_SubGrupo'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='714_IndOutros'>Indicador Outros</label>
-							<input type='text' name='714_IndOutros' id='714_IndOutros' class='form-control' placeholder='Indicador Outros' value='<?= $response['data'][0]['714_IndOutros'] ?>' >
+							<input type='text'  name='714_IndOutros' id='714_IndOutros' class='form-control' placeholder='Indicador Outros' value='<?= $response['data'][0]['714_IndOutros'] ?>' >
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['714_IndOutros']) ? $response['error']['714_IndOutros'] : ''; ?></div>
 							<?php endif; ?>

@@ -77,7 +77,7 @@
 						</div>
 							<div class='form-group'>
 								<label for='sbm_Nome'>Nome do Submenu</label>
-							<input type='text' name='sbm_Nome' id='sbm_Nome' class='form-control' placeholder='Nome do Submenu' value='<?= isset($response['data'][0]['sbm_Nome']) ? $response['data'][0]['sbm_Nome'] : '' ?>' required disabled>
+							<input type='text'  name='sbm_Nome' id='sbm_Nome' class='form-control' placeholder='Nome do Submenu' value='<?= isset($response['data'][0]['sbm_Nome']) ? $response['data'][0]['sbm_Nome'] : '' ?>' required disabled>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['sbm_Nome']) ? $response['error']['sbm_Nome'] : ''; ?></div>
 							<?php endif; ?>
@@ -92,21 +92,21 @@
 						</div>
 							<div class='form-group'>
 								<label for='sbm_Icone'>Icone</label>
-							<input type='' name='sbm_Icone' id='sbm_Icone' class='form-control' placeholder='Icone' value='<?= isset($response['data'][0]['sbm_Icone']) ? $response['data'][0]['sbm_Icone'] : '' ?>'  disabled>
+							<input type=''  name='sbm_Icone' id='sbm_Icone' class='form-control' placeholder='Icone' value='<?= isset($response['data'][0]['sbm_Icone']) ? $response['data'][0]['sbm_Icone'] : '' ?>'  disabled>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['sbm_Icone']) ? $response['error']['sbm_Icone'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='sbm_Url'>Url</label>
-							<input type='' name='sbm_Url' id='sbm_Url' class='form-control' placeholder='Url' value='<?= isset($response['data'][0]['sbm_Url']) ? $response['data'][0]['sbm_Url'] : '' ?>' required disabled>
+							<input type=''  name='sbm_Url' id='sbm_Url' class='form-control' placeholder='Url' value='<?= isset($response['data'][0]['sbm_Url']) ? $response['data'][0]['sbm_Url'] : '' ?>' required disabled>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['sbm_Url']) ? $response['error']['sbm_Url'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='sbm_Nivel'>Nível</label>
-							<input type='number' name='sbm_Nivel' id='sbm_Nivel' class='form-control' placeholder='Nível' value='<?= isset($response['data'][0]['sbm_Nivel']) ? $response['data'][0]['sbm_Nivel'] : '' ?>'  disabled>
+							<input type='number' step='1' name='sbm_Nivel' id='sbm_Nivel' class='form-control' placeholder='Nível' value='<?= isset($response['data'][0]['sbm_Nivel']) ? $response['data'][0]['sbm_Nivel'] : '' ?>'  disabled>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['sbm_Nivel']) ? $response['error']['sbm_Nivel'] : ''; ?></div>
 							<?php endif; ?>

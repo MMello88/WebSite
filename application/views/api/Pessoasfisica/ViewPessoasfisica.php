@@ -68,28 +68,28 @@
                         <legend>Alteração do registro</legend> <!-- .form-group -->
 							<div class='form-group'>
 								<label for='pf_Nome'>Nome</label>
-							<input type='text' name='pf_Nome' id='pf_Nome' class='form-control' placeholder='Nome' value='<?= isset($response['data'][0]['pf_Nome']) ? $response['data'][0]['pf_Nome'] : '' ?>' required disabled>
+							<input type='text'  name='pf_Nome' id='pf_Nome' class='form-control' placeholder='Nome' value='<?= isset($response['data'][0]['pf_Nome']) ? $response['data'][0]['pf_Nome'] : '' ?>' required disabled>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['pf_Nome']) ? $response['error']['pf_Nome'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='pf_Sobrenome'>Sobrenome</label>
-							<input type='text' name='pf_Sobrenome' id='pf_Sobrenome' class='form-control' placeholder='Sobrenome' value='<?= isset($response['data'][0]['pf_Sobrenome']) ? $response['data'][0]['pf_Sobrenome'] : '' ?>' required disabled>
+							<input type='text'  name='pf_Sobrenome' id='pf_Sobrenome' class='form-control' placeholder='Sobrenome' value='<?= isset($response['data'][0]['pf_Sobrenome']) ? $response['data'][0]['pf_Sobrenome'] : '' ?>' required disabled>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['pf_Sobrenome']) ? $response['error']['pf_Sobrenome'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='pf_DataNascimento'>Data Nascimento</label>
-							<input type='date' name='pf_DataNascimento' id='pf_DataNascimento' class='form-control' placeholder='Data Nascimento' value='<?= isset($response['data'][0]['pf_DataNascimento']) ? $response['data'][0]['pf_DataNascimento'] : '' ?>' required disabled>
+							<input type='date'  name='pf_DataNascimento' id='pf_DataNascimento' class='form-control' placeholder='Data Nascimento' value='<?= isset($response['data'][0]['pf_DataNascimento']) ? $response['data'][0]['pf_DataNascimento'] : '' ?>' required disabled>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['pf_DataNascimento']) ? $response['error']['pf_DataNascimento'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='pf_UrlFoto'>Foto Perfil</label>
-							<input type='text' name='pf_UrlFoto' id='pf_UrlFoto' class='form-control' placeholder='Foto Perfil' value='<?= isset($response['data'][0]['pf_UrlFoto']) ? $response['data'][0]['pf_UrlFoto'] : '' ?>'  disabled>
+							<input type='text'  name='pf_UrlFoto' id='pf_UrlFoto' class='form-control' placeholder='Foto Perfil' value='<?= isset($response['data'][0]['pf_UrlFoto']) ? $response['data'][0]['pf_UrlFoto'] : '' ?>'  disabled>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['pf_UrlFoto']) ? $response['error']['pf_UrlFoto'] : ''; ?></div>
 							<?php endif; ?>
@@ -104,7 +104,7 @@
 						</div>
 							<div class='form-group'>
 								<label for='pf_Criacao'></label>
-							<input type='datetime-local' name='pf_Criacao' id='pf_Criacao' class='form-control' placeholder='' value='<?= isset($response['data'][0]['pf_Criacao']) ? $response['data'][0]['pf_Criacao'] : 'CURRENT_TIMESTAMP(6)' ?>' required disabled>
+							<input type='datetime-local'  name='pf_Criacao' id='pf_Criacao' class='form-control' placeholder='' value='<?= isset($response['data'][0]['pf_Criacao']) ? (substr($response['data'][0]['pf_Criacao'],10,1) !== 'T' ? date_format(date_create_from_format('Y-m-d H:i:s', $response['data'][0]['pf_Criacao']),'Y-m-d\TH:i') : $response['data'][0]['pf_Criacao'])  : 'CURRENT_TIMESTAMP(6)' ?>' required disabled>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['pf_Criacao']) ? $response['error']['pf_Criacao'] : ''; ?></div>
 							<?php endif; ?>
@@ -292,7 +292,7 @@
 </div><!-- /.page-section -->
     
       <!-- Central modal -->
-      <div class='modal fade' id='modalDeleteRegistro' tabindex='-1' role='dialog' aria-labelledby='ModalDeleteLabel' aria-hidden='true'>
+      <div class='modal fade' id='modalDeleteRegistropessoasjuridica' tabindex='-1' role='dialog' aria-labelledby='ModalDeleteLabel' aria-hidden='true'>
         <!-- .modal-dialog -->
         <div class='modal-dialog modal-dialog-centered' role='document'>
           <!-- .modal-content -->
@@ -301,10 +301,14 @@
             <div class='modal-header'>
               <h5 id='ModalDeleteLabel' class='modal-title'> Deseja Deletar este Registro? </h5>
             </div><!-- /.modal-header -->
-            <?= form_open('pessoasjuridica/delete') ?>
+          <?php if(isset($response['data'][0]['pf_Id'])): ?>
+            <?= form_open('pessoasjuridica/delete/'.$nameView.'/'.$response['data'][0]['pf_Id']) ?>
+          <?php else: ?>
+            <?= form_open('pessoasjuridica/delete/'.$nameView.'/') ?>
+          <?php endif; ?>
               <!-- .modal-body -->
               <div class='modal-body'>
-                <input type='hidden' id='DeleteById' name='Id' value=''>
+                <input type='hidden' id='DeleteBypj_id' name='Id' value=''>
               </div><!-- /.modal-body -->
               <!-- .modal-footer -->
               <div class='modal-footer'>

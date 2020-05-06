@@ -69,91 +69,91 @@
                         <legend>Adicionar um novo registro</legend> <!-- .form-group -->
 							<div class='form-group'>
 								<label for='0100_Reg'>Registro</label>
-							<input type='text' name='0100_Reg' id='0100_Reg' class='form-control' placeholder='Registro' value='<?= isset($response['data']['0100_Reg']) ? $response['data']['0100_Reg'] : '0100' ?>' required>
+							<input type='text'  name='0100_Reg' id='0100_Reg' class='form-control' placeholder='Registro' value='<?= isset($response['data']['0100_Reg']) ? $response['data']['0100_Reg'] : '0100' ?>' required>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['0100_Reg']) ? $response['error']['0100_Reg'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='0100_Nome'>Nome</label>
-							<input type='text' name='0100_Nome' id='0100_Nome' class='form-control' placeholder='Nome' value='<?= isset($response['data']['0100_Nome']) ? $response['data']['0100_Nome'] : '' ?>' required>
+							<input type='text'  name='0100_Nome' id='0100_Nome' class='form-control' placeholder='Nome' value='<?= isset($response['data']['0100_Nome']) ? $response['data']['0100_Nome'] : '' ?>' required>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['0100_Nome']) ? $response['error']['0100_Nome'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='0100_CPF'>CPF</label>
-							<input type='number' name='0100_CPF' id='0100_CPF' class='form-control' placeholder='CPF' value='<?= isset($response['data']['0100_CPF']) ? $response['data']['0100_CPF'] : '' ?>' required>
+							<input type='number' step='1' name='0100_CPF' id='0100_CPF' class='form-control' placeholder='CPF' value='<?= isset($response['data']['0100_CPF']) ? $response['data']['0100_CPF'] : '' ?>' required>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['0100_CPF']) ? $response['error']['0100_CPF'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='0100_CRC'>CRC</label>
-							<input type='text' name='0100_CRC' id='0100_CRC' class='form-control' placeholder='CRC' value='<?= isset($response['data']['0100_CRC']) ? $response['data']['0100_CRC'] : '' ?>' required>
+							<input type='text'  name='0100_CRC' id='0100_CRC' class='form-control' placeholder='CRC' value='<?= isset($response['data']['0100_CRC']) ? $response['data']['0100_CRC'] : '' ?>' required>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['0100_CRC']) ? $response['error']['0100_CRC'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='0100_CNPJ'>CNPJ</label>
-							<input type='number' name='0100_CNPJ' id='0100_CNPJ' class='form-control' placeholder='CNPJ' value='<?= isset($response['data']['0100_CNPJ']) ? $response['data']['0100_CNPJ'] : '' ?>' required>
+							<input type='number' step='1' name='0100_CNPJ' id='0100_CNPJ' class='form-control' placeholder='CNPJ' value='<?= isset($response['data']['0100_CNPJ']) ? $response['data']['0100_CNPJ'] : '' ?>' required>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['0100_CNPJ']) ? $response['error']['0100_CNPJ'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='0100_CEP'>CEP</label>
-							<input type='number' name='0100_CEP' id='0100_CEP' class='form-control' placeholder='CEP' value='<?= isset($response['data']['0100_CEP']) ? $response['data']['0100_CEP'] : '' ?>' required>
+							<input type='number' step='1' name='0100_CEP' id='0100_CEP' class='form-control' placeholder='CEP' value='<?= isset($response['data']['0100_CEP']) ? $response['data']['0100_CEP'] : '' ?>' required>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['0100_CEP']) ? $response['error']['0100_CEP'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='0100_End'>Endereço</label>
-							<input type='text' name='0100_End' id='0100_End' class='form-control' placeholder='Endereço' value='<?= isset($response['data']['0100_End']) ? $response['data']['0100_End'] : '' ?>' >
+							<input type='text'  name='0100_End' id='0100_End' class='form-control' placeholder='Endereço' value='<?= isset($response['data']['0100_End']) ? $response['data']['0100_End'] : '' ?>' >
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['0100_End']) ? $response['error']['0100_End'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='0100_Num'>Número</label>
-							<input type='text' name='0100_Num' id='0100_Num' class='form-control' placeholder='Número' value='<?= isset($response['data']['0100_Num']) ? $response['data']['0100_Num'] : '' ?>' >
+							<input type='text'  name='0100_Num' id='0100_Num' class='form-control' placeholder='Número' value='<?= isset($response['data']['0100_Num']) ? $response['data']['0100_Num'] : '' ?>' >
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['0100_Num']) ? $response['error']['0100_Num'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='0100_Compl'>Complemento</label>
-							<input type='text' name='0100_Compl' id='0100_Compl' class='form-control' placeholder='Complemento' value='<?= isset($response['data']['0100_Compl']) ? $response['data']['0100_Compl'] : '' ?>' >
+							<input type='text'  name='0100_Compl' id='0100_Compl' class='form-control' placeholder='Complemento' value='<?= isset($response['data']['0100_Compl']) ? $response['data']['0100_Compl'] : '' ?>' >
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['0100_Compl']) ? $response['error']['0100_Compl'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='0100_Bairro'>Bairro</label>
-							<input type='text' name='0100_Bairro' id='0100_Bairro' class='form-control' placeholder='Bairro' value='<?= isset($response['data']['0100_Bairro']) ? $response['data']['0100_Bairro'] : '' ?>' >
+							<input type='text'  name='0100_Bairro' id='0100_Bairro' class='form-control' placeholder='Bairro' value='<?= isset($response['data']['0100_Bairro']) ? $response['data']['0100_Bairro'] : '' ?>' >
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['0100_Bairro']) ? $response['error']['0100_Bairro'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='0100_Fone'>Fone</label>
-							<input type='text' name='0100_Fone' id='0100_Fone' class='form-control' placeholder='Fone' value='<?= isset($response['data']['0100_Fone']) ? $response['data']['0100_Fone'] : '' ?>' >
+							<input type='text'  name='0100_Fone' id='0100_Fone' class='form-control' placeholder='Fone' value='<?= isset($response['data']['0100_Fone']) ? $response['data']['0100_Fone'] : '' ?>' >
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['0100_Fone']) ? $response['error']['0100_Fone'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='0100_Fax'>Fax</label>
-							<input type='text' name='0100_Fax' id='0100_Fax' class='form-control' placeholder='Fax' value='<?= isset($response['data']['0100_Fax']) ? $response['data']['0100_Fax'] : '' ?>' >
+							<input type='text'  name='0100_Fax' id='0100_Fax' class='form-control' placeholder='Fax' value='<?= isset($response['data']['0100_Fax']) ? $response['data']['0100_Fax'] : '' ?>' >
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['0100_Fax']) ? $response['error']['0100_Fax'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='0100_Email'>E-mail</label>
-							<input type='text' name='0100_Email' id='0100_Email' class='form-control' placeholder='E-mail' value='<?= isset($response['data']['0100_Email']) ? $response['data']['0100_Email'] : '' ?>' >
+							<input type='text'  name='0100_Email' id='0100_Email' class='form-control' placeholder='E-mail' value='<?= isset($response['data']['0100_Email']) ? $response['data']['0100_Email'] : '' ?>' >
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['0100_Email']) ? $response['error']['0100_Email'] : ''; ?></div>
 							<?php endif; ?>
@@ -169,14 +169,14 @@
 						</div>
 							<div class='form-group'>
 								<label for='0100_DtIni'>Data Inicial</label>
-							<input type='date' name='0100_DtIni' id='0100_DtIni' class='form-control' placeholder='Data Inicial' value='<?= isset($response['data']['0100_DtIni']) ? $response['data']['0100_DtIni'] : '' ?>' required>
+							<input type='date'  name='0100_DtIni' id='0100_DtIni' class='form-control' placeholder='Data Inicial' value='<?= isset($response['data']['0100_DtIni']) ? $response['data']['0100_DtIni'] : '' ?>' required>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['0100_DtIni']) ? $response['error']['0100_DtIni'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='0100_DtFin'>Data Final</label>
-							<input type='date' name='0100_DtFin' id='0100_DtFin' class='form-control' placeholder='Data Final' value='<?= isset($response['data']['0100_DtFin']) ? $response['data']['0100_DtFin'] : '' ?>' >
+							<input type='date'  name='0100_DtFin' id='0100_DtFin' class='form-control' placeholder='Data Final' value='<?= isset($response['data']['0100_DtFin']) ? $response['data']['0100_DtFin'] : '' ?>' >
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['0100_DtFin']) ? $response['error']['0100_DtFin'] : ''; ?></div>
 							<?php endif; ?>

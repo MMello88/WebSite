@@ -68,7 +68,7 @@
                         <legend>Alteração do registro</legend> <!-- .form-group -->
 							<div class='form-group'>
 								<label for='0001_Reg'>Registro</label>
-							<input type='text' name='0001_Reg' id='0001_Reg' class='form-control' placeholder='Registro' value='<?= isset($response['data'][0]['0001_Reg']) ? $response['data'][0]['0001_Reg'] : '0001' ?>' required disabled>
+							<input type='text'  name='0001_Reg' id='0001_Reg' class='form-control' placeholder='Registro' value='<?= isset($response['data'][0]['0001_Reg']) ? $response['data'][0]['0001_Reg'] : '0001' ?>' required disabled>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['0001_Reg']) ? $response['error']['0001_Reg'] : ''; ?></div>
 							<?php endif; ?>

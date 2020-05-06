@@ -64,10 +64,16 @@
         $this->data['nameView'] = 'edit';
         if ($this->session->flashdata('response')){
           $this->data['response'] = $this->session->flashdata('response');
+
+          if(isset($this->data['response']['comeFromChild'])){
+            $this->data['response'] = $this->sendGet('api/ref311/get/'.$Id, $this->data['login']->data->token, true);
+          }
+      
         } else {
           $this->data['response'] = $this->sendGet('api/ref311/get/'.$Id, $this->data['login']->data->token, true);
         }
 
+				$this->scripts('assets/javascript/api/regs0000efdc/regs0000efdc.js');
 
         if(empty($this->data['response']['data'])){
           $this->data['heading'] = 'Dado não encontrado.';
@@ -126,6 +132,7 @@
         $this->data['nameView'] = 'view';
         $this->data['response'] = $this->sendGet('api/ref311/get/'.$Id, $this->data['login']->data->token, true);
 
+				$this->scripts('assets/javascript/api/regs0000efdc/regs0000efdc.js');
 
         $this->load->view('dashboard/template/header', $this->data);
         $this->load->view('api/ref311/ViewRef311', $this->data);

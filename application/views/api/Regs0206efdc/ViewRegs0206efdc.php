@@ -68,14 +68,14 @@
                         <legend>Alteração do registro</legend> <!-- .form-group -->
 							<div class='form-group'>
 								<label for='0206_Reg'>Registro</label>
-							<input type='text' name='0206_Reg' id='0206_Reg' class='form-control' placeholder='Registro' value='<?= isset($response['data'][0]['0206_Reg']) ? $response['data'][0]['0206_Reg'] : '' ?>' required disabled>
+							<input type='text'  name='0206_Reg' id='0206_Reg' class='form-control' placeholder='Registro' value='<?= isset($response['data'][0]['0206_Reg']) ? $response['data'][0]['0206_Reg'] : '' ?>' required disabled>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['0206_Reg']) ? $response['error']['0206_Reg'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='0206_CodComb'>Código Combustível</label>
-							<input type='text' name='0206_CodComb' id='0206_CodComb' class='form-control' placeholder='Código Combustível' value='<?= isset($response['data'][0]['0206_CodComb']) ? $response['data'][0]['0206_CodComb'] : '' ?>' required disabled>
+							<input type='text'  name='0206_CodComb' id='0206_CodComb' class='form-control' placeholder='Código Combustível' value='<?= isset($response['data'][0]['0206_CodComb']) ? $response['data'][0]['0206_CodComb'] : '' ?>' required disabled>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['0206_CodComb']) ? $response['error']['0206_CodComb'] : ''; ?></div>
 							<?php endif; ?>

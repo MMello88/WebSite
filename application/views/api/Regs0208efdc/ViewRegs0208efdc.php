@@ -68,7 +68,7 @@
                         <legend>Alteração do registro</legend> <!-- .form-group -->
 							<div class='form-group'>
 								<label for='0208_Reg'>Registro</label>
-							<input type='text' name='0208_Reg' id='0208_Reg' class='form-control' placeholder='Registro' value='<?= isset($response['data'][0]['0208_Reg']) ? $response['data'][0]['0208_Reg'] : '' ?>' required disabled>
+							<input type='text'  name='0208_Reg' id='0208_Reg' class='form-control' placeholder='Registro' value='<?= isset($response['data'][0]['0208_Reg']) ? $response['data'][0]['0208_Reg'] : '' ?>' required disabled>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['0208_Reg']) ? $response['error']['0208_Reg'] : ''; ?></div>
 							<?php endif; ?>
@@ -94,14 +94,14 @@
 						</div>
 							<div class='form-group'>
 								<label for='0208_CodGrupo'>Código Grupo</label>
-							<input type='text' name='0208_CodGrupo' id='0208_CodGrupo' class='form-control' placeholder='Código Grupo' value='<?= isset($response['data'][0]['0208_CodGrupo']) ? $response['data'][0]['0208_CodGrupo'] : '' ?>' required disabled>
+							<input type='text'  name='0208_CodGrupo' id='0208_CodGrupo' class='form-control' placeholder='Código Grupo' value='<?= isset($response['data'][0]['0208_CodGrupo']) ? $response['data'][0]['0208_CodGrupo'] : '' ?>' required disabled>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['0208_CodGrupo']) ? $response['error']['0208_CodGrupo'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='0208_MarcaComercial'>Marca Comercial</label>
-							<input type='text' name='0208_MarcaComercial' id='0208_MarcaComercial' class='form-control' placeholder='Marca Comercial' value='<?= isset($response['data'][0]['0208_MarcaComercial']) ? $response['data'][0]['0208_MarcaComercial'] : '' ?>' required disabled>
+							<input type='text'  name='0208_MarcaComercial' id='0208_MarcaComercial' class='form-control' placeholder='Marca Comercial' value='<?= isset($response['data'][0]['0208_MarcaComercial']) ? $response['data'][0]['0208_MarcaComercial'] : '' ?>' required disabled>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['0208_MarcaComercial']) ? $response['error']['0208_MarcaComercial'] : ''; ?></div>
 							<?php endif; ?>

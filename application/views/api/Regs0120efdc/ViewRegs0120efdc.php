@@ -68,35 +68,35 @@
                         <legend>Alteração do registro</legend> <!-- .form-group -->
 							<div class='form-group'>
 								<label for='0120_Reg'>Registro</label>
-							<input type='text' name='0120_Reg' id='0120_Reg' class='form-control' placeholder='Registro' value='<?= isset($response['data'][0]['0120_Reg']) ? $response['data'][0]['0120_Reg'] : '0120' ?>' required disabled>
+							<input type='text'  name='0120_Reg' id='0120_Reg' class='form-control' placeholder='Registro' value='<?= isset($response['data'][0]['0120_Reg']) ? $response['data'][0]['0120_Reg'] : '0120' ?>' required disabled>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['0120_Reg']) ? $response['error']['0120_Reg'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='0120_MesRefer'>Mês de referência</label>
-							<input type='date' name='0120_MesRefer' id='0120_MesRefer' class='form-control' placeholder='Mês de referência' value='<?= isset($response['data'][0]['0120_MesRefer']) ? $response['data'][0]['0120_MesRefer'] : '' ?>' required disabled>
+							<input type='date'  name='0120_MesRefer' id='0120_MesRefer' class='form-control' placeholder='Mês de referência' value='<?= isset($response['data'][0]['0120_MesRefer']) ? $response['data'][0]['0120_MesRefer'] : '' ?>' required disabled>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['0120_MesRefer']) ? $response['error']['0120_MesRefer'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='0120_InfoCompl'>Informação complementar</label>
-							<input type='number' name='0120_InfoCompl' id='0120_InfoCompl' class='form-control' placeholder='Informação complementar' value='<?= isset($response['data'][0]['0120_InfoCompl']) ? $response['data'][0]['0120_InfoCompl'] : '' ?>' required disabled>
+							<input type='number' step='1' name='0120_InfoCompl' id='0120_InfoCompl' class='form-control' placeholder='Informação complementar' value='<?= isset($response['data'][0]['0120_InfoCompl']) ? $response['data'][0]['0120_InfoCompl'] : '' ?>' required disabled>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['0120_InfoCompl']) ? $response['error']['0120_InfoCompl'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='0120_DtIni'>Data Inicial</label>
-							<input type='date' name='0120_DtIni' id='0120_DtIni' class='form-control' placeholder='Data Inicial' value='<?= isset($response['data'][0]['0120_DtIni']) ? $response['data'][0]['0120_DtIni'] : '' ?>' required disabled>
+							<input type='date'  name='0120_DtIni' id='0120_DtIni' class='form-control' placeholder='Data Inicial' value='<?= isset($response['data'][0]['0120_DtIni']) ? $response['data'][0]['0120_DtIni'] : '' ?>' required disabled>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['0120_DtIni']) ? $response['error']['0120_DtIni'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='0120_DtFin'>Data Final</label>
-							<input type='date' name='0120_DtFin' id='0120_DtFin' class='form-control' placeholder='Data Final' value='<?= isset($response['data'][0]['0120_DtFin']) ? $response['data'][0]['0120_DtFin'] : '' ?>'  disabled>
+							<input type='date'  name='0120_DtFin' id='0120_DtFin' class='form-control' placeholder='Data Final' value='<?= isset($response['data'][0]['0120_DtFin']) ? $response['data'][0]['0120_DtFin'] : '' ?>'  disabled>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['0120_DtFin']) ? $response['error']['0120_DtFin'] : ''; ?></div>
 							<?php endif; ?>

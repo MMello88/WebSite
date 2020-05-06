@@ -9,6 +9,7 @@
       }
     
       public function index(){
+        /*
         if ($this->session->flashdata('response')){
           $this->data['response'] = $this->session->flashdata('response');
           if($this->data['response']['status'] == 'FALSE'){
@@ -22,6 +23,7 @@
         $this->load->view('dashboard/template/header', $this->data);
         $this->load->view('api/regsa120efdc/GridRegsa120efdc', $this->data);
         $this->load->view('dashboard/template/footer', $this->data);
+        */
       }
     
       public function get($IdParent, $Id = ''){
@@ -50,8 +52,11 @@
 
           $response = $this->sendPost('api/regsa120efdc/create', $this->data['login']->data->token, $this->input->post(), true);
 
-          if($response['status'] == 'FALSE')
+          if($response['status'] == 'FALSE'){
             $response['data'] = $_POST;
+          } else {
+            $response['comeFromChild'] = 'TRUE';
+          }
           
           if($salvarEVoltar) $response['data']['cbxSaveBack'] = 'on';
           
@@ -97,6 +102,8 @@
           if($response['status'] == 'FALSE'){
             $_POST['a120_Id'] = $Id;
             $response['data'][0] = $_POST;
+          } else {
+            $response['comeFromChild'] = 'TRUE';
           }
 
           if($salvarEVoltar) $response['data']['cbxSaveBack'] = 'on';
@@ -111,11 +118,11 @@
         }
       }
     
-      public function delete(){
+      public function delete($parentView, $IdParent){
         if($_POST){
           $Id = $_POST['Id'];
     
-          $response = $this->sendGet('api/regsa120efdc/get/'.$Id, $this->data['login']->data->token, true);    
+          $response = $this->sendGet('api/regsa120efdc/getByParent/'.$IdParent.'/'.$Id, $this->data['login']->data->token, true);    
     
           if(empty($response['data'])){
             $this->data['heading'] = 'Dado não encontrado.';
@@ -123,15 +130,18 @@
             $this->load->view('errors/html/my_error_404', $this->data);
           } else {
             $response = $this->sendDelete('api/regsa120efdc/delete/'.$Id, $this->data['login']->data->token, true);
+            $response['comeFromChild'] = 'TRUE';
             $this->session->set_flashdata('response', $response); 
-            redirect('regsa120efdc');
+            redirect('regsa100efdc/'.$parentView.'/'.$IdParent);
           }
         }
       }
 
-      public function view($Id){
+      public function view($parentView, $IdParent, $Id){
         $this->data['nameView'] = 'view';
-        $this->data['response'] = $this->sendGet('api/regsa120efdc/get/'.$Id, $this->data['login']->data->token, true);
+        $this->data['IdParent'] = $IdParent;
+        $this->data['parentView'] = $parentView;
+        $this->data['response'] = $this->sendGet('api/regsa120efdc/getByParent/'.$IdParent.'/'.$Id, $this->data['login']->data->token, true);
 
 
         $this->load->view('dashboard/template/header', $this->data);

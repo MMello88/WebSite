@@ -44,7 +44,7 @@
               <nav aria-label='breadcrumb'>
                 <ol class='breadcrumb'>
                   <li class='breadcrumb-item active'>
-                    <a href='<?= base_url('Regs0000efdc') ?>'><i class='breadcrumb-icon fa fa-angle-left mr-2'></i>Voltar</a>
+                    <a href='<?= base_url('Ref311/'.$parentView.'/'.$IdParent) ?>'><i class='breadcrumb-icon fa fa-angle-left mr-2'></i>Voltar Matheus</a>
                   </li>
                 </ol>
               </nav><!-- /.breadcrumb -->
@@ -63,13 +63,13 @@
                   <!-- .card-body -->
                   <div class='card-body'>
                     <!-- .form -->
-                    <?= form_open(base_url('Regs0000efdc/update/'.$response['data'][0]['0000_Id'])); ?>
+                    <?= form_open(base_url('Regs0000efdc/update/'.$parentView.'/'.$IdParent.'/'.$response['data'][0]['0000_Id'])); ?>
                       <!-- .fieldset -->
                       <fieldset>
                         <legend>Alteração do registro</legend> <!-- .form-group -->
 							<div class='form-group'>
 								<label for='0000_Reg'>Registro</label>
-							<input type='text' name='0000_Reg' id='0000_Reg' class='form-control' placeholder='Registro' value='<?= $response['data'][0]['0000_Reg'] ?>' required>
+							<input type='text'  name='0000_Reg' id='0000_Reg' class='form-control' placeholder='Registro' value='<?= $response['data'][0]['0000_Reg'] ?>' required>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['0000_Reg']) ? $response['error']['0000_Reg'] : ''; ?></div>
 							<?php endif; ?>
@@ -104,21 +104,21 @@
 						</div>
 							<div class='form-group'>
 								<label for='0000_NumRecAnterior'>Número Recibo Escrituração Anterior</label>
-							<input type='text' name='0000_NumRecAnterior' id='0000_NumRecAnterior' class='form-control' placeholder='Número Recibo Escrituração Anterior' value='<?= $response['data'][0]['0000_NumRecAnterior'] ?>' >
+							<input type='text'  name='0000_NumRecAnterior' id='0000_NumRecAnterior' class='form-control' placeholder='Número Recibo Escrituração Anterior' value='<?= $response['data'][0]['0000_NumRecAnterior'] ?>' >
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['0000_NumRecAnterior']) ? $response['error']['0000_NumRecAnterior'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='0000_DtIni'>Data Inicial</label>
-							<input type='date' name='0000_DtIni' id='0000_DtIni' class='form-control' placeholder='Data Inicial' value='<?= $response['data'][0]['0000_DtIni'] ?>' required>
+							<input type='date'  name='0000_DtIni' id='0000_DtIni' class='form-control' placeholder='Data Inicial' value='<?= $response['data'][0]['0000_DtIni'] ?>' required>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['0000_DtIni']) ? $response['error']['0000_DtIni'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='0000_DtFin'>Data Final</label>
-							<input type='date' name='0000_DtFin' id='0000_DtFin' class='form-control' placeholder='Data Final' value='<?= $response['data'][0]['0000_DtFin'] ?>' >
+							<input type='date'  name='0000_DtFin' id='0000_DtFin' class='form-control' placeholder='Data Final' value='<?= $response['data'][0]['0000_DtFin'] ?>' >
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['0000_DtFin']) ? $response['error']['0000_DtFin'] : ''; ?></div>
 							<?php endif; ?>
@@ -186,7 +186,7 @@
 														</label>
 														<span>Salvar e voltar?</span>
 													</div>
-                          <button class='btn btn-secondary ml-auto' type='button' onclick="window.location.href='<?= base_url('Regs0000efdc') ?>'">Cancelar</button>
+                          <button class='btn btn-secondary ml-auto' type='button' onclick="window.location.href='<?= base_url('Ref311/'.$parentView.'/'.$IdParent) ?>'">Cancelar</button>
                         </div>
                       </fieldset><!-- /.fieldset -->
                     <?= form_close(); ?><!-- /.form -->
@@ -199,4 +199,3 @@
         </div><!-- /.page -->
       </div><!-- /.wrapper -->
     </main><!-- /.app-main -->
-

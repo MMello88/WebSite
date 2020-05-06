@@ -68,21 +68,21 @@
                         <legend>Alteração do registro</legend> <!-- .form-group -->
 							<div class='form-group'>
 								<label for='mun_CdMunicipio'>Cód. Municipio</label>
-							<input type='text' name='mun_CdMunicipio' id='mun_CdMunicipio' class='form-control' placeholder='Cód. Municipio' value='<?= isset($response['data'][0]['mun_CdMunicipio']) ? $response['data'][0]['mun_CdMunicipio'] : '' ?>' required disabled>
+							<input type='text'  name='mun_CdMunicipio' id='mun_CdMunicipio' class='form-control' placeholder='Cód. Municipio' value='<?= isset($response['data'][0]['mun_CdMunicipio']) ? $response['data'][0]['mun_CdMunicipio'] : '' ?>' required disabled>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['mun_CdMunicipio']) ? $response['error']['mun_CdMunicipio'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='mun_Nome'>Nome</label>
-							<input type='text' name='mun_Nome' id='mun_Nome' class='form-control' placeholder='Nome' value='<?= isset($response['data'][0]['mun_Nome']) ? $response['data'][0]['mun_Nome'] : '' ?>' required disabled>
+							<input type='text'  name='mun_Nome' id='mun_Nome' class='form-control' placeholder='Nome' value='<?= isset($response['data'][0]['mun_Nome']) ? $response['data'][0]['mun_Nome'] : '' ?>' required disabled>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['mun_Nome']) ? $response['error']['mun_Nome'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='mun_Uf'>UF</label>
-							<input type='text' name='mun_Uf' id='mun_Uf' class='form-control' placeholder='UF' value='<?= isset($response['data'][0]['mun_Uf']) ? $response['data'][0]['mun_Uf'] : '' ?>' required disabled>
+							<input type='text'  name='mun_Uf' id='mun_Uf' class='form-control' placeholder='UF' value='<?= isset($response['data'][0]['mun_Uf']) ? $response['data'][0]['mun_Uf'] : '' ?>' required disabled>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['mun_Uf']) ? $response['error']['mun_Uf'] : ''; ?></div>
 							<?php endif; ?>
@@ -531,7 +531,7 @@
 </div><!-- /.page-section -->
     
       <!-- Central modal -->
-      <div class='modal fade' id='modalDeleteRegistro' tabindex='-1' role='dialog' aria-labelledby='ModalDeleteLabel' aria-hidden='true'>
+      <div class='modal fade' id='modalDeleteRegistropessoasjuridica' tabindex='-1' role='dialog' aria-labelledby='ModalDeleteLabel' aria-hidden='true'>
         <!-- .modal-dialog -->
         <div class='modal-dialog modal-dialog-centered' role='document'>
           <!-- .modal-content -->
@@ -540,10 +540,14 @@
             <div class='modal-header'>
               <h5 id='ModalDeleteLabel' class='modal-title'> Deseja Deletar este Registro? </h5>
             </div><!-- /.modal-header -->
-            <?= form_open('pessoasjuridica/delete') ?>
+          <?php if(isset($response['data'][0]['mun_Id'])): ?>
+            <?= form_open('pessoasjuridica/delete/'.$nameView.'/'.$response['data'][0]['mun_Id']) ?>
+          <?php else: ?>
+            <?= form_open('pessoasjuridica/delete/'.$nameView.'/') ?>
+          <?php endif; ?>
               <!-- .modal-body -->
               <div class='modal-body'>
-                <input type='hidden' id='DeleteById' name='Id' value=''>
+                <input type='hidden' id='DeleteBypj_id' name='Id' value=''>
               </div><!-- /.modal-body -->
               <!-- .modal-footer -->
               <div class='modal-footer'>
@@ -564,7 +568,7 @@
 <?php endif; ?>
       
       <!-- Central modal -->
-      <div class='modal fade' id='modalDeleteRegistro' tabindex='-1' role='dialog' aria-labelledby='ModalDeleteLabel' aria-hidden='true'>
+      <div class='modal fade' id='modalDeleteRegistroregs0140efdc' tabindex='-1' role='dialog' aria-labelledby='ModalDeleteLabel' aria-hidden='true'>
         <!-- .modal-dialog -->
         <div class='modal-dialog modal-dialog-centered' role='document'>
           <!-- .modal-content -->
@@ -573,10 +577,14 @@
             <div class='modal-header'>
               <h5 id='ModalDeleteLabel' class='modal-title'> Deseja Deletar este Registro? </h5>
             </div><!-- /.modal-header -->
-            <?= form_open('regs0140efdc/delete') ?>
+          <?php if(isset($response['data'][0]['mun_Id'])): ?>
+            <?= form_open('regs0140efdc/delete/'.$nameView.'/'.$response['data'][0]['mun_Id']) ?>
+          <?php else: ?>
+            <?= form_open('regs0140efdc/delete/'.$nameView.'/') ?>
+          <?php endif; ?>
               <!-- .modal-body -->
               <div class='modal-body'>
-                <input type='hidden' id='DeleteById' name='Id' value=''>
+                <input type='hidden' id='DeleteBy0140_id' name='Id' value=''>
               </div><!-- /.modal-body -->
               <!-- .modal-footer -->
               <div class='modal-footer'>
@@ -597,7 +605,7 @@
 <?php endif; ?>
       
       <!-- Central modal -->
-      <div class='modal fade' id='modalDeleteRegistro' tabindex='-1' role='dialog' aria-labelledby='ModalDeleteLabel' aria-hidden='true'>
+      <div class='modal fade' id='modalDeleteRegistroregs0150efdc' tabindex='-1' role='dialog' aria-labelledby='ModalDeleteLabel' aria-hidden='true'>
         <!-- .modal-dialog -->
         <div class='modal-dialog modal-dialog-centered' role='document'>
           <!-- .modal-content -->
@@ -606,10 +614,14 @@
             <div class='modal-header'>
               <h5 id='ModalDeleteLabel' class='modal-title'> Deseja Deletar este Registro? </h5>
             </div><!-- /.modal-header -->
-            <?= form_open('regs0150efdc/delete') ?>
+          <?php if(isset($response['data'][0]['mun_Id'])): ?>
+            <?= form_open('regs0150efdc/delete/'.$nameView.'/'.$response['data'][0]['mun_Id']) ?>
+          <?php else: ?>
+            <?= form_open('regs0150efdc/delete/'.$nameView.'/') ?>
+          <?php endif; ?>
               <!-- .modal-body -->
               <div class='modal-body'>
-                <input type='hidden' id='DeleteById' name='Id' value=''>
+                <input type='hidden' id='DeleteBy0150_id' name='Id' value=''>
               </div><!-- /.modal-body -->
               <!-- .modal-footer -->
               <div class='modal-footer'>

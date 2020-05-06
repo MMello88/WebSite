@@ -69,42 +69,42 @@
                         <legend>Alteração do registro</legend> <!-- .form-group -->
 							<div class='form-group'>
 								<label for='511_Codigo'>Código</label>
-							<input type='text' name='511_Codigo' id='511_Codigo' class='form-control' placeholder='Código' value='<?= $response['data'][0]['511_Codigo'] ?>' required>
+							<input type='text'  name='511_Codigo' id='511_Codigo' class='form-control' placeholder='Código' value='<?= $response['data'][0]['511_Codigo'] ?>' required>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['511_Codigo']) ? $response['error']['511_Codigo'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='511_Descricao'>Descrição</label>
-							<input type='text' name='511_Descricao' id='511_Descricao' class='form-control' placeholder='Descrição' value='<?= $response['data'][0]['511_Descricao'] ?>' required>
+							<input type='text'  name='511_Descricao' id='511_Descricao' class='form-control' placeholder='Descrição' value='<?= $response['data'][0]['511_Descricao'] ?>' required>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['511_Descricao']) ? $response['error']['511_Descricao'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='511_DtIni'>Data Inicial</label>
-							<input type='date' name='511_DtIni' id='511_DtIni' class='form-control' placeholder='Data Inicial' value='<?= $response['data'][0]['511_DtIni'] ?>' required>
+							<input type='date'  name='511_DtIni' id='511_DtIni' class='form-control' placeholder='Data Inicial' value='<?= $response['data'][0]['511_DtIni'] ?>' required>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['511_DtIni']) ? $response['error']['511_DtIni'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='511_DtFin'>Data Final</label>
-							<input type='date' name='511_DtFin' id='511_DtFin' class='form-control' placeholder='Data Final' value='<?= $response['data'][0]['511_DtFin'] ?>' >
+							<input type='date'  name='511_DtFin' id='511_DtFin' class='form-control' placeholder='Data Final' value='<?= $response['data'][0]['511_DtFin'] ?>' >
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['511_DtFin']) ? $response['error']['511_DtFin'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='511_IndNcmAtividade'>NCM Atividade</label>
-							<input type='text' name='511_IndNcmAtividade' id='511_IndNcmAtividade' class='form-control' placeholder='NCM Atividade' value='<?= $response['data'][0]['511_IndNcmAtividade'] ?>' >
+							<input type='text'  name='511_IndNcmAtividade' id='511_IndNcmAtividade' class='form-control' placeholder='NCM Atividade' value='<?= $response['data'][0]['511_IndNcmAtividade'] ?>' >
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['511_IndNcmAtividade']) ? $response['error']['511_IndNcmAtividade'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='511_AliqAtividade'>Aliquota Atividade</label>
-							<input type='number' name='511_AliqAtividade' id='511_AliqAtividade' class='form-control' placeholder='Aliquota Atividade' value='<?= $response['data'][0]['511_AliqAtividade'] ?>' >
+							<input type='number' step='0.01' name='511_AliqAtividade' id='511_AliqAtividade' class='form-control' placeholder='Aliquota Atividade' value='<?= $response['data'][0]['511_AliqAtividade'] ?>' >
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['511_AliqAtividade']) ? $response['error']['511_AliqAtividade'] : ''; ?></div>
 							<?php endif; ?>

@@ -68,14 +68,14 @@
                         <legend>Alteração do registro</legend> <!-- .form-group -->
 							<div class='form-group'>
 								<label for='pss_CdPais'>Cód. País</label>
-							<input type='text' name='pss_CdPais' id='pss_CdPais' class='form-control' placeholder='Cód. País' value='<?= isset($response['data'][0]['pss_CdPais']) ? $response['data'][0]['pss_CdPais'] : '' ?>' required disabled>
+							<input type='text'  name='pss_CdPais' id='pss_CdPais' class='form-control' placeholder='Cód. País' value='<?= isset($response['data'][0]['pss_CdPais']) ? $response['data'][0]['pss_CdPais'] : '' ?>' required disabled>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['pss_CdPais']) ? $response['error']['pss_CdPais'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='pss_Nome'>Nome</label>
-							<input type='text' name='pss_Nome' id='pss_Nome' class='form-control' placeholder='Nome' value='<?= isset($response['data'][0]['pss_Nome']) ? $response['data'][0]['pss_Nome'] : '' ?>' required disabled>
+							<input type='text'  name='pss_Nome' id='pss_Nome' class='form-control' placeholder='Nome' value='<?= isset($response['data'][0]['pss_Nome']) ? $response['data'][0]['pss_Nome'] : '' ?>' required disabled>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['pss_Nome']) ? $response['error']['pss_Nome'] : ''; ?></div>
 							<?php endif; ?>

@@ -68,14 +68,14 @@
                         <legend>Alteração do registro</legend> <!-- .form-group -->
 							<div class='form-group'>
 								<label for='0500_Reg'>Registro</label>
-							<input type='text' name='0500_Reg' id='0500_Reg' class='form-control' placeholder='Registro' value='<?= isset($response['data'][0]['0500_Reg']) ? $response['data'][0]['0500_Reg'] : '' ?>' required disabled>
+							<input type='text'  name='0500_Reg' id='0500_Reg' class='form-control' placeholder='Registro' value='<?= isset($response['data'][0]['0500_Reg']) ? $response['data'][0]['0500_Reg'] : '' ?>' required disabled>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['0500_Reg']) ? $response['error']['0500_Reg'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='0500_DtAlteracao'>Data Alteração</label>
-							<input type='datetime-local' name='0500_DtAlteracao' id='0500_DtAlteracao' class='form-control' placeholder='Data Alteração' value='<?= isset($response['data'][0]['0500_DtAlteracao']) ? $response['data'][0]['0500_DtAlteracao'] : '' ?>' required disabled>
+							<input type='datetime-local'  name='0500_DtAlteracao' id='0500_DtAlteracao' class='form-control' placeholder='Data Alteração' value='<?= isset($response['data'][0]['0500_DtAlteracao']) ? (substr($response['data'][0]['0500_DtAlteracao'],10,1) !== 'T' ? date_format(date_create_from_format('Y-m-d H:i:s', $response['data'][0]['0500_DtAlteracao']),'Y-m-d\TH:i') : $response['data'][0]['0500_DtAlteracao'])  : '' ?>' required disabled>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['0500_DtAlteracao']) ? $response['error']['0500_DtAlteracao'] : ''; ?></div>
 							<?php endif; ?>
@@ -94,56 +94,56 @@
 						</div>
 							<div class='form-group'>
 								<label for='0500_IndCTA'>Indicador Tipo Conta</label>
-							<input type='text' name='0500_IndCTA' id='0500_IndCTA' class='form-control' placeholder='Indicador Tipo Conta' value='<?= isset($response['data'][0]['0500_IndCTA']) ? $response['data'][0]['0500_IndCTA'] : '' ?>' required disabled>
+							<input type='text'  name='0500_IndCTA' id='0500_IndCTA' class='form-control' placeholder='Indicador Tipo Conta' value='<?= isset($response['data'][0]['0500_IndCTA']) ? $response['data'][0]['0500_IndCTA'] : '' ?>' required disabled>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['0500_IndCTA']) ? $response['error']['0500_IndCTA'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='0500_Nivel'>Nível</label>
-							<input type='number' name='0500_Nivel' id='0500_Nivel' class='form-control' placeholder='Nível' value='<?= isset($response['data'][0]['0500_Nivel']) ? $response['data'][0]['0500_Nivel'] : '' ?>' required disabled>
+							<input type='number' step='1' name='0500_Nivel' id='0500_Nivel' class='form-control' placeholder='Nível' value='<?= isset($response['data'][0]['0500_Nivel']) ? $response['data'][0]['0500_Nivel'] : '' ?>' required disabled>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['0500_Nivel']) ? $response['error']['0500_Nivel'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='0500_CodCTA'>Código</label>
-							<input type='text' name='0500_CodCTA' id='0500_CodCTA' class='form-control' placeholder='Código' value='<?= isset($response['data'][0]['0500_CodCTA']) ? $response['data'][0]['0500_CodCTA'] : '' ?>' required disabled>
+							<input type='text'  name='0500_CodCTA' id='0500_CodCTA' class='form-control' placeholder='Código' value='<?= isset($response['data'][0]['0500_CodCTA']) ? $response['data'][0]['0500_CodCTA'] : '' ?>' required disabled>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['0500_CodCTA']) ? $response['error']['0500_CodCTA'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='0500_NomeCTA'>Nome</label>
-							<input type='text' name='0500_NomeCTA' id='0500_NomeCTA' class='form-control' placeholder='Nome' value='<?= isset($response['data'][0]['0500_NomeCTA']) ? $response['data'][0]['0500_NomeCTA'] : '' ?>' required disabled>
+							<input type='text'  name='0500_NomeCTA' id='0500_NomeCTA' class='form-control' placeholder='Nome' value='<?= isset($response['data'][0]['0500_NomeCTA']) ? $response['data'][0]['0500_NomeCTA'] : '' ?>' required disabled>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['0500_NomeCTA']) ? $response['error']['0500_NomeCTA'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='0500_CodCTARef'>Plano de Conta Referenciado</label>
-							<input type='text' name='0500_CodCTARef' id='0500_CodCTARef' class='form-control' placeholder='Plano de Conta Referenciado' value='<?= isset($response['data'][0]['0500_CodCTARef']) ? $response['data'][0]['0500_CodCTARef'] : '' ?>'  disabled>
+							<input type='text'  name='0500_CodCTARef' id='0500_CodCTARef' class='form-control' placeholder='Plano de Conta Referenciado' value='<?= isset($response['data'][0]['0500_CodCTARef']) ? $response['data'][0]['0500_CodCTARef'] : '' ?>'  disabled>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['0500_CodCTARef']) ? $response['error']['0500_CodCTARef'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='0500_CNPJEstab'>CNPJ do estabelecimento</label>
-							<input type='number' name='0500_CNPJEstab' id='0500_CNPJEstab' class='form-control' placeholder='CNPJ do estabelecimento' value='<?= isset($response['data'][0]['0500_CNPJEstab']) ? $response['data'][0]['0500_CNPJEstab'] : '' ?>' required disabled>
+							<input type='number' step='1' name='0500_CNPJEstab' id='0500_CNPJEstab' class='form-control' placeholder='CNPJ do estabelecimento' value='<?= isset($response['data'][0]['0500_CNPJEstab']) ? $response['data'][0]['0500_CNPJEstab'] : '' ?>' required disabled>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['0500_CNPJEstab']) ? $response['error']['0500_CNPJEstab'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='0500_DtIni'>Data Inicial</label>
-							<input type='date' name='0500_DtIni' id='0500_DtIni' class='form-control' placeholder='Data Inicial' value='<?= isset($response['data'][0]['0500_DtIni']) ? $response['data'][0]['0500_DtIni'] : '' ?>' required disabled>
+							<input type='date'  name='0500_DtIni' id='0500_DtIni' class='form-control' placeholder='Data Inicial' value='<?= isset($response['data'][0]['0500_DtIni']) ? $response['data'][0]['0500_DtIni'] : '' ?>' required disabled>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['0500_DtIni']) ? $response['error']['0500_DtIni'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='0500_DtFin'>Data Final</label>
-							<input type='date' name='0500_DtFin' id='0500_DtFin' class='form-control' placeholder='Data Final' value='<?= isset($response['data'][0]['0500_DtFin']) ? $response['data'][0]['0500_DtFin'] : '' ?>'  disabled>
+							<input type='date'  name='0500_DtFin' id='0500_DtFin' class='form-control' placeholder='Data Final' value='<?= isset($response['data'][0]['0500_DtFin']) ? $response['data'][0]['0500_DtFin'] : '' ?>'  disabled>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['0500_DtFin']) ? $response['error']['0500_DtFin'] : ''; ?></div>
 							<?php endif; ?>

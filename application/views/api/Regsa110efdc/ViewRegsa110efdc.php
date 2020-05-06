@@ -44,7 +44,7 @@
               <nav aria-label='breadcrumb'>
                 <ol class='breadcrumb'>
                   <li class='breadcrumb-item active'>
-                    <a href='<?= base_url('Regsa100efdc') ?>'><i class='breadcrumb-icon fa fa-angle-left mr-2'></i>Voltar</a>
+                    <a href='<?= base_url('Regsa100efdc/'.$parentView.'/'.$IdParent) ?>'><i class='breadcrumb-icon fa fa-angle-left mr-2'></i>Voltar</a>
                   </li>
                 </ol>
               </nav><!-- /.breadcrumb -->
@@ -68,7 +68,7 @@
                         <legend>Alteração do registro</legend> <!-- .form-group -->
 							<div class='form-group'>
 								<label for='a110_Reg'>Registro</label>
-							<input type='text' name='a110_Reg' id='a110_Reg' class='form-control' placeholder='Registro' value='<?= isset($response['data'][0]['a110_Reg']) ? $response['data'][0]['a110_Reg'] : '' ?>' required disabled>
+							<input type='text'  name='a110_Reg' id='a110_Reg' class='form-control' placeholder='Registro' value='<?= isset($response['data'][0]['a110_Reg']) ? $response['data'][0]['a110_Reg'] : '' ?>' required disabled>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['a110_Reg']) ? $response['error']['a110_Reg'] : ''; ?></div>
 							<?php endif; ?>
@@ -84,7 +84,7 @@
 						</div>
 							<div class='form-group'>
 								<label for='a110_TxtComplementar'>Informação Complementar do Documento Fiscal</label>
-							<input type='text' name='a110_TxtComplementar' id='a110_TxtComplementar' class='form-control' placeholder='Informação Complementar do Documento Fiscal' value='<?= isset($response['data'][0]['a110_TxtComplementar']) ? $response['data'][0]['a110_TxtComplementar'] : '' ?>'  disabled>
+							<input type='text'  name='a110_TxtComplementar' id='a110_TxtComplementar' class='form-control' placeholder='Informação Complementar do Documento Fiscal' value='<?= isset($response['data'][0]['a110_TxtComplementar']) ? $response['data'][0]['a110_TxtComplementar'] : '' ?>'  disabled>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['a110_TxtComplementar']) ? $response['error']['a110_TxtComplementar'] : ''; ?></div>
 							<?php endif; ?>
@@ -99,6 +99,9 @@
 							<?php endif; ?>
 						</div>
 
+                        <div class='form-actions'>
+                          <button class='btn btn-secondary ml-auto' type='button' onclick="window.location.href='<?= base_url('Regsa100efdc/'.$parentView.'/'.$IdParent) ?>'">Cancelar</button>
+                        </div>
                       </fieldset><!-- /.fieldset -->
                   </div><!-- /.card-body -->
                 </div><!-- /.base-style -->

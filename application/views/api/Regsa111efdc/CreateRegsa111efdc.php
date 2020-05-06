@@ -69,14 +69,14 @@
                         <legend>Adicionar um novo registro</legend> <!-- .form-group -->
 							<div class='form-group'>
 								<label for='a111_Reg'>Registro</label>
-							<input type='text' name='a111_Reg' id='a111_Reg' class='form-control' placeholder='Registro' value='<?= isset($response['data']['a111_Reg']) ? $response['data']['a111_Reg'] : '' ?>' required>
+							<input type='text'  name='a111_Reg' id='a111_Reg' class='form-control' placeholder='Registro' value='<?= isset($response['data']['a111_Reg']) ? $response['data']['a111_Reg'] : '' ?>' required>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['a111_Reg']) ? $response['error']['a111_Reg'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='a111_NumProcesso'>Número do Processo</label>
-							<input type='text' name='a111_NumProcesso' id='a111_NumProcesso' class='form-control' placeholder='Número do Processo' value='<?= isset($response['data']['a111_NumProcesso']) ? $response['data']['a111_NumProcesso'] : '' ?>' required>
+							<input type='text'  name='a111_NumProcesso' id='a111_NumProcesso' class='form-control' placeholder='Número do Processo' value='<?= isset($response['data']['a111_NumProcesso']) ? $response['data']['a111_NumProcesso'] : '' ?>' required>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['a111_NumProcesso']) ? $response['error']['a111_NumProcesso'] : ''; ?></div>
 							<?php endif; ?>

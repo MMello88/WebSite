@@ -69,7 +69,7 @@
                         <legend>Alteração do registro</legend> <!-- .form-group -->
 							<div class='form-group'>
 								<label for='ps_Nome'>Nome do Perfil</label>
-							<input type='text' name='ps_Nome' id='ps_Nome' class='form-control' placeholder='Nome do Perfil' value='<?= $response['data'][0]['ps_Nome'] ?>' required>
+							<input type='text'  name='ps_Nome' id='ps_Nome' class='form-control' placeholder='Nome do Perfil' value='<?= $response['data'][0]['ps_Nome'] ?>' required>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['ps_Nome']) ? $response['error']['ps_Nome'] : ''; ?></div>
 							<?php endif; ?>
@@ -84,21 +84,21 @@
 						</div>
 							<div class='form-group'>
 								<label for='ps_Descricao'>Descrição</label>
-							<input type='text' name='ps_Descricao' id='ps_Descricao' class='form-control' placeholder='Descrição' value='<?= $response['data'][0]['ps_Descricao'] ?>' required>
+							<input type='text'  name='ps_Descricao' id='ps_Descricao' class='form-control' placeholder='Descrição' value='<?= $response['data'][0]['ps_Descricao'] ?>' required>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['ps_Descricao']) ? $response['error']['ps_Descricao'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='ps_tag'>Tags do Perfil</label>
-							<input type='text' name='ps_tag' id='ps_tag' class='form-control' placeholder='Tags do Perfil' value='<?= $response['data'][0]['ps_tag'] ?>' >
+							<input type='text'  name='ps_tag' id='ps_tag' class='form-control' placeholder='Tags do Perfil' value='<?= $response['data'][0]['ps_tag'] ?>' >
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['ps_tag']) ? $response['error']['ps_tag'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='ps_Imagem'>Imagem</label>
-							<input type='' name='ps_Imagem' id='ps_Imagem' class='form-control' placeholder='Imagem' value='<?= $response['data'][0]['ps_Imagem'] ?>' required>
+							<input type=''  name='ps_Imagem' id='ps_Imagem' class='form-control' placeholder='Imagem' value='<?= $response['data'][0]['ps_Imagem'] ?>' required>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['ps_Imagem']) ? $response['error']['ps_Imagem'] : ''; ?></div>
 							<?php endif; ?>

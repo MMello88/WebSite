@@ -64,6 +64,7 @@
         $this->data['nameView'] = 'edit';
         if ($this->session->flashdata('response')){
           $this->data['response'] = $this->session->flashdata('response');
+
         } else {
           $this->data['response'] = $this->sendGet('api/ref4316/get/'.$Id, $this->data['login']->data->token, true);
         }

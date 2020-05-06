@@ -69,35 +69,35 @@
                         <legend>Adicionar um novo registro</legend> <!-- .form-group -->
 							<div class='form-group'>
 								<label for='0200_Reg'>Registro</label>
-							<input type='text' name='0200_Reg' id='0200_Reg' class='form-control' placeholder='Registro' value='<?= isset($response['data']['0200_Reg']) ? $response['data']['0200_Reg'] : '' ?>' required>
+							<input type='text'  name='0200_Reg' id='0200_Reg' class='form-control' placeholder='Registro' value='<?= isset($response['data']['0200_Reg']) ? $response['data']['0200_Reg'] : '' ?>' required>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['0200_Reg']) ? $response['error']['0200_Reg'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='0200_CodItem'>Código do Item</label>
-							<input type='text' name='0200_CodItem' id='0200_CodItem' class='form-control' placeholder='Código do Item' value='<?= isset($response['data']['0200_CodItem']) ? $response['data']['0200_CodItem'] : '' ?>' required>
+							<input type='text'  name='0200_CodItem' id='0200_CodItem' class='form-control' placeholder='Código do Item' value='<?= isset($response['data']['0200_CodItem']) ? $response['data']['0200_CodItem'] : '' ?>' required>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['0200_CodItem']) ? $response['error']['0200_CodItem'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='0200_DescricaoItem'>Descrição</label>
-							<input type='text' name='0200_DescricaoItem' id='0200_DescricaoItem' class='form-control' placeholder='Descrição' value='<?= isset($response['data']['0200_DescricaoItem']) ? $response['data']['0200_DescricaoItem'] : '' ?>' required>
+							<input type='text'  name='0200_DescricaoItem' id='0200_DescricaoItem' class='form-control' placeholder='Descrição' value='<?= isset($response['data']['0200_DescricaoItem']) ? $response['data']['0200_DescricaoItem'] : '' ?>' required>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['0200_DescricaoItem']) ? $response['error']['0200_DescricaoItem'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='0200_CodBarra'>Código de Barra</label>
-							<input type='text' name='0200_CodBarra' id='0200_CodBarra' class='form-control' placeholder='Código de Barra' value='<?= isset($response['data']['0200_CodBarra']) ? $response['data']['0200_CodBarra'] : '' ?>' >
+							<input type='text'  name='0200_CodBarra' id='0200_CodBarra' class='form-control' placeholder='Código de Barra' value='<?= isset($response['data']['0200_CodBarra']) ? $response['data']['0200_CodBarra'] : '' ?>' >
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['0200_CodBarra']) ? $response['error']['0200_CodBarra'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='0200_CodAntItem'>Código Anterior do Item</label>
-							<input type='text' name='0200_CodAntItem' id='0200_CodAntItem' class='form-control' placeholder='Código Anterior do Item' value='<?= isset($response['data']['0200_CodAntItem']) ? $response['data']['0200_CodAntItem'] : '' ?>' >
+							<input type='text'  name='0200_CodAntItem' id='0200_CodAntItem' class='form-control' placeholder='Código Anterior do Item' value='<?= isset($response['data']['0200_CodAntItem']) ? $response['data']['0200_CodAntItem'] : '' ?>' >
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['0200_CodAntItem']) ? $response['error']['0200_CodAntItem'] : ''; ?></div>
 							<?php endif; ?>
@@ -131,49 +131,49 @@
 						</div>
 							<div class='form-group'>
 								<label for='0200_CodNcm'>NCM</label>
-							<input type='text' name='0200_CodNcm' id='0200_CodNcm' class='form-control' placeholder='NCM' value='<?= isset($response['data']['0200_CodNcm']) ? $response['data']['0200_CodNcm'] : '' ?>' >
+							<input type='text'  name='0200_CodNcm' id='0200_CodNcm' class='form-control' placeholder='NCM' value='<?= isset($response['data']['0200_CodNcm']) ? $response['data']['0200_CodNcm'] : '' ?>' >
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['0200_CodNcm']) ? $response['error']['0200_CodNcm'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='0200_ExIpi'>Código EX TIPI</label>
-							<input type='text' name='0200_ExIpi' id='0200_ExIpi' class='form-control' placeholder='Código EX TIPI' value='<?= isset($response['data']['0200_ExIpi']) ? $response['data']['0200_ExIpi'] : '' ?>' >
+							<input type='text'  name='0200_ExIpi' id='0200_ExIpi' class='form-control' placeholder='Código EX TIPI' value='<?= isset($response['data']['0200_ExIpi']) ? $response['data']['0200_ExIpi'] : '' ?>' >
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['0200_ExIpi']) ? $response['error']['0200_ExIpi'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='0200_CodGen'>Código Gênero Item</label>
-							<input type='number' name='0200_CodGen' id='0200_CodGen' class='form-control' placeholder='Código Gênero Item' value='<?= isset($response['data']['0200_CodGen']) ? $response['data']['0200_CodGen'] : '' ?>' required>
+							<input type='number' step='1' name='0200_CodGen' id='0200_CodGen' class='form-control' placeholder='Código Gênero Item' value='<?= isset($response['data']['0200_CodGen']) ? $response['data']['0200_CodGen'] : '' ?>' required>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['0200_CodGen']) ? $response['error']['0200_CodGen'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='0200_CodLst'>Código do Serviço</label>
-							<input type='number' name='0200_CodLst' id='0200_CodLst' class='form-control' placeholder='Código do Serviço' value='<?= isset($response['data']['0200_CodLst']) ? $response['data']['0200_CodLst'] : '' ?>' required>
+							<input type='number' step='1' name='0200_CodLst' id='0200_CodLst' class='form-control' placeholder='Código do Serviço' value='<?= isset($response['data']['0200_CodLst']) ? $response['data']['0200_CodLst'] : '' ?>' required>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['0200_CodLst']) ? $response['error']['0200_CodLst'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='0200_AliqIcms'>Alíquota de ICMS</label>
-							<input type='' name='0200_AliqIcms' id='0200_AliqIcms' class='form-control' placeholder='Alíquota de ICMS' value='<?= isset($response['data']['0200_AliqIcms']) ? $response['data']['0200_AliqIcms'] : '' ?>' required>
+							<input type='number' step='0.01' name='0200_AliqIcms' id='0200_AliqIcms' class='form-control' placeholder='Alíquota de ICMS' value='<?= isset($response['data']['0200_AliqIcms']) ? $response['data']['0200_AliqIcms'] : '' ?>' required>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['0200_AliqIcms']) ? $response['error']['0200_AliqIcms'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='0200_DtIni'>Data Inicial</label>
-							<input type='date' name='0200_DtIni' id='0200_DtIni' class='form-control' placeholder='Data Inicial' value='<?= isset($response['data']['0200_DtIni']) ? $response['data']['0200_DtIni'] : '' ?>' required>
+							<input type='date'  name='0200_DtIni' id='0200_DtIni' class='form-control' placeholder='Data Inicial' value='<?= isset($response['data']['0200_DtIni']) ? $response['data']['0200_DtIni'] : '' ?>' required>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['0200_DtIni']) ? $response['error']['0200_DtIni'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='0200_DtFin'>Data Final</label>
-							<input type='date' name='0200_DtFin' id='0200_DtFin' class='form-control' placeholder='Data Final' value='<?= isset($response['data']['0200_DtFin']) ? $response['data']['0200_DtFin'] : '' ?>' >
+							<input type='date'  name='0200_DtFin' id='0200_DtFin' class='form-control' placeholder='Data Final' value='<?= isset($response['data']['0200_DtFin']) ? $response['data']['0200_DtFin'] : '' ?>' >
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['0200_DtFin']) ? $response['error']['0200_DtFin'] : ''; ?></div>
 							<?php endif; ?>

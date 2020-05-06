@@ -68,35 +68,35 @@
                         <legend>Alteração do registro</legend> <!-- .form-group -->
 							<div class='form-group'>
 								<label for='411_Codigo'>Código</label>
-							<input type='text' name='411_Codigo' id='411_Codigo' class='form-control' placeholder='Código' value='<?= isset($response['data'][0]['411_Codigo']) ? $response['data'][0]['411_Codigo'] : '' ?>' required disabled>
+							<input type='text'  name='411_Codigo' id='411_Codigo' class='form-control' placeholder='Código' value='<?= isset($response['data'][0]['411_Codigo']) ? $response['data'][0]['411_Codigo'] : '' ?>' required disabled>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['411_Codigo']) ? $response['error']['411_Codigo'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='411_Descricao'>Descrição</label>
-							<input type='text' name='411_Descricao' id='411_Descricao' class='form-control' placeholder='Descrição' value='<?= isset($response['data'][0]['411_Descricao']) ? $response['data'][0]['411_Descricao'] : '' ?>' required disabled>
+							<input type='text'  name='411_Descricao' id='411_Descricao' class='form-control' placeholder='Descrição' value='<?= isset($response['data'][0]['411_Descricao']) ? $response['data'][0]['411_Descricao'] : '' ?>' required disabled>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['411_Descricao']) ? $response['error']['411_Descricao'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='411_Modelo'>Modelo</label>
-							<input type='text' name='411_Modelo' id='411_Modelo' class='form-control' placeholder='Modelo' value='<?= isset($response['data'][0]['411_Modelo']) ? $response['data'][0]['411_Modelo'] : '' ?>'  disabled>
+							<input type='text'  name='411_Modelo' id='411_Modelo' class='form-control' placeholder='Modelo' value='<?= isset($response['data'][0]['411_Modelo']) ? $response['data'][0]['411_Modelo'] : '' ?>'  disabled>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['411_Modelo']) ? $response['error']['411_Modelo'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='411_DtIni'>Data Inicial</label>
-							<input type='date' name='411_DtIni' id='411_DtIni' class='form-control' placeholder='Data Inicial' value='<?= isset($response['data'][0]['411_DtIni']) ? $response['data'][0]['411_DtIni'] : '' ?>' required disabled>
+							<input type='date'  name='411_DtIni' id='411_DtIni' class='form-control' placeholder='Data Inicial' value='<?= isset($response['data'][0]['411_DtIni']) ? $response['data'][0]['411_DtIni'] : '' ?>' required disabled>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['411_DtIni']) ? $response['error']['411_DtIni'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='411_DtFin'>Data Final</label>
-							<input type='date' name='411_DtFin' id='411_DtFin' class='form-control' placeholder='Data Final' value='<?= isset($response['data'][0]['411_DtFin']) ? $response['data'][0]['411_DtFin'] : '' ?>'  disabled>
+							<input type='date'  name='411_DtFin' id='411_DtFin' class='form-control' placeholder='Data Final' value='<?= isset($response['data'][0]['411_DtFin']) ? $response['data'][0]['411_DtFin'] : '' ?>'  disabled>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['411_DtFin']) ? $response['error']['411_DtFin'] : ''; ?></div>
 							<?php endif; ?>

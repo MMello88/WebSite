@@ -69,7 +69,7 @@
                         <legend>Adicionar um novo registro</legend> <!-- .form-group -->
 							<div class='form-group'>
 								<label for='gpu_Nome'>Nome</label>
-							<input type='text' name='gpu_Nome' id='gpu_Nome' class='form-control' placeholder='Nome' value='<?= isset($response['data']['gpu_Nome']) ? $response['data']['gpu_Nome'] : '' ?>' required>
+							<input type='text'  name='gpu_Nome' id='gpu_Nome' class='form-control' placeholder='Nome' value='<?= isset($response['data']['gpu_Nome']) ? $response['data']['gpu_Nome'] : '' ?>' required>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['gpu_Nome']) ? $response['error']['gpu_Nome'] : ''; ?></div>
 							<?php endif; ?>
@@ -215,7 +215,7 @@
 </div><!-- /.page-section -->
     
       <!-- Central modal -->
-      <div class='modal fade' id='modalDeleteRegistro' tabindex='-1' role='dialog' aria-labelledby='ModalDeleteLabel' aria-hidden='true'>
+      <div class='modal fade' id='modalDeleteRegistrousersgrupo' tabindex='-1' role='dialog' aria-labelledby='ModalDeleteLabel' aria-hidden='true'>
         <!-- .modal-dialog -->
         <div class='modal-dialog modal-dialog-centered' role='document'>
           <!-- .modal-content -->
@@ -224,10 +224,14 @@
             <div class='modal-header'>
               <h5 id='ModalDeleteLabel' class='modal-title'> Deseja Deletar este Registro? </h5>
             </div><!-- /.modal-header -->
-            <?= form_open('usersgrupo/delete') ?>
+          <?php if(isset($response['data'][0]['gpu_Id'])): ?>
+            <?= form_open('usersgrupo/delete/'.$nameView.'/'.$response['data'][0]['gpu_Id']) ?>
+          <?php else: ?>
+            <?= form_open('usersgrupo/delete/'.$nameView.'/') ?>
+          <?php endif; ?>
               <!-- .modal-body -->
               <div class='modal-body'>
-                <input type='hidden' id='DeleteById' name='Id' value=''>
+                <input type='hidden' id='DeleteByug_grupouserid' name='Id' value=''>
               </div><!-- /.modal-body -->
               <!-- .modal-footer -->
               <div class='modal-footer'>

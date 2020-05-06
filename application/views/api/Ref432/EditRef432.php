@@ -69,28 +69,28 @@
                         <legend>Alteração do registro</legend> <!-- .form-group -->
 							<div class='form-group'>
 								<label for='432_Codigo'>Código</label>
-							<input type='text' name='432_Codigo' id='432_Codigo' class='form-control' placeholder='Código' value='<?= $response['data'][0]['432_Codigo'] ?>' required>
+							<input type='text'  name='432_Codigo' id='432_Codigo' class='form-control' placeholder='Código' value='<?= $response['data'][0]['432_Codigo'] ?>' required>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['432_Codigo']) ? $response['error']['432_Codigo'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='432_Descricao'>Descrição</label>
-							<input type='text' name='432_Descricao' id='432_Descricao' class='form-control' placeholder='Descrição' value='<?= $response['data'][0]['432_Descricao'] ?>' required>
+							<input type='text'  name='432_Descricao' id='432_Descricao' class='form-control' placeholder='Descrição' value='<?= $response['data'][0]['432_Descricao'] ?>' required>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['432_Descricao']) ? $response['error']['432_Descricao'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='432_DtIni'>Data Inicial</label>
-							<input type='date' name='432_DtIni' id='432_DtIni' class='form-control' placeholder='Data Inicial' value='<?= $response['data'][0]['432_DtIni'] ?>' required>
+							<input type='date'  name='432_DtIni' id='432_DtIni' class='form-control' placeholder='Data Inicial' value='<?= $response['data'][0]['432_DtIni'] ?>' required>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['432_DtIni']) ? $response['error']['432_DtIni'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='432_DtFin'>Data Final</label>
-							<input type='date' name='432_DtFin' id='432_DtFin' class='form-control' placeholder='Data Final' value='<?= $response['data'][0]['432_DtFin'] ?>' >
+							<input type='date'  name='432_DtFin' id='432_DtFin' class='form-control' placeholder='Data Final' value='<?= $response['data'][0]['432_DtFin'] ?>' >
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['432_DtFin']) ? $response['error']['432_DtFin'] : ''; ?></div>
 							<?php endif; ?>

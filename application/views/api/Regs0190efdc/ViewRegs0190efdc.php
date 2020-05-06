@@ -68,35 +68,35 @@
                         <legend>Alteração do registro</legend> <!-- .form-group -->
 							<div class='form-group'>
 								<label for='0190_Reg'>Registro</label>
-							<input type='text' name='0190_Reg' id='0190_Reg' class='form-control' placeholder='Registro' value='<?= isset($response['data'][0]['0190_Reg']) ? $response['data'][0]['0190_Reg'] : '' ?>' required disabled>
+							<input type='text'  name='0190_Reg' id='0190_Reg' class='form-control' placeholder='Registro' value='<?= isset($response['data'][0]['0190_Reg']) ? $response['data'][0]['0190_Reg'] : '' ?>' required disabled>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['0190_Reg']) ? $response['error']['0190_Reg'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='0190_Unidade'>Unidade</label>
-							<input type='text' name='0190_Unidade' id='0190_Unidade' class='form-control' placeholder='Unidade' value='<?= isset($response['data'][0]['0190_Unidade']) ? $response['data'][0]['0190_Unidade'] : '' ?>' required disabled>
+							<input type='text'  name='0190_Unidade' id='0190_Unidade' class='form-control' placeholder='Unidade' value='<?= isset($response['data'][0]['0190_Unidade']) ? $response['data'][0]['0190_Unidade'] : '' ?>' required disabled>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['0190_Unidade']) ? $response['error']['0190_Unidade'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='0190_Descrição'>Descrição</label>
-							<input type='text' name='0190_Descrição' id='0190_Descrição' class='form-control' placeholder='Descrição' value='<?= isset($response['data'][0]['0190_Descrição']) ? $response['data'][0]['0190_Descrição'] : '' ?>' required disabled>
+							<input type='text'  name='0190_Descrição' id='0190_Descrição' class='form-control' placeholder='Descrição' value='<?= isset($response['data'][0]['0190_Descrição']) ? $response['data'][0]['0190_Descrição'] : '' ?>' required disabled>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['0190_Descrição']) ? $response['error']['0190_Descrição'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='0190_DtIni'>Data Inicial</label>
-							<input type='date' name='0190_DtIni' id='0190_DtIni' class='form-control' placeholder='Data Inicial' value='<?= isset($response['data'][0]['0190_DtIni']) ? $response['data'][0]['0190_DtIni'] : '' ?>' required disabled>
+							<input type='date'  name='0190_DtIni' id='0190_DtIni' class='form-control' placeholder='Data Inicial' value='<?= isset($response['data'][0]['0190_DtIni']) ? $response['data'][0]['0190_DtIni'] : '' ?>' required disabled>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['0190_DtIni']) ? $response['error']['0190_DtIni'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='0190_DtFin'>Data Final</label>
-							<input type='date' name='0190_DtFin' id='0190_DtFin' class='form-control' placeholder='Data Final' value='<?= isset($response['data'][0]['0190_DtFin']) ? $response['data'][0]['0190_DtFin'] : '' ?>'  disabled>
+							<input type='date'  name='0190_DtFin' id='0190_DtFin' class='form-control' placeholder='Data Final' value='<?= isset($response['data'][0]['0190_DtFin']) ? $response['data'][0]['0190_DtFin'] : '' ?>'  disabled>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['0190_DtFin']) ? $response['error']['0190_DtFin'] : ''; ?></div>
 							<?php endif; ?>

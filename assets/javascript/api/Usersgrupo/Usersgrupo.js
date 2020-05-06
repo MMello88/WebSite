@@ -89,7 +89,7 @@ function () {
             <a class='btn btn-sm btn-icon btn-secondary' href='${url_upd_usersgrupo}/${data}'>
               <i class='fa fa-pencil-alt'></i>
             </a>
-            <a class='btn btn-sm btn-icon btn-secondary' id='btnDeleteClick' data-toggle='modal' data-target='#modalDeleteRegistro' data-id='${data}' href='#${data}'>
+            <a class='btn btn-sm btn-icon btn-secondary' id='btnDeleteClick' data-toggle='modal' data-target='#modalDeleteRegistrousersgrupo' data-ug_grupouserid='${data}' href='#${data}'>
               <i class='far fa-trash-alt'></i>
             </a>
             `;
@@ -109,8 +109,8 @@ function () {
     key: 'setDeleteClick',
     value: function setDeleteClick(){
       var self = this;
-      $('#modalDeleteRegistro').on('show.bs.modal', function (event) {
-        document.getElementById('DeleteById').value = $(event.relatedTarget).data('id');
+      $('#modalDeleteRegistrousersgrupo').on('show.bs.modal', function (event) {
+        document.getElementById('DeleteByug_grupouserid').value = $(event.relatedTarget).data('ug_grupouserid');
       })
     }
   },{

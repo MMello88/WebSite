@@ -69,56 +69,56 @@
                         <legend>Alteração do registro</legend> <!-- .form-group -->
 							<div class='form-group'>
 								<label for='a120_Reg'>Registro</label>
-							<input type='text' name='a120_Reg' id='a120_Reg' class='form-control' placeholder='Registro' value='<?= $response['data'][0]['a120_Reg'] ?>' required>
+							<input type='text'  name='a120_Reg' id='a120_Reg' class='form-control' placeholder='Registro' value='<?= $response['data'][0]['a120_Reg'] ?>' required>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['a120_Reg']) ? $response['error']['a120_Reg'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='a120_VlTotalServico'>Valor Total do Serviço</label>
-							<input type='' name='a120_VlTotalServico' id='a120_VlTotalServico' class='form-control' placeholder='Valor Total do Serviço' value='<?= $response['data'][0]['a120_VlTotalServico'] ?>' required>
+							<input type='number' step='0.01' name='a120_VlTotalServico' id='a120_VlTotalServico' class='form-control' placeholder='Valor Total do Serviço' value='<?= $response['data'][0]['a120_VlTotalServico'] ?>' required>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['a120_VlTotalServico']) ? $response['error']['a120_VlTotalServico'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='a120_VlBcPis'>Valor BC PIS</label>
-							<input type='' name='a120_VlBcPis' id='a120_VlBcPis' class='form-control' placeholder='Valor BC PIS' value='<?= $response['data'][0]['a120_VlBcPis'] ?>' required>
+							<input type='number' step='0.01' name='a120_VlBcPis' id='a120_VlBcPis' class='form-control' placeholder='Valor BC PIS' value='<?= $response['data'][0]['a120_VlBcPis'] ?>' required>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['a120_VlBcPis']) ? $response['error']['a120_VlBcPis'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='a120_VlPisImportacao'>Valor Pago PIS</label>
-							<input type='' name='a120_VlPisImportacao' id='a120_VlPisImportacao' class='form-control' placeholder='Valor Pago PIS' value='<?= $response['data'][0]['a120_VlPisImportacao'] ?>' required>
+							<input type='number' step='0.01' name='a120_VlPisImportacao' id='a120_VlPisImportacao' class='form-control' placeholder='Valor Pago PIS' value='<?= $response['data'][0]['a120_VlPisImportacao'] ?>' required>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['a120_VlPisImportacao']) ? $response['error']['a120_VlPisImportacao'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='a120_DtPgtoPisImportacao'>Data Pgto PIS</label>
-							<input type='date' name='a120_DtPgtoPisImportacao' id='a120_DtPgtoPisImportacao' class='form-control' placeholder='Data Pgto PIS' value='<?= $response['data'][0]['a120_DtPgtoPisImportacao'] ?>' required>
+							<input type='date'  name='a120_DtPgtoPisImportacao' id='a120_DtPgtoPisImportacao' class='form-control' placeholder='Data Pgto PIS' value='<?= $response['data'][0]['a120_DtPgtoPisImportacao'] ?>' required>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['a120_DtPgtoPisImportacao']) ? $response['error']['a120_DtPgtoPisImportacao'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='a120_VlBcCofins'>Valor BC COFINS</label>
-							<input type='' name='a120_VlBcCofins' id='a120_VlBcCofins' class='form-control' placeholder='Valor BC COFINS' value='<?= $response['data'][0]['a120_VlBcCofins'] ?>' required>
+							<input type='number' step='0.01' name='a120_VlBcCofins' id='a120_VlBcCofins' class='form-control' placeholder='Valor BC COFINS' value='<?= $response['data'][0]['a120_VlBcCofins'] ?>' required>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['a120_VlBcCofins']) ? $response['error']['a120_VlBcCofins'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='a120_VlCofinsImportacao'>Valor Pago COFINS</label>
-							<input type='' name='a120_VlCofinsImportacao' id='a120_VlCofinsImportacao' class='form-control' placeholder='Valor Pago COFINS' value='<?= $response['data'][0]['a120_VlCofinsImportacao'] ?>' required>
+							<input type='number' step='0.01' name='a120_VlCofinsImportacao' id='a120_VlCofinsImportacao' class='form-control' placeholder='Valor Pago COFINS' value='<?= $response['data'][0]['a120_VlCofinsImportacao'] ?>' required>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['a120_VlCofinsImportacao']) ? $response['error']['a120_VlCofinsImportacao'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='a120_DtPgtoCofinsImportacao'>Data do Pgto COFINS</label>
-							<input type='date' name='a120_DtPgtoCofinsImportacao' id='a120_DtPgtoCofinsImportacao' class='form-control' placeholder='Data do Pgto COFINS' value='<?= $response['data'][0]['a120_DtPgtoCofinsImportacao'] ?>' required>
+							<input type='date'  name='a120_DtPgtoCofinsImportacao' id='a120_DtPgtoCofinsImportacao' class='form-control' placeholder='Data do Pgto COFINS' value='<?= $response['data'][0]['a120_DtPgtoCofinsImportacao'] ?>' required>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['a120_DtPgtoCofinsImportacao']) ? $response['error']['a120_DtPgtoCofinsImportacao'] : ''; ?></div>
 							<?php endif; ?>

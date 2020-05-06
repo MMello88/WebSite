@@ -69,42 +69,42 @@
                         <legend>Alteração do registro</legend> <!-- .form-group -->
 							<div class='form-group'>
 								<label for='0111_Reg'>Registro</label>
-							<input type='text' name='0111_Reg' id='0111_Reg' class='form-control' placeholder='Registro' value='<?= $response['data'][0]['0111_Reg'] ?>' required>
+							<input type='text'  name='0111_Reg' id='0111_Reg' class='form-control' placeholder='Registro' value='<?= $response['data'][0]['0111_Reg'] ?>' required>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['0111_Reg']) ? $response['error']['0111_Reg'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='0111_RecBruNCumTribMI'>Tributada</label>
-							<input type='number' name='0111_RecBruNCumTribMI' id='0111_RecBruNCumTribMI' class='form-control' placeholder='Tributada' value='<?= $response['data'][0]['0111_RecBruNCumTribMI'] ?>' required>
+							<input type='number' step='1' name='0111_RecBruNCumTribMI' id='0111_RecBruNCumTribMI' class='form-control' placeholder='Tributada' value='<?= $response['data'][0]['0111_RecBruNCumTribMI'] ?>' required>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['0111_RecBruNCumTribMI']) ? $response['error']['0111_RecBruNCumTribMI'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='0111_RecBruNCumNaoTribMI'>Não Tributada</label>
-							<input type='number' name='0111_RecBruNCumNaoTribMI' id='0111_RecBruNCumNaoTribMI' class='form-control' placeholder='Não Tributada' value='<?= $response['data'][0]['0111_RecBruNCumNaoTribMI'] ?>' required>
+							<input type='number' step='1' name='0111_RecBruNCumNaoTribMI' id='0111_RecBruNCumNaoTribMI' class='form-control' placeholder='Não Tributada' value='<?= $response['data'][0]['0111_RecBruNCumNaoTribMI'] ?>' required>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['0111_RecBruNCumNaoTribMI']) ? $response['error']['0111_RecBruNCumNaoTribMI'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='0111_RecBruNCumExp'>Exportação</label>
-							<input type='number' name='0111_RecBruNCumExp' id='0111_RecBruNCumExp' class='form-control' placeholder='Exportação' value='<?= $response['data'][0]['0111_RecBruNCumExp'] ?>' required>
+							<input type='number' step='1' name='0111_RecBruNCumExp' id='0111_RecBruNCumExp' class='form-control' placeholder='Exportação' value='<?= $response['data'][0]['0111_RecBruNCumExp'] ?>' required>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['0111_RecBruNCumExp']) ? $response['error']['0111_RecBruNCumExp'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='0111_RecBruNCum'>Receita Bruta Cumulativa</label>
-							<input type='number' name='0111_RecBruNCum' id='0111_RecBruNCum' class='form-control' placeholder='Receita Bruta Cumulativa' value='<?= $response['data'][0]['0111_RecBruNCum'] ?>' required>
+							<input type='number' step='1' name='0111_RecBruNCum' id='0111_RecBruNCum' class='form-control' placeholder='Receita Bruta Cumulativa' value='<?= $response['data'][0]['0111_RecBruNCum'] ?>' required>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['0111_RecBruNCum']) ? $response['error']['0111_RecBruNCum'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='0111_RecBruNCumTotal'>Receita Bruta Total</label>
-							<input type='number' name='0111_RecBruNCumTotal' id='0111_RecBruNCumTotal' class='form-control' placeholder='Receita Bruta Total' value='<?= $response['data'][0]['0111_RecBruNCumTotal'] ?>' required>
+							<input type='number' step='1' name='0111_RecBruNCumTotal' id='0111_RecBruNCumTotal' class='form-control' placeholder='Receita Bruta Total' value='<?= $response['data'][0]['0111_RecBruNCumTotal'] ?>' required>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['0111_RecBruNCumTotal']) ? $response['error']['0111_RecBruNCumTotal'] : ''; ?></div>
 							<?php endif; ?>
@@ -267,7 +267,7 @@
 </div><!-- /.page-section -->
     
       <!-- Central modal -->
-      <div class='modal fade' id='modalDeleteRegistro' tabindex='-1' role='dialog' aria-labelledby='ModalDeleteLabel' aria-hidden='true'>
+      <div class='modal fade' id='modalDeleteRegistroregs0110efdc' tabindex='-1' role='dialog' aria-labelledby='ModalDeleteLabel' aria-hidden='true'>
         <!-- .modal-dialog -->
         <div class='modal-dialog modal-dialog-centered' role='document'>
           <!-- .modal-content -->
@@ -276,10 +276,14 @@
             <div class='modal-header'>
               <h5 id='ModalDeleteLabel' class='modal-title'> Deseja Deletar este Registro? </h5>
             </div><!-- /.modal-header -->
-            <?= form_open('regs0110efdc/delete') ?>
+          <?php if(isset($response['data'][0]['0111_Id'])): ?>
+            <?= form_open('regs0110efdc/delete/'.$nameView.'/'.$response['data'][0]['0111_Id']) ?>
+          <?php else: ?>
+            <?= form_open('regs0110efdc/delete/'.$nameView.'/') ?>
+          <?php endif; ?>
               <!-- .modal-body -->
               <div class='modal-body'>
-                <input type='hidden' id='DeleteById' name='Id' value=''>
+                <input type='hidden' id='DeleteBy0110_id' name='Id' value=''>
               </div><!-- /.modal-body -->
               <!-- .modal-footer -->
               <div class='modal-footer'>

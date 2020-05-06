@@ -64,6 +64,11 @@
         $this->data['nameView'] = 'edit';
         if ($this->session->flashdata('response')){
           $this->data['response'] = $this->session->flashdata('response');
+
+          if(isset($this->data['response']['comeFromChild'])){
+            $this->data['response'] = $this->sendGet('api/grupousers/get/'.$Id, $this->data['login']->data->token, true);
+          }
+      
         } else {
           $this->data['response'] = $this->sendGet('api/grupousers/get/'.$Id, $this->data['login']->data->token, true);
         }

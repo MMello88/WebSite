@@ -44,7 +44,7 @@
               <nav aria-label='breadcrumb'>
                 <ol class='breadcrumb'>
                   <li class='breadcrumb-item active'>
-                    <a href='<?= base_url('Grupousers') ?>'><i class='breadcrumb-icon fa fa-angle-left mr-2'></i>Voltar</a>
+                    <a href='<?= base_url('Grupousers/'.$parentView.'/'.$IdParent) ?>'><i class='breadcrumb-icon fa fa-angle-left mr-2'></i>Voltar</a>
                   </li>
                 </ol>
               </nav><!-- /.breadcrumb -->
@@ -75,6 +75,9 @@
 							</select>
 						</div>
 
+                        <div class='form-actions'>
+                          <button class='btn btn-secondary ml-auto' type='button' onclick="window.location.href='<?= base_url('Grupousers/'.$parentView.'/'.$IdParent) ?>'">Cancelar</button>
+                        </div>
                       </fieldset><!-- /.fieldset -->
                   </div><!-- /.card-body -->
                 </div><!-- /.base-style -->

@@ -69,7 +69,7 @@
                         <legend>Alteração do registro</legend> <!-- .form-group -->
 							<div class='form-group'>
 								<label for='0110_Reg'>Registro</label>
-							<input type='text' name='0110_Reg' id='0110_Reg' class='form-control' placeholder='Registro' value='<?= $response['data'][0]['0110_Reg'] ?>' required>
+							<input type='text'  name='0110_Reg' id='0110_Reg' class='form-control' placeholder='Registro' value='<?= $response['data'][0]['0110_Reg'] ?>' required>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['0110_Reg']) ? $response['error']['0110_Reg'] : ''; ?></div>
 							<?php endif; ?>
@@ -109,14 +109,14 @@
 						</div>
 							<div class='form-group'>
 								<label for='0110_DtIni'>Data Inicial</label>
-							<input type='date' name='0110_DtIni' id='0110_DtIni' class='form-control' placeholder='Data Inicial' value='<?= $response['data'][0]['0110_DtIni'] ?>' required>
+							<input type='date'  name='0110_DtIni' id='0110_DtIni' class='form-control' placeholder='Data Inicial' value='<?= $response['data'][0]['0110_DtIni'] ?>' required>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['0110_DtIni']) ? $response['error']['0110_DtIni'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='0110_DtFin'>Data Final</label>
-							<input type='date' name='0110_DtFin' id='0110_DtFin' class='form-control' placeholder='Data Final' value='<?= $response['data'][0]['0110_DtFin'] ?>' >
+							<input type='date'  name='0110_DtFin' id='0110_DtFin' class='form-control' placeholder='Data Final' value='<?= $response['data'][0]['0110_DtFin'] ?>' >
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['0110_DtFin']) ? $response['error']['0110_DtFin'] : ''; ?></div>
 							<?php endif; ?>

@@ -68,42 +68,42 @@
                         <legend>Alteração do registro</legend> <!-- .form-group -->
 							<div class='form-group'>
 								<label for='0035_Reg'>Registro</label>
-							<input type='text' name='0035_Reg' id='0035_Reg' class='form-control' placeholder='Registro' value='<?= isset($response['data'][0]['0035_Reg']) ? $response['data'][0]['0035_Reg'] : '0035' ?>' required disabled>
+							<input type='text'  name='0035_Reg' id='0035_Reg' class='form-control' placeholder='Registro' value='<?= isset($response['data'][0]['0035_Reg']) ? $response['data'][0]['0035_Reg'] : '0035' ?>' required disabled>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['0035_Reg']) ? $response['error']['0035_Reg'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='0035_CodSCP'>Identificação da SCP</label>
-							<input type='number' name='0035_CodSCP' id='0035_CodSCP' class='form-control' placeholder='Identificação da SCP' value='<?= isset($response['data'][0]['0035_CodSCP']) ? $response['data'][0]['0035_CodSCP'] : '' ?>' required disabled>
+							<input type='number' step='1' name='0035_CodSCP' id='0035_CodSCP' class='form-control' placeholder='Identificação da SCP' value='<?= isset($response['data'][0]['0035_CodSCP']) ? $response['data'][0]['0035_CodSCP'] : '' ?>' required disabled>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['0035_CodSCP']) ? $response['error']['0035_CodSCP'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='0035_DescSCP'>Descrição da SCP</label>
-							<input type='text' name='0035_DescSCP' id='0035_DescSCP' class='form-control' placeholder='Descrição da SCP' value='<?= isset($response['data'][0]['0035_DescSCP']) ? $response['data'][0]['0035_DescSCP'] : '' ?>'  disabled>
+							<input type='text'  name='0035_DescSCP' id='0035_DescSCP' class='form-control' placeholder='Descrição da SCP' value='<?= isset($response['data'][0]['0035_DescSCP']) ? $response['data'][0]['0035_DescSCP'] : '' ?>'  disabled>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['0035_DescSCP']) ? $response['error']['0035_DescSCP'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='0035_InfoCompl'>Informação Complementar</label>
-							<input type='text' name='0035_InfoCompl' id='0035_InfoCompl' class='form-control' placeholder='Informação Complementar' value='<?= isset($response['data'][0]['0035_InfoCompl']) ? $response['data'][0]['0035_InfoCompl'] : '' ?>'  disabled>
+							<input type='text'  name='0035_InfoCompl' id='0035_InfoCompl' class='form-control' placeholder='Informação Complementar' value='<?= isset($response['data'][0]['0035_InfoCompl']) ? $response['data'][0]['0035_InfoCompl'] : '' ?>'  disabled>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['0035_InfoCompl']) ? $response['error']['0035_InfoCompl'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='0035_DtIni'>Data Inicial</label>
-							<input type='date' name='0035_DtIni' id='0035_DtIni' class='form-control' placeholder='Data Inicial' value='<?= isset($response['data'][0]['0035_DtIni']) ? $response['data'][0]['0035_DtIni'] : '' ?>' required disabled>
+							<input type='date'  name='0035_DtIni' id='0035_DtIni' class='form-control' placeholder='Data Inicial' value='<?= isset($response['data'][0]['0035_DtIni']) ? $response['data'][0]['0035_DtIni'] : '' ?>' required disabled>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['0035_DtIni']) ? $response['error']['0035_DtIni'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='0035_DtFin'>Data Final</label>
-							<input type='date' name='0035_DtFin' id='0035_DtFin' class='form-control' placeholder='Data Final' value='<?= isset($response['data'][0]['0035_DtFin']) ? $response['data'][0]['0035_DtFin'] : '' ?>'  disabled>
+							<input type='date'  name='0035_DtFin' id='0035_DtFin' class='form-control' placeholder='Data Final' value='<?= isset($response['data'][0]['0035_DtFin']) ? $response['data'][0]['0035_DtFin'] : '' ?>'  disabled>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['0035_DtFin']) ? $response['error']['0035_DtFin'] : ''; ?></div>
 							<?php endif; ?>

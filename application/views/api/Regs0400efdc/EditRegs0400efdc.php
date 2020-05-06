@@ -69,35 +69,35 @@
                         <legend>Alteração do registro</legend> <!-- .form-group -->
 							<div class='form-group'>
 								<label for='0400_Reg'>Registro</label>
-							<input type='text' name='0400_Reg' id='0400_Reg' class='form-control' placeholder='Registro' value='<?= $response['data'][0]['0400_Reg'] ?>' required>
+							<input type='text'  name='0400_Reg' id='0400_Reg' class='form-control' placeholder='Registro' value='<?= $response['data'][0]['0400_Reg'] ?>' required>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['0400_Reg']) ? $response['error']['0400_Reg'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='0400_CodNat'>Código Natureza</label>
-							<input type='text' name='0400_CodNat' id='0400_CodNat' class='form-control' placeholder='Código Natureza' value='<?= $response['data'][0]['0400_CodNat'] ?>' required>
+							<input type='text'  name='0400_CodNat' id='0400_CodNat' class='form-control' placeholder='Código Natureza' value='<?= $response['data'][0]['0400_CodNat'] ?>' required>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['0400_CodNat']) ? $response['error']['0400_CodNat'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='0400_DescricaoNat'>Descrição da Natureza</label>
-							<input type='text' name='0400_DescricaoNat' id='0400_DescricaoNat' class='form-control' placeholder='Descrição da Natureza' value='<?= $response['data'][0]['0400_DescricaoNat'] ?>' required>
+							<input type='text'  name='0400_DescricaoNat' id='0400_DescricaoNat' class='form-control' placeholder='Descrição da Natureza' value='<?= $response['data'][0]['0400_DescricaoNat'] ?>' required>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['0400_DescricaoNat']) ? $response['error']['0400_DescricaoNat'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='0400_DtIni'>Data Inicial</label>
-							<input type='date' name='0400_DtIni' id='0400_DtIni' class='form-control' placeholder='Data Inicial' value='<?= $response['data'][0]['0400_DtIni'] ?>' required>
+							<input type='date'  name='0400_DtIni' id='0400_DtIni' class='form-control' placeholder='Data Inicial' value='<?= $response['data'][0]['0400_DtIni'] ?>' required>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['0400_DtIni']) ? $response['error']['0400_DtIni'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='0400_DtFin'>Data Final</label>
-							<input type='date' name='0400_DtFin' id='0400_DtFin' class='form-control' placeholder='Data Final' value='<?= $response['data'][0]['0400_DtFin'] ?>' >
+							<input type='date'  name='0400_DtFin' id='0400_DtFin' class='form-control' placeholder='Data Final' value='<?= $response['data'][0]['0400_DtFin'] ?>' >
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['0400_DtFin']) ? $response['error']['0400_DtFin'] : ''; ?></div>
 							<?php endif; ?>

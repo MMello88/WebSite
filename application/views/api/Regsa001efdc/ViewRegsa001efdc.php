@@ -68,7 +68,7 @@
                         <legend>Alteração do registro</legend> <!-- .form-group -->
 							<div class='form-group'>
 								<label for='a001_Reg'>Registro</label>
-							<input type='text' name='a001_Reg' id='a001_Reg' class='form-control' placeholder='Registro' value='<?= isset($response['data'][0]['a001_Reg']) ? $response['data'][0]['a001_Reg'] : '' ?>' required disabled>
+							<input type='text'  name='a001_Reg' id='a001_Reg' class='form-control' placeholder='Registro' value='<?= isset($response['data'][0]['a001_Reg']) ? $response['data'][0]['a001_Reg'] : '' ?>' required disabled>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['a001_Reg']) ? $response['error']['a001_Reg'] : ''; ?></div>
 							<?php endif; ?>
@@ -83,14 +83,14 @@
 						</div>
 							<div class='form-group'>
 								<label for='a001_DtIni'>Data Inicial</label>
-							<input type='date' name='a001_DtIni' id='a001_DtIni' class='form-control' placeholder='Data Inicial' value='<?= isset($response['data'][0]['a001_DtIni']) ? $response['data'][0]['a001_DtIni'] : '' ?>' required disabled>
+							<input type='date'  name='a001_DtIni' id='a001_DtIni' class='form-control' placeholder='Data Inicial' value='<?= isset($response['data'][0]['a001_DtIni']) ? $response['data'][0]['a001_DtIni'] : '' ?>' required disabled>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['a001_DtIni']) ? $response['error']['a001_DtIni'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='a001_DtFin'>Data Final</label>
-							<input type='date' name='a001_DtFin' id='a001_DtFin' class='form-control' placeholder='Data Final' value='<?= isset($response['data'][0]['a001_DtFin']) ? $response['data'][0]['a001_DtFin'] : '' ?>'  disabled>
+							<input type='date'  name='a001_DtFin' id='a001_DtFin' class='form-control' placeholder='Data Final' value='<?= isset($response['data'][0]['a001_DtFin']) ? $response['data'][0]['a001_DtFin'] : '' ?>'  disabled>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['a001_DtFin']) ? $response['error']['a001_DtFin'] : ''; ?></div>
 							<?php endif; ?>

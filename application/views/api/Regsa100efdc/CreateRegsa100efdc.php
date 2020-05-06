@@ -69,28 +69,28 @@
                         <legend>Adicionar um novo registro</legend> <!-- .form-group -->
 							<div class='form-group'>
 								<label for='a100_Reg'>Registro</label>
-							<input type='text' name='a100_Reg' id='a100_Reg' class='form-control' placeholder='Registro' value='<?= isset($response['data']['a100_Reg']) ? $response['data']['a100_Reg'] : '' ?>' required>
+							<input type='text'  name='a100_Reg' id='a100_Reg' class='form-control' placeholder='Registro' value='<?= isset($response['data']['a100_Reg']) ? $response['data']['a100_Reg'] : '' ?>' required>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['a100_Reg']) ? $response['error']['a100_Reg'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='a100_CNPJ'>CNPJ</label>
-							<input type='text' name='a100_CNPJ' id='a100_CNPJ' class='form-control' placeholder='CNPJ' value='<?= isset($response['data']['a100_CNPJ']) ? $response['data']['a100_CNPJ'] : '' ?>' >
+							<input type='text'  name='a100_CNPJ' id='a100_CNPJ' class='form-control' placeholder='CNPJ' value='<?= isset($response['data']['a100_CNPJ']) ? $response['data']['a100_CNPJ'] : '' ?>' >
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['a100_CNPJ']) ? $response['error']['a100_CNPJ'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='a100_IndicadorTipoOperacao'>Indicador Tipo Operação</label>
-							<input type='number' name='a100_IndicadorTipoOperacao' id='a100_IndicadorTipoOperacao' class='form-control' placeholder='Indicador Tipo Operação' value='<?= isset($response['data']['a100_IndicadorTipoOperacao']) ? $response['data']['a100_IndicadorTipoOperacao'] : '' ?>' required>
+							<input type='number' step='1' name='a100_IndicadorTipoOperacao' id='a100_IndicadorTipoOperacao' class='form-control' placeholder='Indicador Tipo Operação' value='<?= isset($response['data']['a100_IndicadorTipoOperacao']) ? $response['data']['a100_IndicadorTipoOperacao'] : '' ?>' required>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['a100_IndicadorTipoOperacao']) ? $response['error']['a100_IndicadorTipoOperacao'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='a100_IndicadorEmitenteDocumento'>Indicador Emitente</label>
-							<input type='number' name='a100_IndicadorEmitenteDocumento' id='a100_IndicadorEmitenteDocumento' class='form-control' placeholder='Indicador Emitente' value='<?= isset($response['data']['a100_IndicadorEmitenteDocumento']) ? $response['data']['a100_IndicadorEmitenteDocumento'] : '' ?>' required>
+							<input type='number' step='1' name='a100_IndicadorEmitenteDocumento' id='a100_IndicadorEmitenteDocumento' class='form-control' placeholder='Indicador Emitente' value='<?= isset($response['data']['a100_IndicadorEmitenteDocumento']) ? $response['data']['a100_IndicadorEmitenteDocumento'] : '' ?>' required>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['a100_IndicadorEmitenteDocumento']) ? $response['error']['a100_IndicadorEmitenteDocumento'] : ''; ?></div>
 							<?php endif; ?>
@@ -106,56 +106,56 @@
 						</div>
 							<div class='form-group'>
 								<label for='a100_SituacaoDocumentoFiscal'>Código Situação</label>
-							<input type='number' name='a100_SituacaoDocumentoFiscal' id='a100_SituacaoDocumentoFiscal' class='form-control' placeholder='Código Situação' value='<?= isset($response['data']['a100_SituacaoDocumentoFiscal']) ? $response['data']['a100_SituacaoDocumentoFiscal'] : '' ?>' required>
+							<input type='number' step='1' name='a100_SituacaoDocumentoFiscal' id='a100_SituacaoDocumentoFiscal' class='form-control' placeholder='Código Situação' value='<?= isset($response['data']['a100_SituacaoDocumentoFiscal']) ? $response['data']['a100_SituacaoDocumentoFiscal'] : '' ?>' required>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['a100_SituacaoDocumentoFiscal']) ? $response['error']['a100_SituacaoDocumentoFiscal'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='a100_Ser'>Série</label>
-							<input type='text' name='a100_Ser' id='a100_Ser' class='form-control' placeholder='Série' value='<?= isset($response['data']['a100_Ser']) ? $response['data']['a100_Ser'] : '' ?>' >
+							<input type='text'  name='a100_Ser' id='a100_Ser' class='form-control' placeholder='Série' value='<?= isset($response['data']['a100_Ser']) ? $response['data']['a100_Ser'] : '' ?>' >
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['a100_Ser']) ? $response['error']['a100_Ser'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='a100_Sub'>Subserie</label>
-							<input type='text' name='a100_Sub' id='a100_Sub' class='form-control' placeholder='Subserie' value='<?= isset($response['data']['a100_Sub']) ? $response['data']['a100_Sub'] : '' ?>' >
+							<input type='text'  name='a100_Sub' id='a100_Sub' class='form-control' placeholder='Subserie' value='<?= isset($response['data']['a100_Sub']) ? $response['data']['a100_Sub'] : '' ?>' >
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['a100_Sub']) ? $response['error']['a100_Sub'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='a100_NumDoc'>Número Documento</label>
-							<input type='text' name='a100_NumDoc' id='a100_NumDoc' class='form-control' placeholder='Número Documento' value='<?= isset($response['data']['a100_NumDoc']) ? $response['data']['a100_NumDoc'] : '' ?>' required>
+							<input type='text'  name='a100_NumDoc' id='a100_NumDoc' class='form-control' placeholder='Número Documento' value='<?= isset($response['data']['a100_NumDoc']) ? $response['data']['a100_NumDoc'] : '' ?>' required>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['a100_NumDoc']) ? $response['error']['a100_NumDoc'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='a100_ChaveEletronica'>Chave Eletrônica</label>
-							<input type='text' name='a100_ChaveEletronica' id='a100_ChaveEletronica' class='form-control' placeholder='Chave Eletrônica' value='<?= isset($response['data']['a100_ChaveEletronica']) ? $response['data']['a100_ChaveEletronica'] : '' ?>' >
+							<input type='text'  name='a100_ChaveEletronica' id='a100_ChaveEletronica' class='form-control' placeholder='Chave Eletrônica' value='<?= isset($response['data']['a100_ChaveEletronica']) ? $response['data']['a100_ChaveEletronica'] : '' ?>' >
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['a100_ChaveEletronica']) ? $response['error']['a100_ChaveEletronica'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='a100_DtEmissaoDoc'>Data Emissão Documento</label>
-							<input type='date' name='a100_DtEmissaoDoc' id='a100_DtEmissaoDoc' class='form-control' placeholder='Data Emissão Documento' value='<?= isset($response['data']['a100_DtEmissaoDoc']) ? $response['data']['a100_DtEmissaoDoc'] : '' ?>' required>
+							<input type='date'  name='a100_DtEmissaoDoc' id='a100_DtEmissaoDoc' class='form-control' placeholder='Data Emissão Documento' value='<?= isset($response['data']['a100_DtEmissaoDoc']) ? $response['data']['a100_DtEmissaoDoc'] : '' ?>' required>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['a100_DtEmissaoDoc']) ? $response['error']['a100_DtEmissaoDoc'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='a100_DtConclusaoServico'>Data Conclusão do Serviço</label>
-							<input type='date' name='a100_DtConclusaoServico' id='a100_DtConclusaoServico' class='form-control' placeholder='Data Conclusão do Serviço' value='<?= isset($response['data']['a100_DtConclusaoServico']) ? $response['data']['a100_DtConclusaoServico'] : '' ?>' required>
+							<input type='date'  name='a100_DtConclusaoServico' id='a100_DtConclusaoServico' class='form-control' placeholder='Data Conclusão do Serviço' value='<?= isset($response['data']['a100_DtConclusaoServico']) ? $response['data']['a100_DtConclusaoServico'] : '' ?>' required>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['a100_DtConclusaoServico']) ? $response['error']['a100_DtConclusaoServico'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='a100_VlDocumento'>Valor Total</label>
-							<input type='' name='a100_VlDocumento' id='a100_VlDocumento' class='form-control' placeholder='Valor Total' value='<?= isset($response['data']['a100_VlDocumento']) ? $response['data']['a100_VlDocumento'] : '' ?>' required>
+							<input type='number' step='0.01' name='a100_VlDocumento' id='a100_VlDocumento' class='form-control' placeholder='Valor Total' value='<?= isset($response['data']['a100_VlDocumento']) ? $response['data']['a100_VlDocumento'] : '' ?>' required>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['a100_VlDocumento']) ? $response['error']['a100_VlDocumento'] : ''; ?></div>
 							<?php endif; ?>
@@ -171,70 +171,70 @@
 						</div>
 							<div class='form-group'>
 								<label for='a100_VlDesconto'>Valor Total do Desconto</label>
-							<input type='' name='a100_VlDesconto' id='a100_VlDesconto' class='form-control' placeholder='Valor Total do Desconto' value='<?= isset($response['data']['a100_VlDesconto']) ? $response['data']['a100_VlDesconto'] : '' ?>' required>
+							<input type='number' step='0.01' name='a100_VlDesconto' id='a100_VlDesconto' class='form-control' placeholder='Valor Total do Desconto' value='<?= isset($response['data']['a100_VlDesconto']) ? $response['data']['a100_VlDesconto'] : '' ?>' required>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['a100_VlDesconto']) ? $response['error']['a100_VlDesconto'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='a100_VlBcPis'>Valor Base Cálculo PIS/PASEP</label>
-							<input type='' name='a100_VlBcPis' id='a100_VlBcPis' class='form-control' placeholder='Valor Base Cálculo PIS/PASEP' value='<?= isset($response['data']['a100_VlBcPis']) ? $response['data']['a100_VlBcPis'] : '' ?>' required>
+							<input type='number' step='0.01' name='a100_VlBcPis' id='a100_VlBcPis' class='form-control' placeholder='Valor Base Cálculo PIS/PASEP' value='<?= isset($response['data']['a100_VlBcPis']) ? $response['data']['a100_VlBcPis'] : '' ?>' required>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['a100_VlBcPis']) ? $response['error']['a100_VlBcPis'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='a100_VlPis'>Valor Total do PIS</label>
-							<input type='' name='a100_VlPis' id='a100_VlPis' class='form-control' placeholder='Valor Total do PIS' value='<?= isset($response['data']['a100_VlPis']) ? $response['data']['a100_VlPis'] : '' ?>' required>
+							<input type='number' step='0.01' name='a100_VlPis' id='a100_VlPis' class='form-control' placeholder='Valor Total do PIS' value='<?= isset($response['data']['a100_VlPis']) ? $response['data']['a100_VlPis'] : '' ?>' required>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['a100_VlPis']) ? $response['error']['a100_VlPis'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='a100_VlBcCofins'>Valor Base Cálculo COFINS</label>
-							<input type='' name='a100_VlBcCofins' id='a100_VlBcCofins' class='form-control' placeholder='Valor Base Cálculo COFINS' value='<?= isset($response['data']['a100_VlBcCofins']) ? $response['data']['a100_VlBcCofins'] : '' ?>' required>
+							<input type='number' step='0.01' name='a100_VlBcCofins' id='a100_VlBcCofins' class='form-control' placeholder='Valor Base Cálculo COFINS' value='<?= isset($response['data']['a100_VlBcCofins']) ? $response['data']['a100_VlBcCofins'] : '' ?>' required>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['a100_VlBcCofins']) ? $response['error']['a100_VlBcCofins'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='a100_VlCofins'>Valor Total COFINS</label>
-							<input type='' name='a100_VlCofins' id='a100_VlCofins' class='form-control' placeholder='Valor Total COFINS' value='<?= isset($response['data']['a100_VlCofins']) ? $response['data']['a100_VlCofins'] : '' ?>' required>
+							<input type='number' step='0.01' name='a100_VlCofins' id='a100_VlCofins' class='form-control' placeholder='Valor Total COFINS' value='<?= isset($response['data']['a100_VlCofins']) ? $response['data']['a100_VlCofins'] : '' ?>' required>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['a100_VlCofins']) ? $response['error']['a100_VlCofins'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='a100_VlPisRetido'>Valor Total do PIS Retido na Fonte</label>
-							<input type='' name='a100_VlPisRetido' id='a100_VlPisRetido' class='form-control' placeholder='Valor Total do PIS Retido na Fonte' value='<?= isset($response['data']['a100_VlPisRetido']) ? $response['data']['a100_VlPisRetido'] : '' ?>' required>
+							<input type='number' step='0.01' name='a100_VlPisRetido' id='a100_VlPisRetido' class='form-control' placeholder='Valor Total do PIS Retido na Fonte' value='<?= isset($response['data']['a100_VlPisRetido']) ? $response['data']['a100_VlPisRetido'] : '' ?>' required>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['a100_VlPisRetido']) ? $response['error']['a100_VlPisRetido'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='a100_VlConfinsRetido'>Valor Total da COFINS Retido na Fonte</label>
-							<input type='' name='a100_VlConfinsRetido' id='a100_VlConfinsRetido' class='form-control' placeholder='Valor Total da COFINS Retido na Fonte' value='<?= isset($response['data']['a100_VlConfinsRetido']) ? $response['data']['a100_VlConfinsRetido'] : '' ?>' required>
+							<input type='number' step='0.01' name='a100_VlConfinsRetido' id='a100_VlConfinsRetido' class='form-control' placeholder='Valor Total da COFINS Retido na Fonte' value='<?= isset($response['data']['a100_VlConfinsRetido']) ? $response['data']['a100_VlConfinsRetido'] : '' ?>' required>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['a100_VlConfinsRetido']) ? $response['error']['a100_VlConfinsRetido'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='a100_VlIss'>Valor do ISS</label>
-							<input type='' name='a100_VlIss' id='a100_VlIss' class='form-control' placeholder='Valor do ISS' value='<?= isset($response['data']['a100_VlIss']) ? $response['data']['a100_VlIss'] : '' ?>' required>
+							<input type='number' step='0.01' name='a100_VlIss' id='a100_VlIss' class='form-control' placeholder='Valor do ISS' value='<?= isset($response['data']['a100_VlIss']) ? $response['data']['a100_VlIss'] : '' ?>' required>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['a100_VlIss']) ? $response['error']['a100_VlIss'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='a100_DtIni'>Data Inicial</label>
-							<input type='date' name='a100_DtIni' id='a100_DtIni' class='form-control' placeholder='Data Inicial' value='<?= isset($response['data']['a100_DtIni']) ? $response['data']['a100_DtIni'] : '' ?>' required>
+							<input type='date'  name='a100_DtIni' id='a100_DtIni' class='form-control' placeholder='Data Inicial' value='<?= isset($response['data']['a100_DtIni']) ? $response['data']['a100_DtIni'] : '' ?>' required>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['a100_DtIni']) ? $response['error']['a100_DtIni'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='a100_DtFin'>Data Final</label>
-							<input type='date' name='a100_DtFin' id='a100_DtFin' class='form-control' placeholder='Data Final' value='<?= isset($response['data']['a100_DtFin']) ? $response['data']['a100_DtFin'] : '' ?>' >
+							<input type='date'  name='a100_DtFin' id='a100_DtFin' class='form-control' placeholder='Data Final' value='<?= isset($response['data']['a100_DtFin']) ? $response['data']['a100_DtFin'] : '' ?>' >
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['a100_DtFin']) ? $response['error']['a100_DtFin'] : ''; ?></div>
 							<?php endif; ?>
@@ -508,7 +508,7 @@
 </div><!-- /.page-section -->
     
       <!-- Central modal -->
-      <div class='modal fade' id='modalDeleteRegistro' tabindex='-1' role='dialog' aria-labelledby='ModalDeleteLabel' aria-hidden='true'>
+      <div class='modal fade' id='modalDeleteRegistroregsa110efdc' tabindex='-1' role='dialog' aria-labelledby='ModalDeleteLabel' aria-hidden='true'>
         <!-- .modal-dialog -->
         <div class='modal-dialog modal-dialog-centered' role='document'>
           <!-- .modal-content -->
@@ -517,10 +517,14 @@
             <div class='modal-header'>
               <h5 id='ModalDeleteLabel' class='modal-title'> Deseja Deletar este Registro? </h5>
             </div><!-- /.modal-header -->
-            <?= form_open('regsa110efdc/delete') ?>
+          <?php if(isset($response['data'][0]['a100_Id'])): ?>
+            <?= form_open('regsa110efdc/delete/'.$nameView.'/'.$response['data'][0]['a100_Id']) ?>
+          <?php else: ?>
+            <?= form_open('regsa110efdc/delete/'.$nameView.'/') ?>
+          <?php endif; ?>
               <!-- .modal-body -->
               <div class='modal-body'>
-                <input type='hidden' id='DeleteById' name='Id' value=''>
+                <input type='hidden' id='DeleteBya110_id' name='Id' value=''>
               </div><!-- /.modal-body -->
               <!-- .modal-footer -->
               <div class='modal-footer'>
@@ -541,7 +545,7 @@
 <?php endif; ?>
       
       <!-- Central modal -->
-      <div class='modal fade' id='modalDeleteRegistro' tabindex='-1' role='dialog' aria-labelledby='ModalDeleteLabel' aria-hidden='true'>
+      <div class='modal fade' id='modalDeleteRegistroregsa120efdc' tabindex='-1' role='dialog' aria-labelledby='ModalDeleteLabel' aria-hidden='true'>
         <!-- .modal-dialog -->
         <div class='modal-dialog modal-dialog-centered' role='document'>
           <!-- .modal-content -->
@@ -550,10 +554,14 @@
             <div class='modal-header'>
               <h5 id='ModalDeleteLabel' class='modal-title'> Deseja Deletar este Registro? </h5>
             </div><!-- /.modal-header -->
-            <?= form_open('regsa120efdc/delete') ?>
+          <?php if(isset($response['data'][0]['a100_Id'])): ?>
+            <?= form_open('regsa120efdc/delete/'.$nameView.'/'.$response['data'][0]['a100_Id']) ?>
+          <?php else: ?>
+            <?= form_open('regsa120efdc/delete/'.$nameView.'/') ?>
+          <?php endif; ?>
               <!-- .modal-body -->
               <div class='modal-body'>
-                <input type='hidden' id='DeleteById' name='Id' value=''>
+                <input type='hidden' id='DeleteBya120_id' name='Id' value=''>
               </div><!-- /.modal-body -->
               <!-- .modal-footer -->
               <div class='modal-footer'>

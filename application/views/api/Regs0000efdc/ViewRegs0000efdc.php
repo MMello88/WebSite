@@ -44,7 +44,7 @@
               <nav aria-label='breadcrumb'>
                 <ol class='breadcrumb'>
                   <li class='breadcrumb-item active'>
-                    <a href='<?= base_url('Regs0000efdc') ?>'><i class='breadcrumb-icon fa fa-angle-left mr-2'></i>Voltar</a>
+                    <a href='<?= base_url('Ref311/'.$parentView.'/'.$IdParent) ?>'><i class='breadcrumb-icon fa fa-angle-left mr-2'></i>Voltar</a>
                   </li>
                 </ol>
               </nav><!-- /.breadcrumb -->
@@ -68,7 +68,7 @@
                         <legend>Alteração do registro</legend> <!-- .form-group -->
 							<div class='form-group'>
 								<label for='0000_Reg'>Registro</label>
-							<input type='text' name='0000_Reg' id='0000_Reg' class='form-control' placeholder='Registro' value='<?= isset($response['data'][0]['0000_Reg']) ? $response['data'][0]['0000_Reg'] : '0000' ?>' required disabled>
+							<input type='text'  name='0000_Reg' id='0000_Reg' class='form-control' placeholder='Registro' value='<?= isset($response['data'][0]['0000_Reg']) ? $response['data'][0]['0000_Reg'] : '0000' ?>' required disabled>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['0000_Reg']) ? $response['error']['0000_Reg'] : ''; ?></div>
 							<?php endif; ?>
@@ -103,21 +103,21 @@
 						</div>
 							<div class='form-group'>
 								<label for='0000_NumRecAnterior'>Número Recibo Escrituração Anterior</label>
-							<input type='text' name='0000_NumRecAnterior' id='0000_NumRecAnterior' class='form-control' placeholder='Número Recibo Escrituração Anterior' value='<?= isset($response['data'][0]['0000_NumRecAnterior']) ? $response['data'][0]['0000_NumRecAnterior'] : '' ?>'  disabled>
+							<input type='text'  name='0000_NumRecAnterior' id='0000_NumRecAnterior' class='form-control' placeholder='Número Recibo Escrituração Anterior' value='<?= isset($response['data'][0]['0000_NumRecAnterior']) ? $response['data'][0]['0000_NumRecAnterior'] : '' ?>'  disabled>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['0000_NumRecAnterior']) ? $response['error']['0000_NumRecAnterior'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='0000_DtIni'>Data Inicial</label>
-							<input type='date' name='0000_DtIni' id='0000_DtIni' class='form-control' placeholder='Data Inicial' value='<?= isset($response['data'][0]['0000_DtIni']) ? $response['data'][0]['0000_DtIni'] : '' ?>' required disabled>
+							<input type='date'  name='0000_DtIni' id='0000_DtIni' class='form-control' placeholder='Data Inicial' value='<?= isset($response['data'][0]['0000_DtIni']) ? $response['data'][0]['0000_DtIni'] : '' ?>' required disabled>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['0000_DtIni']) ? $response['error']['0000_DtIni'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='0000_DtFin'>Data Final</label>
-							<input type='date' name='0000_DtFin' id='0000_DtFin' class='form-control' placeholder='Data Final' value='<?= isset($response['data'][0]['0000_DtFin']) ? $response['data'][0]['0000_DtFin'] : '' ?>'  disabled>
+							<input type='date'  name='0000_DtFin' id='0000_DtFin' class='form-control' placeholder='Data Final' value='<?= isset($response['data'][0]['0000_DtFin']) ? $response['data'][0]['0000_DtFin'] : '' ?>'  disabled>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['0000_DtFin']) ? $response['error']['0000_DtFin'] : ''; ?></div>
 							<?php endif; ?>
@@ -174,6 +174,9 @@
 							<?php endif; ?>
 						</div>
 
+                        <div class='form-actions'>
+                          <button class='btn btn-secondary ml-auto' type='button' onclick="window.location.href='<?= base_url('Ref311/'.$parentView.'/'.$IdParent) ?>'">Cancelar</button>
+                        </div>
                       </fieldset><!-- /.fieldset -->
                   </div><!-- /.card-body -->
                 </div><!-- /.base-style -->
@@ -184,3 +187,4 @@
         </div><!-- /.page -->
       </div><!-- /.wrapper -->
     </main><!-- /.app-main -->
+

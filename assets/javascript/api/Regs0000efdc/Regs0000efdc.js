@@ -36,7 +36,7 @@ function () {
           }
         },
         autoWidth: false,
-        ajax: url_get,
+        ajax: url_get_regs0000efdc,
         deferRender: true,
         order: [14, 'desc'],
         columns: [
@@ -119,13 +119,13 @@ function () {
           targets: 1,
           render: function render(data, type, row, meta) {
             return `
-            <a class='btn btn-sm btn-icon btn-secondary' href='${url_view}/${data}'>
+            <a class='btn btn-sm btn-icon btn-secondary' href='${url_view_regs0000efdc}/${data}'>
               <i class='fa fa-eye'></i>
             </a>
-            <a class='btn btn-sm btn-icon btn-secondary' href='${url_upd}/${data}'>
+            <a class='btn btn-sm btn-icon btn-secondary' href='${url_upd_regs0000efdc}/${data}'>
               <i class='fa fa-pencil-alt'></i>
             </a>
-            <a class='btn btn-sm btn-icon btn-secondary' id='btnDeleteClick' data-toggle='modal' data-target='#modalDeleteRegistro' data-id='${data}' href='#${data}'>
+            <a class='btn btn-sm btn-icon btn-secondary' id='btnDeleteClick' data-toggle='modal' data-target='#modalDeleteRegistroregs0000efdc' data-0000_id='${data}' href='#${data}'>
               <i class='far fa-trash-alt'></i>
             </a>
             `;
@@ -145,8 +145,8 @@ function () {
     key: 'setDeleteClick',
     value: function setDeleteClick(){
       var self = this;
-      $('#modalDeleteRegistro').on('show.bs.modal', function (event) {
-        document.getElementById('DeleteById').value = $(event.relatedTarget).data('id');
+      $('#modalDeleteRegistroregs0000efdc').on('show.bs.modal', function (event) {
+        document.getElementById('DeleteBy0000_id').value = $(event.relatedTarget).data('0000_id');
       })
     }
   },{

@@ -69,14 +69,14 @@
                         <legend>Adicionar um novo registro</legend> <!-- .form-group -->
 							<div class='form-group'>
 								<label for='a170_Reg'>Registro</label>
-							<input type='text' name='a170_Reg' id='a170_Reg' class='form-control' placeholder='Registro' value='<?= isset($response['data']['a170_Reg']) ? $response['data']['a170_Reg'] : '' ?>' required>
+							<input type='text'  name='a170_Reg' id='a170_Reg' class='form-control' placeholder='Registro' value='<?= isset($response['data']['a170_Reg']) ? $response['data']['a170_Reg'] : '' ?>' required>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['a170_Reg']) ? $response['error']['a170_Reg'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='a170_NumItem'>Sequencia</label>
-							<input type='number' name='a170_NumItem' id='a170_NumItem' class='form-control' placeholder='Sequencia' value='<?= isset($response['data']['a170_NumItem']) ? $response['data']['a170_NumItem'] : '' ?>' required>
+							<input type='number' step='1' name='a170_NumItem' id='a170_NumItem' class='form-control' placeholder='Sequencia' value='<?= isset($response['data']['a170_NumItem']) ? $response['data']['a170_NumItem'] : '' ?>' required>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['a170_NumItem']) ? $response['error']['a170_NumItem'] : ''; ?></div>
 							<?php endif; ?>
@@ -92,21 +92,21 @@
 						</div>
 							<div class='form-group'>
 								<label for='a170_DescricaoComplementar'>Descrição complementar</label>
-							<input type='text' name='a170_DescricaoComplementar' id='a170_DescricaoComplementar' class='form-control' placeholder='Descrição complementar' value='<?= isset($response['data']['a170_DescricaoComplementar']) ? $response['data']['a170_DescricaoComplementar'] : '' ?>' >
+							<input type='text'  name='a170_DescricaoComplementar' id='a170_DescricaoComplementar' class='form-control' placeholder='Descrição complementar' value='<?= isset($response['data']['a170_DescricaoComplementar']) ? $response['data']['a170_DescricaoComplementar'] : '' ?>' >
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['a170_DescricaoComplementar']) ? $response['error']['a170_DescricaoComplementar'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='a170_VlItem'>Valor Total do Item</label>
-							<input type='' name='a170_VlItem' id='a170_VlItem' class='form-control' placeholder='Valor Total do Item' value='<?= isset($response['data']['a170_VlItem']) ? $response['data']['a170_VlItem'] : '' ?>' required>
+							<input type='number' step='0.01' name='a170_VlItem' id='a170_VlItem' class='form-control' placeholder='Valor Total do Item' value='<?= isset($response['data']['a170_VlItem']) ? $response['data']['a170_VlItem'] : '' ?>' required>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['a170_VlItem']) ? $response['error']['a170_VlItem'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='a170_VlDesconto'>Valor do Desconto</label>
-							<input type='' name='a170_VlDesconto' id='a170_VlDesconto' class='form-control' placeholder='Valor do Desconto' value='<?= isset($response['data']['a170_VlDesconto']) ? $response['data']['a170_VlDesconto'] : '' ?>' required>
+							<input type='number' step='0.01' name='a170_VlDesconto' id='a170_VlDesconto' class='form-control' placeholder='Valor do Desconto' value='<?= isset($response['data']['a170_VlDesconto']) ? $response['data']['a170_VlDesconto'] : '' ?>' required>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['a170_VlDesconto']) ? $response['error']['a170_VlDesconto'] : ''; ?></div>
 							<?php endif; ?>
@@ -139,21 +139,21 @@
 						</div>
 							<div class='form-group'>
 								<label for='a170_VlBcPis'>Valor BC PIS</label>
-							<input type='' name='a170_VlBcPis' id='a170_VlBcPis' class='form-control' placeholder='Valor BC PIS' value='<?= isset($response['data']['a170_VlBcPis']) ? $response['data']['a170_VlBcPis'] : '' ?>' required>
+							<input type='number' step='0.01' name='a170_VlBcPis' id='a170_VlBcPis' class='form-control' placeholder='Valor BC PIS' value='<?= isset($response['data']['a170_VlBcPis']) ? $response['data']['a170_VlBcPis'] : '' ?>' required>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['a170_VlBcPis']) ? $response['error']['a170_VlBcPis'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='a170_VlAliqPis'>Valor Alíquota do PIS</label>
-							<input type='' name='a170_VlAliqPis' id='a170_VlAliqPis' class='form-control' placeholder='Valor Alíquota do PIS' value='<?= isset($response['data']['a170_VlAliqPis']) ? $response['data']['a170_VlAliqPis'] : '' ?>' required>
+							<input type='number' step='0.01' name='a170_VlAliqPis' id='a170_VlAliqPis' class='form-control' placeholder='Valor Alíquota do PIS' value='<?= isset($response['data']['a170_VlAliqPis']) ? $response['data']['a170_VlAliqPis'] : '' ?>' required>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['a170_VlAliqPis']) ? $response['error']['a170_VlAliqPis'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='a170_VlPis'>Valor PIS</label>
-							<input type='' name='a170_VlPis' id='a170_VlPis' class='form-control' placeholder='Valor PIS' value='<?= isset($response['data']['a170_VlPis']) ? $response['data']['a170_VlPis'] : '' ?>' required>
+							<input type='number' step='0.01' name='a170_VlPis' id='a170_VlPis' class='form-control' placeholder='Valor PIS' value='<?= isset($response['data']['a170_VlPis']) ? $response['data']['a170_VlPis'] : '' ?>' required>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['a170_VlPis']) ? $response['error']['a170_VlPis'] : ''; ?></div>
 							<?php endif; ?>
@@ -169,21 +169,21 @@
 						</div>
 							<div class='form-group'>
 								<label for='a170_VlBcCofins'>Valor BC COFINS</label>
-							<input type='' name='a170_VlBcCofins' id='a170_VlBcCofins' class='form-control' placeholder='Valor BC COFINS' value='<?= isset($response['data']['a170_VlBcCofins']) ? $response['data']['a170_VlBcCofins'] : '' ?>' required>
+							<input type='number' step='0.01' name='a170_VlBcCofins' id='a170_VlBcCofins' class='form-control' placeholder='Valor BC COFINS' value='<?= isset($response['data']['a170_VlBcCofins']) ? $response['data']['a170_VlBcCofins'] : '' ?>' required>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['a170_VlBcCofins']) ? $response['error']['a170_VlBcCofins'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='a170_VlAliqCofins'>Valor Alíquota do COFINS</label>
-							<input type='' name='a170_VlAliqCofins' id='a170_VlAliqCofins' class='form-control' placeholder='Valor Alíquota do COFINS' value='<?= isset($response['data']['a170_VlAliqCofins']) ? $response['data']['a170_VlAliqCofins'] : '' ?>' required>
+							<input type='number' step='0.01' name='a170_VlAliqCofins' id='a170_VlAliqCofins' class='form-control' placeholder='Valor Alíquota do COFINS' value='<?= isset($response['data']['a170_VlAliqCofins']) ? $response['data']['a170_VlAliqCofins'] : '' ?>' required>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['a170_VlAliqCofins']) ? $response['error']['a170_VlAliqCofins'] : ''; ?></div>
 							<?php endif; ?>
 						</div>
 							<div class='form-group'>
 								<label for='a170_VlCofins'>Valor da COFINS</label>
-							<input type='' name='a170_VlCofins' id='a170_VlCofins' class='form-control' placeholder='Valor da COFINS' value='<?= isset($response['data']['a170_VlCofins']) ? $response['data']['a170_VlCofins'] : '' ?>' required>
+							<input type='number' step='0.01' name='a170_VlCofins' id='a170_VlCofins' class='form-control' placeholder='Valor da COFINS' value='<?= isset($response['data']['a170_VlCofins']) ? $response['data']['a170_VlCofins'] : '' ?>' required>
 							<?php if(isset($response)): ?>
 								<div class='invalid-feedback' style='display:block'><?= isset($response['error']['a170_VlCofins']) ? $response['error']['a170_VlCofins'] : ''; ?></div>
 							<?php endif; ?>
